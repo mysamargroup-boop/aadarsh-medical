@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Home, LayoutGrid, Search, ShoppingCart } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -41,65 +41,53 @@ export function Navigation() {
           isScrolled ? "bg-primary/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0 overflow-hidden">
             {/* Hamburger on Left for Mobile */}
             <button 
-              className="md:hidden p-2 outline-none focus:ring-0"
+              className="md:hidden p-2 outline-none focus:ring-0 text-white"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className={isScrolled ? "text-white" : "text-primary"} size={24} />
+                <X size={24} />
               ) : (
-                <Menu className={isScrolled ? "text-white" : "text-primary"} size={24} />
+                <Menu size={24} />
               )}
             </button>
 
-            <Link href="/" className="flex items-center gap-2 group whitespace-nowrap">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all">
+            <Link href="/" className="flex items-center gap-2 group whitespace-nowrap min-w-0">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
                 A
               </div>
-              <span className={cn(
-                "font-headline font-bold text-lg md:text-2xl transition-colors",
-                isScrolled ? "text-white" : "text-primary"
-              )}>
+              <span className="font-headline font-bold text-sm sm:text-lg md:text-2xl transition-colors text-white whitespace-nowrap">
                 Aadarsh MedStore
               </span>
             </Link>
           </div>
 
-          <div className="flex items-center gap-4 md:hidden">
-             <Link href="#" className={cn(
-               "relative p-2 transition-opacity hover:opacity-80",
-               isScrolled ? "text-white" : "text-primary"
-             )}>
+          <div className="flex items-center gap-4 md:hidden shrink-0">
+             <Link href="#" className="relative p-2 transition-opacity hover:opacity-80 text-white">
                 <ShoppingCart size={22} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={cn(
-                  "font-medium transition-colors hover:text-accent",
-                  isScrolled ? "text-white" : "text-primary"
-                )}
+                className="font-medium transition-colors hover:text-accent text-white"
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <Link href="#" className={cn(
-                "relative p-2 transition-opacity hover:opacity-80",
-                isScrolled ? "text-white" : "text-primary"
-              )}>
+              <Link href="#" className="relative p-2 transition-opacity hover:opacity-80 text-white">
                 <ShoppingCart size={24} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
-              <Button className="bg-secondary hover:bg-secondary/90 text-primary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
+              <Button className="bg-secondary hover:bg-secondary/90 text-primary rounded-full px-4 lg:px-6 shadow-lg shadow-secondary/10 transition-all font-bold text-sm lg:text-base whitespace-nowrap">
                 Enquiry Portal
               </Button>
             </div>
@@ -107,7 +95,7 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20">
+          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
