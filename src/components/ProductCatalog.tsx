@@ -68,7 +68,7 @@ export function ProductCatalog() {
                   data-ai-hint="medical product"
                 />
                 <div className="absolute top-2 left-2 md:top-4 md:left-4">
-                  <Badge variant="secondary" className="bg-muted/80 backdrop-blur-sm text-secondary font-bold border-none text-[8px] md:text-xs">
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary font-bold border-none text-[8px] md:text-xs hover:bg-secondary/30 transition-colors">
                     {p.cat}
                   </Badge>
                 </div>
@@ -77,7 +77,7 @@ export function ProductCatalog() {
               <div className="p-3 md:p-6 flex-1 flex flex-col">
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-primary font-bold text-base md:text-2xl">₹{p.price}</span>
-                  <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">Wholesale</span>
+                  <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">Wholesale (Incl. GST)</span>
                 </div>
                 
                 <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2 leading-tight">

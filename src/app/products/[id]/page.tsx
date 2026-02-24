@@ -238,7 +238,7 @@ export default function ProductDetailPage() {
                     </div>
                     {/* Total Price on Right */}
                     <div className="text-right w-full sm:w-auto">
-                      <p className="text-xs text-muted-foreground font-bold">Total (excl. GST)</p>
+                      <p className="text-xs text-muted-foreground font-bold">Total (incl. GST)</p>
                       <p className="text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
                     </div>
                   </div>
@@ -289,11 +289,13 @@ export default function ProductDetailPage() {
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
                     <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
                   </div>
-                  <Badge variant="secondary" className="bg-muted text-secondary border-none text-[8px] md:text-[10px] mb-2">{p.cat}</Badge>
+                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 hover:bg-secondary/20 transition-colors">
+                    {p.cat}
+                  </Badge>
                   <h3 className="font-bold text-primary mb-4 line-clamp-1 text-sm md:text-base">{p.name}</h3>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
+                      <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale (Incl. GST)</p>
                       <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
                     </div>
                     <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-secondary-foreground rounded-xl w-8 h-8 md:w-10 md:h-10">
