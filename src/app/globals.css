@@ -36,6 +36,16 @@
   }
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 .medical-gradient-hero {
   background: linear-gradient(135deg, #0B3C5D 0%, #0ABAB5 50%, #E6FFFA 100%);
 }
