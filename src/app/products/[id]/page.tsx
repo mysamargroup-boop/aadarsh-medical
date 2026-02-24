@@ -65,11 +65,11 @@ export default function ProductDetailPage() {
               {/* Product Image Section */}
               <div className="relative aspect-square bg-card rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
-                  <Badge className="bg-destructive hover:bg-destructive/90 text-destructive-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-destructive hover:bg-destructive/90 text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Prescription Required
                   </Badge>
                   <br />
-                  <Badge className="bg-accent hover:bg-accent/90 text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-accent hover:bg-accent/90 text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Cold Chain
                   </Badge>
                 </div>
@@ -115,7 +115,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Title Section */}
+              {/* Title Section - Below Thumbnails */}
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
@@ -207,39 +207,41 @@ export default function ProductDetailPage() {
                     ))}
                   </RadioGroup>
 
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-6 border-t border-muted">
-                    {/* Quantity Selector on Left */}
-                    <div className="flex items-center gap-4 w-full sm:w-auto">
-                      <span className="text-sm font-bold text-muted-foreground">Quantity:</span>
-                      <div className="flex items-center bg-muted rounded-xl p-1 border">
+                  {/* Quantity and Price Row - Optimized for Mobile */}
+                  <div className="flex flex-row items-center justify-between gap-4 pt-6 border-t border-muted w-full">
+                    {/* Price on Left on Mobile, Right on Desktop */}
+                    <div className="order-1 sm:order-2 text-left sm:text-right">
+                      <p className="text-[10px] text-muted-foreground font-bold uppercase">Total (incl. GST)</p>
+                      <p className="text-2xl sm:text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
+                    </div>
+
+                    {/* Quantity on Right on Mobile, Left on Desktop */}
+                    <div className="order-2 sm:order-1 flex items-center gap-2 sm:gap-4">
+                      <span className="hidden xs:inline-block text-xs sm:text-sm font-bold text-muted-foreground">Quantity:</span>
+                      <div className="flex items-center bg-muted rounded-xl p-0.5 sm:p-1 border">
                         <Button 
                           variant="ghost" 
                           size="icon" 
-                          className="h-8 w-8 rounded-lg"
+                          className="h-8 w-8 rounded-lg hover:bg-secondary/10"
                           onClick={() => setQuantity(q => Math.max(1, q - 10))}
                         >
-                          <Minus size={14} />
+                          <Minus size={14} className="text-primary" />
                         </Button>
                         <input 
                           type="number" 
                           value={quantity} 
                           onChange={(e) => setQuantity(Number(e.target.value))}
-                          className="w-16 text-center bg-transparent font-bold text-primary border-none outline-none"
+                          className="w-12 sm:w-16 text-center bg-transparent font-bold text-primary border-none outline-none text-sm sm:text-base"
                         />
                         <Button 
                           variant="ghost" 
                           size="icon" 
-                          className="h-8 w-8 rounded-lg"
+                          className="h-8 w-8 rounded-lg hover:bg-secondary/10"
                           onClick={() => setQuantity(q => q + 10)}
                         >
-                          <Plus size={14} />
+                          <Plus size={14} className="text-primary" />
                         </Button>
                       </div>
-                    </div>
-                    {/* Total Price on Left (Mobile) / Right (Desktop) */}
-                    <div className="text-left sm:text-right w-full sm:w-auto">
-                      <p className="text-xs text-muted-foreground font-bold">Total (incl. GST)</p>
-                      <p className="text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
                     </div>
                   </div>
 
@@ -273,8 +275,8 @@ export default function ProductDetailPage() {
                 <p className="text-muted-foreground mt-1">Frequently bought together by hospitals and retailers.</p>
               </div>
               <div className="hidden md:flex gap-2">
-                <Button variant="outline" size="icon" className="rounded-full"><ChevronLeft size={20} /></Button>
-                <Button variant="outline" size="icon" className="rounded-full"><ChevronRight size={20} /></Button>
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-secondary/10"><ChevronLeft size={20} className="text-primary" /></Button>
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-secondary/10"><ChevronRight size={20} className="text-primary" /></Button>
               </div>
             </div>
 
