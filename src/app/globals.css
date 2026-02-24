@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,9 +7,9 @@
   :root {
     --background: 170 100% 98%;
     --foreground: 205 78% 15%;
-    --card: 0 0% 100%;
+    --card: 170 100% 99%;
     --card-foreground: 205 78% 15%;
-    --popover: 0 0% 100%;
+    --popover: 170 100% 99%;
     --popover-foreground: 205 78% 15%;
     --primary: 204 78% 21%;
     --primary-foreground: 170 100% 96%;
@@ -41,11 +42,11 @@
 }
 
 .medical-gradient-mint {
-  background: linear-gradient(180deg, #E6FFFA 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #E6FFFA 0%, #F0FDFD 100%);
 }
 
 .medical-gradient-blue {
-  background: linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #F0F7FF 0%, #F0FDFD 100%);
 }
 
 .medical-gradient-dark {
@@ -53,10 +54,10 @@
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(230, 255, 250, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .faint-pattern {
@@ -80,5 +81,5 @@
   right: 0;
   height: 50px;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%23F0FDFD' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
 }

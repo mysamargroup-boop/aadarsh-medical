@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from 'react';
@@ -40,8 +41,8 @@ export function ProductCatalog() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input 
                 type="text" 
-                placeholder="Search products, companies..." 
-                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-secondary outline-none font-medium"
+                placeholder="Search products..." 
+                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-secondary outline-none font-medium text-primary placeholder:text-muted-foreground/50"
                 onChange={(e) => setFilter(e.target.value)}
               />
             </div>
@@ -51,14 +52,14 @@ export function ProductCatalog() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {filteredProducts.map((p) => (
             <Link 
               key={p.id} 
               href={`/products/${p.id}`}
-              className="group relative bg-white rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
+              className="group relative bg-muted/20 rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
             >
-              <div className="relative aspect-square overflow-hidden bg-muted/30">
+              <div className="relative aspect-square overflow-hidden bg-white">
                 <Image 
                   src={p.img} 
                   alt={p.name} 
@@ -66,26 +67,26 @@ export function ProductCatalog() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500" 
                   data-ai-hint="medical product"
                 />
-                <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-white/80 backdrop-blur-sm text-secondary font-bold border-none">
+                <div className="absolute top-2 left-2 md:top-4 md:left-4">
+                  <Badge variant="secondary" className="bg-muted text-secondary font-bold border-none text-[8px] md:text-xs">
                     {p.cat}
                   </Badge>
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-primary font-headline font-bold text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2">
+              <div className="p-3 md:p-6 flex-1 flex flex-col">
+                <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2">
                   {p.name}
                 </h3>
-                <p className="text-muted-foreground text-xs mb-4">{p.company}</p>
+                <p className="text-muted-foreground text-[10px] md:text-xs mb-3 md:mb-4">{p.company}</p>
                 
-                <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/50">
+                <div className="mt-auto pt-3 md:pt-4 flex items-center justify-between border-t border-muted/50">
                   <div>
-                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale</p>
-                    <p className="text-primary font-bold text-xl">₹{p.price}</p>
+                    <p className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale</p>
+                    <p className="text-primary font-bold text-base md:text-xl">₹{p.price}</p>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
-                    <Plus size={20} />
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
+                    <Plus size={16} className="md:w-5 md:h-5" />
                   </div>
                 </div>
               </div>

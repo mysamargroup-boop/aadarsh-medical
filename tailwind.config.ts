@@ -29,11 +29,11 @@ export default {
         },
         primary: {
           DEFAULT: '#0B3C5D',
-          foreground: '#FFFFFF',
+          foreground: '#E6FFFA',
         },
         secondary: {
           DEFAULT: '#0ABAB5',
-          foreground: '#FFFFFF',
+          foreground: '#E6FFFA',
         },
         muted: {
           DEFAULT: '#E6FFFA',
@@ -41,11 +41,11 @@ export default {
         },
         accent: {
           DEFAULT: '#4DA8DA',
-          foreground: '#FFFFFF',
+          foreground: '#E6FFFA',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          foreground: '#FEF2F2',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
