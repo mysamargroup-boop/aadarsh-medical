@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -55,7 +56,8 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Header increased to z-[110] to overlay bottom navigation when menu is open */}
+      <header className="fixed top-0 left-0 right-0 z-[110]">
         <nav className={cn("transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg", isScrolled ? "py-3 opacity-100" : "opacity-95")}>
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 md:gap-4 shrink-0">
@@ -105,15 +107,16 @@ export function Header() {
           </div>
         </div>
 
+        {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-5 flex flex-col gap-1.5 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20 max-h-[80vh] overflow-y-auto no-scrollbar">
+          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-5 flex flex-col gap-1 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20 max-h-[90vh] overflow-y-auto no-scrollbar pb-32">
             {navLinks.map((link) => (
               <NextLink 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)} 
                 className={cn(
-                  "font-bold text-base py-2.5 border-b border-muted/10 flex items-center justify-between", 
+                  "font-bold text-base py-3 border-b border-muted/10 flex items-center justify-between", 
                   isActive(link.href) ? "text-primary" : "text-muted-foreground"
                 )}
               >
@@ -121,7 +124,7 @@ export function Header() {
                 <ChevronRight size={16} className="opacity-30" />
               </NextLink>
             ))}
-            <div className="grid grid-cols-2 gap-2 mt-3">
+            <div className="grid grid-cols-2 gap-2 mt-4">
               {subNavItems.map((item) => (
                 <NextLink 
                   key={item.name} 
@@ -135,16 +138,17 @@ export function Header() {
             </div>
             <Button 
               onClick={handleEnquiryClick} 
-              className="w-full gradient-button text-white mt-4 h-12 font-bold rounded-xl shadow-lg border-none"
+              className="w-full gradient-button text-white mt-6 h-14 font-bold rounded-xl shadow-lg border-none"
             >
               Enquiry Portal
             </Button>
-            {/* Added spacer to ensure last item is visible above bottom nav */}
-            <div className="h-24 shrink-0" />
+            {/* Safe area spacer for mobile bottom navigation */}
+            <div className="h-20 shrink-0" />
           </div>
         )}
       </header>
 
+      {/* Bottom Navigation for Mobile (z-index below the open mobile menu) */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[102] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
         <NextLink href="/" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />
