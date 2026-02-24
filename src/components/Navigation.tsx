@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Home, LayoutGrid, Search } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, Search, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -81,9 +81,15 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary hover:bg-primary text-primary hover:text-secondary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
-              Enquiry Portal
-            </Button>
+            <div className="flex items-center gap-4">
+              <Link href="#" className="relative p-2 text-primary hover:text-secondary transition-colors">
+                <ShoppingCart size={24} />
+                <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+              </Link>
+              <Button className="bg-secondary hover:bg-primary text-primary hover:text-secondary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
+                Enquiry Portal
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -104,6 +110,7 @@ export function Navigation() {
         )}
       </nav>
 
+      {/* Bottom Navigation for Mobile */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-muted/95 backdrop-blur-md rounded-2xl shadow-2xl border border-muted/50 p-3 flex justify-around items-center">
         <Link href="#" className="flex flex-col items-center gap-1 text-primary">
           <Home size={20} />
@@ -112,6 +119,11 @@ export function Navigation() {
         <Link href="#categories" className="flex flex-col items-center gap-1 text-muted-foreground">
           <LayoutGrid size={20} />
           <span className="text-[10px]">Categories</span>
+        </Link>
+        <Link href="#" className="relative flex flex-col items-center gap-1 text-muted-foreground">
+          <ShoppingCart size={20} />
+          <span className="text-[10px]">Cart</span>
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-accent-foreground text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
         <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-background">
           <Phone className="text-primary" size={24} />

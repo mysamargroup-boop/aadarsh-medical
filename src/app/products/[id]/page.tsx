@@ -94,25 +94,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Title Section - MOVED HERE BELOW IMAGE */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
-                  <button className="p-3 bg-muted rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
-                    <Heart size={20} />
-                  </button>
-                </div>
-                <p className="text-lg text-muted-foreground mb-4 font-medium">Amoxycillin (500mg) + Clavulanic Acid (125mg)</p>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">GlaxoSmithKline</span></span>
-                  <span className="text-muted-foreground">SKU: <span className="text-primary font-bold">AUG-625-D</span></span>
-                  <span className="flex items-center gap-1 text-green-600 font-bold">
-                    <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
-                  </span>
-                </div>
-              </div>
-
-              {/* Thumbnails */}
+              {/* Thumbnails Section - IMMEDIATELY BELOW IMAGE */}
               <div className="grid grid-cols-4 gap-4">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className={cn(
@@ -133,7 +115,25 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Quality Badges Section - Vertical Rows */}
+              {/* Title Section */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
+                  <button className="p-3 bg-muted rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
+                    <Heart size={20} />
+                  </button>
+                </div>
+                <p className="text-lg text-muted-foreground mb-4 font-medium">Amoxycillin (500mg) + Clavulanic Acid (125mg)</p>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">GlaxoSmithKline</span></span>
+                  <span className="text-muted-foreground">SKU: <span className="text-primary font-bold">AUG-625-D</span></span>
+                  <span className="flex items-center gap-1 text-green-600 font-bold">
+                    <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
+                  </span>
+                </div>
+              </div>
+
+              {/* Quality Badges Section */}
               <div className="bg-card p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
@@ -177,7 +177,7 @@ export default function ProductDetailPage() {
             <div className="space-y-8">
               <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
                 <CardContent className="p-8 space-y-6">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers (Incl. GST)</p>
                   
                   <RadioGroup value={priceTier} onValueChange={setPriceTier} className="space-y-3">
                     {tiers.map((tier) => (
@@ -236,16 +236,16 @@ export default function ProductDetailPage() {
                         </Button>
                       </div>
                     </div>
-                    {/* Total Price on Right */}
-                    <div className="text-right w-full sm:w-auto">
+                    {/* Total Price on Left (Mobile) / Right (Desktop) */}
+                    <div className="text-left sm:text-right w-full sm:w-auto">
                       <p className="text-xs text-muted-foreground font-bold">Total (incl. GST)</p>
                       <p className="text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-secondary-foreground rounded-2xl h-14 font-bold text-lg">
-                      <ShoppingCart className="mr-2" size={20} /> Add to Enquiry
+                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-secondary-foreground rounded-2xl h-14 font-bold text-lg group">
+                      <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
                     </Button>
                     <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
@@ -285,15 +285,15 @@ export default function ProductDetailPage() {
                 { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
                 { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
               ].map((p, i) => (
-                <div key={i} className="group bg-card rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all">
+                <div key={i} className="group bg-card rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
                     <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
                   </div>
-                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 hover:bg-secondary/20 transition-colors">
+                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 hover:bg-secondary/20 transition-colors w-fit">
                     {p.cat}
                   </Badge>
                   <h3 className="font-bold text-primary mb-4 line-clamp-1 text-sm md:text-base">{p.name}</h3>
-                  <div className="flex items-center justify-between">
+                  <div className="mt-auto flex items-center justify-between">
                     <div>
                       <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale (Incl. GST)</p>
                       <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
