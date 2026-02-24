@@ -61,8 +61,9 @@ export default function ProductDetailPage() {
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-6">
-              <div className="relative aspect-square bg-white rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
+            <div className="space-y-8">
+              {/* Product Image Section */}
+              <div className="relative aspect-square bg-card rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
                   <Badge className="bg-destructive hover:bg-destructive/90 text-destructive-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Prescription Required
@@ -93,10 +94,29 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
+              {/* Title Section - MOVED HERE BELOW IMAGE */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
+                  <button className="p-3 bg-muted rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
+                    <Heart size={20} />
+                  </button>
+                </div>
+                <p className="text-lg text-muted-foreground mb-4 font-medium">Amoxycillin (500mg) + Clavulanic Acid (125mg)</p>
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">GlaxoSmithKline</span></span>
+                  <span className="text-muted-foreground">SKU: <span className="text-primary font-bold">AUG-625-D</span></span>
+                  <span className="flex items-center gap-1 text-green-600 font-bold">
+                    <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
+                  </span>
+                </div>
+              </div>
+
+              {/* Thumbnails */}
               <div className="grid grid-cols-4 gap-4">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className={cn(
-                    "aspect-square rounded-2xl bg-white border cursor-pointer hover:border-secondary transition-all overflow-hidden",
+                    "aspect-square rounded-2xl bg-card border cursor-pointer hover:border-secondary transition-all overflow-hidden",
                     i === 1 ? "border-secondary ring-2 ring-secondary/20" : "border-muted"
                   )}>
                     <Image 
@@ -108,13 +128,13 @@ export default function ProductDetailPage() {
                     />
                   </div>
                 ))}
-                <div className="aspect-square rounded-2xl bg-white border border-muted flex items-center justify-center text-muted-foreground hover:border-secondary transition-all cursor-pointer">
+                <div className="aspect-square rounded-2xl bg-card border border-muted flex items-center justify-center text-muted-foreground hover:border-secondary transition-all cursor-pointer">
                   <PlayCircle size={32} />
                 </div>
               </div>
 
               {/* Quality Badges Section - Vertical Rows */}
-              <div className="bg-white p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
+              <div className="bg-card p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
                     <ThermometerSnowflake size={22} />
@@ -155,23 +175,6 @@ export default function ProductDetailPage() {
             </div>
 
             <div className="space-y-8">
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
-                  <button className="p-3 bg-muted rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
-                    <Heart size={20} />
-                  </button>
-                </div>
-                <p className="text-lg text-muted-foreground mb-4 font-medium">Amoxycillin (500mg) + Clavulanic Acid (125mg)</p>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">GlaxoSmithKline</span></span>
-                  <span className="text-muted-foreground">SKU: <span className="text-primary font-bold">AUG-625-D</span></span>
-                  <span className="flex items-center gap-1 text-green-600 font-bold">
-                    <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
-                  </span>
-                </div>
-              </div>
-
               <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
                 <CardContent className="p-8 space-y-6">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers</p>
@@ -184,7 +187,7 @@ export default function ProductDetailPage() {
                           "relative flex items-center justify-between p-5 rounded-2xl border transition-all cursor-pointer",
                           priceTier === tier.id 
                             ? "border-primary bg-primary/5 ring-1 ring-primary/50" 
-                            : "border-muted bg-white hover:border-primary/30"
+                            : "border-muted bg-card hover:border-primary/30"
                         )}
                       >
                         {tier.popular && (
@@ -251,9 +254,13 @@ export default function ProductDetailPage() {
                 </CardContent>
               </Card>
 
-              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
+              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
+                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
                 <p>
                   Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue. It will not work for viral infections such as the common cold.
+                </p>
+                <p className="mt-4">
+                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
                 </p>
               </div>
             </div>
@@ -278,7 +285,7 @@ export default function ProductDetailPage() {
                 { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
                 { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
               ].map((p, i) => (
-                <div key={i} className="group bg-white rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all">
+                <div key={i} className="group bg-card rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all">
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
                     <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
                   </div>
