@@ -43,6 +43,11 @@ export default function ProductDetailPage() {
   const currentPrice = tiers.find(t => t.id === priceTier)?.price || 0;
   const totalPrice = (currentPrice * quantity).toLocaleString('en-IN');
 
+  const handleEnquiry = () => {
+    const message = encodeURIComponent(`I am interested in Augmentin 625 Duo. Quantity: ${quantity}. Price Tier: ${priceTier}.`);
+    window.open(`https://wa.me/919630080706?text=${message}`, '_blank');
+  };
+
   return (
     <main className="min-h-screen bg-muted/20">
       <Header />
@@ -112,7 +117,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Quality Badges Section (Left Side beneath images) */}
+              {/* Quality Badges Section (Left Side) */}
               <div className="bg-white p-6 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
                 <h3 className="text-primary font-bold text-lg mb-2">Quality Assurance</h3>
                 <div className="flex items-center gap-4">
@@ -164,7 +169,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Description Section (Now above Pricing) */}
+              {/* Description Section (Above Pricing) */}
               <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted shadow-sm">
                 <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
                 <p>
@@ -243,10 +248,14 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group border-none">
+                    <Button 
+                      onClick={handleEnquiry}
+                      size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group border-none">
                       <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
                     </Button>
-                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10 border-none">
+                    <Button 
+                      onClick={() => window.open('https://wa.me/919630080706', '_blank')}
+                      size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10 border-none">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
@@ -283,7 +292,7 @@ export default function ProductDetailPage() {
                       <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
                       <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
                     </div>
-                    <Button size="icon" variant="ghost" className="bg-muted hover:gradient-button hover:text-white rounded-xl w-8 h-8 md:w-10 md:h-10">
+                    <Button size="icon" variant="ghost" className="bg-muted hover:gradient-button hover:text-white rounded-full w-8 h-8 md:w-10 md:h-10">
                       <Plus size={16} />
                     </Button>
                   </div>

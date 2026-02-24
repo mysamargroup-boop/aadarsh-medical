@@ -98,39 +98,39 @@ export function ProductCatalog() {
               <Link 
                 key={p.id} 
                 href={`/products/${p.id}`}
-                className="group relative bg-white rounded-2xl border border-border hover:shadow-xl hover:border-secondary/20 transition-all duration-300 overflow-hidden flex flex-col h-full card-wave-pattern"
+                className="group relative bg-white rounded-2xl border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
                   <Image 
                     src={p.img} 
                     alt={p.name} 
                     fill 
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="object-cover group-hover:scale-110 transition-transform duration-700" 
                     data-ai-hint="medical product"
                   />
                   <div className="absolute top-3 left-3 z-10">
-                    <Badge className="bg-white/90 text-primary hover:bg-white text-[9px] font-bold border-none shadow-sm backdrop-blur-sm">
+                    <Badge className="bg-white/95 text-primary hover:bg-white text-[9px] font-bold border-none shadow-md backdrop-blur-md px-2.5 py-1">
                       {p.cat}
                     </Badge>
                   </div>
                 </div>
 
-                <div className="p-4 flex-1 flex flex-col relative z-10 bg-white/40 backdrop-blur-sm">
-                  <h3 className="text-primary font-headline font-bold text-sm group-hover:text-secondary transition-colors line-clamp-2 leading-tight mb-1">
+                <div className="p-5 flex-1 flex flex-col relative z-10 bg-white/60 backdrop-blur-sm border-t border-muted/20">
+                  <h3 className="text-primary font-headline font-bold text-sm md:text-base group-hover:text-secondary transition-colors line-clamp-2 leading-snug mb-0.5">
                     {p.name}
                   </h3>
                   
-                  <p className="text-muted-foreground text-[9px] font-medium uppercase tracking-tight mb-3">
+                  <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wider mb-4 opacity-80">
                     {p.company}
                   </p>
 
-                  <div className="mt-auto flex items-end justify-between">
+                  <div className="mt-auto flex items-center justify-between">
                     <div>
-                      <p className="text-[8px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1">Wholesale</p>
-                      <p className="text-primary font-bold text-base md:text-lg leading-none">₹{p.price}</p>
+                      <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
+                      <p className="text-primary font-bold text-base md:text-xl leading-none">₹{p.price}</p>
                     </div>
-                    <div className="w-9 h-9 rounded-xl bg-muted/50 group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all shadow-sm">
-                      <Plus size={18} />
+                    <div className="w-10 h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                      <Plus size={20} />
                     </div>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export function ProductCatalog() {
         )}
 
         <div className="mt-14 text-center">
-          <Button variant="outline" className="rounded-full px-10 h-12 border-primary text-primary hover:gradient-button hover:text-white hover:border-none font-bold text-base bg-white shadow-sm transition-all">
+          <Button variant="outline" className="rounded-full px-10 h-12 border-primary text-primary hover:gradient-button hover:text-white hover:border-none font-bold text-base bg-white shadow-md transition-all">
             Browse All 2500+ Items
           </Button>
         </div>

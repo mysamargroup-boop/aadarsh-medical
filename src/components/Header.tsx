@@ -24,6 +24,10 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleEnquiryClick = () => {
+    window.open('https://wa.me/919630080706?text=Hi, I want to inquire about wholesale medicine supply.', '_blank');
+  };
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Categories', href: '/#categories' },
@@ -33,13 +37,11 @@ export function Header() {
   ];
 
   const subNavItems = [
-    { name: 'All Categories', icon: <LayoutGrid size={16} /> },
-    { name: 'Medicine', icon: <Pill size={16} /> },
-    { name: 'Lab Tests', icon: <FlaskConical size={16} /> },
-    { name: 'Beauty', icon: <Sparkles size={16} /> },
-    { name: 'Wellness', icon: <Leaf size={16} /> },
-    { name: 'Health Corner', icon: <BookOpen size={16} /> },
-    { name: 'Offers', icon: <Tag size={16} /> },
+    { name: 'All Categories', icon: <LayoutGrid size={16} />, href: '/#categories' },
+    { name: 'Medicine', icon: <Pill size={16} />, href: '/#products' },
+    { name: 'Lab Tests', icon: <FlaskConical size={16} />, href: '/#contact' },
+    { name: 'Wellness', icon: <Leaf size={16} />, href: '/#categories' },
+    { name: 'Health Corner', icon: <BookOpen size={16} />, href: '/#why-us' },
   ];
 
   return (
@@ -86,7 +88,10 @@ export function Header() {
                   <ShoppingCart size={24} />
                   <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
                 </Link>
-                <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none">
+                <Button 
+                  onClick={handleEnquiryClick}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none"
+                >
                   Enquiry Portal
                 </Button>
               </div>
@@ -101,7 +106,7 @@ export function Header() {
           </div>
         </nav>
 
-        {/* Secondary Navigation (Hidden on Scroll or smaller screens if needed, but keeping for now) */}
+        {/* Secondary Navigation */}
         <div className={cn(
           "bg-white/10 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300",
           isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100"
@@ -111,7 +116,7 @@ export function Header() {
               {subNavItems.map((item) => (
                 <Link 
                   key={item.name} 
-                  href="#" 
+                  href={item.href} 
                   className="flex items-center gap-2 text-white/80 hover:text-white transition-all group"
                 >
                   <span className="group-hover:scale-110 transition-transform">
@@ -140,12 +145,22 @@ export function Header() {
             ))}
             <div className="grid grid-cols-2 gap-2 mt-2">
               {subNavItems.map((item) => (
-                <Link key={item.name} href="#" className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary">
+                <Link 
+                  key={item.name} 
+                  href={item.href} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary"
+                >
                   {item.icon} {item.name}
                 </Link>
               ))}
             </div>
-            <Button className="w-full gradient-button text-white mt-4 py-6 font-bold rounded-xl shadow-lg border-none">Enquiry Portal</Button>
+            <Button 
+              onClick={handleEnquiryClick}
+              className="w-full gradient-button text-white mt-4 py-6 font-bold rounded-xl shadow-lg border-none"
+            >
+              Enquiry Portal
+            </Button>
           </div>
         )}
       </header>
@@ -161,7 +176,10 @@ export function Header() {
           <span className="text-[10px]">Categories</span>
         </Link>
         
-        <button className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary">
+        <button 
+          onClick={() => window.location.href = 'tel:+919630080706'}
+          className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary"
+        >
           <Phone className="text-primary" size={24} />
         </button>
 
