@@ -2,7 +2,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Bot, Send, X, Search, Sparkles, Plus } from 'lucide-react';
+import { MessageCircle, Send, X, Search, Sparkles, Plus, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,7 +32,7 @@ export function AiAssistant() {
 
   return (
     <>
-      {/* Floating Toggle Button */}
+      {/* Floating Toggle Button - Updated to MessageCircle for WhatsApp feel */}
       <button 
         onClick={() => setIsOpen(true)}
         className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-50 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-secondary transition-all duration-300 group"
@@ -40,7 +40,7 @@ export function AiAssistant() {
         <div className="absolute -top-1 -right-1 bg-accent w-5 h-5 rounded-full flex items-center justify-center text-[10px] animate-pulse">
           <Sparkles size={10} />
         </div>
-        <Bot size={32} className="group-hover:scale-110 transition-transform" />
+        <MessageCircle size={32} className="group-hover:scale-110 transition-transform" />
       </button>
 
       {/* Chat Interface Modal */}

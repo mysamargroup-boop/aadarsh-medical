@@ -3,20 +3,20 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Search, ShoppingCart, Eye, Filter } from 'lucide-react';
-import { PlaceHolderImages } from '@/app/lib/placeholder-images';
+import { Search, Plus, Filter } from 'lucide-react';
 
 const products = [
-  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Antibiotic", img: "https://picsum.photos/seed/p1/400/400" },
-  { id: 2, name: "Calpol 650mg", company: "GSK", cat: "Antipyretic", img: "https://picsum.photos/seed/p2/400/400" },
-  { id: 3, name: "Telma 40", company: "Glenmark", cat: "Cardiac", img: "https://picsum.photos/seed/p3/400/400" },
-  { id: 4, name: "Dolo 650", company: "Micro Labs", cat: "Analgesic", img: "https://picsum.photos/seed/p4/400/400" },
-  { id: 5, name: "Liv 52", company: "Himalaya", cat: "OTC", img: "https://picsum.photos/seed/p5/400/400" },
-  { id: 6, name: "Ezee Wash", company: "WellcomeVet", cat: "Veterinary", img: "https://picsum.photos/seed/p6/400/400" },
-  { id: 7, name: "Accu-Chek Guide", company: "Roche", cat: "Medical Device", img: "https://picsum.photos/seed/p7/400/400" },
-  { id: 8, name: "Surgical Gloves", company: "Romsons", cat: "Surgical", img: "https://picsum.photos/seed/p8/400/400" }
+  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Antibiotic", price: "120.00", img: "https://picsum.photos/seed/p1/600/600" },
+  { id: 2, name: "Calpol 650mg", company: "GSK", cat: "Antipyretic", price: "45.50", img: "https://picsum.photos/seed/p2/600/600" },
+  { id: 3, name: "Telma 40", company: "Glenmark", cat: "Cardiac", price: "185.00", img: "https://picsum.photos/seed/p3/600/600" },
+  { id: 4, name: "Dolo 650", company: "Micro Labs", cat: "Analgesic", price: "30.00", img: "https://picsum.photos/seed/p4/600/600" },
+  { id: 5, name: "Limcee Vitamin C", company: "Himalaya", cat: "Supplements", price: "85.00", img: "https://picsum.photos/seed/p5/600/600" },
+  { id: 6, name: "N95 Face Masks", company: "3M", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/600/600" },
+  { id: 7, name: "Accu-Chek Guide", company: "Roche", cat: "Medical Device", price: "1250.00", img: "https://picsum.photos/seed/p7/600/600" },
+  { id: 8, name: "Azithromycin 500mg", company: "Cipla", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/600/600" }
 ];
 
 export function ProductCatalog() {
@@ -54,39 +54,43 @@ export function ProductCatalog() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProducts.map((p) => (
-            <div key={p.id} className="group relative bg-white rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full">
-              <div className="relative aspect-square overflow-hidden bg-muted/30">
+            <Link 
+              key={p.id} 
+              href={`/products/${p.id}`}
+              className="group relative bg-white rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
+            >
+              <div className="relative aspect-square overflow-hidden bg-muted/30 p-8">
                 <Image 
                   src={p.img} 
                   alt={p.name} 
                   fill 
-                  className="object-contain p-8 group-hover:scale-110 transition-transform duration-500" 
+                  className="object-contain p-4 group-hover:scale-110 transition-transform duration-500" 
+                  data-ai-hint="medical product"
                 />
-                <div className="absolute top-4 left-4 flex flex-col gap-2">
-                  <Badge className="bg-secondary/10 text-secondary border-none hover:bg-secondary/20">{p.cat}</Badge>
-                </div>
-                
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
-                  <Button variant="secondary" size="icon" className="rounded-full shadow-lg">
-                    <Eye size={20} />
-                  </Button>
-                  <Button variant="default" size="icon" className="rounded-full shadow-lg bg-primary">
-                    <ShoppingCart size={20} />
-                  </Button>
+                <div className="absolute top-4 left-4">
+                  <Badge variant="secondary" className="bg-white/80 backdrop-blur-sm text-secondary font-bold border-none">
+                    {p.cat}
+                  </Badge>
                 </div>
               </div>
 
               <div className="p-6 flex-1 flex flex-col">
-                <p className="text-muted-foreground text-xs font-bold uppercase tracking-tight mb-1">{p.company}</p>
-                <h3 className="text-primary font-headline font-bold text-lg mb-4 line-clamp-1">{p.name}</h3>
+                <h3 className="text-primary font-headline font-bold text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2">
+                  {p.name}
+                </h3>
+                <p className="text-muted-foreground text-xs mb-4">{p.company}</p>
                 
-                <div className="mt-auto">
-                  <Button className="w-full bg-white border border-secondary text-secondary hover:bg-secondary hover:text-white rounded-xl transition-all duration-300 font-bold group">
-                    Inquiry Now
-                  </Button>
+                <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/50">
+                  <div>
+                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale</p>
+                    <p className="text-primary font-bold text-xl">₹{p.price}</p>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all">
+                    <Plus size={20} />
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
