@@ -52,7 +52,7 @@ export default function ProductDetailPage() {
     <main className="min-h-screen bg-muted/20">
       <Header />
       
-      <div className="pt-32 md:pt-48 pb-12">
+      <div className="pt-28 md:pt-36 pb-12">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
