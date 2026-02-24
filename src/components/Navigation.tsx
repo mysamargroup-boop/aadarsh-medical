@@ -1,9 +1,8 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, FlaskConical, Sparkles, Leaf, BookOpen, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -33,63 +32,93 @@ export function Navigation() {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const subNavItems = [
+    { name: 'All Categories', icon: <LayoutGrid size={16} /> },
+    { name: 'Medicine', icon: <Pill size={16} /> },
+    { name: 'Lab Tests', icon: <FlaskConical size={16} /> },
+    { name: 'Beauty', icon: <Sparkles size={16} /> },
+    { name: 'Wellness', icon: <Leaf size={16} /> },
+    { name: 'Health Corner', icon: <BookOpen size={16} /> },
+    { name: 'Offers', icon: <Tag size={16} /> },
+  ];
+
   return (
     <>
-      <nav 
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-4",
-          isScrolled ? "bg-primary/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent"
-        )}
-      >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 md:gap-4 shrink-0 overflow-hidden">
-            {/* Hamburger on Left for Mobile */}
-            <button 
-              className="md:hidden p-2 outline-none focus:ring-0 text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X size={24} />
-              ) : (
-                <Menu size={24} />
-              )}
-            </button>
-
-            <Link href="/" className="flex items-center gap-2 group whitespace-nowrap min-w-0">
-              <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
-                A
-              </div>
-              <span className="font-headline font-bold text-sm sm:text-lg md:text-2xl transition-colors text-white whitespace-nowrap">
-                Aadarsh MedStore
-              </span>
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-4 md:hidden shrink-0">
-             <Link href="#" className="relative p-2 transition-opacity hover:opacity-80 text-white">
-                <ShoppingCart size={22} />
-                <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
-              </Link>
-          </div>
-
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                className="font-medium transition-colors hover:text-accent text-white"
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Main Navigation */}
+        <nav 
+          className={cn(
+            "transition-all duration-300 px-4 md:px-8 py-4",
+            isScrolled ? "bg-primary shadow-lg py-3" : "bg-transparent"
+          )}
+        >
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2 md:gap-4 shrink-0">
+              <button 
+                className="md:hidden p-2 text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                {link.name}
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+
+              <Link href="/" className="flex items-center gap-2 group whitespace-nowrap">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-400 rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
+                  A
+                </div>
+                <span className="font-headline font-bold text-xs sm:text-base md:text-xl lg:text-2xl transition-colors text-white whitespace-nowrap">
+                  Aadarsh MedStore
+                </span>
               </Link>
-            ))}
-            <div className="flex items-center gap-4">
-              <Link href="#" className="relative p-2 transition-opacity hover:opacity-80 text-white">
-                <ShoppingCart size={24} />
-                <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
-              </Link>
-              <Button className="bg-secondary hover:bg-secondary/90 text-primary rounded-full px-4 lg:px-6 shadow-lg shadow-secondary/10 transition-all font-bold text-sm lg:text-base whitespace-nowrap">
-                Enquiry Portal
-              </Button>
+            </div>
+
+            <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  href={link.href}
+                  className="font-medium text-white hover:text-emerald-300 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className="flex items-center gap-4">
+                <Link href="#" className="relative p-2 text-white hover:opacity-80">
+                  <ShoppingCart size={24} />
+                  <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-400 text-primary text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
+                </Link>
+                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base">
+                  Enquiry Portal
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex items-center md:hidden gap-3">
+               <Link href="#" className="relative p-2 text-white">
+                  <ShoppingCart size={22} />
+                  <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-400 text-primary text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                </Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* Sub-Navigation (Categories/Shortcuts) */}
+        <div className="medical-gradient-subnav hidden md:block border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-8 py-2.5">
+            <div className="flex items-center justify-center gap-8 lg:gap-12">
+              {subNavItems.map((item) => (
+                <Link 
+                  key={item.name} 
+                  href="#" 
+                  className="flex items-center gap-2 text-white hover:text-emerald-100 transition-all group"
+                >
+                  <span className="group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </span>
+                  <span className="text-xs lg:text-sm font-bold tracking-tight whitespace-nowrap">
+                    {item.name}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -101,15 +130,22 @@ export function Navigation() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-primary font-semibold text-lg py-2 border-b border-muted/10 hover:text-secondary"
+                className="text-primary font-bold text-lg py-2 border-b border-muted/10"
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-secondary text-primary mt-4 py-6 font-bold rounded-xl shadow-lg">Enquiry Portal</Button>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              {subNavItems.map((item) => (
+                <Link key={item.name} href="#" className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary">
+                  {item.icon} {item.name}
+                </Link>
+              ))}
+            </div>
+            <Button className="w-full bg-primary text-white mt-4 py-6 font-bold rounded-xl shadow-lg">Enquiry Portal</Button>
           </div>
         )}
-      </nav>
+      </header>
 
       {/* Bottom Navigation for Mobile */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-primary/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
@@ -122,7 +158,7 @@ export function Navigation() {
           <span className="text-[10px]">Categories</span>
         </Link>
         
-        <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-[#072A42]">
+        <button className="bg-emerald-400 w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary">
           <Phone className="text-primary" size={24} />
         </button>
 
