@@ -49,9 +49,9 @@ export function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className="text-white" size={24} />
+                <X className={isScrolled ? "text-white" : "text-primary"} size={24} />
               ) : (
-                <Menu className="text-white" size={24} />
+                <Menu className={isScrolled ? "text-white" : "text-primary"} size={24} />
               )}
             </button>
 
@@ -59,14 +59,20 @@ export function Navigation() {
               <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all">
                 A
               </div>
-              <span className="font-headline font-bold text-lg md:text-2xl text-white">
+              <span className={cn(
+                "font-headline font-bold text-lg md:text-2xl transition-colors",
+                isScrolled ? "text-white" : "text-primary"
+              )}>
                 Aadarsh MedStore
               </span>
             </Link>
           </div>
 
           <div className="flex items-center gap-4 md:hidden">
-             <Link href="#" className="relative p-2 text-white hover:opacity-80 transition-opacity">
+             <Link href="#" className={cn(
+               "relative p-2 transition-opacity hover:opacity-80",
+               isScrolled ? "text-white" : "text-primary"
+             )}>
                 <ShoppingCart size={22} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
@@ -77,13 +83,19 @@ export function Navigation() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="font-medium transition-colors text-white hover:text-accent"
+                className={cn(
+                  "font-medium transition-colors hover:text-accent",
+                  isScrolled ? "text-white" : "text-primary"
+                )}
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <Link href="#" className="relative p-2 text-white hover:opacity-80 transition-opacity">
+              <Link href="#" className={cn(
+                "relative p-2 transition-opacity hover:opacity-80",
+                isScrolled ? "text-white" : "text-primary"
+              )}>
                 <ShoppingCart size={24} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
@@ -95,18 +107,18 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-primary shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-white/10">
+          <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white font-semibold text-lg py-2 border-b border-white/5 hover:text-accent"
+                className="text-primary font-semibold text-lg py-2 border-b border-muted/10 hover:text-secondary"
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-secondary text-primary mt-4 py-6 font-bold rounded-xl">Enquiry Portal</Button>
+            <Button className="w-full bg-secondary text-primary mt-4 py-6 font-bold rounded-xl shadow-lg">Enquiry Portal</Button>
           </div>
         )}
       </nav>
