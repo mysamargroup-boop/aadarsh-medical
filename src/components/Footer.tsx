@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react';
@@ -22,11 +23,18 @@ export function Footer() {
               Premier pharmaceutical wholesale distributor serving healthcare providers with integrity and reliability since 2015.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <Link key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
-                  <Icon size={18} className="text-background" />
-                </Link>
-              ))}
+              <Link href="https://www.instagram.com/aadarshmedstore" target="_blank" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+                <Instagram size={18} className="text-background" />
+              </Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+                <Facebook size={18} className="text-background" />
+              </Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+                <Twitter size={18} className="text-background" />
+              </Link>
+              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+                <Linkedin size={18} className="text-background" />
+              </Link>
             </div>
           </div>
 
@@ -92,7 +100,12 @@ export function Footer() {
             <span>Retail DL: 20-223/36/2015</span>
             <span>Wholesale DL: 20B/461/36/2017</span>
           </div>
-          <p>© {new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved. Designed with Health in Mind.</p>
+          <div className="space-y-2">
+            <p>© {new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
+            <p className="font-bold text-secondary tracking-widest uppercase text-xs opacity-60">
+              Designed by Samar
+            </p>
+          </div>
         </div>
       </div>
     </footer>
