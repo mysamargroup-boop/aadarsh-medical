@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react';
@@ -32,16 +33,14 @@ export function HealthConcerns() {
                 key={item.id} 
                 className="flex-shrink-0 w-32 md:w-44 snap-start group cursor-pointer"
               >
-                <div className={`aspect-square rounded-[2rem] ${item.color} overflow-hidden mb-4 border border-muted/20 group-hover:shadow-lg transition-all flex items-center justify-center p-4`}>
-                  <div className="relative w-full h-full">
-                     <Image 
-                      src={img || `https://picsum.photos/seed/${item.id}/400/400`}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500 rounded-xl"
-                      data-ai-hint={item.title}
-                    />
-                  </div>
+                <div className={`aspect-square rounded-[2rem] ${item.color} overflow-hidden mb-4 border border-muted/20 group-hover:shadow-lg transition-all relative`}>
+                  <Image 
+                    src={img || `https://picsum.photos/seed/${item.id}/400/400`}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    data-ai-hint={item.title}
+                  />
                 </div>
                 <h3 className="text-center text-[13px] md:text-sm font-bold text-[#444] leading-tight group-hover:text-primary transition-colors h-10 flex items-start justify-center px-1">
                   {item.title}

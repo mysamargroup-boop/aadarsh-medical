@@ -67,12 +67,12 @@ export function ProductCatalog() {
                 <Button 
                   variant="outline" 
                   className={cn(
-                    "rounded-2xl h-12 border-muted hover:bg-secondary/10 text-primary bg-white shadow-sm font-bold min-w-[120px]",
-                    selectedCategory !== 'All' && "border-secondary text-secondary"
+                    "rounded-2xl h-12 border-primary/20 hover:border-secondary hover:bg-secondary/5 text-primary hover:text-secondary transition-all font-bold min-w-[140px] shadow-sm bg-white",
+                    selectedCategory !== 'All' && "border-secondary text-secondary bg-secondary/5"
                   )}
                 >
                   <Filter className="mr-2 w-4 h-4" /> 
-                  {selectedCategory === 'All' ? 'Filter' : selectedCategory}
+                  {selectedCategory === 'All' ? 'Select Category' : selectedCategory}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56 rounded-2xl p-2">
@@ -124,8 +124,8 @@ export function ProductCatalog() {
                   <p className="text-muted-foreground text-[10px] md:text-xs font-medium">{p.company}</p>
 
                   <div className="flex flex-col">
-                    <span className="text-primary font-bold text-base md:text-xl leading-tight">₹{p.price}</span>
-                    <span className="text-[7px] md:text-[9px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (incl. GST)</span>
+                    <span className="text-primary font-bold text-sm md:text-lg leading-tight">₹{p.price}</span>
+                    <span className="text-[7px] md:text-[8px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (incl. GST)</span>
                   </div>
                   
                   <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/20">
