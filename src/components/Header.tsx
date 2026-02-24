@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, FlaskConical, Sparkles, Leaf, BookOpen, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -15,6 +16,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +45,12 @@ export function Header() {
     { name: 'Wellness', icon: <Leaf size={16} />, href: '/#categories' },
     { name: 'Health Corner', icon: <BookOpen size={16} />, href: '/#why-us' },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/' && pathname === '/') return true;
+    if (path !== '/' && pathname.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <>
@@ -78,7 +86,10 @@ export function Header() {
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className="font-bold text-white/90 hover:text-white transition-colors text-sm lg:text-base"
+                  className={cn(
+                    "font-bold transition-colors text-sm lg:text-base",
+                    isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
+                  )}
                 >
                   {link.name}
                 </Link>
@@ -138,7 +149,10 @@ export function Header() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-primary font-bold text-lg py-2 border-b border-muted/10"
+                className={cn(
+                  "font-bold text-lg py-2 border-b border-muted/10",
+                  isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                )}
               >
                 {link.name}
               </Link>
@@ -167,11 +181,17 @@ export function Header() {
 
       {/* Bottom Navigation for Mobile */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
-        <Link href="/" className="flex flex-col items-center gap-1 text-white">
+        <Link href="/" className={cn(
+          "flex flex-col items-center gap-1 transition-colors",
+          isActive('/') ? "text-white" : "text-white/60"
+        )}>
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link href="/shop" className="flex flex-col items-center gap-1 text-white/60">
+        <Link href="/shop" className={cn(
+          "flex flex-col items-center gap-1 transition-colors",
+          isActive('/shop') ? "text-white" : "text-white/60"
+        )}>
           <LayoutGrid size={20} />
           <span className="text-[10px]">Shop</span>
         </Link>
@@ -189,7 +209,7 @@ export function Header() {
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
 
-        <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white">
+        <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white/60 hover:text-white">
           <WhatsAppIcon className="w-5 h-5" />
           <span className="text-[10px] font-bold">WhatsApp</span>
         </Link>
