@@ -38,14 +38,11 @@ export function AiAssistant() {
 
   return (
     <>
-      {/* Floating Toggle Button - WhatsApp Themed */}
+      {/* Floating Toggle Button - WhatsApp themed, no sparkle badge */}
       <button 
         onClick={() => setIsOpen(true)}
         className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-[#128C7E] transition-all duration-300 group"
       >
-        <div className="absolute -top-1 -right-1 bg-accent w-5 h-5 rounded-full flex items-center justify-center text-[10px] animate-pulse">
-          <Sparkles size={10} />
-        </div>
         <WhatsAppIcon className="w-8 h-8 group-hover:scale-110 transition-transform" />
       </button>
 

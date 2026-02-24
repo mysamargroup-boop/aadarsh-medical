@@ -52,6 +52,7 @@ export function ProductCatalog() {
           </div>
         </div>
 
+        {/* 2 columns mobile, 3 columns tablet (md), 4 columns desktop (lg) */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
           {filteredProducts.map((p) => (
             <Link 
@@ -59,6 +60,7 @@ export function ProductCatalog() {
               href={`/products/${p.id}`}
               className="group relative bg-card rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
             >
+              {/* Product Image Area */}
               <div className="relative aspect-square overflow-hidden bg-muted/10">
                 <Image 
                   src={p.img} 
@@ -67,26 +69,32 @@ export function ProductCatalog() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500" 
                   data-ai-hint="medical product"
                 />
-                <div className="absolute top-2 left-2 md:top-4 md:left-4">
-                  <Badge variant="secondary" className="bg-secondary/20 text-secondary font-bold border-none text-[8px] md:text-xs hover:bg-secondary/30 transition-colors">
+                <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
+                  <Badge variant="secondary" className="bg-secondary/20 text-secondary font-bold border-none text-[8px] md:text-[10px] hover:bg-secondary/30 transition-colors">
                     {p.cat}
                   </Badge>
                 </div>
               </div>
 
-              <div className="p-3 md:p-6 flex-1 flex flex-col">
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-primary font-bold text-base md:text-2xl">₹{p.price}</span>
-                  <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">Wholesale (Incl. GST)</span>
+              {/* Product Info Area - Refined Alignment */}
+              <div className="p-4 md:p-6 flex-1 flex flex-col space-y-1.5 md:space-y-2">
+                {/* Price Label First */}
+                <div className="flex flex-col">
+                  <span className="text-primary font-bold text-base md:text-2xl leading-tight">₹{p.price}</span>
+                  <span className="text-[8px] md:text-[9px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (Incl. GST)</span>
                 </div>
                 
-                <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2 leading-tight">
+                {/* Product Title */}
+                <h3 className="text-primary font-headline font-bold text-sm md:text-lg group-hover:text-secondary transition-colors line-clamp-2 leading-tight">
                   {p.name}
                 </h3>
-                <p className="text-muted-foreground text-[10px] md:text-xs mb-4">{p.company}</p>
                 
-                <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/50">
-                  <span className="text-[9px] font-bold text-accent uppercase tracking-tighter">Ready to Ship</span>
+                {/* Manufacturer */}
+                <p className="text-muted-foreground text-[10px] md:text-xs font-medium">{p.company}</p>
+                
+                {/* Status Footer */}
+                <div className="mt-auto pt-3 md:pt-4 flex items-center justify-between border-t border-muted/50">
+                  <span className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-tighter">Ready to Ship</span>
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
                     <Plus size={16} className="md:w-5 md:h-5" />
                   </div>
