@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react';
@@ -24,8 +25,7 @@ export function HealthConcerns() {
           <div className="w-16 h-1 bg-[#EB5B3C] rounded-full" />
         </div>
 
-        {/* Removed no-scrollbar to show the custom gradient scrollbar */}
-        <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 scroll-smooth snap-x">
+        <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 scroll-smooth snap-x no-scrollbar">
           {concerns.map((item) => {
             const img = PlaceHolderImages.find(p => p.id === item.imageId)?.imageUrl;
             return (
