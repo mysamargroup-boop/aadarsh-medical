@@ -49,9 +49,9 @@ export function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className="text-secondary" size={24} />
+                <X className="text-white" size={24} />
               ) : (
-                <Menu className="text-secondary" size={24} />
+                <Menu className="text-white" size={24} />
               )}
             </button>
 
@@ -59,14 +59,14 @@ export function Navigation() {
               <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all">
                 A
               </div>
-              <span className="font-headline font-bold text-lg md:text-2xl text-secondary">
+              <span className="font-headline font-bold text-lg md:text-2xl text-white">
                 Aadarsh MedStore
               </span>
             </Link>
           </div>
 
           <div className="flex items-center gap-4 md:hidden">
-             <Link href="#" className="relative p-2 text-secondary hover:opacity-80 transition-opacity">
+             <Link href="#" className="relative p-2 text-white hover:opacity-80 transition-opacity">
                 <ShoppingCart size={22} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
@@ -77,13 +77,13 @@ export function Navigation() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="font-medium transition-colors text-secondary hover:text-accent"
+                className="font-medium transition-colors text-white hover:text-accent"
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <Link href="#" className="relative p-2 text-secondary hover:opacity-80 transition-opacity">
+              <Link href="#" className="relative p-2 text-white hover:opacity-80 transition-opacity">
                 <ShoppingCart size={24} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
@@ -101,7 +101,7 @@ export function Navigation() {
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-secondary font-semibold text-lg py-2 border-b border-white/5 hover:text-accent"
+                className="text-white font-semibold text-lg py-2 border-b border-white/5 hover:text-accent"
               >
                 {link.name}
               </Link>
@@ -113,11 +113,11 @@ export function Navigation() {
 
       {/* Bottom Navigation for Mobile */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-primary/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
-        <Link href="#" className="flex flex-col items-center gap-1 text-secondary">
+        <Link href="#" className="flex flex-col items-center gap-1 text-white">
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link href="#categories" className="flex flex-col items-center gap-1 text-secondary/60">
+        <Link href="#categories" className="flex flex-col items-center gap-1 text-white/60">
           <LayoutGrid size={20} />
           <span className="text-[10px]">Categories</span>
         </Link>
@@ -126,13 +126,13 @@ export function Navigation() {
           <Phone className="text-primary" size={24} />
         </button>
 
-        <Link href="#" className="relative flex flex-col items-center gap-1 text-secondary/60">
+        <Link href="#" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px]">Cart</span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-accent-foreground text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
 
-        <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-secondary">
+        <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white">
           <WhatsAppIcon className="w-5 h-5" />
           <span className="text-[10px] font-bold">WhatsApp</span>
         </Link>
