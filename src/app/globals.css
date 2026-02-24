@@ -34,6 +34,39 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0ABAB5 0%, #0B3C5D 100%);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #099a95 0%, #082d46 100%);
+    background-clip: content-box;
+  }
+
+  /* Hide Scrollbar Arrows (Buttons) */
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* Firefox Support (No gradient support, using secondary color) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #0ABAB5 transparent;
+  }
 }
 
 @layer utilities {
