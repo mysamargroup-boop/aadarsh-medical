@@ -47,7 +47,7 @@ export default function ProductDetailPage() {
     <main className="min-h-screen bg-muted/20">
       <Header />
       
-      <div className="pt-32 md:pt-40 pb-12">
+      <div className="pt-32 md:pt-48 pb-12">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -112,7 +112,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Quality Badges Section (Moved to Left Side) */}
+              {/* Quality Badges Section (Left Side beneath images) */}
               <div className="bg-white p-6 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
                 <h3 className="text-primary font-bold text-lg mb-2">Quality Assurance</h3>
                 <div className="flex items-center gap-4">
@@ -164,6 +164,18 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
+              {/* Description Section (Now above Pricing) */}
+              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted shadow-sm">
+                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
+                <p>
+                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
+                </p>
+                <p className="mt-4">
+                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
+                </p>
+              </div>
+
+              {/* Wholesale Pricing Tiers (Incl. GST) Card */}
               <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
                 <CardContent className="p-8 space-y-6">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers (Incl. GST)</p>
@@ -231,26 +243,15 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group">
+                    <Button size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group border-none">
                       <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
                     </Button>
-                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
+                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10 border-none">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
                 </CardContent>
               </Card>
-
-              {/* Description Section (Moved to Right Side) */}
-              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
-                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
-                <p>
-                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
-                </p>
-                <p className="mt-4">
-                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
-                </p>
-              </div>
             </div>
           </div>
 
@@ -269,7 +270,7 @@ export default function ProductDetailPage() {
                 { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
                 { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
               ].map((p, i) => (
-                <div key={i} className="group bg-white rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
+                <div key={i} className="group bg-white rounded-3xl border border-border p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
                     <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
                   </div>

@@ -45,11 +45,11 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
-        {/* Main Navigation */}
+        {/* Main Navigation with constant gradient */}
         <nav 
           className={cn(
-            "transition-all duration-300 px-4 md:px-8 py-4",
-            isScrolled ? "bg-primary shadow-lg py-3" : "bg-primary/95 backdrop-blur-md"
+            "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
+            isScrolled ? "py-3 opacity-100" : "opacity-95"
           )}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -62,10 +62,10 @@ export function Header() {
               </button>
 
               <Link href="/" className="flex items-center gap-2 group whitespace-nowrap">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-emerald-400 rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
                   A
                 </div>
-                <span className="font-headline font-bold text-sm sm:text-lg md:text-xl lg:text-2xl transition-colors text-white whitespace-nowrap">
+                <span className="font-headline font-bold text-base sm:text-lg md:text-xl lg:text-2xl transition-colors text-white whitespace-nowrap">
                   Aadarsh MedStore
                 </span>
               </Link>
@@ -76,7 +76,7 @@ export function Header() {
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  className="font-medium text-white hover:text-emerald-300 transition-colors text-sm lg:text-base"
+                  className="font-bold text-white/90 hover:text-white transition-colors text-sm lg:text-base"
                 >
                   {link.name}
                 </Link>
@@ -84,9 +84,9 @@ export function Header() {
               <div className="flex items-center gap-4">
                 <Link href="#" className="relative p-2 text-white hover:opacity-80">
                   <ShoppingCart size={24} />
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-400 text-primary text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
+                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
                 </Link>
-                <Button className="gradient-button text-white rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none">
+                <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none">
                   Enquiry Portal
                 </Button>
               </div>
@@ -95,23 +95,26 @@ export function Header() {
             <div className="flex items-center md:hidden gap-3">
                <Link href="#" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-400 text-primary text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
                 </Link>
             </div>
           </div>
         </nav>
 
-        {/* Sub-Navigation (Categories/Shortcuts) */}
-        <div className="medical-gradient-subnav hidden md:block border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-8 py-2">
-            <div className="flex items-center justify-center gap-6 lg:gap-10">
+        {/* Secondary Navigation (Hidden on Scroll or smaller screens if needed, but keeping for now) */}
+        <div className={cn(
+          "bg-white/10 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300",
+          isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100"
+        )}>
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="flex items-center justify-center gap-8 lg:gap-12">
               {subNavItems.map((item) => (
                 <Link 
                   key={item.name} 
                   href="#" 
-                  className="flex items-center gap-1.5 text-white/90 hover:text-white transition-all group"
+                  className="flex items-center gap-2 text-white/80 hover:text-white transition-all group"
                 >
-                  <span className="group-hover:scale-110 transition-transform opacity-80 group-hover:opacity-100">
+                  <span className="group-hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
                   <span className="text-[11px] lg:text-[12px] font-bold tracking-tight whitespace-nowrap uppercase">
@@ -148,7 +151,7 @@ export function Header() {
       </header>
 
       {/* Bottom Navigation for Mobile */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-primary/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
         <Link href="/" className="flex flex-col items-center gap-1 text-white">
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
@@ -158,14 +161,14 @@ export function Header() {
           <span className="text-[10px]">Categories</span>
         </Link>
         
-        <button className="bg-emerald-400 w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary">
+        <button className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary">
           <Phone className="text-primary" size={24} />
         </button>
 
         <Link href="#" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px]">Cart</span>
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-accent-foreground text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
+          <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
 
         <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white">
