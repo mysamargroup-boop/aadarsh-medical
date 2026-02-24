@@ -1,9 +1,8 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/navigation';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
@@ -50,6 +49,7 @@ export function Header() {
   const isActive = (path: string) => {
     if (path === '/' && pathname === '/') return true;
     if (path !== '/' && pathname.startsWith(path)) return true;
+    if (path.startsWith('/#') && pathname === '/') return true;
     return false;
   };
 
@@ -106,22 +106,41 @@ export function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20">
+          <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-5 flex flex-col gap-1.5 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20 max-h-[80vh] overflow-y-auto no-scrollbar">
             {navLinks.map((link) => (
-              <NextLink key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={cn("font-bold text-lg py-2 border-b border-muted/10", isActive(link.href) ? "text-primary" : "text-muted-foreground")}>
+              <NextLink 
+                key={link.name} 
+                href={link.href} 
+                onClick={() => setIsMobileMenuOpen(false)} 
+                className={cn(
+                  "font-bold text-base py-2.5 border-b border-muted/10 flex items-center justify-between", 
+                  isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                )}
+              >
                 {link.name}
+                <ChevronRight size={16} className="opacity-30" />
               </NextLink>
             ))}
-            <div className="grid grid-cols-2 gap-2 mt-2">
+            <div className="grid grid-cols-2 gap-2 mt-3">
               {subNavItems.map((item) => (
-                <NextLink key={item.name} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary">
-                  {item.icon} {item.name}
+                <NextLink 
+                  key={item.name} 
+                  href={item.href} 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className="flex items-center gap-2 p-3 bg-muted/40 rounded-xl text-[11px] font-bold text-primary border border-transparent hover:border-secondary/20 transition-all"
+                >
+                  <span className="text-secondary">{item.icon}</span> {item.name}
                 </NextLink>
               ))}
             </div>
-            <Button onClick={handleEnquiryClick} className="w-full gradient-button text-white mt-4 py-6 font-bold rounded-xl shadow-lg border-none">
+            <Button 
+              onClick={handleEnquiryClick} 
+              className="w-full gradient-button text-white mt-4 h-12 font-bold rounded-xl shadow-lg border-none"
+            >
               Enquiry Portal
             </Button>
+            {/* Added spacer to ensure last item is visible above bottom nav */}
+            <div className="h-24 shrink-0" />
           </div>
         )}
       </header>
@@ -135,7 +154,7 @@ export function Header() {
           <LayoutGrid size={20} className={cn(isActive('/shop') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Shop</span>
         </NextLink>
-        <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-50">
+        <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-[103]">
           <Phone className="text-primary" size={24} />
         </button>
         <NextLink href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
