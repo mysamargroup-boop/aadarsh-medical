@@ -78,12 +78,12 @@ export function ProductCatalog() {
                 <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2">
                   {p.name}
                 </h3>
-                <p className="text-muted-foreground text-[10px] md:text-xs mb-3 md:mb-4">{p.company}</p>
+                <p className="text-muted-foreground text-[10px] md:text-xs mb-4">{p.company}</p>
                 
-                <div className="mt-auto pt-3 md:pt-4 flex items-center justify-between border-t border-muted/50">
-                  <div>
-                    <p className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale</p>
-                    <p className="text-primary font-bold text-base md:text-xl">₹{p.price}</p>
+                <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/50">
+                  <div className="flex flex-col">
+                    <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale Price</span>
+                    <span className="text-primary font-bold text-base md:text-xl">₹{p.price}</span>
                   </div>
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
                     <Plus size={16} className="md:w-5 md:h-5" />

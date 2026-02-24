@@ -15,7 +15,6 @@ import {
   ShoppingCart, 
   Rotate3D, 
   PlayCircle,
-  ShieldCheck,
   ThermometerSnowflake,
   FileText,
   BadgeCheck,
@@ -114,15 +113,15 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Quality Badges Section - Refined sizes and gaps */}
+              {/* Quality Badges Section - Vertical Rows */}
               <div className="bg-white p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
                     <ThermometerSnowflake size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm md:text-base text-primary">Cold Chain Maintained</h4>
-                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
+                    <h4 className="font-bold text-sm text-primary">Cold Chain Maintained</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -130,8 +129,8 @@ export default function ProductDetailPage() {
                     <BadgeCheck size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm md:text-base text-primary">WHO-GMP Certified</h4>
-                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
+                    <h4 className="font-bold text-sm text-primary">WHO-GMP Certified</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -139,8 +138,8 @@ export default function ProductDetailPage() {
                     <FileText size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm md:text-base text-primary">Batch Tracking</h4>
-                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
+                    <h4 className="font-bold text-sm text-primary">Batch Tracking</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -148,8 +147,8 @@ export default function ProductDetailPage() {
                     <Microscope size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm md:text-base text-primary">Lab Tested</h4>
-                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
+                    <h4 className="font-bold text-sm text-primary">Lab Tested</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
                   </div>
                 </div>
               </div>
@@ -189,7 +188,7 @@ export default function ProductDetailPage() {
                         )}
                       >
                         {tier.popular && (
-                          <div className="absolute -top-2.5 right-6 bg-primary text-primary-foreground text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                          <div className="absolute -top-2.5 right-6 bg-primary text-secondary-foreground text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                             Most Popular
                           </div>
                         )}
@@ -206,7 +205,8 @@ export default function ProductDetailPage() {
                   </RadioGroup>
 
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-6 border-t border-muted">
-                    <div className="flex items-center gap-4">
+                    {/* Quantity Selector on Left */}
+                    <div className="flex items-center gap-4 w-full sm:w-auto">
                       <span className="text-sm font-bold text-muted-foreground">Quantity:</span>
                       <div className="flex items-center bg-muted rounded-xl p-1 border">
                         <Button 
@@ -233,14 +233,15 @@ export default function ProductDetailPage() {
                         </Button>
                       </div>
                     </div>
-                    <div className="text-right">
+                    {/* Total Price on Right */}
+                    <div className="text-right w-full sm:w-auto">
                       <p className="text-xs text-muted-foreground font-bold">Total (excl. GST)</p>
                       <p className="text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-primary-foreground rounded-2xl h-14 font-bold text-lg">
+                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-secondary-foreground rounded-2xl h-14 font-bold text-lg">
                       <ShoppingCart className="mr-2" size={20} /> Add to Enquiry
                     </Button>
                     <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
@@ -288,7 +289,7 @@ export default function ProductDetailPage() {
                       <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
                       <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
                     </div>
-                    <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-primary-foreground rounded-xl w-8 h-8 md:w-10 md:h-10">
+                    <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-secondary-foreground rounded-xl w-8 h-8 md:w-10 md:h-10">
                       <Plus size={16} />
                     </Button>
                   </div>

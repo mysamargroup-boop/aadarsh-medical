@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Home, LayoutGrid, Search, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -42,17 +42,31 @@ export function Navigation() {
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg group-hover:bg-secondary transition-colors">
-              A
-            </div>
-            <span className={cn(
-              "font-headline font-bold text-xl md:text-2xl",
-              isScrolled || isMobileMenuOpen ? "text-primary" : "text-background"
-            )}>
-              Aadarsh MedStore
-            </span>
-          </Link>
+          <div className="flex items-center gap-4">
+            {/* Hamburger on Left for Mobile */}
+            <button 
+              className="md:hidden p-2 -ml-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className={isScrolled ? "text-primary" : "text-secondary"} size={28} />
+              ) : (
+                <Menu className={isScrolled ? "text-primary" : "text-secondary"} size={28} />
+              )}
+            </button>
+
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center text-secondary-foreground font-bold text-xl shadow-lg group-hover:bg-primary transition-colors">
+                A
+              </div>
+              <span className={cn(
+                "font-headline font-bold text-xl md:text-2xl",
+                isScrolled ? "text-primary" : "text-secondary"
+              )}>
+                Aadarsh MedStore
+              </span>
+            </Link>
+          </div>
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -61,7 +75,7 @@ export function Navigation() {
                 href={link.href}
                 className={cn(
                   "font-medium transition-colors hover:text-secondary",
-                  isScrolled ? "text-primary" : "text-background"
+                  isScrolled ? "text-primary" : "text-secondary"
                 )}
               >
                 {link.name}
@@ -71,17 +85,6 @@ export function Navigation() {
               Enquiry Portal
             </Button>
           </div>
-
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-primary" : "text-background"} size={28} />
-            ) : (
-              <Menu className={isScrolled ? "text-primary" : "text-background"} size={28} />
-            )}
-          </button>
         </div>
 
         {isMobileMenuOpen && (
@@ -96,7 +99,7 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary text-primary-foreground mt-4 py-6">Enquiry Portal</Button>
+            <Button className="w-full bg-primary text-secondary-foreground mt-4 py-6">Enquiry Portal</Button>
           </div>
         )}
       </nav>
