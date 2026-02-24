@@ -17,10 +17,8 @@ import {
   ThermometerSnowflake,
   FileText,
   BadgeCheck,
-  Microscope,
   Plus,
-  Minus,
-  ChevronLeft
+  Minus
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -114,15 +112,36 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Description Section */}
-              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
-                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
-                <p>
-                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
-                </p>
-                <p className="mt-4">
-                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
-                </p>
+              {/* Quality Badges Section (Moved to Left Side) */}
+              <div className="bg-white p-6 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
+                <h3 className="text-primary font-bold text-lg mb-2">Quality Assurance</h3>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
+                    <ThermometerSnowflake size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintained</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <BadgeCheck size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary leading-tight">WHO-GMP Certified</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized manufacturers.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <FileText size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Tracking</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Expiry Date.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -222,35 +241,15 @@ export default function ProductDetailPage() {
                 </CardContent>
               </Card>
 
-              {/* Quality Badges */}
-              <div className="bg-white p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
-                    <ThermometerSnowflake size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintained</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
-                    <BadgeCheck size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">WHO-GMP Certified</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized manufacturers.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-                    <FileText size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Tracking</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Expiry Date.</p>
-                  </div>
-                </div>
+              {/* Description Section (Moved to Right Side) */}
+              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
+                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
+                <p>
+                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
+                </p>
+                <p className="mt-4">
+                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
+                </p>
               </div>
             </div>
           </div>
