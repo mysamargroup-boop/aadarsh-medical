@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigation } from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { PromoBanner } from '@/components/PromoBanner';
 import { LogoSlider } from '@/components/LogoSlider';
@@ -15,7 +15,7 @@ import { AiAssistant } from '@/components/AiAssistant';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Navigation />
+      <Header />
       
       <Hero />
       
@@ -37,7 +37,7 @@ export default function Home() {
       
       <Footer />
       
-      {/* AI Assistant Tool */}
+      {/* AI Assistant Tool (WhatsApp Redirect) */}
       <AiAssistant />
     </main>
   );

@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 180 100% 98%;
-    --foreground: 185 80% 10%;
-    --card: 180 100% 99%;
-    --card-foreground: 185 80% 10%;
-    --popover: 180 100% 99%;
-    --popover-foreground: 185 80% 10%;
-    --primary: 184 90% 18%;
-    --primary-foreground: 180 100% 96%;
-    --secondary: 172 100% 34%;
-    --secondary-foreground: 180 100% 96%;
-    --muted: 180 100% 94%;
-    --muted-foreground: 185 80% 25%;
-    --accent: 195 85% 45%;
-    --accent-foreground: 180 100% 96%;
+    --background: 170 40% 98%;
+    --foreground: 180 50% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 50% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 50% 5%;
+    --primary: 172 100% 25%;
+    --primary-foreground: 170 100% 96%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 170 100% 96%;
+    --muted: 170 30% 94%;
+    --muted-foreground: 180 30% 30%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 170 100% 96%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 180 100% 98%;
-    --border: 185 40% 90%;
-    --input: 185 40% 90%;
-    --ring: 184 90% 18%;
-    --radius: 1rem;
+    --destructive-foreground: 0 0% 98%;
+    --border: 170 20% 90%;
+    --input: 170 20% 90%;
+    --ring: 172 100% 25%;
+    --radius: 0.75rem;
   }
 }
 
@@ -46,7 +46,7 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #0ABAB5 0%, #065F46 100%);
+    background: linear-gradient(180deg, #10B981 0%, #0D9488 100%);
     border-radius: 10px;
   }
 
@@ -57,7 +57,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #0ABAB5 transparent;
+    scrollbar-color: #10B981 transparent;
   }
 }
 
@@ -69,6 +69,21 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .gradient-emerald-teal {
+    background: linear-gradient(135deg, #065F46 0%, #0D9488 100%);
+  }
+
+  .gradient-button {
+    background: linear-gradient(90deg, #10B981 0%, #0D9488 100%);
+    transition: all 0.3s ease;
+  }
+
+  .gradient-button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+  }
 }
 
 .medical-gradient-hero {
@@ -76,11 +91,11 @@
 }
 
 .medical-gradient-mint {
-  background: linear-gradient(180deg, #ECFDF5 0%, #F9FAFB 100%);
+  background: linear-gradient(180deg, #F0FDFA 0%, #F9FAFB 100%);
 }
 
 .medical-gradient-blue {
-  background: linear-gradient(180deg, #F0F9FF 0%, #F0FDF4 100%);
+  background: linear-gradient(180deg, #F0FDFA 0%, #ECFDF5 100%);
 }
 
 .medical-gradient-dark {
@@ -88,24 +103,24 @@
 }
 
 .medical-gradient-subnav {
-  background: linear-gradient(90deg, #065F46 0%, #059669 100%);
+  background: linear-gradient(90deg, #047857 0%, #0D9488 100%);
 }
 
 .glass-card {
-  background: rgba(236, 253, 245, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .faint-pattern {
-  background-image: radial-gradient(#059669 0.5px, transparent 0.5px);
+  background-image: radial-gradient(#10B981 0.5px, transparent 0.5px);
   background-size: 24px 24px;
   opacity: 0.05;
 }
 
 .card-wave-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%23059669' fill-opacity='0.03' d='M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3%3Cpath fill='%2310B981' fill-opacity='0.03' d='M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
   background-size: cover;
   background-position: bottom;
 }

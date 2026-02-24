@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -42,21 +41,21 @@ export function ProductCatalog() {
   });
 
   return (
-    <section id="products" className="py-24 medical-gradient-blue">
+    <section id="products" className="py-20 medical-gradient-blue">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
-            <span className="text-secondary font-bold uppercase tracking-widest text-sm">Our Inventory</span>
-            <h2 className="text-primary font-headline font-bold text-4xl md:text-5xl mt-2">Available Wholesale</h2>
+            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Our Inventory</span>
+            <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Available Wholesale</h2>
           </div>
           
           <div className="flex gap-2 w-full md:w-auto">
-            <div className="relative flex-1 md:w-80">
+            <div className="relative flex-1 md:w-72">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input 
                 type="text" 
                 placeholder="Search products..." 
-                className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-muted focus:ring-2 focus:ring-secondary outline-none font-medium text-primary placeholder:text-muted-foreground/50 shadow-sm"
+                className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-primary text-sm shadow-sm"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -67,25 +66,25 @@ export function ProductCatalog() {
                 <Button 
                   variant="outline" 
                   className={cn(
-                    "rounded-2xl h-12 border-primary/20 hover:border-secondary hover:bg-secondary/5 text-primary hover:text-secondary transition-all font-bold min-w-[140px] shadow-sm bg-white",
+                    "rounded-xl h-11 border-border hover:border-secondary hover:bg-secondary/5 text-primary transition-all font-bold text-xs bg-white",
                     selectedCategory !== 'All' && "border-secondary text-secondary bg-secondary/5"
                   )}
                 >
-                  <Filter className="mr-2 w-4 h-4" /> 
-                  {selectedCategory === 'All' ? 'Select Category' : selectedCategory}
+                  <Filter className="mr-2 w-3.5 h-3.5" /> 
+                  {selectedCategory === 'All' ? 'Filter' : selectedCategory}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 rounded-2xl p-2">
-                <DropdownMenuLabel className="font-bold text-primary">Select Category</DropdownMenuLabel>
+              <DropdownMenuContent align="end" className="w-52 rounded-xl p-1.5">
+                <DropdownMenuLabel className="font-bold text-primary text-xs">Category</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {categories.map((cat) => (
                   <DropdownMenuItem 
                     key={cat} 
-                    className="rounded-xl flex items-center justify-between cursor-pointer"
+                    className="rounded-lg flex items-center justify-between cursor-pointer py-2"
                     onClick={() => setSelectedCategory(cat)}
                   >
-                    <span className={cn(selectedCategory === cat && "font-bold text-secondary")}>{cat}</span>
-                    {selectedCategory === cat && <Check className="w-4 h-4 text-secondary" />}
+                    <span className={cn("text-sm", selectedCategory === cat && "font-bold text-secondary")}>{cat}</span>
+                    {selectedCategory === cat && <Check className="w-3.5 h-3.5 text-secondary" />}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -94,44 +93,44 @@ export function ProductCatalog() {
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {filteredProducts.map((p) => (
               <Link 
                 key={p.id} 
                 href={`/products/${p.id}`}
-                className="group relative bg-card rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern"
+                className="group relative bg-white rounded-2xl border border-border hover:shadow-xl hover:border-secondary/20 transition-all duration-300 overflow-hidden flex flex-col h-full card-wave-pattern"
               >
-                <div className="relative aspect-square overflow-hidden bg-muted/10">
+                <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
                   <Image 
                     src={p.img} 
                     alt={p.name} 
                     fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     data-ai-hint="medical product"
                   />
-                  <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
-                    <Badge variant="secondary" className="bg-secondary/90 text-white font-bold border-none text-[8px] md:text-[10px] shadow-sm">
+                  <div className="absolute top-3 left-3 z-10">
+                    <Badge className="bg-white/90 text-primary hover:bg-white text-[9px] font-bold border-none shadow-sm backdrop-blur-sm">
                       {p.cat}
                     </Badge>
                   </div>
                 </div>
 
-                <div className="p-4 md:p-6 flex-1 flex flex-col space-y-3 relative z-10">
-                  <h3 className="text-primary font-headline font-bold text-sm md:text-base group-hover:text-secondary transition-colors line-clamp-2 leading-tight">
+                <div className="p-4 flex-1 flex flex-col relative z-10 bg-white/40 backdrop-blur-sm">
+                  <h3 className="text-primary font-headline font-bold text-sm group-hover:text-secondary transition-colors line-clamp-2 leading-[1.3] mb-1">
                     {p.name}
                   </h3>
                   
-                  <p className="text-muted-foreground text-[10px] md:text-xs font-medium">{p.company}</p>
+                  <p className="text-muted-foreground text-[10px] font-medium uppercase tracking-tight mb-3">
+                    {p.company}
+                  </p>
 
-                  <div className="flex flex-col">
-                    <span className="text-primary font-bold text-sm md:text-lg leading-tight">₹{p.price}</span>
-                    <span className="text-[7px] md:text-[8px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (incl. GST)</span>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/20">
-                    <span className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-tighter">Ready to Ship</span>
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted/50 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all shadow-sm">
-                      <Plus size={16} className="md:w-5 md:h-5" />
+                  <div className="mt-auto flex items-end justify-between">
+                    <div>
+                      <p className="text-[8px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1">Wholesale</p>
+                      <p className="text-primary font-bold text-base md:text-lg leading-none">₹{p.price}</p>
+                    </div>
+                    <div className="w-9 h-9 rounded-xl bg-muted/50 group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all shadow-sm">
+                      <Plus size={18} />
                     </div>
                   </div>
                 </div>
@@ -139,26 +138,26 @@ export function ProductCatalog() {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center bg-white/50 rounded-[3rem] border border-dashed border-muted">
-            <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-20" />
-            <h3 className="text-xl font-bold text-primary">No products found</h3>
-            <p className="text-muted-foreground mt-2">Try adjusting your search or category filter.</p>
+          <div className="py-20 text-center bg-white/50 rounded-3xl border border-dashed border-border">
+            <Search className="w-10 h-10 text-muted-foreground mx-auto mb-4 opacity-20" />
+            <h3 className="text-lg font-bold text-primary">No products found</h3>
+            <p className="text-sm text-muted-foreground mt-1">Try a different search term or category.</p>
             <Button 
               variant="link" 
-              className="mt-4 text-secondary font-bold"
+              className="mt-4 text-secondary font-bold text-sm"
               onClick={() => {
                 setSearchTerm('');
                 setSelectedCategory('All');
               }}
             >
-              Clear all filters
+              Clear filters
             </Button>
           </div>
         )}
 
-        <div className="mt-16 text-center">
-          <Button variant="outline" className="rounded-full px-12 h-14 border-primary text-primary hover:bg-primary hover:text-white font-bold text-lg bg-white shadow-md transition-all">
-            View All 2500+ Products
+        <div className="mt-14 text-center">
+          <Button variant="outline" className="rounded-full px-10 h-12 border-primary text-primary hover:gradient-button hover:text-white hover:border-none font-bold text-base bg-white shadow-sm transition-all">
+            Browse All 2500+ Items
           </Button>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react';
@@ -46,15 +45,15 @@ const categories = [
 
 export function Categories() {
   return (
-    <section id="categories" className="py-24 medical-gradient-mint relative">
+    <section id="categories" className="py-20 medical-gradient-mint relative">
       <div className="faint-pattern absolute inset-0 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <span className="text-secondary font-bold uppercase tracking-widest text-sm">Product Segments</span>
-            <h2 className="text-primary font-headline font-bold text-4xl md:text-5xl mt-2">Comprehensive Catalog</h2>
+            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Product Segments</span>
+            <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Comprehensive Catalog</h2>
           </div>
-          <p className="text-muted-foreground max-w-md text-lg">
+          <p className="text-muted-foreground max-w-md text-base opacity-80">
             We supply a wide range of specialized medical categories tailored for hospitals, clinics, and pharmacies.
           </p>
         </div>
@@ -63,10 +62,10 @@ export function Categories() {
           {categories.map((cat, idx) => (
             <div 
               key={idx}
-              className={`group relative overflow-hidden rounded-3xl bg-white border border-muted hover:border-secondary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col`}
+              className={`group relative overflow-hidden rounded-3xl bg-white border border-border hover:border-secondary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col`}
             >
               {/* Image Bg */}
-              <div className="h-48 relative overflow-hidden">
+              <div className="h-44 relative overflow-hidden">
                 <Image 
                   src={cat.image || ''} 
                   alt={cat.title} 
@@ -74,21 +73,21 @@ export function Categories() {
                   className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                <div className="absolute bottom-4 left-6 p-3 bg-white/90 backdrop-blur-md rounded-2xl text-secondary shadow-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                <div className="absolute bottom-4 left-6 p-2.5 bg-white/95 backdrop-blur-md rounded-xl text-secondary shadow-lg group-hover:gradient-button group-hover:text-white transition-all duration-300">
                   {cat.icon}
                 </div>
               </div>
 
-              <div className="p-8 pt-4 flex-1 flex flex-col">
-                <h3 className="text-primary font-headline font-bold text-2xl mb-3 group-hover:text-secondary transition-colors">
+              <div className="p-7 pt-4 flex-1 flex flex-col">
+                <h3 className="text-primary font-headline font-bold text-xl mb-2 group-hover:text-secondary transition-colors">
                   {cat.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1 opacity-90">
                   {cat.desc}
                 </p>
-                <button className="flex items-center gap-2 font-bold text-secondary group/btn">
+                <button className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest text-secondary group/btn w-fit">
                   Explore Now
-                  <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform" />
+                  <ArrowRight size={16} className="group-hover/btn:translate-x-2 transition-transform" />
                 </button>
               </div>
             </div>
