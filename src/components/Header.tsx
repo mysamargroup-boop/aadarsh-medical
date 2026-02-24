@@ -55,14 +55,14 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
-        {/* Main Navigation with constant gradient */}
+        {/* Main Navigation */}
         <nav 
           className={cn(
             "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
             isScrolled ? "py-3 opacity-100" : "opacity-95"
           )}
         >
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="max-w-7xl auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 md:gap-4 shrink-0">
               <button 
                 className="md:hidden p-2 text-white"
@@ -179,33 +179,33 @@ export function Header() {
         )}
       </header>
 
-      {/* Bottom Navigation for Mobile */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
+      {/* Bottom Navigation for Mobile - Lower z-index than Sheets */}
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-40 medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
         <Link href="/" className={cn(
           "flex flex-col items-center gap-1 transition-colors",
-          isActive('/') ? "text-white" : "text-white/60"
+          isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80"
         )}>
-          <Home size={20} />
+          <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
         <Link href="/shop" className={cn(
           "flex flex-col items-center gap-1 transition-colors",
-          isActive('/shop') ? "text-white" : "text-white/60"
+          isActive('/shop') ? "text-white opacity-100" : "text-white/60 opacity-80"
         )}>
-          <LayoutGrid size={20} />
-          <span className="text-[10px]">Shop</span>
+          <LayoutGrid size={20} className={cn(isActive('/shop') && "stroke-[2.5px]")} />
+          <span className="text-[10px] font-bold">Shop</span>
         </Link>
         
         <button 
           onClick={() => window.location.href = 'tel:+919630080706'}
-          className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary"
+          className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-50"
         >
           <Phone className="text-primary" size={24} />
         </button>
 
         <Link href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
-          <span className="text-[10px]">Cart</span>
+          <span className="text-[10px] font-bold">Cart</span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
 
