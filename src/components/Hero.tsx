@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -43,10 +42,10 @@ export function Hero() {
     <section className="relative h-[85vh] md:h-screen w-full overflow-hidden medical-gradient-hero">
       {/* Background Floating Icons */}
       <div className="absolute inset-0 pointer-events-none">
-        <Pill className="absolute top-20 left-[10%] text-white/10 w-24 h-24 animate-float-slow rotate-45" />
-        <Activity className="absolute bottom-20 left-[20%] text-white/10 w-32 h-32 animate-float-medium" />
-        <PlusCircle className="absolute top-40 right-[15%] text-white/10 w-16 h-16 animate-float-slow" />
-        <Pill className="absolute bottom-40 right-[10%] text-white/10 w-20 h-20 animate-float-medium -rotate-12" />
+        <Pill className="absolute top-20 left-[10%] text-background/10 w-24 h-24 animate-float-slow rotate-45" />
+        <Activity className="absolute bottom-20 left-[20%] text-background/10 w-32 h-32 animate-float-medium" />
+        <PlusCircle className="absolute top-40 right-[15%] text-background/10 w-16 h-16 animate-float-slow" />
+        <Pill className="absolute bottom-40 right-[10%] text-background/10 w-20 h-20 animate-float-medium -rotate-12" />
       </div>
 
       {slides.map((slide, index) => (
@@ -70,7 +69,7 @@ export function Hero() {
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 w-full">
-            <div className="max-w-2xl text-white">
+            <div className="max-w-2xl text-background">
               <h1 className="font-headline font-bold text-4xl md:text-7xl mb-6 leading-tight animate-in slide-in-from-bottom duration-700">
                 {slide.title}
               </h1>
@@ -78,11 +77,11 @@ export function Hero() {
                 {slide.subtitle}
               </p>
               <div className="flex flex-wrap gap-4 animate-in slide-in-from-bottom delay-200 duration-700">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-8 h-14 rounded-full text-lg shadow-xl shadow-secondary/20 group">
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 h-14 rounded-full text-lg shadow-xl shadow-secondary/20 group">
                   {slide.cta}
                   <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 h-14 rounded-full px-8 text-lg">
+                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-background hover:bg-white/20 h-14 rounded-full px-8 text-lg">
                   Learn More
                 </Button>
               </div>
@@ -99,7 +98,7 @@ export function Hero() {
             onClick={() => setCurrentSlide(index)}
             className={cn(
               "h-2 rounded-full transition-all duration-300",
-              currentSlide === index ? "bg-white w-8" : "bg-white/40 w-2"
+              currentSlide === index ? "bg-background w-8" : "bg-background/40 w-2"
             )}
           />
         ))}
@@ -108,13 +107,13 @@ export function Hero() {
       {/* Manual Nav Controls */}
       <button 
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hidden md:flex"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md text-background border border-white/20 hover:bg-white/20 hidden md:flex"
       >
         <ChevronLeft size={24} />
       </button>
       <button 
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hidden md:flex"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md text-background border border-white/20 hover:bg-white/20 hidden md:flex"
       >
         <ChevronRight size={24} />
       </button>

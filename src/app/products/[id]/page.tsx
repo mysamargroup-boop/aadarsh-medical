@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -64,11 +63,11 @@ export default function ProductDetailPage() {
             <div className="space-y-6">
               <div className="relative aspect-square bg-white rounded-[2rem] overflow-hidden border border-muted shadow-sm">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
-                  <Badge className="bg-destructive hover:bg-destructive text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-destructive hover:bg-destructive text-destructive-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Prescription Required
                   </Badge>
                   <br />
-                  <Badge className="bg-accent hover:bg-accent text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-accent hover:bg-accent text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Cold Chain
                   </Badge>
                 </div>
@@ -85,10 +84,10 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
-                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-md rounded-full shadow-lg">
+                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg">
                     <Rotate3D className="mr-2" size={16} /> 360° View
                   </Button>
-                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-md rounded-full shadow-lg">
+                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg">
                     <PlayCircle className="mr-2" size={16} /> Video
                   </Button>
                 </div>
@@ -190,7 +189,7 @@ export default function ProductDetailPage() {
                         )}
                       >
                         {tier.popular && (
-                          <div className="absolute -top-2.5 right-6 bg-primary text-white text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                          <div className="absolute -top-2.5 right-6 bg-primary text-primary-foreground text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                             Most Popular
                           </div>
                         )}
@@ -241,10 +240,10 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-2xl h-14 font-bold text-lg">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl h-14 font-bold text-lg">
                       <ShoppingCart className="mr-2" size={20} /> Add to Enquiry
                     </Button>
-                    <Button size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/20">
+                    <Button size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/20">
                       <MessageCircle className="mr-2" size={20} /> WhatsApp Chat
                     </Button>
                   </div>
@@ -286,7 +285,7 @@ export default function ProductDetailPage() {
                 <div key={i} className="group bg-white rounded-3xl border border-muted p-6 hover:shadow-xl transition-all">
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden p-4">
                     <Image src={p.img} alt={p.name} fill className="object-contain p-4 group-hover:scale-110 transition-transform" />
-                    {i === 3 && <Badge className="absolute top-2 left-2 bg-black text-white text-[8px]">Bestseller</Badge>}
+                    {i === 3 && <Badge className="absolute top-2 left-2 bg-black text-secondary-foreground text-[8px]">Bestseller</Badge>}
                   </div>
                   <Badge variant="secondary" className="bg-muted text-secondary border-none text-[10px] mb-2">{p.cat}</Badge>
                   <h3 className="font-bold text-primary mb-4 line-clamp-1">{p.name}</h3>
@@ -295,7 +294,7 @@ export default function ProductDetailPage() {
                       <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
                       <p className="font-bold text-primary">₹{p.price}</p>
                     </div>
-                    <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-white rounded-xl">
+                    <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-primary-foreground rounded-xl">
                       <Plus size={18} />
                     </Button>
                   </div>

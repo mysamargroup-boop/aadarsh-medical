@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -32,10 +31,10 @@ export function AiAssistant() {
 
   return (
     <>
-      {/* Floating Toggle Button - Updated to MessageCircle for WhatsApp feel */}
+      {/* Floating Toggle Button */}
       <button 
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-50 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-secondary transition-all duration-300 group"
+        className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-50 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-primary-foreground shadow-2xl hover:bg-secondary transition-all duration-300 group"
       >
         <div className="absolute -top-1 -right-1 bg-accent w-5 h-5 rounded-full flex items-center justify-center text-[10px] animate-pulse">
           <Sparkles size={10} />
@@ -49,7 +48,7 @@ export function AiAssistant() {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
           
           <Card className="relative w-full max-w-2xl h-[80vh] flex flex-col shadow-2xl overflow-hidden border-none animate-in fade-in zoom-in duration-300">
-            <CardHeader className="medical-gradient-dark text-white p-6">
+            <CardHeader className="medical-gradient-dark text-background p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-md">
@@ -57,12 +56,12 @@ export function AiAssistant() {
                   </div>
                   <div>
                     <CardTitle className="text-xl font-headline">Aadarsh AI Assistant</CardTitle>
-                    <p className="text-white/70 text-sm">Find medicines & alternatives instantly</p>
+                    <p className="text-background/70 text-sm">Find medicines & alternatives instantly</p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-background"
                 >
                   <X size={20} />
                 </button>
@@ -164,7 +163,7 @@ export function AiAssistant() {
                 />
                 <Button 
                   disabled={isLoading || !query.trim()}
-                  className="absolute right-2 top-2 h-10 bg-primary hover:bg-secondary text-white"
+                  className="absolute right-2 top-2 h-10 bg-primary hover:bg-secondary text-primary-foreground"
                 >
                   <Send size={18} />
                 </Button>

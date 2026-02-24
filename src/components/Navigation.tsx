@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -37,12 +36,12 @@ export function Navigation() {
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:bg-secondary transition-colors">
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg group-hover:bg-secondary transition-colors">
               A
             </div>
             <span className={cn(
               "font-headline font-bold text-xl md:text-2xl",
-              isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
+              isScrolled || isMobileMenuOpen ? "text-primary" : "text-background"
             )}>
               Aadarsh MedStore
             </span>
@@ -56,26 +55,26 @@ export function Navigation() {
                 href={link.href}
                 className={cn(
                   "font-medium transition-colors hover:text-secondary",
-                  isScrolled ? "text-primary" : "text-white"
+                  isScrolled ? "text-primary" : "text-background"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-6 shadow-lg shadow-secondary/20">
+            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-6 shadow-lg shadow-secondary/20">
               Enquiry Portal
             </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-primary" : "text-white"} size={28} />
+              <X className={isScrolled ? "text-primary" : "text-background"} size={28} />
             ) : (
-              <Menu className={isScrolled ? "text-primary" : "text-white"} size={28} />
+              <Menu className={isScrolled ? "text-primary" : "text-background"} size={28} />
             )}
           </button>
         </div>
@@ -93,7 +92,7 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary mt-4 py-6">Enquiry Portal</Button>
+            <Button className="w-full bg-primary text-primary-foreground mt-4 py-6">Enquiry Portal</Button>
           </div>
         )}
       </nav>
@@ -109,7 +108,7 @@ export function Navigation() {
           <span className="text-[10px]">Categories</span>
         </Link>
         <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-white">
-          <Phone className="text-white" size={24} />
+          <Phone className="text-secondary-foreground" size={24} />
         </button>
         <Link href="#products" className="flex flex-col items-center gap-1 text-muted-foreground">
           <Search size={20} />

@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -59,12 +58,12 @@ export function ProductCatalog() {
               href={`/products/${p.id}`}
               className="group relative bg-white rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
             >
-              <div className="relative aspect-square overflow-hidden bg-muted/30 p-8">
+              <div className="relative aspect-square overflow-hidden bg-muted/30">
                 <Image 
                   src={p.img} 
                   alt={p.name} 
                   fill 
-                  className="object-contain p-4 group-hover:scale-110 transition-transform duration-500" 
+                  className="object-cover group-hover:scale-110 transition-transform duration-500" 
                   data-ai-hint="medical product"
                 />
                 <div className="absolute top-4 left-4">
@@ -85,7 +84,7 @@ export function ProductCatalog() {
                     <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale</p>
                     <p className="text-primary font-bold text-xl">₹{p.price}</p>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
                     <Plus size={20} />
                   </div>
                 </div>
@@ -95,7 +94,7 @@ export function ProductCatalog() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button variant="outline" className="rounded-full px-12 h-14 border-primary text-primary hover:bg-primary hover:text-white font-bold text-lg">
+          <Button variant="outline" className="rounded-full px-12 h-14 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg">
             View All 2500+ Products
           </Button>
         </div>
