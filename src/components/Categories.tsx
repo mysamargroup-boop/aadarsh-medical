@@ -8,35 +8,35 @@ import Image from 'next/image';
 const categories = [
   {
     title: "Pharmaceuticals",
-    desc: "Complete range of generic and branded prescription drugs.",
+    desc: "Complete range of generic and branded prescription drugs from top pharma giants.",
     icon: <Pill className="w-8 h-8" />,
     color: "from-blue-500/10 to-blue-600/10",
     image: PlaceHolderImages.find(img => img.id === 'pharma-cat')?.imageUrl
   },
   {
     title: "OTC & Healthcare",
-    desc: "Everyday health essentials and non-prescription medicines.",
+    desc: "Everyday essentials: ENO, Crocin, Iodex, Sensodyne, Godrej OTC, and Hempushpa.",
     icon: <ShieldPlus className="w-8 h-8" />,
     color: "from-teal-500/10 to-teal-600/10",
     image: PlaceHolderImages.find(img => img.id === 'otc-cat')?.imageUrl
   },
   {
     title: "Veterinary Medicines",
-    desc: "Comprehensive animal healthcare and veterinary supplies.",
+    desc: "WellcomeVet Pharma, Tineta Pharma, and Sushima Pharmaceuticals authorized products.",
     icon: <HeartPulse className="w-8 h-8" />,
     color: "from-green-500/10 to-green-600/10",
     image: PlaceHolderImages.find(img => img.id === 'vet-cat')?.imageUrl
   },
   {
     title: "Medical Devices & Equipment",
-    desc: "Advanced diagnostic tools and medical machinery.",
+    desc: "Reliable BP Machines, Nebulizers, Stethoscopes, and Digital Thermometers.",
     icon: <Microscope className="w-8 h-8" />,
     color: "from-cyan-500/10 to-cyan-600/10",
     image: PlaceHolderImages.find(img => img.id === 'device-cat')?.imageUrl
   },
   {
     title: "Surgical & Healthcare Essentials",
-    desc: "Professional surgical instruments and clinical disposables.",
+    desc: "Professional Syringes, IV Sets, Cotton Bandages, and high-grade Disinfectants.",
     icon: <Syringe className="w-8 h-8" />,
     color: "from-sky-500/10 to-sky-600/10",
     image: PlaceHolderImages.find(img => img.id === 'surgical-cat')?.imageUrl
@@ -54,7 +54,7 @@ export function Categories() {
             <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Comprehensive Catalog</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-base opacity-80">
-            We supply a wide range of specialized medical categories tailored for hospitals, clinics, and pharmacies.
+            Authorized wholesale distributor for hospitals and retail pharmacies across Central India.
           </p>
         </div>
 
@@ -64,7 +64,6 @@ export function Categories() {
               key={idx}
               className={`group relative overflow-hidden rounded-3xl bg-white border border-border hover:border-secondary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col`}
             >
-              {/* Image Bg */}
               <div className="h-44 relative overflow-hidden">
                 <Image 
                   src={cat.image || ''} 

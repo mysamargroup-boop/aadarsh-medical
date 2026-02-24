@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react';
@@ -20,14 +19,14 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-background/60 leading-relaxed max-w-xs">
-              Premier pharmaceutical wholesale distributor serving healthcare providers with integrity and reliability since 2015.
+              Premier pharmaceutical wholesale distributor serving Sagar and Central India with integrity and reliability since 2015.
             </p>
             <div className="flex gap-4">
-              <Link href="https://www.instagram.com/aadarshmedstore" target="_blank" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
-                <Instagram size={18} className="text-background" />
+              <Link href="https://www.facebook.com/share/15ffXat1id/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+                <Facebook size={18} className="text-background" />
               </Link>
               <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
-                <Facebook size={18} className="text-background" />
+                <Instagram size={18} className="text-background" />
               </Link>
               <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
                 <Twitter size={18} className="text-background" />
@@ -44,9 +43,9 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary rounded-full" />
             </h4>
             <ul className="space-y-4 text-background/70">
-              {['Home', 'About Us', 'Category Catalog', 'Wholesale Inquiry', 'Contact Us'].map(item => (
+              {['Home', 'Shop Catalog', 'Categories', 'Wholesale Inquiry', 'Contact Us'].map(item => (
                 <li key={item}>
-                  <Link href="#" className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
+                  <Link href={item === 'Shop Catalog' ? '/shop' : '#'} className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </Link>
@@ -63,7 +62,7 @@ export function Footer() {
             <ul className="space-y-4 text-background/70">
               {['Pharmaceuticals', 'OTC & Healthcare', 'Veterinary Medicines', 'Medical Devices', 'Surgical Essentials'].map(item => (
                 <li key={item}>
-                  <Link href="#" className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
+                  <Link href="/shop" className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </Link>
@@ -80,7 +79,7 @@ export function Footer() {
             <ul className="space-y-4 text-background/70">
               <li className="flex items-start gap-3">
                 <MapPin className="text-secondary shrink-0" size={20} />
-                <span>Central India Medical Hub, HQ</span>
+                <span>Ghanta Ghar, Jagdish ward, Garhakota Dist Sagar, MP, 470229</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-secondary shrink-0" size={20} />
@@ -88,7 +87,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-secondary shrink-0" size={20} />
-                <span>info@aadarshmedstore.com</span>
+                <span className="text-[13px]">adarshmedicalstores2020@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -102,9 +101,6 @@ export function Footer() {
           </div>
           <div className="space-y-2">
             <p>© {new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
-            <p className="font-bold text-secondary tracking-widest uppercase text-xs opacity-60">
-              Designed by Samar
-            </p>
           </div>
         </div>
       </div>

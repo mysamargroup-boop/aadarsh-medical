@@ -8,22 +8,22 @@ import { Footer } from '@/components/Footer';
 import { ShopFilters } from '@/components/ShopFilters';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal, X } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const allProducts = [
-  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Antibiotics", price: "120.00", img: "https://picsum.photos/seed/p1/600/600", rx: true },
-  { id: 2, name: "Calpol 650mg", company: "GSK", cat: "Antipyretic", price: "45.50", img: "https://picsum.photos/seed/p2/600/600", rx: false },
-  { id: 3, name: "Telma 40", company: "Glenmark", cat: "Cardiac", price: "185.00", img: "https://picsum.photos/seed/p3/600/600", rx: true },
-  { id: 4, name: "Dolo 650", company: "Micro Labs", cat: "Analgesic", price: "30.00", img: "https://picsum.photos/seed/p4/600/600", rx: false },
-  { id: 5, name: "Limcee Vitamin C", company: "Himalaya", cat: "Supplements", price: "85.00", img: "https://picsum.photos/seed/p5/600/600", rx: false },
-  { id: 6, name: "N95 Face Masks", company: "3M", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/600/600", rx: false },
-  { id: 7, name: "Accu-Chek Guide", company: "Roche", cat: "Medical Device", price: "1250.00", img: "https://picsum.photos/seed/p7/600/600", rx: false },
-  { id: 8, name: "Azithromycin 500mg", company: "Cipla", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/600/600", rx: true },
-  { id: 9, name: "Betadine Ointment", company: "Win-Medicare", cat: "Antiseptic", price: "95.00", img: "https://picsum.photos/seed/p9/600/600", rx: false },
-  { id: 10, name: "Pudin Hara Pearls", company: "Dabur", cat: "Digestive", price: "25.00", img: "https://picsum.photos/seed/p10/600/600", rx: false },
-  { id: 11, name: "Vicks Vaporub", company: "P&G", cat: "Cold & Cough", price: "145.00", img: "https://picsum.photos/seed/p11/600/600", rx: false },
-  { id: 12, name: "Omnigel 30g", company: "Cipla", cat: "Pain Relief", price: "110.00", img: "https://picsum.photos/seed/p12/600/600", rx: false },
+  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Pharmaceuticals", price: "120.00", img: "https://picsum.photos/seed/p1/600/600", rx: true },
+  { id: 2, name: "ENO Fruit Salt", company: "GSK", cat: "OTC & Healthcare", price: "15.00", img: "https://picsum.photos/seed/p2/600/600", rx: false },
+  { id: 3, name: "Crocin Advance", company: "GSK", cat: "OTC & Healthcare", price: "45.00", img: "https://picsum.photos/seed/p3/600/600", rx: false },
+  { id: 4, name: "Sensodyne Paste", company: "GSK", cat: "OTC & Healthcare", price: "180.00", img: "https://picsum.photos/seed/p4/600/600", rx: false },
+  { id: 5, name: "WellcomeVet Calcium", company: "WellcomeVet", cat: "Veterinary Medicines", price: "285.00", img: "https://picsum.photos/seed/p5/600/600", rx: false },
+  { id: 6, name: "Digital BP Machine", company: "Omron", cat: "Medical Devices & Equipment", price: "2450.00", img: "https://picsum.photos/seed/p6/600/600", rx: false },
+  { id: 7, name: "Nebulizer Kit", company: "Phillips", cat: "Medical Devices & Equipment", price: "1850.00", img: "https://picsum.photos/seed/p7/600/600", rx: false },
+  { id: 8, name: "Azithromycin 500mg", company: "Cipla", cat: "Pharmaceuticals", price: "115.00", img: "https://picsum.photos/seed/p8/600/600", rx: true },
+  { id: 9, name: "Surgical Syringes (Box)", company: "Dispovan", cat: "Surgical & Healthcare Essentials", price: "450.00", img: "https://picsum.photos/seed/p9/600/600", rx: false },
+  { id: 10, name: "Cotton Bandages", company: "Surgicals", cat: "Surgical & Healthcare Essentials", price: "125.00", img: "https://picsum.photos/seed/p10/600/600", rx: false },
+  { id: 11, name: "Digital Thermometer", company: "Dr. Trust", cat: "Medical Devices & Equipment", price: "245.00", img: "https://picsum.photos/seed/p11/600/600", rx: false },
+  { id: 12, name: "Hempushpa Syrup", company: "Rajvaidya", cat: "OTC & Healthcare", price: "310.00", img: "https://picsum.photos/seed/p12/600/600", rx: false },
 ];
 
 export default function ShopPage() {
@@ -67,9 +67,9 @@ export default function ShopPage() {
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-              <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Pharmaceutical Products</h1>
+              <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Wholesale Inventory</h1>
               <p className="text-muted-foreground mt-2 max-w-xl text-sm leading-relaxed">
-                Discover our authorized wholesale range of 2500+ medications, medical equipment, and clinical essentials.
+                Browse our complete range of OTC, Veterinary, Medical Devices, and Surgical essentials.
               </p>
             </div>
             
@@ -77,7 +77,7 @@ export default function ShopPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input 
                 type="text" 
-                placeholder="Search inventory..." 
+                placeholder="Search products, brands..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 rounded-[1.25rem] bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-primary shadow-sm"
@@ -86,7 +86,6 @@ export default function ShopPage() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            {/* Desktop Sidebar Filters - Sticky */}
             <aside className="hidden lg:block w-72 shrink-0 sticky top-36 h-[calc(100vh-10rem)] overflow-visible">
               <ShopFilters 
                 selectedCats={selectedCats} 
@@ -97,14 +96,11 @@ export default function ShopPage() {
               />
             </aside>
 
-            {/* Main Product Grid Area */}
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <div className="bg-white p-4 rounded-[1.5rem] border border-muted/30 shadow-sm mb-6 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="text-sm text-muted-foreground font-medium">
-                    Found <span className="text-primary font-bold">{filteredProducts.length}</span> Results
-                  </span>
-                </div>
+                <span className="text-sm text-muted-foreground font-medium">
+                  Showing <span className="text-primary font-bold">{filteredProducts.length}</span> items
+                </span>
                 
                 <div className="flex items-center gap-2">
                   <Sheet>
@@ -113,16 +109,14 @@ export default function ShopPage() {
                         <SlidersHorizontal size={16} /> Filters
                       </Button>
                     </SheetTrigger>
-                    <SheetContent side="left" className="w-[320px] p-0 border-none bg-white">
-                      <div className="h-full overflow-hidden">
-                        <ShopFilters 
-                          selectedCats={selectedCats} 
-                          toggleCategory={toggleCategory}
-                          rxRequired={rxRequired}
-                          setRxRequired={setRxRequired}
-                          clearFilters={clearFilters}
-                        />
-                      </div>
+                    <SheetContent side="left" className="w-[320px] p-0 border-none bg-white z-[101]">
+                      <ShopFilters 
+                        selectedCats={selectedCats} 
+                        toggleCategory={toggleCategory}
+                        rxRequired={rxRequired}
+                        setRxRequired={setRxRequired}
+                        clearFilters={clearFilters}
+                      />
                     </SheetContent>
                   </Sheet>
 
@@ -151,7 +145,6 @@ export default function ShopPage() {
                           alt={p.name} 
                           fill 
                           className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                          data-ai-hint="medical product"
                         />
                         <div className="absolute top-4 left-4 z-10">
                           <Badge className="bg-white/95 text-primary hover:bg-white text-[10px] font-bold border-none shadow-md backdrop-blur-md px-3 py-1 rounded-full">
@@ -167,7 +160,7 @@ export default function ShopPage() {
                         )}
                       </div>
 
-                      <div className="p-6 flex-1 flex flex-col relative z-10 bg-white/70 backdrop-blur-md border-t border-muted/20">
+                      <div className="p-5 flex-1 flex flex-col relative z-10 bg-white/70 backdrop-blur-md border-t border-muted/20">
                         <h3 className="text-primary font-headline font-bold text-sm md:text-lg group-hover:text-secondary transition-colors line-clamp-2 leading-tight mb-1">
                           {p.name}
                         </h3>
@@ -192,13 +185,9 @@ export default function ShopPage() {
               ) : (
                 <div className="py-20 text-center bg-white rounded-3xl border border-dashed border-border">
                   <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-20" />
-                  <h3 className="text-xl font-bold text-primary">No matching products found</h3>
+                  <h3 className="text-xl font-bold text-primary">No matching items found</h3>
                   <p className="text-muted-foreground mt-2">Adjust your filters to see more medical supplies.</p>
-                  <Button 
-                    variant="link" 
-                    className="mt-4 text-secondary font-bold"
-                    onClick={clearFilters}
-                  >
+                  <Button variant="link" className="mt-4 text-secondary font-bold" onClick={clearFilters}>
                     Clear all filters
                   </Button>
                 </div>

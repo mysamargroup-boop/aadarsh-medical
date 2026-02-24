@@ -1,11 +1,12 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from 'next/navigation';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, FlaskConical, Sparkles, Leaf, BookOpen, Tag } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import NextLink from 'next/link';
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +28,7 @@ export function Header() {
   }, []);
 
   const handleEnquiryClick = () => {
-    window.open('https://wa.me/919630080706?text=Hi, I want to inquire about wholesale medicine supply.', '_blank');
+    window.open('https://wa.me/919630080706?text=Hi Abhishek, I want to inquire about wholesale medicine supply for my organization.', '_blank');
   };
 
   const navLinks = [
@@ -39,11 +40,11 @@ export function Header() {
   ];
 
   const subNavItems = [
-    { name: 'All Categories', icon: <LayoutGrid size={16} />, href: '/shop' },
-    { name: 'Medicine', icon: <Pill size={16} />, href: '/shop' },
-    { name: 'Lab Tests', icon: <FlaskConical size={16} />, href: '/#contact' },
-    { name: 'Wellness', icon: <Leaf size={16} />, href: '/#categories' },
-    { name: 'Health Corner', icon: <BookOpen size={16} />, href: '/#why-us' },
+    { name: 'Pharma', icon: <Pill size={16} />, href: '/shop' },
+    { name: 'OTC', icon: <ShieldPlus size={16} />, href: '/shop' },
+    { name: 'Vet', icon: <HeartPulse size={16} />, href: '/shop' },
+    { name: 'Devices', icon: <Microscope size={16} />, href: '/shop' },
+    { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop' },
   ];
 
   const isActive = (path: string) => {
@@ -55,88 +56,50 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
-        {/* Main Navigation */}
-        <nav 
-          className={cn(
-            "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
-            isScrolled ? "py-3 opacity-100" : "opacity-95"
-          )}
-        >
-          <div className="max-w-7xl auto flex items-center justify-between gap-4">
+        <nav className={cn("transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg", isScrolled ? "py-3 opacity-100" : "opacity-95")}>
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 md:gap-4 shrink-0">
-              <button 
-                className="md:hidden p-2 text-white"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              >
+              <button className="md:hidden p-2 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
-
-              <Link href="/" className="flex items-center gap-2 group whitespace-nowrap">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all shrink-0">
-                  A
-                </div>
-                <span className="font-headline font-bold text-base sm:text-lg md:text-xl lg:text-2xl transition-colors text-white whitespace-nowrap">
-                  Aadarsh MedStore
-                </span>
-              </Link>
+              <NextLink href="/" className="flex items-center gap-2 group whitespace-nowrap">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg shrink-0">A</div>
+                <span className="font-headline font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white">Aadarsh MedStore</span>
+              </NextLink>
             </div>
-
             <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href}
-                  className={cn(
-                    "font-bold transition-colors text-sm lg:text-base",
-                    isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
-                  )}
-                >
+                <NextLink key={link.name} href={link.href} className={cn("font-bold transition-colors text-sm lg:text-base", isActive(link.href) ? "text-white" : "text-white/80 hover:text-white")}>
                   {link.name}
-                </Link>
+                </NextLink>
               ))}
               <div className="flex items-center gap-4">
-                <Link href="/shop" className="relative p-2 text-white hover:opacity-80">
+                <NextLink href="/shop" className="relative p-2 text-white hover:opacity-80">
                   <ShoppingCart size={24} />
                   <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
-                </Link>
-                <Button 
-                  onClick={handleEnquiryClick}
-                  className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none"
-                >
+                </NextLink>
+                <Button onClick={handleEnquiryClick} className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none">
                   Enquiry Portal
                 </Button>
               </div>
             </div>
-
             <div className="flex items-center md:hidden gap-3">
-               <Link href="/shop" className="relative p-2 text-white">
+               <NextLink href="/shop" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
                   <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
-                </Link>
+                </NextLink>
             </div>
           </div>
         </nav>
 
-        {/* Secondary Navigation */}
-        <div className={cn(
-          "bg-white/10 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300",
-          isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100"
-        )}>
+        <div className={cn("bg-white/10 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300", isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100")}>
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-center justify-center gap-8 lg:gap-12">
               {subNavItems.map((item) => (
-                <Link 
-                  key={item.name} 
-                  href={item.href} 
-                  className="flex items-center gap-2 text-white/80 hover:text-white transition-all group"
-                >
-                  <span className="group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </span>
-                  <span className="text-[11px] lg:text-[12px] font-bold tracking-tight whitespace-nowrap uppercase">
-                    {item.name}
-                  </span>
-                </Link>
+                <NextLink key={item.name} href={item.href} className="flex items-center gap-2 text-white/80 hover:text-white transition-all group">
+                  <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
+                  <span className="text-[11px] lg:text-[12px] font-bold tracking-tight whitespace-nowrap uppercase">{item.name}</span>
+                </NextLink>
               ))}
             </div>
           </div>
@@ -145,74 +108,45 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted/20">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={cn(
-                  "font-bold text-lg py-2 border-b border-muted/10",
-                  isActive(link.href) ? "text-primary" : "text-muted-foreground"
-                )}
-              >
+              <NextLink key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={cn("font-bold text-lg py-2 border-b border-muted/10", isActive(link.href) ? "text-primary" : "text-muted-foreground")}>
                 {link.name}
-              </Link>
+              </NextLink>
             ))}
             <div className="grid grid-cols-2 gap-2 mt-2">
               {subNavItems.map((item) => (
-                <Link 
-                  key={item.name} 
-                  href={item.href} 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary"
-                >
+                <NextLink key={item.name} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2 p-3 bg-muted/50 rounded-xl text-xs font-bold text-primary">
                   {item.icon} {item.name}
-                </Link>
+                </NextLink>
               ))}
             </div>
-            <Button 
-              onClick={handleEnquiryClick}
-              className="w-full gradient-button text-white mt-4 py-6 font-bold rounded-xl shadow-lg border-none"
-            >
+            <Button onClick={handleEnquiryClick} className="w-full gradient-button text-white mt-4 py-6 font-bold rounded-xl shadow-lg border-none">
               Enquiry Portal
             </Button>
           </div>
         )}
       </header>
 
-      {/* Bottom Navigation for Mobile - Lower z-index than Sheets */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-40 medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
-        <Link href="/" className={cn(
-          "flex flex-col items-center gap-1 transition-colors",
-          isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80"
-        )}>
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[102] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
+        <NextLink href="/" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Home</span>
-        </Link>
-        <Link href="/shop" className={cn(
-          "flex flex-col items-center gap-1 transition-colors",
-          isActive('/shop') ? "text-white opacity-100" : "text-white/60 opacity-80"
-        )}>
+        </NextLink>
+        <NextLink href="/shop" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/shop') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <LayoutGrid size={20} className={cn(isActive('/shop') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Shop</span>
-        </Link>
-        
-        <button 
-          onClick={() => window.location.href = 'tel:+919630080706'}
-          className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-50"
-        >
+        </NextLink>
+        <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-50">
           <Phone className="text-primary" size={24} />
         </button>
-
-        <Link href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
+        <NextLink href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px] font-bold">Cart</span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
-        </Link>
-
-        <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white/60 hover:text-white">
+        </NextLink>
+        <NextLink href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white/60 hover:text-white">
           <WhatsAppIcon className="w-5 h-5" />
           <span className="text-[10px] font-bold">WhatsApp</span>
-        </Link>
+        </NextLink>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { Phone, MessageCircle, Mail, MapPin, Facebook, Instagram, Send, Users } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Send, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function ContactSection() {
@@ -32,7 +32,7 @@ export function ContactSection() {
                   <Phone size={22} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Phone Number</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Contact Number</p>
                   <p className="text-primary font-headline font-bold text-lg">+91 9630080706</p>
                 </div>
               </div>
@@ -43,7 +43,17 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Location</p>
-                  <p className="text-primary font-headline font-bold text-lg">Aadarsh MedStore, Central India Hub</p>
+                  <p className="text-primary font-headline font-bold text-sm">Ghanta Ghar, Jagdish ward, Garhakota Dist Sagar, MP, 470229</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600">
+                  <Mail size={22} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Email Address</p>
+                  <p className="text-primary font-headline font-bold text-sm">adarshmedicalstores2020@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -56,7 +66,7 @@ export function ContactSection() {
               </Button>
               <Button asChild className="gradient-button text-white rounded-full px-7 h-12 font-bold shadow-lg border-none">
                 <a href="https://wa.me/join/yourgroup" target="_blank" rel="noopener noreferrer">
-                  <Users className="mr-2" size={20} /> Join WhatsApp Group
+                  <Users className="mr-2" size={20} /> Join Wholesale Group
                 </a>
               </Button>
             </div>
@@ -71,7 +81,7 @@ export function ContactSection() {
                 <input type="tel" placeholder="Mobile Number" className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm" />
               </div>
               <input type="text" placeholder="Organization / Pharmacy Name" className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm" />
-              <textarea placeholder="List products or your inquiry details..." rows={4} className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm resize-none" />
+              <textarea placeholder="List products or your inquiry details (e.g., ENO, Crocin, BP Machines...)" rows={4} className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm resize-none" />
               <Button className="w-full h-12 gradient-button text-white rounded-xl font-bold text-base group border-none">
                 Submit Inquiry <Send className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
               </Button>

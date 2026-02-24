@@ -24,25 +24,23 @@ interface ShopFiltersProps {
 
 export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxRequired, clearFilters }: ShopFiltersProps) {
   const categories = [
-    { label: "Antibiotics", id: "Antibiotics" },
-    { label: "Antipyretic", id: "Antipyretic" },
-    { label: "Cardiac", id: "Cardiac" },
-    { label: "Analgesic", id: "Analgesic" },
-    { label: "Supplements", id: "Supplements" },
-    { label: "Surgical", id: "Surgical" },
-    { label: "Medical Device", id: "Medical Device" },
+    { label: "Pharmaceuticals", id: "Pharmaceuticals" },
+    { label: "OTC & Healthcare", id: "OTC & Healthcare" },
+    { label: "Veterinary Medicines", id: "Veterinary Medicines" },
+    { label: "Medical Devices & Equipment", id: "Medical Devices & Equipment" },
+    { label: "Surgical & Healthcare Essentials", id: "Surgical & Healthcare Essentials" },
   ];
 
   const brands = [
-    "GlaxoSmithKline", "GSK", "Glenmark", "Micro Labs", "Himalaya", "3M", "Roche", "Cipla"
+    "GlaxoSmithKline", "WellcomeVet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
   ];
 
   const dosageForms = [
-    "Tablets", "Capsules", "Syrups", "Injections", "Ointments", "Drops"
+    "Tablets", "Capsules", "Syrups", "Injections", "Ointments", "Devices"
   ];
 
   return (
-    <div className="bg-white rounded-[2rem] border border-muted/30 shadow-sm overflow-hidden flex flex-col h-full max-h-screen">
+    <div className="bg-white rounded-[2rem] border border-muted/30 shadow-sm overflow-hidden flex flex-col h-full max-h-[85vh] md:max-h-[calc(100vh-10rem)]">
       <div className="p-6 border-b flex items-center justify-between bg-white/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="flex items-center gap-2">
           <SlidersHorizontal size={18} className="text-secondary" />
@@ -58,7 +56,6 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
       </div>
 
       <div className="p-6 flex-1 overflow-y-auto no-scrollbar space-y-8">
-        {/* Availability */}
         <div className="space-y-4">
           <h3 className="font-bold text-primary text-[10px] uppercase tracking-[0.2em]">Stock Availability</h3>
           <div className="flex items-center space-x-3 group cursor-pointer">
@@ -67,7 +64,6 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
           </div>
         </div>
 
-        {/* Prescription Status */}
         <div className="space-y-4">
           <h3 className="font-bold text-primary text-[10px] uppercase tracking-[0.2em]">Prescription</h3>
           <div className="grid grid-cols-1 gap-3">
@@ -87,16 +83,15 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
                 rxRequired === false ? "bg-secondary/5 border-secondary text-secondary" : "bg-muted/10 border-transparent text-muted-foreground"
               )}
             >
-              Over The Counter (OTC) {rxRequired === false && <Check size={14} />}
+              OTC / Non-Rx {rxRequired === false && <Check size={14} />}
             </button>
           </div>
         </div>
 
         <Accordion type="multiple" defaultValue={["Category", "Brand"]} className="w-full">
-          {/* Categories */}
           <AccordionItem value="Category" className="border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
-              Categories
+              Product Segments
             </AccordionTrigger>
             <AccordionContent className="space-y-3 pt-1">
               {categories.map((cat) => (
@@ -124,7 +119,6 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
             </AccordionContent>
           </AccordionItem>
 
-          {/* Brands */}
           <AccordionItem value="Brand" className="border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Pharma Partners
@@ -132,11 +126,7 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
             <AccordionContent className="space-y-3 pt-1">
               <div className="relative mb-4">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-3 h-3" />
-                <input 
-                  type="text" 
-                  placeholder="Search brands..." 
-                  className="w-full pl-8 pr-3 py-2 bg-muted/20 border-none rounded-lg text-xs outline-none"
-                />
+                <input type="text" placeholder="Search brands..." className="w-full pl-8 pr-3 py-2 bg-muted/20 border-none rounded-lg text-xs outline-none" />
               </div>
               <div className="max-h-48 overflow-y-auto no-scrollbar space-y-3">
                 {brands.map((brand) => (
@@ -149,24 +139,19 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
             </AccordionContent>
           </AccordionItem>
 
-          {/* Dosage Form */}
           <AccordionItem value="Dosage" className="border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Dosage Form
             </AccordionTrigger>
             <AccordionContent className="grid grid-cols-2 gap-2 pt-1">
               {dosageForms.map((form) => (
-                <button 
-                  key={form}
-                  className="px-3 py-2 rounded-lg bg-muted/20 text-[10px] font-bold text-muted-foreground hover:bg-secondary/10 hover:text-secondary border border-transparent transition-all"
-                >
+                <button key={form} className="px-3 py-2 rounded-lg bg-muted/20 text-[10px] font-bold text-muted-foreground hover:bg-secondary/10 hover:text-secondary border border-transparent transition-all">
                   {form}
                 </button>
               ))}
             </AccordionContent>
           </AccordionItem>
 
-          {/* Price Range */}
           <AccordionItem value="Price" className="border-none">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Wholesale Price
@@ -182,10 +167,9 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
         </Accordion>
       </div>
       
-      {/* Search Button (Mobile/Tablet Only) */}
       <div className="p-6 border-t lg:hidden bg-muted/10">
         <Button className="w-full h-12 gradient-button text-white rounded-xl font-bold shadow-lg shadow-secondary/20">
-          Apply Filter <Check size={18} className="ml-2" />
+          Apply Filters <Check size={18} className="ml-2" />
         </Button>
       </div>
     </div>
