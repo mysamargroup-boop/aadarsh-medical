@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
+import { PromoBanner } from '@/components/PromoBanner';
 import { LogoSlider } from '@/components/LogoSlider';
 import { Categories } from '@/components/Categories';
 import { ProductCatalog } from '@/components/ProductCatalog';
@@ -17,6 +17,8 @@ export default function Home() {
       <Navigation />
       
       <Hero />
+      
+      <PromoBanner />
       
       <LogoSlider />
       

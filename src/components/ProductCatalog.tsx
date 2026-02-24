@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -58,7 +57,7 @@ export function ProductCatalog() {
             <Link 
               key={p.id} 
               href={`/products/${p.id}`}
-              className="group relative bg-card rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
+              className="group relative bg-card rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern"
             >
               {/* Product Image Area */}
               <div className="relative aspect-square overflow-hidden bg-muted/10">
@@ -76,24 +75,24 @@ export function ProductCatalog() {
                 </div>
               </div>
 
-              {/* Product Info Area - Refined Alignment */}
-              <div className="p-4 md:p-6 flex-1 flex flex-col space-y-1.5 md:space-y-2">
-                {/* Price Label First */}
-                <div className="flex flex-col">
-                  <span className="text-primary font-bold text-base md:text-2xl leading-tight">₹{p.price}</span>
-                  <span className="text-[8px] md:text-[9px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (Incl. GST)</span>
-                </div>
-                
-                {/* Product Title */}
+              {/* Product Info Area - Title Above Price */}
+              <div className="p-4 md:p-6 flex-1 flex flex-col space-y-2 relative z-10">
+                {/* Product Title First */}
                 <h3 className="text-primary font-headline font-bold text-sm md:text-lg group-hover:text-secondary transition-colors line-clamp-2 leading-tight">
                   {p.name}
                 </h3>
                 
                 {/* Manufacturer */}
                 <p className="text-muted-foreground text-[10px] md:text-xs font-medium">{p.company}</p>
+
+                {/* Price Label (Smaller font) */}
+                <div className="flex flex-col pt-1">
+                  <span className="text-primary font-bold text-sm md:text-xl leading-tight">₹{p.price}</span>
+                  <span className="text-[7px] md:text-[8px] text-muted-foreground font-bold uppercase tracking-tight">Wholesale (Incl. GST)</span>
+                </div>
                 
                 {/* Status Footer */}
-                <div className="mt-auto pt-3 md:pt-4 flex items-center justify-between border-t border-muted/50">
+                <div className="mt-auto pt-3 md:pt-4 flex items-center justify-between border-t border-muted/20">
                   <span className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-tighter">Ready to Ship</span>
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
                     <Plus size={16} className="md:w-5 md:h-5" />

@@ -47,6 +47,12 @@
       "description": "Surgical essentials",
       "imageUrl": "https://images.unsplash.com/photo-1643386106343-18d5d3c64d47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdXJnaWNhbCUyMHN1cHBsaWVzfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "surgical supplies"
+    },
+    {
+      "id": "promo-banner",
+      "description": "Medical promotional banner for healthcare products",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwYmFubmVyfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical banner"
     }
   ]
 }
