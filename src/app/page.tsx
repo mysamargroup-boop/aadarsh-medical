@@ -4,6 +4,7 @@ import { Hero } from '@/components/Hero';
 import { PromoBanner } from '@/components/PromoBanner';
 import { LogoSlider } from '@/components/LogoSlider';
 import { Categories } from '@/components/Categories';
+import { HealthConcerns } from '@/components/HealthConcerns';
 import { ProductCatalog } from '@/components/ProductCatalog';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { LegalSection } from '@/components/LegalSection';
@@ -21,6 +22,8 @@ export default function Home() {
       <PromoBanner />
       
       <LogoSlider />
+
+      <HealthConcerns />
       
       <Categories />
       
