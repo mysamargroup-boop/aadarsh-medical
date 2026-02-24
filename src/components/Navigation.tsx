@@ -38,34 +38,38 @@ export function Navigation() {
       <nav 
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-4",
-          isScrolled ? "bg-muted/90 backdrop-blur-md shadow-md py-3" : "bg-transparent"
+          isScrolled ? "bg-primary/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
             {/* Hamburger on Left for Mobile */}
             <button 
-              className="md:hidden p-2 -ml-2 outline-none focus:ring-0"
+              className="md:hidden p-2 outline-none focus:ring-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className={isScrolled ? "text-primary" : "text-secondary"} size={28} />
+                <X className="text-secondary" size={24} />
               ) : (
-                <Menu className={isScrolled ? "text-primary" : "text-secondary"} size={28} />
+                <Menu className="text-secondary" size={24} />
               )}
             </button>
 
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center text-primary font-bold text-xl shadow-lg group-hover:bg-primary group-hover:text-secondary transition-all">
+            <Link href="/" className="flex items-center gap-2 group whitespace-nowrap">
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-secondary rounded-lg md:rounded-xl flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg transition-all">
                 A
               </div>
-              <span className={cn(
-                "font-headline font-bold text-xl md:text-2xl",
-                isScrolled ? "text-primary" : "text-secondary"
-              )}>
+              <span className="font-headline font-bold text-lg md:text-2xl text-secondary">
                 Aadarsh MedStore
               </span>
             </Link>
+          </div>
+
+          <div className="flex items-center gap-4 md:hidden">
+             <Link href="#" className="relative p-2 text-secondary hover:opacity-80 transition-opacity">
+                <ShoppingCart size={22} />
+                <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+              </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -73,20 +77,17 @@ export function Navigation() {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className={cn(
-                  "font-medium transition-colors hover:text-accent",
-                  isScrolled ? "text-primary" : "text-secondary"
-                )}
+                className="font-medium transition-colors text-secondary hover:text-accent"
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex items-center gap-4">
-              <Link href="#" className="relative p-2 text-primary hover:text-secondary transition-colors">
+              <Link href="#" className="relative p-2 text-secondary hover:opacity-80 transition-opacity">
                 <ShoppingCart size={24} />
                 <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-accent-foreground text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
               </Link>
-              <Button className="bg-secondary hover:bg-primary text-primary hover:text-secondary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
+              <Button className="bg-secondary hover:bg-secondary/90 text-primary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
                 Enquiry Portal
               </Button>
             </div>
@@ -94,44 +95,43 @@ export function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-card shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted">
+          <div className="absolute top-full left-0 right-0 bg-primary shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-white/10">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-primary font-semibold text-lg py-2 border-b border-muted hover:text-secondary"
+                className="text-secondary font-semibold text-lg py-2 border-b border-white/5 hover:text-accent"
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary text-secondary-foreground mt-4 py-6 font-bold">Enquiry Portal</Button>
+            <Button className="w-full bg-secondary text-primary mt-4 py-6 font-bold rounded-xl">Enquiry Portal</Button>
           </div>
         )}
       </nav>
 
       {/* Bottom Navigation for Mobile */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-muted/95 backdrop-blur-md rounded-2xl shadow-2xl border border-muted/50 p-3 flex justify-around items-center">
-        <Link href="#" className="flex flex-col items-center gap-1 text-primary">
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-primary/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
+        <Link href="#" className="flex flex-col items-center gap-1 text-secondary">
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link href="#categories" className="flex flex-col items-center gap-1 text-muted-foreground">
+        <Link href="#categories" className="flex flex-col items-center gap-1 text-secondary/60">
           <LayoutGrid size={20} />
           <span className="text-[10px]">Categories</span>
         </Link>
-        <Link href="#" className="relative flex flex-col items-center gap-1 text-muted-foreground">
+        
+        <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-[#072A42]">
+          <Phone className="text-primary" size={24} />
+        </button>
+
+        <Link href="#" className="relative flex flex-col items-center gap-1 text-secondary/60">
           <ShoppingCart size={20} />
           <span className="text-[10px]">Cart</span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-accent-foreground text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </Link>
-        <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-background">
-          <Phone className="text-primary" size={24} />
-        </button>
-        <Link href="#products" className="flex flex-col items-center gap-1 text-muted-foreground">
-          <Search size={20} />
-          <span className="text-[10px]">Search</span>
-        </Link>
+
         <Link href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-secondary">
           <WhatsAppIcon className="w-5 h-5" />
           <span className="text-[10px] font-bold">WhatsApp</span>
