@@ -45,8 +45,8 @@ export function ProductCatalog() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
-            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Our Inventory</span>
-            <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Available Wholesale</h2>
+            <span className="text-secondary font-bold uppercase tracking-widest text-[10px]">Our Inventory</span>
+            <h2 className="text-primary font-headline font-bold text-2xl md:text-3xl mt-1">Available Wholesale</h2>
           </div>
           
           <div className="flex gap-2 w-full md:w-auto">
@@ -116,11 +116,11 @@ export function ProductCatalog() {
                 </div>
 
                 <div className="p-4 flex-1 flex flex-col relative z-10 bg-white/40 backdrop-blur-sm">
-                  <h3 className="text-primary font-headline font-bold text-sm group-hover:text-secondary transition-colors line-clamp-2 leading-[1.3] mb-1">
+                  <h3 className="text-primary font-headline font-bold text-sm group-hover:text-secondary transition-colors line-clamp-2 leading-tight mb-1">
                     {p.name}
                   </h3>
                   
-                  <p className="text-muted-foreground text-[10px] font-medium uppercase tracking-tight mb-3">
+                  <p className="text-muted-foreground text-[9px] font-medium uppercase tracking-tight mb-3">
                     {p.company}
                   </p>
 

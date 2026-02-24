@@ -49,7 +49,7 @@ export function Header() {
         <nav 
           className={cn(
             "transition-all duration-300 px-4 md:px-8 py-4",
-            isScrolled ? "bg-primary shadow-lg py-3" : "bg-transparent"
+            isScrolled ? "bg-primary shadow-lg py-3" : "bg-primary/95 backdrop-blur-md"
           )}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">

@@ -1,10 +1,9 @@
-
 "use client"
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Navigation } from '@/components/Navigation';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -48,9 +47,9 @@ export default function ProductDetailPage() {
 
   return (
     <main className="min-h-screen bg-muted/20">
-      <Navigation />
+      <Header />
       
-      <div className="pt-24 pb-12">
+      <div className="pt-32 md:pt-40 pb-12">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
@@ -65,11 +64,11 @@ export default function ProductDetailPage() {
               {/* Product Image Section */}
               <div className="relative aspect-square bg-card rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
-                  <Badge className="bg-destructive hover:bg-destructive/90 text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Prescription Required
                   </Badge>
                   <br />
-                  <Badge className="bg-accent hover:bg-accent/90 text-secondary-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Cold Chain
                   </Badge>
                 </div>
@@ -94,7 +93,7 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Thumbnails Section - IMMEDIATELY BELOW IMAGE */}
+              {/* Thumbnails Section */}
               <div className="grid grid-cols-4 gap-4">
                 {[1, 2, 3].map((i) => (
                   <div key={i} className={cn(
@@ -115,11 +114,24 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Title Section - Below Thumbnails */}
+              {/* Description Section */}
+              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
+                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
+                <p>
+                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
+                </p>
+                <p className="mt-4">
+                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              {/* Title Section */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
-                  <button className="p-3 bg-muted rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
+                  <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
+                  <button className="p-3 bg-white rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
                     <Heart size={20} />
                   </button>
                 </div>
@@ -132,9 +144,7 @@ export default function ProductDetailPage() {
                   </span>
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-8">
               <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
                 <CardContent className="p-8 space-y-6">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers (Incl. GST)</p>
@@ -151,7 +161,7 @@ export default function ProductDetailPage() {
                         )}
                       >
                         {tier.popular && (
-                          <div className="absolute -top-2.5 right-6 bg-primary text-secondary-foreground text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                          <div className="absolute -top-2.5 right-6 bg-primary text-white text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                             Most Popular
                           </div>
                         )}
@@ -167,18 +177,14 @@ export default function ProductDetailPage() {
                     ))}
                   </RadioGroup>
 
-                  {/* Quantity and Price Row - Optimized for Mobile */}
                   <div className="flex flex-row items-center justify-between gap-4 pt-6 border-t border-muted w-full">
-                    {/* Price on Left on Mobile, Right on Desktop */}
-                    <div className="order-1 sm:order-2 text-left sm:text-right">
+                    <div className="text-left">
                       <p className="text-[10px] text-muted-foreground font-bold uppercase">Total (incl. GST)</p>
-                      <p className="text-2xl sm:text-4xl font-headline font-bold text-primary">₹{totalPrice}</p>
+                      <p className="text-2xl sm:text-3xl font-headline font-bold text-primary">₹{totalPrice}</p>
                     </div>
 
-                    {/* Quantity on Right on Mobile, Left on Desktop */}
-                    <div className="order-2 sm:order-1 flex items-center gap-2 sm:gap-4">
-                      <span className="hidden xs:inline-block text-xs sm:text-sm font-bold text-muted-foreground">Quantity:</span>
-                      <div className="flex items-center bg-muted rounded-xl p-0.5 sm:p-1 border">
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center bg-white rounded-xl p-0.5 border shadow-sm">
                         <Button 
                           variant="ghost" 
                           size="icon" 
@@ -191,7 +197,7 @@ export default function ProductDetailPage() {
                           type="number" 
                           value={quantity} 
                           onChange={(e) => setQuantity(Number(e.target.value))}
-                          className="w-12 sm:w-16 text-center bg-transparent font-bold text-primary border-none outline-none text-sm sm:text-base"
+                          className="w-12 text-center bg-transparent font-bold text-primary border-none outline-none text-sm"
                         />
                         <Button 
                           variant="ghost" 
@@ -206,25 +212,25 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-secondary-foreground rounded-2xl h-14 font-bold text-lg group">
+                    <Button size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group">
                       <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
                     </Button>
-                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
+                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Quality Badges Section - NOW ON RIGHT SIDE */}
-              <div className="bg-card p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
+              {/* Quality Badges */}
+              <div className="bg-white p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
                 <div className="flex items-center gap-4">
                   <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
                     <ThermometerSnowflake size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Cold Chain Maintained</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintained</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -232,8 +238,8 @@ export default function ProductDetailPage() {
                     <BadgeCheck size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">WHO-GMP Certified</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">WHO-GMP Certified</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized manufacturers.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -241,29 +247,10 @@ export default function ProductDetailPage() {
                     <FileText size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Batch Tracking</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Tracking</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Expiry Date.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
-                    <Microscope size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Lab Tested</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
-                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
-                <p>
-                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue. It will not work for viral infections such as the common cold.
-                </p>
-                <p className="mt-4">
-                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
-                </p>
               </div>
             </div>
           </div>
@@ -271,12 +258,8 @@ export default function ProductDetailPage() {
           <div className="pt-16 border-t">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-headline font-bold text-primary">Complete Your Surgical Kit</h2>
-                <p className="text-muted-foreground mt-1">Frequently bought together by hospitals and retailers.</p>
-              </div>
-              <div className="hidden md:flex gap-2">
-                <Button variant="outline" size="icon" className="rounded-full hover:bg-secondary/10"><ChevronLeft size={20} className="text-primary" /></Button>
-                <Button variant="outline" size="icon" className="rounded-full hover:bg-secondary/10"><ChevronRight size={20} className="text-primary" /></Button>
+                <h2 className="text-2xl font-headline font-bold text-primary">Complete Your Surgical Kit</h2>
+                <p className="text-muted-foreground mt-1 text-sm">Frequently bought together by hospitals and retailers.</p>
               </div>
             </div>
 
@@ -287,20 +270,20 @@ export default function ProductDetailPage() {
                 { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
                 { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
               ].map((p, i) => (
-                <div key={i} className="group bg-card rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
+                <div key={i} className="group bg-white rounded-3xl border border-muted p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
                   <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
                     <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
                   </div>
-                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 hover:bg-secondary/20 transition-colors w-fit">
+                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 w-fit">
                     {p.cat}
                   </Badge>
-                  <h3 className="font-bold text-primary mb-4 line-clamp-1 text-sm md:text-base">{p.name}</h3>
+                  <h3 className="font-bold text-primary mb-4 line-clamp-1 text-sm md:text-base leading-tight">{p.name}</h3>
                   <div className="mt-auto flex items-center justify-between">
                     <div>
-                      <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale (Incl. GST)</p>
+                      <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
                       <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
                     </div>
-                    <Button size="icon" variant="ghost" className="bg-muted hover:bg-primary hover:text-secondary-foreground rounded-xl w-8 h-8 md:w-10 md:h-10">
+                    <Button size="icon" variant="ghost" className="bg-muted hover:gradient-button hover:text-white rounded-xl w-8 h-8 md:w-10 md:h-10">
                       <Plus size={16} />
                     </Button>
                   </div>
