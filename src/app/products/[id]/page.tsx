@@ -132,46 +132,6 @@ export default function ProductDetailPage() {
                   </span>
                 </div>
               </div>
-
-              {/* Quality Badges Section */}
-              <div className="bg-card p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
-                    <ThermometerSnowflake size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Cold Chain Maintained</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
-                    <BadgeCheck size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">WHO-GMP Certified</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-                    <FileText size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Batch Tracking</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
-                    <Microscope size={22} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary">Lab Tested</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="space-y-8">
@@ -255,6 +215,46 @@ export default function ProductDetailPage() {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Quality Badges Section - NOW ON RIGHT SIDE */}
+              <div className="bg-card p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
+                    <ThermometerSnowflake size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary">Cold Chain Maintained</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <BadgeCheck size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary">WHO-GMP Certified</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <FileText size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary">Batch Tracking</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <Microscope size={22} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-primary">Lab Tested</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
+                  </div>
+                </div>
+              </div>
 
               <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted">
                 <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
