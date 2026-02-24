@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Search, Plus, Filter, Check } from 'lucide-react';
+import { Search, Plus, Filter, Check, ArrowRight } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -98,7 +98,7 @@ export function ProductCatalog() {
               <Link 
                 key={p.id} 
                 href={`/products/${p.id}`}
-                className="group relative bg-white rounded-2xl border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
+                className="group relative bg-white rounded-[2rem] border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
                   <Image 
@@ -109,7 +109,7 @@ export function ProductCatalog() {
                     data-ai-hint="medical product"
                   />
                   <div className="absolute top-3 left-3 z-10">
-                    <Badge className="bg-white/95 text-primary hover:bg-white text-[9px] font-bold border-none shadow-md backdrop-blur-md px-2.5 py-1">
+                    <Badge className="bg-white/95 text-primary hover:bg-white text-[9px] font-bold border-none shadow-md backdrop-blur-md px-2.5 py-1 rounded-full">
                       {p.cat}
                     </Badge>
                   </div>
@@ -129,7 +129,7 @@ export function ProductCatalog() {
                       <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
                       <p className="text-primary font-bold text-base md:text-xl leading-none">₹{p.price}</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
                       <Plus size={20} />
                     </div>
                   </div>
@@ -156,8 +156,10 @@ export function ProductCatalog() {
         )}
 
         <div className="mt-14 text-center">
-          <Button variant="outline" className="rounded-full px-10 h-12 border-primary text-primary hover:gradient-button hover:text-white hover:border-none font-bold text-base bg-white shadow-md transition-all">
-            Browse All 2500+ Items
+          <Button asChild variant="outline" className="rounded-full px-10 h-12 border-primary text-primary hover:gradient-button hover:text-white hover:border-none font-bold text-base bg-white shadow-md transition-all">
+            <Link href="/shop">
+              Browse All 2500+ Items <ArrowRight className="ml-2" size={18} />
+            </Link>
           </Button>
         </div>
       </div>

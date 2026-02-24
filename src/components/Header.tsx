@@ -30,15 +30,15 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Shop', href: '/shop' },
     { name: 'Categories', href: '/#categories' },
-    { name: 'Products', href: '/#products' },
     { name: 'Why Us', href: '/#why-us' },
     { name: 'Contact', href: '/#contact' },
   ];
 
   const subNavItems = [
-    { name: 'All Categories', icon: <LayoutGrid size={16} />, href: '/#categories' },
-    { name: 'Medicine', icon: <Pill size={16} />, href: '/#products' },
+    { name: 'All Categories', icon: <LayoutGrid size={16} />, href: '/shop' },
+    { name: 'Medicine', icon: <Pill size={16} />, href: '/shop' },
     { name: 'Lab Tests', icon: <FlaskConical size={16} />, href: '/#contact' },
     { name: 'Wellness', icon: <Leaf size={16} />, href: '/#categories' },
     { name: 'Health Corner', icon: <BookOpen size={16} />, href: '/#why-us' },
@@ -84,7 +84,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="flex items-center gap-4">
-                <Link href="#" className="relative p-2 text-white hover:opacity-80">
+                <Link href="/shop" className="relative p-2 text-white hover:opacity-80">
                   <ShoppingCart size={24} />
                   <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
                 </Link>
@@ -98,7 +98,7 @@ export function Header() {
             </div>
 
             <div className="flex items-center md:hidden gap-3">
-               <Link href="#" className="relative p-2 text-white">
+               <Link href="/shop" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
                   <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
                 </Link>
@@ -171,9 +171,9 @@ export function Header() {
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
         </Link>
-        <Link href="/#categories" className="flex flex-col items-center gap-1 text-white/60">
+        <Link href="/shop" className="flex flex-col items-center gap-1 text-white/60">
           <LayoutGrid size={20} />
-          <span className="text-[10px]">Categories</span>
+          <span className="text-[10px]">Shop</span>
         </Link>
         
         <button 
@@ -183,7 +183,7 @@ export function Header() {
           <Phone className="text-primary" size={24} />
         </button>
 
-        <Link href="#" className="relative flex flex-col items-center gap-1 text-white/60">
+        <Link href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px]">Cart</span>
           <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
