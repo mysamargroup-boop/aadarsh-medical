@@ -38,14 +38,14 @@ export function Navigation() {
       <nav 
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-4",
-          isScrolled ? "bg-muted/80 backdrop-blur-md shadow-md py-3" : "bg-transparent"
+          isScrolled ? "bg-muted/90 backdrop-blur-md shadow-md py-3" : "bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
             {/* Hamburger on Left for Mobile */}
             <button 
-              className="md:hidden p-2 -ml-2"
+              className="md:hidden p-2 -ml-2 outline-none focus:ring-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -56,7 +56,7 @@ export function Navigation() {
             </button>
 
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center text-secondary-foreground font-bold text-xl shadow-lg group-hover:bg-primary transition-colors">
+              <div className="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center text-primary font-bold text-xl shadow-lg group-hover:bg-primary group-hover:text-secondary transition-all">
                 A
               </div>
               <span className={cn(
@@ -74,37 +74,37 @@ export function Navigation() {
                 key={link.name} 
                 href={link.href}
                 className={cn(
-                  "font-medium transition-colors hover:text-secondary",
+                  "font-medium transition-colors hover:text-accent",
                   isScrolled ? "text-primary" : "text-secondary"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-6 shadow-lg shadow-secondary/20">
+            <Button className="bg-secondary hover:bg-primary text-primary hover:text-secondary rounded-full px-6 shadow-lg shadow-secondary/10 transition-all font-bold">
               Enquiry Portal
             </Button>
           </div>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t">
+          <div className="absolute top-full left-0 right-0 bg-card shadow-2xl p-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300 md:hidden border-t border-muted">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-primary font-semibold text-lg py-2 border-b border-muted"
+                className="text-primary font-semibold text-lg py-2 border-b border-muted hover:text-secondary"
               >
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full bg-primary text-secondary-foreground mt-4 py-6">Enquiry Portal</Button>
+            <Button className="w-full bg-primary text-secondary-foreground mt-4 py-6 font-bold">Enquiry Portal</Button>
           </div>
         )}
       </nav>
 
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-background/95 backdrop-blur-md rounded-2xl shadow-2xl border border-muted/50 p-3 flex justify-around items-center">
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[60] bg-muted/95 backdrop-blur-md rounded-2xl shadow-2xl border border-muted/50 p-3 flex justify-around items-center">
         <Link href="#" className="flex flex-col items-center gap-1 text-primary">
           <Home size={20} />
           <span className="text-[10px] font-bold">Home</span>
@@ -114,7 +114,7 @@ export function Navigation() {
           <span className="text-[10px]">Categories</span>
         </Link>
         <button className="bg-secondary w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-background">
-          <Phone className="text-secondary-foreground" size={24} />
+          <Phone className="text-primary" size={24} />
         </button>
         <Link href="#products" className="flex flex-col items-center gap-1 text-muted-foreground">
           <Search size={20} />

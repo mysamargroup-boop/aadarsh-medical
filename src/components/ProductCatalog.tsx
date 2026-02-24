@@ -28,7 +28,7 @@ export function ProductCatalog() {
   );
 
   return (
-    <section id="products" className="py-24 bg-white">
+    <section id="products" className="py-24 medical-gradient-blue">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
@@ -42,11 +42,11 @@ export function ProductCatalog() {
               <input 
                 type="text" 
                 placeholder="Search products..." 
-                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-muted/50 border-none focus:ring-2 focus:ring-secondary outline-none font-medium text-primary placeholder:text-muted-foreground/50"
+                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-muted/30 border-none focus:ring-2 focus:ring-secondary outline-none font-medium text-primary placeholder:text-muted-foreground/50"
                 onChange={(e) => setFilter(e.target.value)}
               />
             </div>
-            <Button variant="outline" className="rounded-2xl h-12 border-muted hover:bg-muted text-primary">
+            <Button variant="outline" className="rounded-2xl h-12 border-muted hover:bg-muted text-primary bg-muted/20">
               <Filter className="mr-2 w-4 h-4" /> Filter
             </Button>
           </div>
@@ -57,9 +57,9 @@ export function ProductCatalog() {
             <Link 
               key={p.id} 
               href={`/products/${p.id}`}
-              className="group relative bg-muted/20 rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
+              className="group relative bg-card rounded-3xl border border-muted hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col h-full"
             >
-              <div className="relative aspect-square overflow-hidden bg-white">
+              <div className="relative aspect-square overflow-hidden bg-muted/10">
                 <Image 
                   src={p.img} 
                   alt={p.name} 
@@ -68,23 +68,25 @@ export function ProductCatalog() {
                   data-ai-hint="medical product"
                 />
                 <div className="absolute top-2 left-2 md:top-4 md:left-4">
-                  <Badge variant="secondary" className="bg-muted text-secondary font-bold border-none text-[8px] md:text-xs">
+                  <Badge variant="secondary" className="bg-muted/80 backdrop-blur-sm text-secondary font-bold border-none text-[8px] md:text-xs">
                     {p.cat}
                   </Badge>
                 </div>
               </div>
 
               <div className="p-3 md:p-6 flex-1 flex flex-col">
-                <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-primary font-bold text-base md:text-2xl">₹{p.price}</span>
+                  <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">Wholesale</span>
+                </div>
+                
+                <h3 className="text-primary font-headline font-bold text-sm md:text-lg mb-1 group-hover:text-secondary transition-colors line-clamp-2 leading-tight">
                   {p.name}
                 </h3>
                 <p className="text-muted-foreground text-[10px] md:text-xs mb-4">{p.company}</p>
                 
                 <div className="mt-auto pt-4 flex items-center justify-between border-t border-muted/50">
-                  <div className="flex flex-col">
-                    <span className="text-[8px] md:text-[10px] text-muted-foreground font-bold uppercase tracking-wider">Wholesale Price</span>
-                    <span className="text-primary font-bold text-base md:text-xl">₹{p.price}</span>
-                  </div>
+                  <span className="text-[9px] font-bold text-accent uppercase tracking-tighter">Ready to Ship</span>
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-muted group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-all">
                     <Plus size={16} className="md:w-5 md:h-5" />
                   </div>
@@ -95,7 +97,7 @@ export function ProductCatalog() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button variant="outline" className="rounded-full px-12 h-14 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg">
+          <Button variant="outline" className="rounded-full px-12 h-14 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold text-lg bg-card shadow-sm">
             View All 2500+ Products
           </Button>
         </div>
