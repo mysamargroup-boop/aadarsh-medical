@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -136,9 +135,9 @@ function ProductCard({ product }: { product: any }) {
   return (
     <Link 
       href={`/products/${product.id}`}
-      className="group relative bg-white rounded-[2rem] border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
+      className="group relative bg-white rounded-[1.5rem] border border-border hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
+      <div className="relative aspect-square overflow-hidden bg-muted/30">
         {isLoading && <Skeleton className="absolute inset-0 z-10" />}
         <Image 
           src={product.img} 
@@ -149,14 +148,14 @@ function ProductCard({ product }: { product: any }) {
           data-ai-hint="medical product"
         />
         <div className="absolute top-3 left-3 z-10">
-          <Badge className="bg-white/95 text-primary hover:bg-white text-[9px] font-bold border-none shadow-md backdrop-blur-md px-2.5 py-1 rounded-full">
+          <Badge className="bg-white/95 text-primary text-[9px] font-bold border-none shadow-sm px-2.5 py-1 rounded-full">
             {product.cat}
           </Badge>
         </div>
       </div>
 
-      <div className="p-5 flex-1 flex flex-col relative z-10 bg-white/60 backdrop-blur-sm border-t border-muted/20">
-        <h3 className="text-primary font-headline font-bold text-sm md:text-base group-hover:text-secondary transition-colors line-clamp-2 leading-snug mb-0.5">
+      <div className="p-4 flex-1 flex flex-col relative z-10 bg-white border-t border-muted/20">
+        <h3 className="text-primary font-bold text-sm md:text-base group-hover:text-secondary transition-colors line-clamp-1 leading-tight mb-0.5">
           {product.name}
         </h3>
         
@@ -166,11 +165,11 @@ function ProductCard({ product }: { product: any }) {
 
         <div className="mt-auto flex items-center justify-between">
           <div>
-            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
-            <p className="text-primary font-bold text-base md:text-xl leading-none">₹{product.price}</p>
+            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">Wholesale Price</p>
+            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price}</p>
           </div>
-          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
-            <Plus className="size-4 md:size-5" />
+          <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
+            <Plus className="size-4" />
           </div>
         </div>
       </div>

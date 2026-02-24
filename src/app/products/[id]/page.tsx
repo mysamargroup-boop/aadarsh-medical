@@ -52,12 +52,12 @@ export default function ProductDetailPage() {
     <main className="min-h-screen bg-muted/20">
       <Header />
       
-      <div className="pt-28 md:pt-36 pb-12">
+      <div className="pt-24 md:pt-32 pb-12">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <Link href="/#products" className="hover:text-primary transition-colors">Pharmaceuticals</Link>
+            <Link href="/shop" className="hover:text-primary transition-colors">Pharmaceuticals</Link>
             <ChevronRight size={14} />
             <span className="text-primary font-bold">Augmentin 625 Duo</span>
           </nav>
@@ -272,31 +272,37 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { name: "Paracetamol 650mg - 50 Strip Box", cat: "Analgesic", price: "120.00", img: "https://picsum.photos/seed/p1/400/400" },
                 { name: "Limcee Vitamin C Chewable", cat: "Supplements", price: "85.00", img: "https://picsum.photos/seed/p5/400/400" },
                 { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
                 { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
               ].map((p, i) => (
-                <div key={i} className="group bg-white rounded-3xl border border-border p-4 md:p-6 hover:shadow-xl transition-all h-full flex flex-col">
-                  <div className="relative aspect-square bg-muted/20 rounded-2xl mb-4 overflow-hidden">
-                    <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform" />
-                  </div>
-                  <Badge variant="secondary" className="bg-secondary/10 text-secondary border-none text-[8px] md:text-xs mb-2 w-fit">
-                    {p.cat}
-                  </Badge>
-                  <h3 className="font-bold text-primary mb-4 line-clamp-1 text-sm md:text-base leading-tight">{p.name}</h3>
-                  <div className="mt-auto flex items-center justify-between">
-                    <div>
-                      <p className="text-[8px] text-muted-foreground font-bold uppercase">Wholesale</p>
-                      <p className="font-bold text-primary text-sm md:text-base">₹{p.price}</p>
+                <Link key={i} href={`/products/${i + 1}`} className="group relative bg-white rounded-2xl border border-border hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1">
+                  <div className="relative aspect-square bg-muted/20 overflow-hidden">
+                    <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute top-3 left-3 z-10">
+                      <Badge className="bg-white/95 text-primary text-[8px] font-bold border-none shadow-sm px-2 py-0.5 rounded-full">
+                        {p.cat}
+                      </Badge>
                     </div>
-                    <Button size="icon" variant="ghost" className="bg-muted hover:gradient-button hover:text-white rounded-full w-8 h-8 md:w-10 md:h-10">
-                      <Plus size={16} />
-                    </Button>
                   </div>
-                </div>
+                  <div className="p-4 flex-1 flex flex-col">
+                    <h3 className="font-bold text-primary mb-3 line-clamp-1 text-sm leading-tight group-hover:text-secondary transition-colors">
+                      {p.name}
+                    </h3>
+                    <div className="mt-auto flex items-center justify-between">
+                      <div>
+                        <p className="text-[8px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1">Wholesale</p>
+                        <p className="font-bold text-primary text-sm">₹{p.price}</p>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
+                        <Plus className="size-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
