@@ -62,14 +62,14 @@ export default function ShopPage() {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <span className="text-primary font-bold">Shop Inventory</span>
+            <span className="text-primary font-bold">Inventory Catalog</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Pharmaceutical Products</h1>
-              <p className="text-muted-foreground mt-2 max-w-xl">
-                Browse our complete catalog of 2500+ products including medicines and surgical essentials.
+              <p className="text-muted-foreground mt-2 max-w-xl text-sm leading-relaxed">
+                Discover our authorized wholesale range of 2500+ medications, medical equipment, and clinical essentials.
               </p>
             </div>
             
@@ -77,17 +77,17 @@ export default function ShopPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input 
                 type="text" 
-                placeholder="Search products or brands..." 
+                placeholder="Search inventory..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-2xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-primary shadow-sm"
+                className="w-full pl-11 pr-4 py-3 rounded-[1.25rem] bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-primary shadow-sm"
               />
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Desktop Sidebar Filters */}
-            <aside className="hidden lg:block w-72 shrink-0">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            {/* Desktop Sidebar Filters - Sticky */}
+            <aside className="hidden lg:block w-72 shrink-0 sticky top-36 h-[calc(100vh-10rem)] overflow-visible">
               <ShopFilters 
                 selectedCats={selectedCats} 
                 toggleCategory={toggleCategory}
@@ -99,26 +99,22 @@ export default function ShopPage() {
 
             {/* Main Product Grid Area */}
             <div className="flex-1">
-              <div className="bg-white p-4 rounded-2xl border border-muted/30 shadow-sm mb-6 flex items-center justify-between">
+              <div className="bg-white p-4 rounded-[1.5rem] border border-muted/30 shadow-sm mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <span className="text-sm text-muted-foreground font-medium">
-                    Showing <span className="text-primary font-bold">{filteredProducts.length}</span> Products
+                    Found <span className="text-primary font-bold">{filteredProducts.length}</span> Results
                   </span>
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  {/* Mobile Filter Trigger */}
                   <Sheet>
                     <SheetTrigger asChild>
-                      <Button variant="outline" className="lg:hidden rounded-xl border-muted text-primary font-bold flex gap-2">
+                      <Button variant="outline" className="lg:hidden rounded-xl border-muted text-primary font-bold flex gap-2 h-10">
                         <SlidersHorizontal size={16} /> Filters
                       </Button>
                     </SheetTrigger>
-                    <SheetContent side="left" className="w-[300px] p-0 border-none bg-white">
-                      <SheetHeader className="p-6 border-b">
-                        <SheetTitle className="text-primary font-headline font-bold">Filters</SheetTitle>
-                      </SheetHeader>
-                      <div className="h-full overflow-y-auto">
+                    <SheetContent side="left" className="w-[320px] p-0 border-none bg-white">
+                      <div className="h-full overflow-hidden">
                         <ShopFilters 
                           selectedCats={selectedCats} 
                           toggleCategory={toggleCategory}
@@ -131,10 +127,10 @@ export default function ShopPage() {
                   </Sheet>
 
                   <div className="hidden sm:flex items-center gap-2">
-                    <Button variant="ghost" size="icon" className="text-secondary bg-secondary/10 rounded-lg">
+                    <Button variant="ghost" size="icon" className="text-secondary bg-secondary/10 rounded-lg h-9 w-9">
                       <LayoutGrid size={18} />
                     </Button>
-                    <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary rounded-lg">
+                    <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary rounded-lg h-9 w-9">
                       <List size={18} />
                     </Button>
                   </div>
@@ -185,8 +181,8 @@ export default function ShopPage() {
                             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
                             <p className="text-primary font-bold text-lg md:text-2xl leading-none">₹{p.price}</p>
                           </div>
-                          <div className="w-11 h-11 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
-                            <Plus size={22} />
+                          <div className="w-8 h-8 md:w-11 md:h-11 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
+                            <Plus className="size-4 md:size-5" />
                           </div>
                         </div>
                       </div>
@@ -196,8 +192,8 @@ export default function ShopPage() {
               ) : (
                 <div className="py-20 text-center bg-white rounded-3xl border border-dashed border-border">
                   <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-20" />
-                  <h3 className="text-xl font-bold text-primary">No products match your filters</h3>
-                  <p className="text-muted-foreground mt-2">Try adjusting your category or prescription settings.</p>
+                  <h3 className="text-xl font-bold text-primary">No matching products found</h3>
+                  <p className="text-muted-foreground mt-2">Adjust your filters to see more medical supplies.</p>
                   <Button 
                     variant="link" 
                     className="mt-4 text-secondary font-bold"

@@ -129,8 +129,8 @@ export function ProductCatalog() {
                       <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
                       <p className="text-primary font-bold text-base md:text-xl leading-none">₹{p.price}</p>
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
-                      <Plus size={20} />
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
+                      <Plus className="size-4 md:size-5" />
                     </div>
                   </div>
                 </div>
