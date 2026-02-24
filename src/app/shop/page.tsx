@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -10,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const allProducts = [
   { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Pharmaceuticals", price: "120.00", img: "https://picsum.photos/seed/p1/600/600", rx: true },
@@ -134,52 +136,7 @@ export default function ShopPage() {
               {filteredProducts.length > 0 ? (
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {filteredProducts.map((p) => (
-                    <Link 
-                      key={p.id} 
-                      href={`/products/${p.id}`}
-                      className="group relative bg-white rounded-[2rem] border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
-                    >
-                      <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
-                        <Image 
-                          src={p.img} 
-                          alt={p.name} 
-                          fill 
-                          className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                        />
-                        <div className="absolute top-4 left-4 z-10">
-                          <Badge className="bg-white/95 text-primary hover:bg-white text-[10px] font-bold border-none shadow-md backdrop-blur-md px-3 py-1 rounded-full">
-                            {p.cat}
-                          </Badge>
-                        </div>
-                        {p.rx && (
-                          <div className="absolute top-4 right-4 z-10">
-                            <Badge className="bg-destructive text-white border-none text-[8px] px-2 py-0.5 rounded-full uppercase">
-                              Rx
-                            </Badge>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="p-5 flex-1 flex flex-col relative z-10 bg-white/70 backdrop-blur-md border-t border-muted/20">
-                        <h3 className="text-primary font-headline font-bold text-sm md:text-lg group-hover:text-secondary transition-colors line-clamp-2 leading-tight mb-1">
-                          {p.name}
-                        </h3>
-                        
-                        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-6 opacity-80">
-                          {p.company}
-                        </p>
-
-                        <div className="mt-auto flex items-center justify-between">
-                          <div>
-                            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
-                            <p className="text-primary font-bold text-lg md:text-2xl leading-none">₹{p.price}</p>
-                          </div>
-                          <div className="w-8 h-8 md:w-11 md:h-11 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
-                            <Plus className="size-4 md:size-5" />
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                    <ShopProductCard key={p.id} product={p} />
                   ))}
                 </div>
               ) : (
@@ -199,5 +156,59 @@ export default function ShopPage() {
 
       <Footer />
     </main>
+  );
+}
+
+function ShopProductCard({ product }: { product: any }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <Link 
+      href={`/products/${product.id}`}
+      className="group relative bg-white rounded-[2rem] border border-border hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 overflow-hidden flex flex-col h-full card-wave-pattern transform hover:-translate-y-1"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted/30">
+        {isLoading && <Skeleton className="absolute inset-0 z-10" />}
+        <Image 
+          src={product.img} 
+          alt={product.name} 
+          fill 
+          onLoad={() => setIsLoading(false)}
+          className={`object-cover group-hover:scale-110 transition-transform duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`} 
+        />
+        <div className="absolute top-4 left-4 z-10">
+          <Badge className="bg-white/95 text-primary hover:bg-white text-[10px] font-bold border-none shadow-md backdrop-blur-md px-3 py-1 rounded-full">
+            {product.cat}
+          </Badge>
+        </div>
+        {product.rx && (
+          <div className="absolute top-4 right-4 z-10">
+            <Badge className="bg-destructive text-white border-none text-[8px] px-2 py-0.5 rounded-full uppercase">
+              Rx
+            </Badge>
+          </div>
+        )}
+      </div>
+
+      <div className="p-5 flex-1 flex flex-col relative z-10 bg-white/70 backdrop-blur-md border-t border-muted/20">
+        <h3 className="text-primary font-headline font-bold text-sm md:text-lg group-hover:text-secondary transition-colors line-clamp-2 leading-tight mb-1">
+          {product.name}
+        </h3>
+        
+        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-6 opacity-80">
+          {product.company}
+        </p>
+
+        <div className="mt-auto flex items-center justify-between">
+          <div>
+            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-[0.1em] leading-none mb-1 opacity-70">Wholesale Price</p>
+            <p className="text-primary font-bold text-lg md:text-2xl leading-none">₹{product.price}</p>
+          </div>
+          <div className="w-8 h-8 md:w-11 md:h-11 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm border-none">
+            <Plus className="size-4 md:size-5" />
+          </div>
+        </div>
+      </div>
+    </Link>
   );
 }
