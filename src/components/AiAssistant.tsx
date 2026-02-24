@@ -38,7 +38,7 @@ export function AiAssistant() {
 
   return (
     <>
-      {/* Floating Toggle Button - WhatsApp themed, no sparkle badge */}
+      {/* Floating Toggle Button */}
       <button 
         onClick={() => setIsOpen(true)}
         className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-[#128C7E] transition-all duration-300 group"
@@ -72,7 +72,7 @@ export function AiAssistant() {
               </div>
             </CardHeader>
 
-            <CardContent className="flex-1 overflow-y-auto p-6 bg-muted/30">
+            <CardContent className="flex-1 overflow-y-auto no-scrollbar p-6 bg-muted/30">
               <div className="space-y-6">
                 {!result && !isLoading && (
                   <div className="text-center py-12">
