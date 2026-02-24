@@ -65,11 +65,11 @@ export default function ProductDetailPage() {
             <div className="space-y-6">
               <div className="relative aspect-square bg-white rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
-                  <Badge className="bg-destructive hover:bg-destructive text-destructive-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-destructive hover:bg-destructive/90 text-destructive-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Prescription Required
                   </Badge>
                   <br />
-                  <Badge className="bg-accent hover:bg-accent text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-accent hover:bg-accent/90 text-accent-foreground border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
                     Cold Chain
                   </Badge>
                 </div>
@@ -85,10 +85,10 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg">
+                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg hover:bg-muted/90">
                     <Rotate3D className="mr-2" size={16} /> 360° View
                   </Button>
-                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg">
+                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg hover:bg-muted/90">
                     <PlayCircle className="mr-2" size={16} /> Video
                   </Button>
                 </div>
@@ -114,41 +114,42 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-8">
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shrink-0">
-                    <ThermometerSnowflake size={28} />
+              {/* Quality Badges Section - Refined sizes and gaps */}
+              <div className="bg-white p-5 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
+                    <ThermometerSnowflake size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-lg text-primary">Cold Chain Maintained</h4>
-                    <p className="text-sm text-muted-foreground mt-1">Stored between 2°C - 8°C throughout the supply chain.</p>
+                    <h4 className="font-bold text-sm md:text-base text-primary">Cold Chain Maintained</h4>
+                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout the supply chain.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary shrink-0">
-                    <BadgeCheck size={28} />
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <BadgeCheck size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-lg text-primary">WHO-GMP Certified</h4>
-                    <p className="text-sm text-muted-foreground mt-1">Sourced directly from authorized manufacturers.</p>
+                    <h4 className="font-bold text-sm md:text-base text-primary">WHO-GMP Certified</h4>
+                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Sourced directly from authorized manufacturers.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0">
-                    <FileText size={28} />
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <FileText size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-lg text-primary">Batch Tracking</h4>
-                    <p className="text-sm text-muted-foreground mt-1">Full traceability with Batch No. and Expiry Date.</p>
+                    <h4 className="font-bold text-sm md:text-base text-primary">Batch Tracking</h4>
+                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Full traceability with Batch No. and Expiry Date.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary shrink-0">
-                    <Microscope size={28} />
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                    <Microscope size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-lg text-primary">Lab Tested</h4>
-                    <p className="text-sm text-muted-foreground mt-1">Every batch passes rigorous quality checks.</p>
+                    <h4 className="font-bold text-sm md:text-base text-primary">Lab Tested</h4>
+                    <p className="text-[11px] md:text-xs text-muted-foreground leading-tight">Every batch passes rigorous quality checks.</p>
                   </div>
                 </div>
               </div>
@@ -239,10 +240,10 @@ export default function ProductDetailPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl h-14 font-bold text-lg">
+                    <Button size="lg" className="bg-primary hover:bg-primary/95 text-primary-foreground rounded-2xl h-14 font-bold text-lg">
                       <ShoppingCart className="mr-2" size={20} /> Add to Enquiry
                     </Button>
-                    <Button size="lg" className="bg-[#25D366] hover:bg-[#128C7E] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/20">
+                    <Button size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-secondary-foreground rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
