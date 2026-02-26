@@ -66,7 +66,10 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-[110]">
-        <nav className={cn("transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg", isScrolled ? "py-3 opacity-100" : "opacity-95")}>
+        <nav className={cn(
+          "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
+          isScrolled ? "py-2.5" : "py-4"
+        )}>
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 md:gap-4 shrink-0">
               <button className="md:hidden p-2 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -78,19 +81,19 @@ export function Header() {
               </NextLink>
             </div>
             
-            <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0 h-full">
               {navLinks.map((link) => (
                 <div 
                   key={link.name}
                   onMouseEnter={() => link.hasMegaMenu && setIsMegaMenuOpen(true)}
                   onMouseLeave={() => link.hasMegaMenu && setIsMegaMenuOpen(false)}
-                  className="relative h-full flex items-center"
+                  className="relative flex items-center h-full"
                 >
                   <NextLink 
                     href={link.href} 
                     className={cn(
-                      "font-bold transition-colors text-sm lg:text-base py-2", 
-                      isActive(link.href) ? "text-white underline underline-offset-8" : "text-white/80 hover:text-white"
+                      "font-bold transition-all text-sm lg:text-base py-4 flex items-center h-full border-b-2 border-transparent", 
+                      isActive(link.href) ? "text-white border-white" : "text-white/80 hover:text-white"
                     )}
                   >
                     {link.name}
@@ -98,59 +101,63 @@ export function Header() {
 
                   {/* Desktop Mega Menu */}
                   {link.hasMegaMenu && isMegaMenuOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[750px] animate-in fade-in slide-in-from-top-2 duration-200">
-                      <div className="bg-white rounded-[2rem] shadow-2xl border border-muted/20 overflow-hidden grid grid-cols-3">
-                        <div className="p-8 bg-muted/20">
-                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <LayoutGrid size={14} className="text-secondary" /> Shop by Segment
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[850px] animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="bg-white rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-muted/20 overflow-hidden grid grid-cols-3">
+                        {/* Section 1: Segments */}
+                        <div className="p-8 bg-slate-50/50">
+                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <LayoutGrid size={14} /> Shop by Segment
                           </h4>
                           <div className="space-y-4">
                             {subNavItems.map((item) => (
                               <NextLink 
                                 key={item.name} 
                                 href={item.href}
-                                className="flex items-center gap-3 p-1 rounded-xl hover:text-secondary transition-all text-primary font-bold group/item"
+                                className="flex items-center gap-4 p-2 rounded-2xl hover:bg-white hover:shadow-sm hover:scale-[1.02] transition-all text-primary font-bold group/item"
                               >
-                                <span className="p-2 bg-white rounded-lg text-secondary group-hover/item:gradient-button group-hover/item:text-white transition-all shadow-sm">{item.icon}</span>
-                                <span className="text-xs">{item.name}</span>
+                                <span className="p-2.5 bg-white rounded-xl text-secondary group-hover/item:gradient-button group-hover/item:text-white transition-all shadow-sm border border-muted/20">{item.icon}</span>
+                                <span className="text-sm">{item.name}</span>
                               </NextLink>
                             ))}
                           </div>
                         </div>
 
-                        <div className="p-8 bg-white border-x">
-                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <Building2 size={14} className="text-secondary" /> Top Manufacturers
+                        {/* Section 2: Brands */}
+                        <div className="p-8 bg-white border-x border-slate-100">
+                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <Building2 size={14} /> Top Manufacturers
                           </h4>
                           <div className="grid grid-cols-1 gap-1">
                             {brands.map((brand) => (
                               <NextLink 
                                 key={brand} 
                                 href={`/shop?q=${brand}`}
-                                className="text-[11px] font-bold text-muted-foreground hover:text-secondary p-2.5 rounded-xl hover:bg-muted/30 transition-all flex items-center justify-between group/brand"
+                                className="text-sm font-semibold text-primary/70 hover:text-secondary p-2 rounded-xl hover:bg-slate-50 transition-all flex items-center justify-between group/brand"
                               >
                                 {brand}
-                                <ChevronRight size={12} className="opacity-0 group-hover/brand:opacity-100 transition-opacity" />
+                                <ChevronRight size={14} className="opacity-0 group-hover/brand:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                               </NextLink>
                             ))}
                           </div>
-                          <Button asChild variant="link" className="mt-4 p-0 h-auto text-xs font-bold text-secondary">
-                            <NextLink href="/shop">View all 29+ Partners →</NextLink>
-                          </Button>
+                          <NextLink href="/shop" className="mt-6 inline-flex items-center text-[11px] font-bold text-secondary hover:underline px-2">
+                            View all 29+ Partners <ArrowRight size={12} className="ml-1" />
+                          </NextLink>
                         </div>
 
-                        <div className="p-8 bg-muted/5">
-                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <Activity size={14} className="text-secondary" /> Health Concerns
+                        {/* Section 3: Concerns */}
+                        <div className="p-8 bg-slate-50/30">
+                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <Activity size={14} /> Health Concerns
                           </h4>
-                          <div className="grid grid-cols-1 gap-2">
+                          <div className="grid grid-cols-1 gap-2.5">
                             {['Gastric Care', 'Diabetes', 'Heart Care', 'Liver Care', 'Bone & Joint', 'Kidney Care', 'Derma Care'].map((concern) => (
                               <NextLink 
                                 key={concern} 
                                 href={`/shop?q=${concern}`}
-                                className="text-[11px] font-medium text-muted-foreground hover:text-secondary p-2 rounded-lg hover:bg-white hover:shadow-sm transition-all"
+                                className="text-sm font-medium text-primary/60 hover:text-secondary flex items-center gap-2 group/concern"
                               >
-                                • {concern}
+                                <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover/concern:bg-secondary transition-colors" />
+                                {concern}
                               </NextLink>
                             ))}
                           </div>
@@ -161,12 +168,12 @@ export function Header() {
                 </div>
               ))}
               
-              <div className="flex items-center gap-4">
-                <NextLink href="/shop" className="relative p-2 text-white hover:opacity-80">
+              <div className="flex items-center gap-4 ml-4">
+                <NextLink href="/shop" className="relative p-2 text-white hover:scale-110 transition-transform">
                   <ShoppingCart size={24} />
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
+                  <span className="absolute top-0 right-0 w-4.5 h-4.5 bg-accent text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-md border-2 border-primary">0</span>
                 </NextLink>
-                <Button onClick={handleEnquiryClick} className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-lg transition-all font-bold text-sm lg:text-base border-none">
+                <Button onClick={handleEnquiryClick} className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-xl transition-all font-bold text-sm lg:text-base border-none h-11">
                   Enquiry Portal
                 </Button>
               </div>
@@ -175,19 +182,22 @@ export function Header() {
             <div className="flex items-center md:hidden gap-3">
                <NextLink href="/shop" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-primary">0</span>
                 </NextLink>
             </div>
           </div>
         </nav>
 
-        <div className={cn("bg-white/10 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300", isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100")}>
+        <div className={cn(
+          "bg-white/10 backdrop-blur-md hidden md:block border-t border-white/5 transition-all duration-300",
+          isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100"
+        )}>
           <div className="max-w-7xl mx-auto px-8">
             <div className="flex items-center justify-center gap-8 lg:gap-12">
               {subNavItems.map((item) => (
-                <NextLink key={item.name} href={item.href} className="flex items-center gap-2 text-white/80 hover:text-white transition-all group">
-                  <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
-                  <span className="text-[11px] lg:text-[12px] font-bold tracking-tight whitespace-nowrap uppercase">{item.name}</span>
+                <NextLink key={item.name} href={item.href} className="flex items-center gap-2 text-white/70 hover:text-white transition-all group">
+                  <span className="group-hover:scale-110 transition-transform opacity-80 group-hover:opacity-100">{item.icon}</span>
+                  <span className="text-[11px] font-bold tracking-tight whitespace-nowrap uppercase">{item.name}</span>
                 </NextLink>
               ))}
             </div>
@@ -203,7 +213,7 @@ export function Header() {
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)} 
                 className={cn(
-                  "font-bold text-base py-3 border-b border-muted/10 flex items-center justify-between", 
+                  "font-bold text-base py-4 border-b border-muted/10 flex items-center justify-between", 
                   isActive(link.href) ? "text-primary" : "text-muted-foreground"
                 )}
               >
@@ -211,13 +221,13 @@ export function Header() {
                 <ChevronRight size={16} className="opacity-30" />
               </NextLink>
             ))}
-            <div className="grid grid-cols-2 gap-2 mt-4">
+            <div className="grid grid-cols-2 gap-3 mt-6">
               {subNavItems.map((item) => (
                 <NextLink 
                   key={item.name} 
                   href={item.href} 
                   onClick={() => setIsMobileMenuOpen(false)} 
-                  className="flex items-center gap-2 p-3 bg-muted/40 rounded-xl text-[11px] font-bold text-primary border border-transparent hover:border-secondary/20 transition-all"
+                  className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl text-xs font-bold text-primary border border-slate-100 hover:border-secondary/20 transition-all"
                 >
                   <span className="text-secondary">{item.icon}</span> {item.name}
                 </NextLink>
@@ -225,7 +235,7 @@ export function Header() {
             </div>
             <Button 
               onClick={handleEnquiryClick} 
-              className="w-full gradient-button text-white mt-6 h-14 font-bold rounded-xl shadow-lg border-none"
+              className="w-full gradient-button text-white mt-8 h-14 font-bold rounded-2xl shadow-lg border-none"
             >
               Enquiry Portal
             </Button>
@@ -235,7 +245,7 @@ export function Header() {
       </header>
 
       {/* Bottom Navigation for Mobile */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-[102] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
+      <div className="md:hidden fixed bottom-6 left-6 right-6 z-[102] medical-gradient-dark rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/10 p-3 flex justify-around items-center">
         <NextLink href="/" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Home</span>
@@ -244,13 +254,13 @@ export function Header() {
           <LayoutGrid size={20} className={cn(isActive('/shop') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Shop</span>
         </NextLink>
-        <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-10 shadow-xl border-4 border-primary relative z-[103]">
-          <Phone className="text-primary" size={24} />
+        <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-12 shadow-2xl border-4 border-primary relative z-[103] group active:scale-95 transition-transform">
+          <Phone className="text-primary group-hover:rotate-12 transition-transform" size={24} />
         </button>
         <NextLink href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px] font-bold">Cart</span>
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center border border-primary">0</span>
         </NextLink>
         <NextLink href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white/60 hover:text-white">
           <WhatsAppIcon className="w-5 h-5" />
