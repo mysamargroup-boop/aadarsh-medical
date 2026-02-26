@@ -13,6 +13,9 @@ export interface Product {
   description: string;
   usage?: string;
   type?: 'Popular' | 'Focus';
+  benefits?: string;
+  sideEffects?: string;
+  storage?: string;
 }
 
 /**
@@ -46,7 +49,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-1",
     name: "Cefiwok CV",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 320.50,
     img: "https://picsum.photos/seed/dr1/600/600",
@@ -55,13 +58,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefixime 200 mg + Clavulanic acid 125 mg",
     packing: "10x1x10's",
     description: "Cefiwok CV is a potent combination antibiotic. Cefixime belongs to the cephalosporin group and works by inhibiting bacterial cell wall synthesis. Clavulanic acid is a beta-lactamase inhibitor that prevents bacteria from destroying Cefixime, making it highly effective against resistant bacterial strains.",
-    usage: "Used for bacterial infections of the lungs, ears, throat, and urinary tract. Take exactly as prescribed, usually once or twice daily."
+    usage: "Used for bacterial infections of the lungs, ears, throat, and urinary tract. Take exactly as prescribed, usually once or twice daily.",
+    benefits: "Effectively treats a wide range of bacterial infections, particularly those resistant to other antibiotics. The combination of ingredients enhances its efficacy.",
+    sideEffects: "Common side effects may include diarrhea, nausea, vomiting, and abdominal pain. Inform your doctor if any of these persist or worsen.",
+    storage: "Store in a cool, dry place away from direct sunlight. Keep out of reach of children."
   },
   {
     id: "dr-reddy-2",
     name: "Cefiwok-O Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 192.50,
     img: "https://picsum.photos/seed/dr2/600/600",
@@ -70,13 +76,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefixime 200mg + Ofloxacin 200mg",
     packing: "10x10's",
     description: "A dual-action antibiotic combining Cefixime (Cephalosporin) and Ofloxacin (Fluoroquinolone). This combination provides a broad spectrum of activity against both aerobic and anaerobic bacteria, commonly used for complicated respiratory and urinary tract infections.",
-    usage: "Treats severe respiratory, skin, and abdominal infections. Take after meals to avoid stomach upset."
+    usage: "Treats severe respiratory, skin, and abdominal infections. Take after meals to avoid stomach upset.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-3",
     name: "Fluerma 150",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 13.40,
     img: "https://picsum.photos/seed/dr3/600/600",
@@ -85,13 +94,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Fluconazole 150mg",
     packing: "50X1X1",
     description: "Fluerma 150 contains Fluconazole, a powerful antifungal medication. It works by stopping the growth of certain types of fungus and is used to treat a variety of fungal and yeast infections.",
-    usage: "Single dose often used for vaginal yeast infections. Consult physician for systemic fungal treatments."
+    usage: "Single dose often used for vaginal yeast infections. Consult physician for systemic fungal treatments.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-4",
     name: "Norilet OZ Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 107.80,
     img: "https://picsum.photos/seed/dr4/600/600",
@@ -100,13 +112,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ofloxacin 200mg + Ornidazole 500mg",
     packing: "20x10's",
     description: "A combination medicine used to treat gastrointestinal infections such as acute diarrhea or dysentery. Ofloxacin kills bacteria while Ornidazole kills amoeba and other infectious microorganisms.",
-    usage: "Specifically for bacterial and parasitic diarrhea. Complete the full course even if feeling better."
+    usage: "Specifically for bacterial and parasitic diarrhea. Complete the full course even if feeling better.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-5",
     name: "ORO-CV Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 208.36,
     img: "https://picsum.photos/seed/dr5/600/600",
@@ -115,13 +130,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Amoxycillin 500mg + Clavulanic Acid 125mg",
     packing: "10x1x10's",
     description: "A gold-standard antibiotic combination. Amoxycillin is a broad-spectrum penicillin, and Clavulanic Acid protects it from being broken down by bacterial enzymes, ensuring efficacy against a wide range of common infections.",
-    usage: "Broad-spectrum use for ear, nose, throat, and skin infections. Often taken twice daily."
+    usage: "Broad-spectrum use for ear, nose, throat, and skin infections. Often taken twice daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-6",
     name: "Podoxim 200 Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 208.50,
     img: "https://picsum.photos/seed/dr6/600/600",
@@ -130,13 +148,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefpodoxime Tablets 200mg",
     packing: "10x10's",
     description: "Podoxim 200 contains Cefpodoxime, a third-generation cephalosporin antibiotic. It is highly effective against a variety of bacterial infections, including those of the respiratory tract, urinary tract, and skin.",
-    usage: "Commonly used for pneumonia and pharyngitis. Swallow whole with water."
+    usage: "Commonly used for pneumonia and pharyngitis. Swallow whole with water.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-7",
     name: "Podoxim CV DS",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 135.00,
     img: "https://picsum.photos/seed/dr7/600/600",
@@ -145,13 +166,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefpodoxime 50mg + Clavulanic acid 31.25mg",
     packing: "8x1x30 ml",
     description: "A pediatric dry suspension combining Cefpodoxime and Clavulanic Acid. This formulation provides enhanced stability and efficacy for treating moderate to severe bacterial infections in children.",
-    usage: "Pediatric use for respiratory infections. Shake well before use and store in a cool place after reconstitution."
+    usage: "Pediatric use for respiratory infections. Shake well before use and store in a cool place after reconstitution.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-8",
     name: "Podoxim DS 100 (Glass)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 174.75,
     img: "https://picsum.photos/seed/dr8/600/600",
@@ -160,13 +184,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefpodoxime 100mg/5ml",
     packing: "3 X 4 X 2 X 1",
     description: "High-strength Cefpodoxime oral suspension in a premium glass bottle for better stability. Used for treating various bacterial infections in children where a 100mg/5ml concentration is required.",
-    usage: "Higher concentration for severe pediatric infections. Reconstitute with sterile water as directed."
+    usage: "Higher concentration for severe pediatric infections. Reconstitute with sterile water as directed.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-10",
     name: "Podoxim-Cv 200 Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 396.00,
     img: "https://picsum.photos/seed/dr10/600/600",
@@ -175,13 +202,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefpodoxime proxetil 200mg + Clavulanic Acid 125mg",
     packing: "10X1X10's",
     description: "A powerful combination of Cefpodoxime Proxetil and Clavulanic Acid. This medication is used for treating more resistant bacterial infections of the lungs, throat, and urinary tract.",
-    usage: "Reserved for severe or resistant bacterial infections. Take with food."
+    usage: "Reserved for severe or resistant bacterial infections. Take with food.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-13",
     name: "Powercef Injection",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 71.01,
     img: "https://picsum.photos/seed/dr13/600/600",
@@ -190,13 +220,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ceftriaxone 1g with WFI",
     packing: "20x1x1's",
     description: "Powercef (Ceftriaxone) is a broad-spectrum injectable antibiotic used for serious infections like meningitis, sepsis, and surgical prophylaxis. Supplied with Sterile Water for Injection.",
-    usage: "Hospital setting use for severe infections. IV or IM administration by a healthcare professional."
+    usage: "Hospital setting use for severe infections. IV or IM administration by a healthcare professional.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-14",
     name: "Powercef T",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 224.95,
     img: "https://picsum.photos/seed/dr14/600/600",
@@ -205,13 +238,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ceftriaxone + Tazobactam",
     packing: "25 X 1",
     description: "A combination of Ceftriaxone and Tazobactam. Tazobactam is a beta-lactamase inhibitor that extends the spectrum of Ceftriaxone to include many beta-lactamase-producing bacteria.",
-    usage: "Treats intra-abdominal and pelvic infections. Administered via IV infusion."
+    usage: "Treats intra-abdominal and pelvic infections. Administered via IV infusion.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-15",
     name: "Powercef-S Injection",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 202.50,
     img: "https://picsum.photos/seed/dr15/600/600",
@@ -220,13 +256,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ceftriaxone & Sulbactam 1.5g",
     packing: "10x1x1's",
     description: "A premium injectable combination of Ceftriaxone and Sulbactam. Used for severe hospital-acquired infections and cases where resistance to single-agent antibiotics is suspected.",
-    usage: "Used for surgical prophylaxis and complicated skin infections. Requires clinical monitoring."
+    usage: "Used for surgical prophylaxis and complicated skin infections. Requires clinical monitoring.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-16",
     name: "Tricefuro 250",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 302.15,
     img: "https://picsum.photos/seed/dr16/600/600",
@@ -235,13 +274,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefuroxime Axetil 250mg",
     packing: "10 X 1 X 10",
     description: "Tricefuro contains Cefuroxime Axetil, a second-generation cephalosporin. It is highly effective against respiratory tract infections, sinus infections, and skin infections.",
-    usage: "Standard dose for throat and ear infections. Take after a meal to enhance absorption."
+    usage: "Standard dose for throat and ear infections. Take after a meal to enhance absorption.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-17",
     name: "Tricefuro 500",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 586.04,
     img: "https://picsum.photos/seed/dr17/600/600",
@@ -250,13 +292,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefuroxime Axetil 500mg",
     packing: "10 X 1 X 10",
     description: "Double strength Cefuroxime Axetil for more severe or chronic bacterial infections. Ensures high peak plasma concentrations for effective bacterial eradication.",
-    usage: "Treats chronic bronchitis and severe UTI. Usual dose is twice daily."
+    usage: "Treats chronic bronchitis and severe UTI. Usual dose is twice daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-18",
     name: "Tricefuro CV",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 650.50,
     img: "https://picsum.photos/seed/dr18/600/600",
@@ -265,13 +310,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefuroxime Axetil + Clavulanic Acid",
     packing: "10X1X10",
     description: "Advanced combination of Cefuroxime and Clavulanic Acid. This combination overcomes bacterial resistance, providing a reliable treatment option for complex infections.",
-    usage: "Advanced therapy for resistant sinus and chest infections. Strictly follow prescription timing."
+    usage: "Advanced therapy for resistant sinus and chest infections. Strictly follow prescription timing.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-19",
     name: "Fapenro 200",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 660.00,
     img: "https://picsum.photos/seed/dr19/600/600",
@@ -280,13 +328,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Faropenem 200mg",
     packing: "10 X 1 X 6",
     description: "Fapenro 200 contains Faropenem, a unique penem antibiotic. It has a broad spectrum of activity and is often used for severe respiratory and skin infections that do not respond to other antibiotics.",
-    usage: "Effective against Gram-positive and Gram-negative bacteria. Take thrice daily as directed."
+    usage: "Effective against Gram-positive and Gram-negative bacteria. Take thrice daily as directed.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-20",
     name: "Fapenro ER 300",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 830.00,
     img: "https://picsum.photos/seed/dr20/600/600",
@@ -295,13 +346,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Faropenem 300mg Extended Release",
     packing: "10 X 1 X 6",
     description: "Extended-release Faropenem for sustained therapeutic levels and improved patient compliance. Ideal for once-daily dosing in chronic or severe bacterial infections.",
-    usage: "Extended release for better compliance. Do not crush or chew the tablet."
+    usage: "Extended release for better compliance. Do not crush or chew the tablet.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-21",
     name: "Rifinimx 200",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 251.50,
     img: "https://picsum.photos/seed/dr21/600/600",
@@ -310,13 +364,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Rifaximin 200mg",
     packing: "10 X 1 X 10",
     description: "Rifinimx 200 contains Rifaximin, a non-absorbable antibiotic. It acts locally in the gastrointestinal tract and is used to treat traveler's diarrhea and irritable bowel syndrome.",
-    usage: "Locally acting antibiotic for gut health. Used for diarrhea and IBS symptoms."
+    usage: "Locally acting antibiotic for gut health. Used for diarrhea and IBS symptoms.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-22",
     name: "Rifinimx 400",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 520.25,
     img: "https://picsum.photos/seed/dr22/600/600",
@@ -325,13 +382,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Rifaximin 400mg",
     packing: "10 X 1 X 10",
     description: "Standard dose Rifaximin for the prevention of hepatic encephalopathy recurrence and treatment of small intestinal bacterial overgrowth (SIBO).",
-    usage: "Prevents recurrence of liver-related brain fog. Long-term use requires monitoring."
+    usage: "Prevents recurrence of liver-related brain fog. Long-term use requires monitoring.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-23",
     name: "Rifinimx 550",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 602.25,
     img: "https://picsum.photos/seed/dr23/600/600",
@@ -340,13 +400,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Rifaximin 550mg",
     packing: "10 X 1 X 10",
     description: "High-dose Rifaximin specifically indicated for the reduction in risk of overt hepatic encephalopathy recurrence in adults.",
-    usage: "High-dose gut-specific antibiotic. Often taken twice daily."
+    usage: "High-dose gut-specific antibiotic. Often taken twice daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-24",
     name: "Tri-Cefuro Inj",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anti-Infectives",
     price: 386.02,
     img: "https://picsum.photos/seed/dr24/600/600",
@@ -355,7 +418,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Cefuroxime 1500mg with WFI",
     packing: "8 X 1 X 1",
     description: "Injectable Cefuroxime (1.5g) for intensive care settings. Provides broad-spectrum coverage against many Gram-positive and Gram-negative organisms.",
-    usage: "Pre-operative prophylaxis and severe respiratory infections. Clinical use only."
+    usage: "Pre-operative prophylaxis and severe respiratory infections. Clinical use only.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // DERMATOLOGY
@@ -363,7 +429,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-25",
     name: "Baxysporin Powder",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 85.00,
     img: "https://picsum.photos/seed/dr25/600/600",
@@ -372,13 +438,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Neomycin sulphate IP 5mg + Bacitracin zinc IP 250 units + Sulphacetamide sodium IP 60 mg",
     packing: "10x10g",
     description: "Baxysporin Powder is a triple antibiotic powder containing Neomycin, Bacitracin, and Sulphacetamide. It is used to prevent and treat minor skin infections caused by small cuts, scrapes, or burns.",
-    usage: "Clean the area and sprinkle lightly 1-3 times daily. Do not use on large open wounds."
+    usage: "Clean the area and sprinkle lightly 1-3 times daily. Do not use on large open wounds.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-26",
     name: "Candigurd B",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 98.00,
     img: "https://picsum.photos/seed/dr26/600/600",
@@ -387,13 +456,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Clotrimazole 1% w/w + Beclometasone Dipropionate 0.025% Cream",
     packing: "20x1x10g",
     description: "Candigurd B Cream treats various skin infections associated with inflammation. Clotrimazole is an antifungal, while Beclometasone is a steroid that reduces redness and itching.",
-    usage: "Apply a thin layer to the affected area twice daily. Avoid contact with eyes."
+    usage: "Apply a thin layer to the affected area twice daily. Avoid contact with eyes.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-27",
     name: "Candigurd Powder (Small)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 104.50,
     img: "https://picsum.photos/seed/dr27/600/600",
@@ -402,13 +474,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Clotrimazole 1% w/w Powder",
     packing: "6x1's",
     description: "Antifungal dusting powder effective for prickly heat, sweat-induced fungal infections, and skin irritation in folds.",
-    usage: "Dust liberally over the affected area, especially in skin folds. Use after bathing."
+    usage: "Dust liberally over the affected area, especially in skin folds. Use after bathing.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-28",
     name: "Candigurd Powder (Large)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 148.50,
     img: "https://picsum.photos/seed/dr28/600/600",
@@ -417,13 +492,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Clotrimazole 1% w/w Powder",
     packing: "5x1's",
     description: "Bulk antifungal powder for larger areas. Prevents fungal growth and keeps skin dry.",
-    usage: "Apply twice daily to moisture-prone areas to prevent fungal recurrence."
+    usage: "Apply twice daily to moisture-prone areas to prevent fungal recurrence.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-29",
     name: "Eclospan Cream",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 188.50,
     img: "https://picsum.photos/seed/dr29/600/600",
@@ -432,13 +510,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Beclomethasone dipropionate + Neomycin Sulphate + Miconazole Nitrate",
     packing: "25x1x15g",
     description: "Comprehensive triple-action cream for mixed skin infections (bacterial, fungal, and inflammatory).",
-    usage: "Apply thin layer 2-3 times daily as prescribed for mixed infections."
+    usage: "Apply thin layer 2-3 times daily as prescribed for mixed infections.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-30",
     name: "Eclospan M",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 225.00,
     img: "https://picsum.photos/seed/dr30/600/600",
@@ -447,13 +528,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Mometasone (0.1 % w/w) Cream",
     packing: "20x1x10g",
     description: "Medium-potency corticosteroid for reducing swelling, itchiness, and redness in conditions like eczema and psoriasis.",
-    usage: "Apply once daily to the affected skin area."
+    usage: "Apply once daily to the affected skin area.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-31",
     name: "Eclospan S",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 182.00,
     img: "https://picsum.photos/seed/dr31/600/600",
@@ -462,13 +546,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Clobetasol 0.05% w/w + Salicylic Acid 3% w/w Ointment",
     packing: "20x1x20g",
     description: "Potent steroid combined with a keratolytic to treat thick, scaly psoriasis plaques and chronic skin conditions.",
-    usage: "Apply 1-2 times daily to hard, scaly skin and psoriasis patches."
+    usage: "Apply 1-2 times daily to hard, scaly skin and psoriasis patches.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-32",
     name: "Ketoluxe ZPTO",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 410.00,
     img: "https://picsum.photos/seed/dr32/600/600",
@@ -477,13 +564,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ketoconazole 2% w/v + Pyrithione Zinc 1% w/v Shampoo",
     packing: "6 X 1 X 100ml",
     description: "Advanced anti-dandruff shampoo that kills fungi and regulates scalp health to prevent flaking.",
-    usage: "Leave lather for 3-5 minutes before rinsing. Use twice weekly."
+    usage: "Leave lather for 3-5 minutes before rinsing. Use twice weekly.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-33",
     name: "Candigurd Soap",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Dermatology",
     price: 95.00,
     img: "https://picsum.photos/seed/dr33/600/600",
@@ -492,7 +582,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Sulfiram (5%) Soap",
     packing: "12 X 1 (Shrink Wrap)",
     description: "Antiseptic soap used specifically for treating and preventing scabies and other skin parasites.",
-    usage: "Use during daily bath, focusing on affected areas. Rinse thoroughly."
+    usage: "Use during daily bath, focusing on affected areas. Rinse thoroughly.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // GASTRO INTESTINAL
@@ -500,7 +593,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-34",
     name: "Omez Lax L (100ml)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 131.25,
     img: "https://picsum.photos/seed/dr34/600/600",
@@ -509,13 +602,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Lactulose Solution 10g/15ml",
     packing: "100ml",
     description: "Osmotic laxative that softens stool and is used in the clinical management of hepatic encephalopathy.",
-    usage: "Constipation: 15-30ml daily. Liver conditions: As directed by MD."
+    usage: "Constipation: 15-30ml daily. Liver conditions: As directed by MD.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-35",
     name: "Omez Lax L (200ml)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 262.79,
     img: "https://picsum.photos/seed/dr35/600/600",
@@ -524,13 +620,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Lactulose Solution 10g/15ml",
     packing: "200ml",
     description: "Double volume pack for chronic constipation management. Safe for long-term physician-monitored use.",
-    usage: "Take with water or juice. Onset may take 24-48 hours."
+    usage: "Take with water or juice. Onset may take 24-48 hours.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-36",
     name: "Omezyme (Pineapple)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 160.00,
     img: "https://picsum.photos/seed/dr36/600/600",
@@ -539,13 +638,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml)",
     packing: "200ml",
     description: "Digestive enzyme complex that aids the digestion of starch and proteins, relieving post-meal bloating.",
-    usage: "Take 5-10ml immediately after major meals to reduce bloating."
+    usage: "Take 5-10ml immediately after major meals to reduce bloating.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-37",
     name: "Omezyme (Saunf)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 160.00,
     img: "https://picsum.photos/seed/dr37/600/600",
@@ -554,13 +656,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml)",
     packing: "200ml",
     description: "Digestive supplement in Fennel (Saunf) flavor to improve digestion and reduce dyspepsia symptoms.",
-    usage: "Adults: 10ml twice daily after meals for better digestion."
+    usage: "Adults: 10ml twice daily after meals for better digestion.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-38",
     name: "Rebalanz ORS",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 22.19,
     img: "https://picsum.photos/seed/dr38/600/600",
@@ -569,13 +674,16 @@ export const drReddyProducts: Product[] = [
     molecules: "WHO ORS Powder Formula",
     packing: "30x21g",
     description: "WHO-recommended oral rehydration salts for managing dehydration from diarrhea or heat stress.",
-    usage: "Dissolve entire 21g sachet in 1 liter of clean water. Sip daily."
+    usage: "Dissolve entire 21g sachet in 1 liter of clean water. Sip daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-39",
     name: "Rebalanz ORS Apple",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 29.40,
     img: "https://picsum.photos/seed/dr39/600/600",
@@ -584,13 +692,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ready-to-drink ORS Apple",
     packing: "30x1x200ml",
     description: "Immediate electrolyte replenishment in a refreshing apple flavor, perfect for pediatric use.",
-    usage: "Drink directly at signs of fatigue or dehydration. Best served cold."
+    usage: "Drink directly at signs of fatigue or dehydration. Best served cold.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-40",
     name: "Rebalanz ORS Orange",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 29.40,
     img: "https://picsum.photos/seed/dr40/600/600",
@@ -599,13 +710,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ready-to-drink ORS Orange",
     packing: "30x1x200ml",
     description: "Standard WHO-formula Orange flavored rehydration solution for rapid fluid recovery.",
-    usage: "Tear and sip as needed during high physical activity or diarrhea."
+    usage: "Tear and sip as needed during high physical activity or diarrhea.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-41",
     name: "Rediout + Chew Tab",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 35.00,
     img: "https://picsum.photos/seed/dr41/600/600",
@@ -614,13 +728,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Albendazole (400mg) + Ivermectin (6mg)",
     packing: "10x10's",
     description: "Anti-parasitic combination for treating a broad range of intestinal and systemic worm infestations.",
-    usage: "Single dose for deworming as per clinical recommendation."
+    usage: "Single dose for deworming as per clinical recommendation.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-42",
     name: "Rediout Chew Tab",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 9.26,
     img: "https://picsum.photos/seed/dr42/600/600",
@@ -629,13 +746,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Albendazole (400 mg)",
     packing: "10x10's",
     description: "Standard deworming agent effective against roundworms, hookworms, and other common parasites.",
-    usage: "Chew the tablet thoroughly before swallowing. Single dose therapy."
+    usage: "Chew the tablet thoroughly before swallowing. Single dose therapy.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-43",
     name: "Supadrot DS",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 160.00,
     img: "https://picsum.photos/seed/dr43/600/600",
@@ -644,13 +764,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Drotaverine (80 mg)",
     packing: "20X15",
     description: "High-strength antispasmodic for relief from severe smooth muscle spasms and renal colic pain.",
-    usage: "For severe stomach/kidney pain. 1-3 times daily as per intensity."
+    usage: "For severe stomach/kidney pain. 1-3 times daily as per intensity.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-44",
     name: "Udiwok 300 Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 637.00,
     img: "https://picsum.photos/seed/dr44/600/600",
@@ -659,13 +782,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ursodeoxycholic Acid 300mg",
     packing: "10x15's",
     description: "Clinically used for dissolving cholesterol gallstones and treating chronic primary biliary cirrhosis.",
-    usage: "Long-term liver therapy. Best taken with milk or fatty meal."
+    usage: "Long-term liver therapy. Best taken with milk or fatty meal.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-45",
     name: "Udiwok 150 Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 231.50,
     img: "https://picsum.photos/seed/dr45/600/600",
@@ -674,13 +800,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ursodeoxycholic Acid 150mg",
     packing: "10x10's",
     description: "Maintenance dose for gallstone management and supportive liver health therapy.",
-    usage: "Usually a night dose. Follow weight-based titration by MD."
+    usage: "Usually a night dose. Follow weight-based titration by MD.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-46",
     name: "Zovanta CT",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 277.98,
     img: "https://picsum.photos/seed/dr46/600/600",
@@ -689,13 +818,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cinitapride (3mg) SR + Pantoprazole (40mg) EC",
     packing: "10x1x10's",
     description: "Advanced PPI and prokinetic combination for treating GERD with associated gastric motility issues.",
-    usage: "Take 30-60 mins before breakfast. Do not crush capsules."
+    usage: "Take 30-60 mins before breakfast. Do not crush capsules.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-47",
     name: "Zovanta D",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 121.63,
     img: "https://picsum.photos/seed/dr47/600/600",
@@ -704,13 +836,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Pantoprazole 40mg + Domperidone 10mg",
     packing: "10X15's",
     description: "Reliable combination for acid reflux, heartburn, and associated nausea/bloating.",
-    usage: "Standard acid-nausea relief. Take on empty stomach daily."
+    usage: "Standard acid-nausea relief. Take on empty stomach daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-48",
     name: "Zovanta DSR Capsules",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 248.00,
     img: "https://picsum.photos/seed/dr48/600/600",
@@ -719,13 +854,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Pantoprazole 40mg + Domperidone 30mg SR",
     packing: "10X15's",
     description: "Prolonged-release formula for 24-hour protection against acid reflux and gastroparesis symptoms.",
-    usage: "Once daily before first meal. Sustained relief for 24 hours."
+    usage: "Once daily before first meal. Sustained relief for 24 hours.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-49",
     name: "Zovanta Injection",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 57.48,
     img: "https://picsum.photos/seed/dr49/600/600",
@@ -734,13 +872,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Pantoprazole 40mg IV",
     packing: "10X1X1",
     description: "Injectable PPI for acute hospital settings requiring rapid gastric acid suppression.",
-    usage: "IV only. Administered in hospital for acute ulcer bleeding."
+    usage: "IV only. Administered in hospital for acute ulcer bleeding.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-50",
     name: "Zovanta Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 211.00,
     img: "https://picsum.photos/seed/dr50/600/600",
@@ -749,13 +890,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Pantoprazole 40mg",
     packing: "10X15's",
     description: "Pure acid-blocker for reliable management of peptic ulcers and gastric acid hypersecretion.",
-    usage: "Standard PPI therapy. Swallow whole before breakfast."
+    usage: "Standard PPI therapy. Swallow whole before breakfast.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-51",
     name: "Comiffin+",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 220.00,
     img: "https://picsum.photos/seed/dr51/600/600",
@@ -764,13 +908,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Magnesium Hydroxide + Paraffin Oil + Sodium Picosulfate",
     packing: "170ml",
     description: "Triple-action laxative that softens stool and stimulates bowel movement for effective constipation relief.",
-    usage: "10-15ml at bedtime for comfortable next-morning results."
+    usage: "10-15ml at bedtime for comfortable next-morning results.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-52",
     name: "Supadrot",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 130.00,
     img: "https://picsum.photos/seed/dr52/600/600",
@@ -779,13 +926,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Drotaverine 40mg",
     packing: "20 X 15",
     description: "Standard strength antispasmodic for relieving abdominal pain, period cramps, and gut spasms.",
-    usage: "For menstrual/abdominal cramps. Up to 3 times daily."
+    usage: "For menstrual/abdominal cramps. Up to 3 times daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-53",
     name: "Supadrot M",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 200.00,
     img: "https://picsum.photos/seed/dr53/600/600",
@@ -794,13 +944,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Drotaverine (80mg) + Mefenamic Acid (250mg)",
     packing: "20 X 10",
     description: "Potent combined analgesic and antispasmodic for severe spasmodic and inflammatory pain.",
-    usage: "Severe period pain or intestinal colic. Take with food."
+    usage: "Severe period pain or intestinal colic. Take with food.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-54",
     name: "Zovanta L",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gastrointestinal",
     price: 200.35,
     img: "https://picsum.photos/seed/dr54/600/600",
@@ -809,7 +962,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Pantoprazole 40mg + Levosulpiride 75mg",
     packing: "10x1x10's",
     description: "Prokinetic and PPI combination for GERD complicated by functional dyspepsia.",
-    usage: "Improves gut speed and blocks acid. Morning dose preferred."
+    usage: "Improves gut speed and blocks acid. Morning dose preferred.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // GYNECOLOGY
@@ -817,7 +973,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-55",
     name: "Redihealth XT",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gynecology",
     price: 192.50,
     img: "https://picsum.photos/seed/dr55/600/600",
@@ -826,13 +982,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Ferrous Ascorbate + Folic Acid",
     packing: "5x3x10's",
     description: "Premium iron supplement for managing anemia during pregnancy and recovery.",
-    usage: "Once daily with water. Avoid dairy/tea for 1 hour after taking."
+    usage: "Once daily with water. Avoid dairy/tea for 1 hour after taking.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-56",
     name: "Styptochrome - E Injection",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gynecology",
     price: 25.41,
     img: "https://picsum.photos/seed/dr56/600/600",
@@ -841,13 +1000,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Etamsylate 125mg",
     packing: "10X5X2ml",
     description: "Hemostatic agent used to control excessive bleeding in surgeries or cycles.",
-    usage: "Professional IV/IM use for emergency bleeding control."
+    usage: "Professional IV/IM use for emergency bleeding control.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-57",
     name: "Trancynene M",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Gynecology",
     price: 372.40,
     img: "https://picsum.photos/seed/dr57/600/600",
@@ -856,7 +1018,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Tranexamic Acid + Mefenamic Acid",
     packing: "10X1X10",
     description: "Clinical solution for heavy menstrual bleeding and associated cramping.",
-    usage: "Take only during heavy flow days. Follow cycle schedule."
+    usage: "Take only during heavy flow days. Follow cycle schedule.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-58",
@@ -871,7 +1036,10 @@ export const drReddyProducts: Product[] = [
     molecules: "HCG Detection Card",
     packing: "30 X 1'S",
     description: "Highly sensitive rapid pregnancy diagnostic kit with 99% clinical accuracy.",
-    usage: "Use first morning urine sample for most accurate result."
+    usage: "Use first morning urine sample for most accurate result.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-59",
@@ -886,7 +1054,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Lactic Acid Intimate Wash",
     packing: "5x100ml",
     description: "Maintains natural pH balance and prevents itching/odor in sensitive areas.",
-    usage: "External daily use during bath. Rinse thoroughly after use."
+    usage: "External daily use during bath. Rinse thoroughly after use.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // PAIN & ANALGESICS
@@ -894,7 +1065,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-60",
     name: "Nicetamol 125",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 23.19,
     img: "https://picsum.photos/seed/dr60/600/600",
@@ -903,13 +1074,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Paracetamol 125mg/5ml",
     packing: "25x60ml",
     description: "Gentle fever and pain relief for infants in a kid-friendly strawberry flavor.",
-    usage: "Dose by child's weight. Safe for pediatric fever management."
+    usage: "Dose by child's weight. Safe for pediatric fever management.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-61",
     name: "Nicetamol 250",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 43.34,
     img: "https://picsum.photos/seed/dr61/600/600",
@@ -918,13 +1092,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Paracetamol 250mg/5ml",
     packing: "25x60ml",
     description: "High-strength paracetamol for effective fever control in older children.",
-    usage: "Higher dose for weight >10kg. Maximum 4 doses per day."
+    usage: "Higher dose for weight >10kg. Maximum 4 doses per day.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-62",
     name: "Nicetamol MF",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 49.00,
     img: "https://picsum.photos/seed/dr62/600/600",
@@ -933,13 +1110,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Mefenamic Acid + Paracetamol",
     packing: "60ml",
     description: "Stronger pediatric analgesic for high fever and inflammatory pain.",
-    usage: "Stronger pediatric fever/pain relief. Take with milk/food."
+    usage: "Stronger pediatric fever/pain relief. Take with milk/food.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-63",
     name: "Nicetamol MF DS",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 61.80,
     img: "https://picsum.photos/seed/dr63/600/600",
@@ -948,13 +1128,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Mefenamic Acid + Paracetamol DS",
     packing: "60ml",
     description: "Double strength dual-action analgesic for children with persistent fever.",
-    usage: "Use for high-grade pediatric fever. Follow weight chart carefully."
+    usage: "Use for high-grade pediatric fever. Follow weight chart carefully.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-64",
     name: "Nicetamol SP",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 148.75,
     img: "https://picsum.photos/seed/dr64/600/600",
@@ -963,13 +1146,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Aceclofenac + Paracetamol + Serratiopeptidase",
     packing: "20X10's",
     description: "Triple-action therapy for severe pain, fever, and post-traumatic swelling.",
-    usage: "Post-injury swelling and pain relief. Take after meals."
+    usage: "Post-injury swelling and pain relief. Take after meals.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-65",
     name: "Nise AP (Small)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 79.75,
     img: "https://picsum.photos/seed/dr65/600/600",
@@ -978,13 +1164,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Aceclofenac + Paracetamol",
     packing: "20x10's",
     description: "Standard daily pain management for joint pain, toothaches, and stiffness.",
-    usage: "General inflammatory pain. Twice daily after meals."
+    usage: "General inflammatory pain. Twice daily after meals.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-66",
     name: "Nise AP (Value Pack)",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 119.60,
     img: "https://picsum.photos/seed/dr66/600/600",
@@ -993,13 +1182,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Aceclofenac + Paracetamol Bulk",
     packing: "60x15's",
     description: "Economical bulk pack for chronic arthritic pain management.",
-    usage: "Ideal for chronic arthritis patients. Take as prescribed daily."
+    usage: "Ideal for chronic arthritis patients. Take as prescribed daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-67",
     name: "Nise AT4",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 286.75,
     img: "https://picsum.photos/seed/dr67/600/600",
@@ -1008,7 +1200,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Aceclofenac + Paracetamol + Thiocolchicoside",
     packing: "10x1x10's",
     description: "Complete solution for painful muscle spasms and stiff neck relief.",
-    usage: "Muscle relaxant and painkiller. Take with a glass of water."
+    usage: "Muscle relaxant and painkiller. Take with a glass of water.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-68",
@@ -1023,7 +1218,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Diclofenac 1.16% Spray",
     packing: "6x55g",
     description: "Rapid-action spray for joint pain and sports injuries without massage.",
-    usage: "Spray 3-4 times daily on painful area from 5cm distance."
+    usage: "Spray 3-4 times daily on painful area from 5cm distance.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-69",
@@ -1038,7 +1236,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Diclofenac 1.16% Spray",
     packing: "6x35g",
     description: "Portable pain relief spray for quick relief from backaches and pulls.",
-    usage: "Targeted spray for back and joint pain. Non-greasy formula."
+    usage: "Targeted spray for back and joint pain. Non-greasy formula.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-70",
@@ -1053,13 +1254,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Diclofenac + Linseed Oil + Methyl Salicylate",
     packing: "20 X 1 X 30g",
     description: "Triple-action gel that warms the area and reduces deep muscle pain.",
-    usage: "Gently rub into painful joints 3 times daily for relief."
+    usage: "Gently rub into painful joints 3 times daily for relief.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-71",
     name: "Chymopath Forte",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Pain & Analgesics",
     price: 450.00,
     img: "https://picsum.photos/seed/dr71/600/600",
@@ -1068,7 +1272,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Trypsin Chymotrypsin (1 Lakh AU)",
     packing: "10 X 20's",
     description: "Enzyme therapy to rapidly reduce surgical and traumatic swelling.",
-    usage: "Mandatory: Take on empty stomach 30 mins before food."
+    usage: "Mandatory: Take on empty stomach 30 mins before food.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-72",
@@ -1083,7 +1290,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Diclofenac 1.16% Spray",
     packing: "6x20g",
     description: "Travel-friendly first-aid spray for immediate injury relief.",
-    usage: "Emergency injury spray. Keep in first-aid or gym bag."
+    usage: "Emergency injury spray. Keep in first-aid or gym bag.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-73",
@@ -1098,7 +1308,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Diclofenac + Linseed Oil + Methyl Salicylate",
     packing: "10 Monocartons",
     description: "Professional bulk supply of high-efficacy pain relief gel.",
-    usage: "Professional clinic/home use. Rub twice daily for chronic pain."
+    usage: "Professional clinic/home use. Rub twice daily for chronic pain.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // RESPIRATORY
@@ -1106,7 +1319,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-74",
     name: "Acebrobid 100 Capsules",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 119.75,
     img: "https://picsum.photos/seed/dr74/600/600",
@@ -1115,13 +1328,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Acebrophylline 100mg",
     packing: "10x10's",
     description: "Bronchodilator and mucolytic for asthma and chronic bronchitis.",
-    usage: "Breathing aid. Usually 1 capsule twice daily after meals."
+    usage: "Breathing aid. Usually 1 capsule twice daily after meals.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-75",
     name: "Acebrobid 200",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 223.50,
     img: "https://picsum.photos/seed/dr75/600/600",
@@ -1130,13 +1346,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Acebrophylline 200 mg SR",
     packing: "10x1x10's",
     description: "Long-acting airway clearance for consistent management of COPD.",
-    usage: "Sustained-release tablet. Once daily at the same time."
+    usage: "Sustained-release tablet. Once daily at the same time.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-76",
     name: "Acebrobid-AC",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 245.00,
     img: "https://picsum.photos/seed/dr76/600/600",
@@ -1145,13 +1364,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Acebrophylline + Acetylcysteine",
     packing: "10x1x10's",
     description: "Dual therapy to relax airways and break down thick, sticky mucus.",
-    usage: "Break down sticky mucus. Drink 2-3 liters of water daily."
+    usage: "Break down sticky mucus. Drink 2-3 liters of water daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-77",
     name: "Acebrobid-M",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 202.40,
     img: "https://picsum.photos/seed/dr77/600/600",
@@ -1160,13 +1382,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Acebrophylline + Montelukast",
     packing: "10x1x10's",
     description: "Targets both airway narrowing and allergic inflammation triggers.",
-    usage: "Allergic asthma management. Night dose preferred by MDs."
+    usage: "Allergic asthma management. Night dose preferred by MDs.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-78",
     name: "Dialex Cold Syrup",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 121.25,
     img: "https://picsum.photos/seed/dr78/600/600",
@@ -1175,13 +1400,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Chlorpheniramine + Phenylephrine",
     packing: "60ml",
     description: "Relieves sneezing, runny nose, and nasal congestion from common colds.",
-    usage: "Cold and congestion relief. 5ml twice daily for adults."
+    usage: "Cold and congestion relief. 5ml twice daily for adults.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-79",
     name: "Dialex DC+ Syrup",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 130.00,
     img: "https://picsum.photos/seed/dr79/600/600",
@@ -1190,13 +1418,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Dextromethorphan + Chlorpheniramine",
     packing: "100ml",
     description: "Targeted cough suppressant for dry, irritating, non-productive coughs.",
-    usage: "Dry cough relief. May cause slight drowsiness."
+    usage: "Dry cough relief. May cause slight drowsiness.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-80",
     name: "Diltoris",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 229.30,
     img: "https://picsum.photos/seed/dr80/600/600",
@@ -1205,13 +1436,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Acetylcysteine 600mg Effervescent",
     packing: "10X1X10",
     description: "Fizzy orange tablet that clears excessive lung mucus and boosts antioxidants.",
-    usage: "Dissolve 1 tablet in 100ml water. Drink immediately once daily."
+    usage: "Dissolve 1 tablet in 100ml water. Drink immediately once daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-81",
     name: "FM 24 Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 271.25,
     img: "https://picsum.photos/seed/dr81/600/600",
@@ -1220,13 +1454,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Montelukast + Fexofenadine",
     packing: "10x10's",
     description: "Superior anti-allergic for hay fever and seasonal allergy symptoms.",
-    usage: "Non-drowsy allergy relief. Once daily at bedtime often."
+    usage: "Non-drowsy allergy relief. Once daily at bedtime often.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-82",
     name: "Nostriol",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 102.00,
     img: "https://picsum.photos/seed/dr82/600/600",
@@ -1235,13 +1472,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Oxymetazoline HCl",
     packing: "10 X 1 X 10ml",
     description: "Immediate relief from nasal blockage caused by colds or allergies.",
-    usage: "2 sprays per nostril. Use only for max 3 days consecutively."
+    usage: "2 sprays per nostril. Use only for max 3 days consecutively.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-83",
     name: "Throateasy GT Syrup",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 100.25,
     img: "https://picsum.photos/seed/dr83/600/600",
@@ -1250,7 +1490,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Ambroxol + Terbutaline + Guaiphenesin + Menthol",
     packing: "25x100 ml",
     description: "Quad-action expectorant for chesty, productive cough clearance.",
-    usage: "Expectorant for productive cough. 10ml thrice daily."
+    usage: "Expectorant for productive cough. 10ml thrice daily.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-84",
@@ -1265,7 +1508,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Dichlorobenzyl Alcohol + Amylmetacresol",
     packing: "24x10's",
     description: "Antiseptic throat soothing for irritation and mouth infections.",
-    usage: "Sore throat soothing. Dissolve slowly every 3 hours."
+    usage: "Sore throat soothing. Dissolve slowly every 3 hours.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-85",
@@ -1280,13 +1526,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Dichlorobenzyl Alcohol + Amylmetacresol",
     packing: "24x10's",
     description: "Antiseptic lozenges for rapid relief from painful sore throat.",
-    usage: "Throat antiseptic. Avoid eating/drinking for 15 mins after use."
+    usage: "Throat antiseptic. Avoid eating/drinking for 15 mins after use.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-86",
     name: "Defzacort 6",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 150.00,
     img: "https://picsum.photos/seed/dr86/600/600",
@@ -1295,13 +1544,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Deflazacort 6mg",
     packing: "20X1X10",
     description: "Potent anti-inflammatory steroid for asthma and joint inflammation.",
-    usage: "Steroid therapy. Take with food as directed by physician."
+    usage: "Steroid therapy. Take with food as directed by physician.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-87",
     name: "Nostriol S",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Respiratory",
     price: 70.00,
     img: "https://picsum.photos/seed/dr87/600/600",
@@ -1310,7 +1562,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Saline Nasal Solution",
     packing: "20 X 1 X 1",
     description: "Sterile saline to moisten dry nasal passages and clear crusting.",
-    usage: "Nasal hygiene. Safe for frequent daily use for all ages."
+    usage: "Nasal hygiene. Safe for frequent daily use for all ages.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // VMS
@@ -1327,13 +1582,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cholecalciferol 60000 IU",
     packing: "10X8'S",
     description: "High-dose Vitamin D3 for bone health and calcium absorption.",
-    usage: "Once weekly for 8 weeks. Take with fat-rich meal for absorption."
+    usage: "Once weekly for 8 weeks. Take with fat-rich meal for absorption.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-89",
     name: "Practin Syrup",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "VMS",
     price: 175.25,
     img: "https://picsum.photos/seed/dr89/600/600",
@@ -1342,13 +1600,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Cyproheptadine HCl",
     packing: "8X4X2",
     description: "Appetite stimulant and allergy relief for healthy weight gain.",
-    usage: "Appetite boost. Take 5ml thrice daily before meals."
+    usage: "Appetite boost. Take 5ml thrice daily before meals.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-90",
     name: "Redihealth Inj",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anemia",
     price: 327.03,
     img: "https://picsum.photos/seed/dr90/600/600",
@@ -1357,13 +1618,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Iron Succrose 100mg/5ml",
     packing: "20x1x5ml",
     description: "IV iron replacement for severe iron deficiency anemia cases.",
-    usage: "Clinical anemia IV treatment. Administered by professional only."
+    usage: "Clinical anemia IV treatment. Administered by professional only.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-91",
     name: "Redihealth Tablets",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Anemia",
     price: 171.50,
     img: "https://picsum.photos/seed/dr91/600/600",
@@ -1372,7 +1636,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Sodium Feredetate + Folic Acid + B12",
     packing: "10x15's",
     description: "High-bioavailability iron complex for managing deficiency anemia.",
-    usage: "Blood builder. Once daily morning dose after breakfast."
+    usage: "Blood builder. Once daily morning dose after breakfast.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-92",
@@ -1387,7 +1654,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Zinc + B-Complex + Vit C",
     packing: "8x30's",
     description: "Balanced multivitamin to boost immunity and energy recovery.",
-    usage: "Immunity booster. One capsule daily after major meal."
+    usage: "Immunity booster. One capsule daily after major meal.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-93",
@@ -1402,7 +1672,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Amino Acids + Minerals + Antioxidants",
     packing: "5x2x15's",
     description: "Premium daily wellness boost for vitality and focus support.",
-    usage: "Advanced vitality. Best taken once daily with breakfast."
+    usage: "Advanced vitality. Best taken once daily with breakfast.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
 
   // ORTHO
@@ -1410,7 +1683,7 @@ export const drReddyProducts: Product[] = [
     id: "dr-reddy-94",
     name: "Fbsoxta 40",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Ortho",
     price: 175.00,
     img: "https://picsum.photos/seed/dr94/600/600",
@@ -1419,13 +1692,16 @@ export const drReddyProducts: Product[] = [
     molecules: "Febuxostat 40mg",
     packing: "10x1x10's",
     description: "Uric acid reducer used specifically to prevent gout attacks.",
-    usage: "Gout prevention. Once daily morning dose regularly."
+    usage: "Gout prevention. Once daily morning dose regularly.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   },
   {
     id: "dr-reddy-95",
     name: "Fbsoxta 80",
     company: "Dr. Reddy's",
-    cat: "Pharmaceuticals",
+    cat: "Drugs",
     subCat: "Ortho",
     price: 270.00,
     img: "https://picsum.photos/seed/dr95/600/600",
@@ -1434,7 +1710,10 @@ export const drReddyProducts: Product[] = [
     molecules: "Febuxostat 80mg",
     packing: "10x1x10's",
     description: "High-strength therapy for effective uric acid control in gout.",
-    usage: "Strong gout control. Take consistently to prevent flares."
+    usage: "Strong gout control. Take consistently to prevent flares.",
+    benefits: "Placeholder for benefits. Please update.",
+    sideEffects: "Placeholder for sideEffects. Please update.",
+    storage: "Placeholder for storage. Please update."
   }
 ];
 

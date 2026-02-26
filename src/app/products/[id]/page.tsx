@@ -9,12 +9,10 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  ChevronRight, 
-  Heart, 
-  ShoppingCart, 
-  Rotate3D, 
-  PlayCircle,
+import {
+  ChevronRight,
+  Heart,
+  ShoppingCart,
   ThermometerSnowflake,
   FileText,
   BadgeCheck,
@@ -23,7 +21,10 @@ import {
   Stethoscope,
   Info,
   Clock,
-  ShieldCheck
+  ShieldCheck,
+  Package,
+  Leaf,
+  TriangleAlert,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
@@ -86,15 +87,6 @@ export default function ProductDetailPage() {
                     className="object-cover"
                   />
                 </div>
-
-                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-sm text-secondary rounded-full shadow-lg border-none">
-                    <Rotate3D className="mr-2" size={16} /> 360°
-                  </Button>
-                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-sm text-secondary rounded-full shadow-lg border-none">
-                    <PlayCircle className="mr-2" size={16} /> Video
-                  </Button>
-                </div>
               </div>
             </div>
 
@@ -117,11 +109,11 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Description & Usage */}
+              {/* Description, Usage, etc. */}
               <div className="space-y-6">
                 <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm">
                   <h3 className="text-primary font-bold text-lg mb-4 flex items-center gap-2">
-                    <Info className="text-secondary" size={20} /> Product Information
+                    <Info className="text-secondary" size={20} /> Formula
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
                 </div>
@@ -134,6 +126,33 @@ export default function ProductDetailPage() {
                     <p className="text-primary font-medium text-sm leading-relaxed">{product.usage}</p>
                   </div>
                 )}
+
+                {product.benefits && (
+                  <div className="bg-green-50 p-8 rounded-[2rem] border border-green-200 shadow-sm">
+                    <h3 className="text-green-800 font-bold text-lg mb-4 flex items-center gap-2">
+                      <Leaf size={20} /> Benefits
+                    </h3>
+                    <p className="text-green-700 font-medium text-sm leading-relaxed">{product.benefits}</p>
+                  </div>
+                )}
+
+                {product.sideEffects && (
+                  <div className="bg-red-50 p-8 rounded-[2rem] border border-red-200 shadow-sm">
+                    <h3 className="text-red-800 font-bold text-lg mb-4 flex items-center gap-2">
+                      <TriangleAlert size={20} /> Side Effects
+                    </h3>
+                    <p className="text-red-700 font-medium text-sm leading-relaxed">{product.sideEffects}</p>
+                  </div>
+                )}
+                
+                {product.storage && (
+                  <div className="bg-blue-50 p-8 rounded-[2rem] border border-blue-200 shadow-sm">
+                    <h3 className="text-blue-800 font-bold text-lg mb-4 flex items-center gap-2">
+                      <Package size={20} /> Storage
+                    </h3>
+                    <p className="text-blue-700 font-medium text-sm leading-relaxed">{product.storage}</p>
+                  </div>
+                )}
               </div>
 
               {/* Pricing Section */}
@@ -144,7 +163,7 @@ export default function ProductDetailPage() {
                       <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-1">Maximum Retail Price</p>
                       <div className="flex items-end gap-1">
                         <span className="text-4xl font-headline font-bold text-primary">₹{product.price.toFixed(2)}</span>
-                        <span className="text-muted-foreground font-bold text-xs mb-1">/ unit</span>
+                        <span className="text-muted-foreground font-bold text-xs mb-1">/strip</span>
                       </div>
                       <p className="text-[10px] text-muted-foreground mt-1 font-bold italic">*Incl. of all taxes (GST)</p>
                     </div>
@@ -201,14 +220,10 @@ export default function ProductDetailPage() {
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
-
-                  <p className="text-[10px] text-center text-muted-foreground flex items-center justify-center gap-2">
-                    <Clock size={12} /> Same-day processing for orders before 4 PM
-                  </p>
                 </CardContent>
               </Card>
 
-              {/* Quality Badges Section (Moved below buttons) */}
+              {/* Quality Badges Section */}
               <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
                 <h3 className="text-primary font-bold text-lg mb-2 flex items-center gap-2">
                   <ShieldCheck className="text-secondary" /> Quality Assurance
