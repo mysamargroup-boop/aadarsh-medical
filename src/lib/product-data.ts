@@ -1179,5 +1179,121 @@ export const products: Product[] = [
     packing: "20 X 1 X 1",
     description: "Nostriol S is a sterile saline nasal solution. It helps in moisturizing dry or irritated nasal passages and clearing nasal crusting or thick mucus, making it safe for regular use to maintain nasal hygiene.",
     type: "Focus"
+  },
+
+  // VMS (88-93)
+  {
+    id: "dr-reddy-88",
+    name: "Dr Excel D3 Capsules",
+    company: "Dr. Reddy's",
+    cat: "OTC & Healthcare",
+    price: 250.17,
+    img: "https://picsum.photos/seed/dr88/600/600",
+    rx: false,
+    format: "Capsule",
+    molecules: "Cholecalciferol Capsules USP 60000 IU",
+    packing: "10X8'S",
+    description: "A high-dose Vitamin D3 supplement used to treat and prevent vitamin D deficiency. Vitamin D is essential for calcium absorption and maintaining healthy bones and teeth.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-89",
+    name: "Practin Syrup",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 175.25,
+    img: "https://picsum.photos/seed/dr89/600/600",
+    rx: true,
+    format: "Syrup",
+    molecules: "Cyproheptadine HCl 2mg/5ml Syrup",
+    packing: "8X4X2",
+    description: "An antihistamine used to relieve allergy symptoms such as watery eyes, runny nose, and itching. It is also commonly prescribed as an appetite stimulant in underweight patients.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-90",
+    name: "Redihealth Inj",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 327.03,
+    img: "https://picsum.photos/seed/dr90/600/600",
+    rx: true,
+    format: "Injection",
+    molecules: "Iron Succrose Injection 100mg/5ml",
+    packing: "20x1x5ml",
+    description: "An intravenous iron replacement product used to treat iron deficiency anemia. It is particularly effective for patients who cannot tolerate oral iron or have chronic kidney conditions.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-91",
+    name: "Redihealth Tablets",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 171.50,
+    img: "https://picsum.photos/seed/dr91/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Sodium Feredetate 231mg, Folic Acid 1.5mg, Vitamin B12 15mcg Tablets",
+    packing: "10x15's",
+    description: "A comprehensive hematinic supplement for the management of iron deficiency. Sodium feredetate provides iron with high bioavailability and minimal gastrointestinal irritation.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-92",
+    name: "VitzBeco Capsules",
+    company: "Dr. Reddy's",
+    cat: "OTC & Healthcare",
+    price: 62.25,
+    img: "https://picsum.photos/seed/dr92/600/600",
+    rx: false,
+    format: "Capsule",
+    molecules: "Capsules of Zinc, B-Complex fortified with Vitamin C",
+    packing: "8x30's",
+    description: "A balanced multivitamin and mineral supplement designed to boost immunity, support energy production, and improve overall health during periods of recovery or nutritional deficiency.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-93",
+    name: "Winofit Gold Capsules",
+    company: "Dr. Reddy's",
+    cat: "OTC & Healthcare",
+    price: 296.25,
+    img: "https://picsum.photos/seed/dr93/600/600",
+    rx: false,
+    format: "Capsule",
+    molecules: "Amino acids, Minerals, Vitamins, Antioxidants with green tea extracts and wheat germ oil Capsules",
+    packing: "5x2x15's",
+    description: "A premium daily wellness supplement containing essential amino acids, minerals, and potent antioxidants like green tea extract to support vitality, improve focus, and protect against oxidative stress.",
+    type: "Focus"
+  },
+
+  // ORTHO (94-95)
+  {
+    id: "dr-reddy-94",
+    name: "Fbsoxta 40",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 175.00,
+    img: "https://picsum.photos/seed/dr94/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Febuxostat Tablets 40mg",
+    packing: "10x1x10's",
+    description: "A xanthine oxidase inhibitor used to lower uric acid levels in adults with gout. It works by inhibiting the enzyme responsible for uric acid production, preventing gout attacks.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-95",
+    name: "Fbsoxta 80",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 270.00,
+    img: "https://picsum.photos/seed/dr95/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Febuxostat Tablets 80mg",
+    packing: "10x1x10's",
+    description: "High-strength Febuxostat for the effective management of hyperuricemia in patients with gout. Provides superior uric acid control for those requiring more aggressive treatment.",
+    type: "Focus"
   }
 ];
