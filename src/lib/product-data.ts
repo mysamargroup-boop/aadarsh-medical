@@ -8,7 +8,7 @@ export interface Product {
   rx: boolean;
   molecules: string;
   packing: string;
-  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Capsule' | 'Gel' | 'Spray' | 'Test Kit' | 'Other';
+  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Capsule' | 'Gel' | 'Spray' | 'Test Kit' | 'Lozenges' | 'Other';
   description: string;
   type?: 'Popular' | 'Focus';
 }
@@ -980,6 +980,204 @@ export const products: Product[] = [
     molecules: "Diclofenac 1.16%, Virgin Linseed Oil & Methyl Salicylate Gel",
     packing: "10 Monocartons",
     description: "Bulk supply of high-efficacy Nise D Gel. Targeted for clinics and pharmacies, this formula remains the preferred choice for long-term management of chronic arthritic and inflammatory joint conditions.",
+    type: "Focus"
+  },
+
+  // RESPIRATORY (74-87)
+  {
+    id: "dr-reddy-74",
+    name: "Acebrobid 100 Capsules",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 119.75,
+    img: "https://picsum.photos/seed/dr74/600/600",
+    rx: true,
+    format: "Capsule",
+    molecules: "Acebrophylline 100mg Capsules",
+    packing: "10x10's",
+    description: "Acebrobid 100 contains Acebrophylline, a potent bronchodilator with mucolytic properties. It works by relaxing the airway muscles and thinning the mucus, making it easier to breathe in patients with asthma and chronic obstructive pulmonary disease (COPD).",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-75",
+    name: "Acebrobid 200",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 223.50,
+    img: "https://picsum.photos/seed/dr75/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Acebrophylline 200 mg SR Tablets",
+    packing: "10x1x10's",
+    description: "Sustained-release Acebrophylline for long-lasting relief from bronchospasms. This formulation ensures stable drug levels in the blood, providing consistent airway clearance throughout the day and night.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-76",
+    name: "Acebrobid-AC",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 245.00,
+    img: "https://picsum.photos/seed/dr76/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Acebrophylline (100mg) + Acetylcysteine (600mg) Tablets",
+    packing: "10x1x10's",
+    description: "A dual-action respiratory therapy. Acebrophylline acts as a bronchodilator while Acetylcysteine is a powerful mucolytic that breaks down thick, sticky mucus. Ideal for productive cough in bronchitis or COPD.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-77",
+    name: "Acebrobid-M",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 202.40,
+    img: "https://picsum.photos/seed/dr77/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Acebrophylline (200mg) SR + Montelukast (10mg) Tablets",
+    packing: "10x1x10's",
+    description: "Advanced combination of Acebrophylline SR and Montelukast. This therapy targets both airway constriction and allergic inflammation, making it highly effective for management of allergic asthma.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-78",
+    name: "Dialex Cold Syrup",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 121.25,
+    img: "https://picsum.photos/seed/dr78/600/600",
+    rx: false,
+    format: "Syrup",
+    molecules: "Chlorpheniramine Maleate 2mg/5ml + Phenylephrine 5mg/5ml Syrup",
+    packing: "60ml",
+    description: "Dialex Cold is a comprehensive cold relief syrup. It contains an antihistamine to control sneezing and runny nose, and a nasal decongestant to relieve nasal blockage and sinus pressure.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-79",
+    name: "Dialex DC+ Syrup",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 130.00,
+    img: "https://picsum.photos/seed/dr79/600/600",
+    rx: true,
+    format: "Syrup",
+    molecules: "Dextromethorphan HBr 10mg/5ml + Chlorpheniramine Maleate 4mg/5ml Syrup",
+    packing: "100ml",
+    description: "A targeted cough suppressant for dry, irritating coughs. Dextromethorphan acts on the cough center in the brain while Chlorpheniramine provides relief from associated allergic symptoms.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-80",
+    name: "Diltoris",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 229.30,
+    img: "https://picsum.photos/seed/dr80/600/600",
+    rx: false,
+    format: "Tablets",
+    molecules: "Acetylcysteine (600mg) Effervescent Tablet (Orange Flavour)",
+    packing: "10X1X10",
+    description: "Diltoris contains high-dose Acetylcysteine in a convenient orange-flavored effervescent format. It is used as a potent mucolytic to clear excessive mucus from the lungs and as an antioxidant supplement.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-81",
+    name: "FM 24 Tablets",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 271.25,
+    img: "https://picsum.photos/seed/dr81/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Montelukast 10mg + Fexofenadine 120mg Tablets",
+    packing: "10x10's",
+    description: "FM 24 is a superior anti-allergic combination. Fexofenadine provides non-sedative relief from seasonal allergy symptoms, and Montelukast works as a leukotriene antagonist to prevent asthma symptoms and hay fever.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-82",
+    name: "Nostriol",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 102.00,
+    img: "https://picsum.photos/seed/dr82/600/600",
+    rx: false,
+    format: "Spray",
+    molecules: "Oxymetazoline Hydrochloride Nasal Spray",
+    packing: "10 X 1 X 10ml",
+    description: "Nostriol (Oxymetazoline) is a rapid-action nasal decongestant. It works by constricting the blood vessels in the nasal passages, providing immediate relief from nasal congestion caused by colds, hay fever, or sinusitis.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-83",
+    name: "Throateasy GT Syrup",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 100.25,
+    img: "https://picsum.photos/seed/dr83/600/600",
+    rx: true,
+    format: "Syrup",
+    molecules: "Ambroxol HCl 15mg/5ml + Terbutaline Sulphate 1.25mg/5ml + Guaiphenesin 50mg/5ml + Menthol 1mg/5ml Syrup",
+    packing: "25x100 ml",
+    description: "Throateasy GT is a quad-action expectorant. It combines a mucolytic (Ambroxol), a bronchodilator (Terbutaline), an expectorant (Guaiphenesin), and a cooling agent (Menthol) to treat productive coughs effectively.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-84",
+    name: "Zedex Lozenges Jar (Orange)",
+    company: "Dr. Reddy's",
+    cat: "OTC & Healthcare",
+    price: 35.00,
+    img: "https://picsum.photos/seed/dr84/600/600",
+    rx: false,
+    format: "Lozenges",
+    molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Orange)",
+    packing: "24x10's",
+    description: "Zedex Lozenges contain two antiseptic agents that help fight throat infections. They provide symptomatic relief from sore throat, mouth infections, and throat irritation in a pleasant orange flavor.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-85",
+    name: "Zedex Lozenges Carton (Orange)",
+    company: "Dr. Reddy's",
+    cat: "OTC & Healthcare",
+    price: 35.00,
+    img: "https://picsum.photos/seed/dr85/600/600",
+    rx: false,
+    format: "Lozenges",
+    molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Orange) - Jar Pack",
+    packing: "24x10's",
+    description: "Carton packaging of Zedex antiseptic lozenges for convenient wholesale and retail distribution. Effective for rapid soothing of sore throat symptoms.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-86",
+    name: "Defzacort 6",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 150.00,
+    img: "https://picsum.photos/seed/dr86/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Deflazacort 6mg Tablets",
+    packing: "20X1X10",
+    description: "Defzacort 6 contains Deflazacort, a glucocorticoid with powerful anti-inflammatory and immunosuppressant properties. It is used to treat various conditions like asthma, allergies, and inflammatory joint disorders with a lower risk of metabolic side effects.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-87",
+    name: "Nostriol S",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 70.00,
+    img: "https://picsum.photos/seed/dr87/600/600",
+    rx: false,
+    format: "Liquid",
+    molecules: "Saline Nasal Solution - Sodium Chloride I.P 0.65% w/v in Purified water, Benzalkonium Chloride 0.01% w/v",
+    packing: "20 X 1 X 1",
+    description: "Nostriol S is a sterile saline nasal solution. It helps in moisturizing dry or irritated nasal passages and clearing nasal crusting or thick mucus, making it safe for regular use to maintain nasal hygiene.",
     type: "Focus"
   }
 ];
