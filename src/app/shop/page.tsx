@@ -1,7 +1,6 @@
-
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
@@ -9,37 +8,62 @@ import { Footer } from '@/components/Footer';
 import { ShopFilters } from '@/components/ShopFilters';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal } from 'lucide-react';
+import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal, ChevronLeft } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
 import { products as allProducts } from '@/lib/product-data';
+import { cn } from '@/lib/utils';
+
+const ITEMS_PER_PAGE = 24;
 
 export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
   const [rxRequired, setRxRequired] = useState<boolean | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Debounce logic: 100ms delay as requested
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearch(searchQuery);
+      setCurrentPage(1); // Reset to first page on new search
+    }, 100);
+
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   const filteredProducts = useMemo(() => {
     return allProducts.filter(p => {
-      const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                           p.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           p.molecules.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = p.name.toLowerCase().includes(debouncedSearch.toLowerCase()) || 
+                           p.company.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+                           p.molecules.toLowerCase().includes(debouncedSearch.toLowerCase());
       const matchesCat = selectedCats.length === 0 || selectedCats.includes(p.cat);
       const matchesRx = rxRequired === null || p.rx === rxRequired;
       return matchesSearch && matchesCat && matchesRx;
     });
-  }, [searchQuery, selectedCats, rxRequired]);
+  }, [debouncedSearch, selectedCats, rxRequired]);
+
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
 
   const toggleCategory = (cat: string) => {
-    setSelectedCats(prev => 
-      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
-    );
+    setSelectedCats(prev => {
+      const newCats = prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat];
+      setCurrentPage(1);
+      return newCats;
+    });
   };
 
   const clearFilters = () => {
     setSelectedCats([]);
     setRxRequired(null);
     setSearchQuery('');
+    setDebouncedSearch('');
+    setCurrentPage(1);
   };
 
   return (
@@ -75,12 +99,12 @@ export default function ShopPage() {
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <aside className="hidden lg:block w-72 shrink-0 sticky top-36 h-[calc(100vh-10rem)] overflow-visible">
+            <aside className="hidden lg:block w-72 shrink-0 sticky top-36">
               <ShopFilters 
                 selectedCats={selectedCats} 
                 toggleCategory={toggleCategory}
                 rxRequired={rxRequired}
-                setRxRequired={setRxRequired}
+                setRxRequired={(val) => { setRxRequired(val); setCurrentPage(1); }}
                 clearFilters={clearFilters}
               />
             </aside>
@@ -88,7 +112,7 @@ export default function ShopPage() {
             <div className="flex-1 w-full">
               <div className="bg-white p-4 rounded-[1.5rem] border border-muted/30 shadow-sm mb-6 flex items-center justify-between">
                 <span className="text-sm text-muted-foreground font-medium">
-                  Showing <span className="text-primary font-bold">{filteredProducts.length}</span> items
+                  Showing <span className="text-primary font-bold">{paginatedProducts.length}</span> of <span className="text-primary font-bold">{filteredProducts.length}</span> items
                 </span>
                 
                 <div className="flex items-center gap-2">
@@ -98,12 +122,12 @@ export default function ShopPage() {
                         <SlidersHorizontal size={16} /> Filters
                       </Button>
                     </SheetTrigger>
-                    <SheetContent side="left" className="w-[320px] p-0 border-none bg-white z-[120]">
+                    <SheetContent side="left" className="w-[320px] p-0 border-none bg-white z-[150]">
                       <ShopFilters 
                         selectedCats={selectedCats} 
                         toggleCategory={toggleCategory}
                         rxRequired={rxRequired}
-                        setRxRequired={setRxRequired}
+                        setRxRequired={(val) => { setRxRequired(val); setCurrentPage(1); }}
                         clearFilters={clearFilters}
                       />
                     </SheetContent>
@@ -120,12 +144,53 @@ export default function ShopPage() {
                 </div>
               </div>
 
-              {filteredProducts.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                  {filteredProducts.map((p) => (
-                    <ShopProductCard key={p.id} product={p} />
-                  ))}
-                </div>
+              {paginatedProducts.length > 0 ? (
+                <>
+                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    {paginatedProducts.map((p) => (
+                      <ShopProductCard key={p.id} product={p} />
+                    ))}
+                  </div>
+
+                  {/* Pagination Controls */}
+                  {totalPages > 1 && (
+                    <div className="mt-12 flex items-center justify-center gap-2">
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        className="rounded-xl border-muted"
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                      >
+                        <ChevronLeft size={18} />
+                      </Button>
+                      
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <Button
+                          key={page}
+                          variant={currentPage === page ? "default" : "outline"}
+                          className={cn(
+                            "rounded-xl h-10 w-10 p-0 font-bold border-muted",
+                            currentPage === page ? "gradient-button border-none" : "bg-white text-primary"
+                          )}
+                          onClick={() => setCurrentPage(page)}
+                        >
+                          {page}
+                        </Button>
+                      ))}
+
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        className="rounded-xl border-muted"
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                      >
+                        <ChevronRight size={18} />
+                      </Button>
+                    </div>
+                  )}
+                </>
               ) : (
                 <div className="py-20 text-center bg-white rounded-3xl border border-dashed border-border">
                   <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-20" />
@@ -177,7 +242,7 @@ function ShopProductCard({ product }: { product: any }) {
         )}
       </div>
 
-      <div className="p-4 flex-1 flex flex-col relative z-10 bg-white border-t border-muted/20">
+      <div className="p-3 md:p-4 flex-1 flex flex-col relative z-10 bg-white border-t border-muted/20">
         <h3 className="text-primary font-bold text-sm md:text-base group-hover:text-secondary transition-colors line-clamp-1 leading-tight mb-0.5">
           {product.name}
         </h3>
@@ -191,8 +256,8 @@ function ShopProductCard({ product }: { product: any }) {
             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">MRP</p>
             <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)}</p>
           </div>
-          <div className="w-6 h-6 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
-            <Plus className="size-3" />
+          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
+            <Plus className="size-3 md:size-4" />
           </div>
         </div>
       </div>

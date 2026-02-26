@@ -1,4 +1,3 @@
-
 export interface Product {
   id: string;
   name: string;
@@ -16,11 +15,11 @@ export interface Product {
 }
 
 /**
- * DR. REDDY'S LABORATORIES - FULL PRODUCT INVENTORY
+ * DR. REDDY'S LABORATORIES
  * Authorized Wholesale Range
  */
-export const products: Product[] = [
-  // ANTI-INFECTIVES (1-24)
+export const drReddyProducts: Product[] = [
+  // ANTI-INFECTIVES
   {
     id: "dr-reddy-1",
     name: "Cefiwok CV",
@@ -316,7 +315,7 @@ export const products: Product[] = [
     usage: "Pre-operative prophylaxis and severe respiratory infections. Clinical use only."
   },
 
-  // DERMATOLOGY (25-33)
+  // DERMATOLOGY
   {
     id: "dr-reddy-25",
     name: "Baxysporin Powder",
@@ -328,9 +327,8 @@ export const products: Product[] = [
     format: "Powder",
     molecules: "Neomycin sulphate IP 5mg + Bacitracin zinc IP 250 units + Sulphacetamide sodium IP 60 mg",
     packing: "10x10g",
-    description: "Baxysporin Powder is a triple antibiotic powder containing Neomycin, Bacitracin, and Sulphacetamide. It is used to prevent and treat minor skin infections caused by small cuts, scrapes, or burns. Neomycin and Bacitracin kill bacteria, while Sulphacetamide inhibits their growth.",
-    usage: "Clean the area and sprinkle lightly 1-3 times daily. Do not use on large open wounds.",
-    type: "Focus"
+    description: "Baxysporin Powder is a triple antibiotic powder containing Neomycin, Bacitracin, and Sulphacetamide. It is used to prevent and treat minor skin infections caused by small cuts, scrapes, or burns.",
+    usage: "Clean the area and sprinkle lightly 1-3 times daily. Do not use on large open wounds."
   },
   {
     id: "dr-reddy-26",
@@ -343,9 +341,8 @@ export const products: Product[] = [
     format: "Cream",
     molecules: "Clotrimazole 1% w/w + Beclometasone Dipropionate 0.025% Cream",
     packing: "20x1x10g",
-    description: "Candigurd B Cream is a combination medicine used to treat various types of skin infections, typically those associated with inflammation and itching. Clotrimazole is an antifungal that stops the growth of fungi, and Beclometasone is a steroid that reduces redness, swelling, and itchiness.",
-    usage: "Apply a thin layer to the affected area twice daily. Avoid contact with eyes.",
-    type: "Focus"
+    description: "Candigurd B Cream treats various skin infections associated with inflammation. Clotrimazole is an antifungal, while Beclometasone is a steroid that reduces redness and itching.",
+    usage: "Apply a thin layer to the affected area twice daily. Avoid contact with eyes."
   },
   {
     id: "dr-reddy-27",
@@ -358,9 +355,8 @@ export const products: Product[] = [
     format: "Powder",
     molecules: "Clotrimazole 1% w/w Powder",
     packing: "6x1's",
-    description: "Candigurd Powder contains Clotrimazole, a broad-spectrum antifungal. It is effective for treating prickly heat, fungal infections caused by sweat and moisture, and skin irritation in folds of the body.",
-    usage: "Dust liberally over the affected area, especially in skin folds. Use after bathing.",
-    type: "Focus"
+    description: "Antifungal dusting powder effective for prickly heat, sweat-induced fungal infections, and skin irritation in folds.",
+    usage: "Dust liberally over the affected area, especially in skin folds. Use after bathing."
   },
   {
     id: "dr-reddy-28",
@@ -373,9 +369,8 @@ export const products: Product[] = [
     format: "Powder",
     molecules: "Clotrimazole 1% w/w Powder",
     packing: "5x1's",
-    description: "Standard antifungal dusting powder for larger areas or prolonged use. Prevents fungal growth and keeps the skin dry and comfortable.",
-    usage: "Apply twice daily to prevent fungal recurrence in areas prone to moisture.",
-    type: "Focus"
+    description: "Bulk antifungal powder for larger areas. Prevents fungal growth and keeps skin dry.",
+    usage: "Apply twice daily to moisture-prone areas to prevent fungal recurrence."
   },
   {
     id: "dr-reddy-29",
@@ -386,11 +381,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr29/600/600",
     rx: true,
     format: "Cream",
-    molecules: "Beclomethasone dipropionate (0.025% w/w) + Neomycin Sulphate (0.5% w/w) + Miconazole Nitrate (2% w/w)",
+    molecules: "Beclomethasone dipropionate + Neomycin Sulphate + Miconazole Nitrate",
     packing: "25x1x15g",
-    description: "A comprehensive triple-action cream. Beclomethasone reduces inflammation, Neomycin treats bacterial infections, and Miconazole treats fungal infections, making it ideal for mixed skin infections.",
-    usage: "Used for mixed skin infections. Apply thin layer 2-3 times daily as prescribed.",
-    type: "Focus"
+    description: "Comprehensive triple-action cream for mixed skin infections (bacterial, fungal, and inflammatory).",
+    usage: "Apply thin layer 2-3 times daily as prescribed for mixed infections."
   },
   {
     id: "dr-reddy-30",
@@ -403,9 +397,8 @@ export const products: Product[] = [
     format: "Cream",
     molecules: "Mometasone (0.1 % w/w) Cream",
     packing: "20x1x10g",
-    description: "Eclospan M contains Mometasone, a medium-potency corticosteroid. It is used to reduce the swelling, itchiness, and redness of various skin conditions such as eczema and psoriasis.",
-    usage: "Steroid cream for inflammatory skin conditions. Apply once daily.",
-    type: "Focus"
+    description: "Medium-potency corticosteroid for reducing swelling, itchiness, and redness in conditions like eczema and psoriasis.",
+    usage: "Apply once daily to the affected skin area."
   },
   {
     id: "dr-reddy-31",
@@ -418,9 +411,8 @@ export const products: Product[] = [
     format: "Ointment",
     molecules: "Clobetasol 0.05% w/w + Salicylic Acid 3% w/w Ointment",
     packing: "20x1x20g",
-    description: "A potent combination of Clobetasol (steroid) and Salicylic Acid (keratolytic). Used to treat chronic plaque psoriasis and other scaly skin conditions where thick skin needs to be softened for better steroid penetration.",
-    usage: "Ideal for hard, scaly skin and psoriasis. Apply 1-2 times daily.",
-    type: "Focus"
+    description: "Potent steroid combined with a keratolytic to treat thick, scaly psoriasis plaques and chronic skin conditions.",
+    usage: "Apply 1-2 times daily to hard, scaly skin and psoriasis patches."
   },
   {
     id: "dr-reddy-32",
@@ -433,9 +425,8 @@ export const products: Product[] = [
     format: "Shampoo",
     molecules: "Ketoconazole 2% w/v + Pyrithione Zinc 1% w/v Shampoo",
     packing: "6 X 1 X 100ml",
-    description: "Ketoluxe ZPTO is an anti-dandruff shampoo combining two active ingredients. Ketoconazole is an antifungal that kills dandruff-causing fungi, while Pyrithione Zinc helps regulate scalp health and reduces flaking.",
-    usage: "Apply to wet hair, lather well, and leave for 3-5 minutes before rinsing. Use twice weekly.",
-    type: "Focus"
+    description: "Advanced anti-dandruff shampoo that kills fungi and regulates scalp health to prevent flaking.",
+    usage: "Leave lather for 3-5 minutes before rinsing. Use twice weekly."
   },
   {
     id: "dr-reddy-33",
@@ -448,12 +439,11 @@ export const products: Product[] = [
     format: "Soap",
     molecules: "Sulfiram (5%) Soap",
     packing: "12 X 1 (Shrink Wrap)",
-    description: "Candigurd Soap with Sulfiram is an antiseptic soap used for the treatment and prevention of scabies and other skin parasites. It helps maintain skin hygiene and prevents the spread of skin infections.",
-    usage: "Use during daily bath, focusing on affected areas. Rinse thoroughly.",
-    type: "Focus"
+    description: "Antiseptic soap used specifically for treating and preventing scabies and other skin parasites.",
+    usage: "Use during daily bath, focusing on affected areas. Rinse thoroughly."
   },
 
-  // GASTRO INTESTINAL (34-54)
+  // GASTRO INTESTINAL
   {
     id: "dr-reddy-34",
     name: "Omez Lax L (100ml)",
@@ -465,9 +455,8 @@ export const products: Product[] = [
     format: "Suspension",
     molecules: "Lactulose Solution 10g/15ml",
     packing: "100ml",
-    description: "Omez Lax L contains Lactulose, a synthetic sugar used to treat constipation. It works by drawing water into the colon, which softens the stool and makes it easier to pass. It is also used in the management of hepatic encephalopathy.",
-    usage: "For constipation: 15-30ml daily. For hepatic conditions: as directed by doctor.",
-    type: "Focus"
+    description: "Osmotic laxative that softens stool and is used in the clinical management of hepatic encephalopathy.",
+    usage: "Constipation: 15-30ml daily. Liver conditions: As directed by MD."
   },
   {
     id: "dr-reddy-35",
@@ -480,9 +469,8 @@ export const products: Product[] = [
     format: "Suspension",
     molecules: "Lactulose Solution 10g/15ml",
     packing: "200ml",
-    description: "Double volume Lactulose solution for extended treatment of chronic constipation or hepatic conditions. Safe for long-term use under medical supervision.",
-    usage: "Larger pack for chronic management. Take with water or fruit juice.",
-    type: "Focus"
+    description: "Double volume pack for chronic constipation management. Safe for long-term physician-monitored use.",
+    usage: "Take with water or juice. Onset may take 24-48 hours."
   },
   {
     id: "dr-reddy-36",
@@ -493,11 +481,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr36/600/600",
     rx: false,
     format: "Syrup",
-    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml) -- Syrup (Pineapple Flavor)",
+    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml)",
     packing: "200ml",
-    description: "Omezyme is a digestive syrup containing Diastase and Pepsin. Diastase helps in the digestion of starch and carbohydrates, while Pepsin helps in the digestion of proteins, aiding in overall digestion and relieving acidity or bloating.",
-    usage: "Take 5-10ml immediately after major meals. Helps reduce bloating.",
-    type: "Focus"
+    description: "Digestive enzyme complex that aids the digestion of starch and proteins, relieving post-meal bloating.",
+    usage: "Take 5-10ml immediately after major meals to reduce bloating."
   },
   {
     id: "dr-reddy-37",
@@ -508,11 +495,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr37/600/600",
     rx: false,
     format: "Syrup",
-    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml) -- Syrup (Saunf Flavor)",
+    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml)",
     packing: "200ml",
-    description: "Digestive enzyme supplement in a pleasant Fennel (Saunf) flavor. Helps improve digestion and reduces symptoms of dyspepsia and abdominal discomfort.",
-    usage: "Adults: 10ml twice daily after meals. Children: As directed.",
-    type: "Focus"
+    description: "Digestive supplement in Fennel (Saunf) flavor to improve digestion and reduce dyspepsia symptoms.",
+    usage: "Adults: 10ml twice daily after meals for better digestion."
   },
   {
     id: "dr-reddy-38",
@@ -523,11 +509,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr38/600/600",
     rx: false,
     format: "Sachet",
-    molecules: "Rebalanz ORS Powder 21gms",
+    molecules: "WHO ORS Powder Formula",
     packing: "30x21g",
-    description: "Rebalanz ORS is a WHO-recommended Oral Rehydration Salt formula used to replenish fluids and electrolytes lost due to dehydration, typically caused by diarrhea or vomiting. It contains a precise balance of salts and glucose to ensure rapid rehydration.",
-    usage: "Dissolve entire contents in 1 liter of clean drinking water. Sip throughout the day.",
-    type: "Focus"
+    description: "WHO-recommended oral rehydration salts for managing dehydration from diarrhea or heat stress.",
+    usage: "Dissolve entire 21g sachet in 1 liter of clean water. Sip daily."
   },
   {
     id: "dr-reddy-39",
@@ -538,11 +523,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr39/600/600",
     rx: false,
     format: "Liquid",
-    molecules: "Oral Rehydration Salt - WHO recommended formula Apple flavor solution",
+    molecules: "Ready-to-drink ORS Apple",
     packing: "30x1x200ml",
-    description: "Ready-to-drink Oral Rehydration Solution in a refreshing Apple flavor. Perfect for immediate use in children and adults to manage dehydration quickly and effectively.",
-    usage: "Drink directly when signs of dehydration appear. Best served chilled.",
-    type: "Focus"
+    description: "Immediate electrolyte replenishment in a refreshing apple flavor, perfect for pediatric use.",
+    usage: "Drink directly at signs of fatigue or dehydration. Best served cold."
   },
   {
     id: "dr-reddy-40",
@@ -553,11 +537,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr40/600/600",
     rx: false,
     format: "Liquid",
-    molecules: "Oral Rehydration Salt - WHO recommended formula Orange flavor solution",
+    molecules: "Ready-to-drink ORS Orange",
     packing: "30x1x200ml",
-    description: "Ready-to-drink Oral Rehydration Solution in a vibrant Orange flavor. Designed for rapid fluid and electrolyte replacement according to WHO guidelines.",
-    usage: "Tear and sip directly. Helps recover energy and electrolytes.",
-    type: "Focus"
+    description: "Standard WHO-formula Orange flavored rehydration solution for rapid fluid recovery.",
+    usage: "Tear and sip as needed during high physical activity or diarrhea."
   },
   {
     id: "dr-reddy-41",
@@ -570,9 +553,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Albendazole (400mg) + Ivermectin (6mg)",
     packing: "10x10's",
-    description: "Anti-parasitic combination of Albendazole and Ivermectin. Used for the treatment of various parasitic worm infestations, providing a dual-action approach for broader efficacy.",
-    usage: "Single dose treatment for parasitic worms. Consult doctor for schedule.",
-    type: "Focus"
+    description: "Anti-parasitic combination for treating a broad range of intestinal and systemic worm infestations.",
+    usage: "Single dose for deworming as per clinical recommendation."
   },
   {
     id: "dr-reddy-42",
@@ -585,9 +567,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Albendazole (400 mg)",
     packing: "10x10's",
-    description: "Contains Albendazole, a broad-spectrum anthelmintic agent. Effective against roundworms, hookworms, and other common intestinal parasites in a convenient chewable format.",
-    usage: "Chew the tablet thoroughly before swallowing. Usually a single dose.",
-    type: "Focus"
+    description: "Standard deworming agent effective against roundworms, hookworms, and other common parasites.",
+    usage: "Chew the tablet thoroughly before swallowing. Single dose therapy."
   },
   {
     id: "dr-reddy-43",
@@ -600,9 +581,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Drotaverine (80 mg)",
     packing: "20X15",
-    description: "High-strength Drotaverine, an antispasmodic medication used to relieve smooth muscle spasms, especially in the gastrointestinal, biliary, and renal tracts.",
-    usage: "For severe stomach or kidney stone pain. Usually taken 1-3 times daily.",
-    type: "Focus"
+    description: "High-strength antispasmodic for relief from severe smooth muscle spasms and renal colic pain.",
+    usage: "For severe stomach/kidney pain. 1-3 times daily as per intensity."
   },
   {
     id: "dr-reddy-44",
@@ -615,9 +595,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Ursodeoxycholic Acid 300mg",
     packing: "10x15's",
-    description: "Contains Ursodeoxycholic Acid, a naturally occurring bile acid used to dissolve certain types of cholesterol gallstones and treat chronic liver diseases like primary biliary cirrhosis.",
-    usage: "Long-term therapy for liver/gallstones. Take with milk or food.",
-    type: "Focus"
+    description: "Clinically used for dissolving cholesterol gallstones and treating chronic primary biliary cirrhosis.",
+    usage: "Long-term liver therapy. Best taken with milk or fatty meal."
   },
   {
     id: "dr-reddy-45",
@@ -630,9 +609,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Ursodeoxycholic Acid 150mg",
     packing: "10x10's",
-    description: "Lower strength Ursodeoxycholic Acid for maintenance therapy or specific titration in hepatic disorders and gallstone management.",
-    usage: "Dose based on body weight. Usually taken at bedtime.",
-    type: "Focus"
+    description: "Maintenance dose for gallstone management and supportive liver health therapy.",
+    usage: "Usually a night dose. Follow weight-based titration by MD."
   },
   {
     id: "dr-reddy-46",
@@ -645,9 +623,8 @@ export const products: Product[] = [
     format: "Capsule",
     molecules: "Cinitapride (3mg) SR + Pantoprazole (40mg) EC",
     packing: "10x1x10's",
-    description: "Advanced combination of Cinitapride (prokinetic) and Pantoprazole (PPI). Used for treating gastro-esophageal reflux disease (GERD) and associated dyspepsia where delayed gastric emptying is a factor.",
-    usage: "Take 30-60 mins before breakfast. Do not crush capsules.",
-    type: "Focus"
+    description: "Advanced PPI and prokinetic combination for treating GERD with associated gastric motility issues.",
+    usage: "Take 30-60 mins before breakfast. Do not crush capsules."
   },
   {
     id: "dr-reddy-47",
@@ -660,9 +637,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Pantoprazole 40mg + Domperidone 10mg",
     packing: "10X15's",
-    description: "Effective combination of Pantoprazole for acid suppression and Domperidone for nausea control. Indicated for acid reflux, ulcers, and bloating.",
-    usage: "Relieves acidity and nausea. Take on an empty stomach.",
-    type: "Focus"
+    description: "Reliable combination for acid reflux, heartburn, and associated nausea/bloating.",
+    usage: "Standard acid-nausea relief. Take on empty stomach daily."
   },
   {
     id: "dr-reddy-48",
@@ -673,11 +649,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr48/600/600",
     rx: true,
     format: "Capsule",
-    molecules: "Pantoprazole 40mg + Domperidone 30mg prolonged release",
+    molecules: "Pantoprazole 40mg + Domperidone 30mg SR",
     packing: "10X15's",
-    description: "Prolonged-release combination for sustained relief from acid reflux and heartburn, especially when accompanied by persistent nausea or gastroparesis.",
-    usage: "Sustained relief pack. Once daily before food.",
-    type: "Focus"
+    description: "Prolonged-release formula for 24-hour protection against acid reflux and gastroparesis symptoms.",
+    usage: "Once daily before first meal. Sustained relief for 24 hours."
   },
   {
     id: "dr-reddy-49",
@@ -688,11 +663,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr49/600/600",
     rx: true,
     format: "Injection",
-    molecules: "Pantoprazole for Injection BP 40mg",
+    molecules: "Pantoprazole 40mg IV",
     packing: "10X1X1",
-    description: "Injectable Pantoprazole for rapid and potent reduction of gastric acid production in acute clinical settings like severe peptic ulcers or surgical prophylaxis.",
-    usage: "Hospital use for severe ulcers. IV only.",
-    type: "Focus"
+    description: "Injectable PPI for acute hospital settings requiring rapid gastric acid suppression.",
+    usage: "IV only. Administered in hospital for acute ulcer bleeding."
   },
   {
     id: "dr-reddy-50",
@@ -705,9 +679,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Pantoprazole 40mg",
     packing: "10X15's",
-    description: "Pure Pantoprazole (40mg) for the reliable treatment of peptic ulcers, GERD, and hypersecretory conditions like Zollinger-Ellison syndrome.",
-    usage: "Pure acid blocker. Swallow whole with water.",
-    type: "Focus"
+    description: "Pure acid-blocker for reliable management of peptic ulcers and gastric acid hypersecretion.",
+    usage: "Standard PPI therapy. Swallow whole before breakfast."
   },
   {
     id: "dr-reddy-51",
@@ -718,11 +691,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr51/600/600",
     rx: false,
     format: "Suspension",
-    molecules: "Magnesium hydroxide (11.25ml) + Paraffin oil (3.75ml) + Sodium Picosulfate (10mg)",
+    molecules: "Magnesium Hydroxide + Paraffin Oil + Sodium Picosulfate",
     packing: "170ml",
-    description: "A comprehensive triple-action laxative. Magnesium hydroxide, Paraffin oil, and Sodium Picosulfate work together to provide effective relief from constipation by softening the stool and stimulating bowel motility.",
-    usage: "Shake well. Best taken at bedtime for next-day results.",
-    type: "Focus"
+    description: "Triple-action laxative that softens stool and stimulates bowel movement for effective constipation relief.",
+    usage: "10-15ml at bedtime for comfortable next-morning results."
   },
   {
     id: "dr-reddy-52",
@@ -733,11 +705,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr52/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Drotaverine Tablets 40mg",
+    molecules: "Drotaverine 40mg",
     packing: "20 X 15",
-    description: "Standard strength Drotaverine for relieving pain associated with smooth muscle spasms in abdominal cramps, menstrual pain, and irritable bowel syndrome.",
-    usage: "For period/stomach cramps. Up to thrice daily.",
-    type: "Focus"
+    description: "Standard strength antispasmodic for relieving abdominal pain, period cramps, and gut spasms.",
+    usage: "For menstrual/abdominal cramps. Up to 3 times daily."
   },
   {
     id: "dr-reddy-53",
@@ -750,9 +721,8 @@ export const products: Product[] = [
     format: "Tablets",
     molecules: "Drotaverine (80mg) + Mefenamic Acid (250mg)",
     packing: "20 X 10",
-    description: "Dual-action relief combining Drotaverine (antispasmodic) and Mefenamic Acid (analgesic). Specifically indicated for severe spasmodic pain in conditions like dysmenorrhea or colic.",
-    usage: "Stronger pain relief for dysmenorrhea. Take with food.",
-    type: "Focus"
+    description: "Potent combined analgesic and antispasmodic for severe spasmodic and inflammatory pain.",
+    usage: "Severe period pain or intestinal colic. Take with food."
   },
   {
     id: "dr-reddy-54",
@@ -765,12 +735,11 @@ export const products: Product[] = [
     format: "Capsule",
     molecules: "Pantoprazole 40mg + Levosulpiride 75mg",
     packing: "10x1x10's",
-    description: "Combines a potent PPI (Pantoprazole) with a prokinetic (Levosulpiride). Ideal for GERD complicated by functional dyspepsia or diabetic gastroparesis.",
-    usage: "Improves gut motility and blocks acid. Morning dose preferred.",
-    type: "Focus"
+    description: "Prokinetic and PPI combination for GERD complicated by functional dyspepsia.",
+    usage: "Improves gut speed and blocks acid. Morning dose preferred."
   },
 
-  // GYNECOLOGY (55-59)
+  // GYNECOLOGY
   {
     id: "dr-reddy-55",
     name: "Redihealth XT",
@@ -780,11 +749,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr55/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Ferrous Ascorbate equivalent to elemental Iron 100mg + Folic Acid 1.5mg Tablets",
+    molecules: "Ferrous Ascorbate + Folic Acid",
     packing: "5x3x10's",
-    description: "Redihealth XT is a premium iron supplement specifically designed for the management of iron deficiency anemia. The combination of Ferrous Ascorbate and Folic Acid ensures superior absorption and supports healthy red blood cell production, especially critical during pregnancy and postpartum recovery.",
-    usage: "Once daily, preferably with Vitamin C rich food/juice. Do not take with tea/coffee.",
-    type: "Focus"
+    description: "Premium iron supplement for managing anemia during pregnancy and recovery.",
+    usage: "Once daily with water. Avoid dairy/tea for 1 hour after taking."
   },
   {
     id: "dr-reddy-56",
@@ -795,11 +763,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr56/600/600",
     rx: true,
     format: "Injection",
-    molecules: "Etamsylate 125mg Injection",
+    molecules: "Etamsylate 125mg",
     packing: "10X5X2ml",
-    description: "Styptochrome-E contains Etamsylate, a specialized hemostatic agent. It works by enhancing platelet aggregation and reducing capillary permeability, making it indispensable for controlling excessive bleeding during gynecological surgeries or heavy menstrual cycles.",
-    usage: "Emergency bleeding control. Administered by professional IV/IM.",
-    type: "Focus"
+    description: "Hemostatic agent used to control excessive bleeding in surgeries or cycles.",
+    usage: "Professional IV/IM use for emergency bleeding control."
   },
   {
     id: "dr-reddy-57",
@@ -810,11 +777,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr57/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "TRANEXAMIC ACID + MEFENAMIC ACID",
+    molecules: "Tranexamic Acid + Mefenamic Acid",
     packing: "10X1X10",
-    description: "A dual-action clinical solution for Menorrhagia. Tranexamic acid prevents blood clots from breaking down, effectively reducing heavy bleeding, while Mefenamic Acid provides targeted relief from associated menstrual cramps and pain.",
-    usage: "Take only during heavy bleeding days. Start at onset of cycle.",
-    type: "Focus"
+    description: "Clinical solution for heavy menstrual bleeding and associated cramping.",
+    usage: "Take only during heavy flow days. Follow cycle schedule."
   },
   {
     id: "dr-reddy-58",
@@ -825,11 +791,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr58/600/600",
     rx: false,
     format: "Test Kit",
-    molecules: "Pregnancy Test Card",
+    molecules: "HCG Detection Card",
     packing: "30 X 1'S",
-    description: "Velocit Kit is a rapid, one-step pregnancy diagnostic tool. It offers high sensitivity (99% accuracy) for early detection of HCG levels in urine, providing reliable results within 3-5 minutes in the privacy of your home.",
-    usage: "Use first morning urine for best accuracy. Read instructions carefully.",
-    type: "Focus"
+    description: "Highly sensitive rapid pregnancy diagnostic kit with 99% clinical accuracy.",
+    usage: "Use first morning urine sample for most accurate result."
   },
   {
     id: "dr-reddy-59",
@@ -840,14 +805,13 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr59/600/600",
     rx: false,
     format: "Liquid",
-    molecules: "Lactic acid 1.2% w/v Solution",
+    molecules: "Lactic Acid Intimate Wash",
     packing: "5x100ml",
-    description: "Velocit Wash is an expert-formulated intimate hygiene wash. Enriched with Lactic Acid, it helps maintain the natural acidic pH balance of the intimate area, preventing irritation, itching, and unpleasant odors while supporting natural defensive flora.",
-    usage: "External use only. Use daily during shower. Rinse well.",
-    type: "Focus"
+    description: "Maintains natural pH balance and prevents itching/odor in sensitive areas.",
+    usage: "External daily use during bath. Rinse thoroughly after use."
   },
 
-  // PAIN & ANALGESICS (60-73)
+  // PAIN & ANALGESICS
   {
     id: "dr-reddy-60",
     name: "Nicetamol 125",
@@ -857,11 +821,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr60/600/600",
     rx: false,
     format: "Suspension",
-    molecules: "Paracetamol Suspension 125mg/5ml (Strawberry Flavour)",
+    molecules: "Paracetamol 125mg/5ml",
     packing: "25x60ml",
-    description: "Nicetamol 125 is a gentle yet effective pediatric paracetamol suspension. With a child-friendly strawberry flavor, it provides rapid relief from fever and mild-to-moderate pain in infants and young children.",
-    usage: "Dose based on weight (15mg/kg). Safe for infants.",
-    type: "Focus"
+    description: "Gentle fever and pain relief for infants in a kid-friendly strawberry flavor.",
+    usage: "Dose by child's weight. Safe for pediatric fever management."
   },
   {
     id: "dr-reddy-61",
@@ -872,11 +835,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr61/600/600",
     rx: false,
     format: "Suspension",
-    molecules: "Paracetamol Suspension 250mg/5ml (Strawberry Flavour)",
+    molecules: "Paracetamol 250mg/5ml",
     packing: "25x60ml",
-    description: "High-strength pediatric paracetamol for older children. Effectively manages high-grade fever and dental or post-vaccination pain with reliable dosing and excellent palatability.",
-    usage: "Higher dose for older children. Do not exceed 4 doses in 24 hrs.",
-    type: "Focus"
+    description: "High-strength paracetamol for effective fever control in older children.",
+    usage: "Higher dose for weight >10kg. Maximum 4 doses per day."
   },
   {
     id: "dr-reddy-62",
@@ -887,11 +849,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr62/600/600",
     rx: true,
     format: "Suspension",
-    molecules: "Mefenamic acid + Paracetamol suspension (Mango Flavour)",
+    molecules: "Mefenamic Acid + Paracetamol",
     packing: "60ml",
-    description: "Nicetamol MF is a powerful dual-action pediatric analgesic. Combining Mefenamic Acid and Paracetamol, it provides superior control over inflammatory pain and high fever where single agents may be insufficient.",
-    usage: "Anti-inflammatory pain relief for kids. Take with milk/food.",
-    type: "Focus"
+    description: "Stronger pediatric analgesic for high fever and inflammatory pain.",
+    usage: "Stronger pediatric fever/pain relief. Take with milk/food."
   },
   {
     id: "dr-reddy-63",
@@ -902,11 +863,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr63/600/600",
     rx: true,
     format: "Suspension",
-    molecules: "Mefenamic acid + Paracetamol suspension (Mango Flavour)",
+    molecules: "Mefenamic Acid + Paracetamol DS",
     packing: "60ml",
-    description: "Double strength (DS) formulation of Mefenamic Acid and Paracetamol for older children. Offers extended duration of relief from severe pain associated with injuries, fever, or inflammatory conditions.",
-    usage: "Double strength for high fever management. Follow age-weight chart.",
-    type: "Focus"
+    description: "Double strength dual-action analgesic for children with persistent fever.",
+    usage: "Use for high-grade pediatric fever. Follow weight chart carefully."
   },
   {
     id: "dr-reddy-64",
@@ -917,11 +877,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr64/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Aceclofenac (100mg) + Paracetamol (325mg) + Serratiopeptidase (15mg)",
+    molecules: "Aceclofenac + Paracetamol + Serratiopeptidase",
     packing: "20X10's",
-    description: "Nicetamol SP is a comprehensive triple-action tablet for adults. Aceclofenac and Paracetamol manage pain and fever, while Serratiopeptidase (a proteolytic enzyme) breaks down inflammatory mediators to rapidly reduce swelling and speed up tissue repair.",
-    usage: "Post-injury/surgery swelling and pain. Take with food.",
-    type: "Focus"
+    description: "Triple-action therapy for severe pain, fever, and post-traumatic swelling.",
+    usage: "Post-injury swelling and pain relief. Take after meals."
   },
   {
     id: "dr-reddy-65",
@@ -932,11 +891,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr65/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Aceclofenac 100 mg + Paracetamol 325mg Tablets",
+    molecules: "Aceclofenac + Paracetamol",
     packing: "20x10's",
-    description: "The gold standard for everyday pain management. Nise AP combines the rapid action of Paracetamol with the sustained anti-inflammatory properties of Aceclofenac, ideal for musculoskeletal pain, headaches, and toothaches.",
-    usage: "Musculoskeletal pain. Twice daily.",
-    type: "Focus"
+    description: "Standard daily pain management for joint pain, toothaches, and stiffness.",
+    usage: "General inflammatory pain. Twice daily after meals."
   },
   {
     id: "dr-reddy-66",
@@ -947,11 +905,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr66/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Aceclofenac 100 mg + Paracetamol 325mg Tablets",
+    molecules: "Aceclofenac + Paracetamol Bulk",
     packing: "60x15's",
-    description: "Bulk value pack of the trusted Nise AP formula. Provides reliable, cost-effective relief from chronic inflammatory pain conditions like osteoarthritis and rheumatoid arthritis.",
-    usage: "Chronic arthritis management. Regular dosing as per MD.",
-    type: "Focus"
+    description: "Economical bulk pack for chronic arthritic pain management.",
+    usage: "Ideal for chronic arthritis patients. Take as prescribed daily."
   },
   {
     id: "dr-reddy-67",
@@ -962,11 +919,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr67/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "ACECLOFENAC 100 MG + PARACETAMOL 325 MG + THIOCOLCHICOSIDE 4MG",
+    molecules: "Aceclofenac + Paracetamol + Thiocolchicoside",
     packing: "10x1x10's",
-    description: "Nise AT4 is an advanced solution for painful muscle spasms. It combines the pain-relieving power of Aceclofenac and Paracetamol with Thiocolchicoside, a potent muscle relaxant that works centrally to restore mobility and relieve stiffness.",
-    usage: "For painful muscle spasms and stiff neck. Take with water.",
-    type: "Focus"
+    description: "Complete solution for painful muscle spasms and stiff neck relief.",
+    usage: "Muscle relaxant and painkiller. Take with a glass of water."
   },
   {
     id: "dr-reddy-68",
@@ -977,11 +933,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr68/600/600",
     rx: false,
     format: "Spray",
-    molecules: "Diclofenac Diethylamine Spray 1.16% w/w",
+    molecules: "Diclofenac 1.16% Spray",
     packing: "6x55g",
-    description: "Nise D Spray offers rapid-action topical pain relief. The aerosolized Diclofenac penetrates deep into the skin to target joint pain, sprains, and sports injuries instantly, without the need for manual massage.",
-    usage: "Spray from 5cm distance 3-4 times daily. Do not apply to cuts.",
-    type: "Focus"
+    description: "Rapid-action spray for joint pain and sports injuries without massage.",
+    usage: "Spray 3-4 times daily on painful area from 5cm distance."
   },
   {
     id: "dr-reddy-69",
@@ -992,11 +947,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr69/600/600",
     rx: false,
     format: "Spray",
-    molecules: "Diclofenac Diethylamine Spray 1.16% w/w",
+    molecules: "Diclofenac 1.16% Spray",
     packing: "6x35g",
-    description: "Convenient medium-sized pain relief spray. Ideal for on-the-go relief from backaches and muscle pulls, providing a cooling sensation and rapid absorption of active Diclofenac.",
-    usage: "Quick relief for back pain. Wash hands after use.",
-    type: "Focus"
+    description: "Portable pain relief spray for quick relief from backaches and pulls.",
+    usage: "Targeted spray for back and joint pain. Non-greasy formula."
   },
   {
     id: "dr-reddy-70",
@@ -1007,11 +961,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr70/600/600",
     rx: false,
     format: "Gel",
-    molecules: "Diclofenac 1.16%, Virgin Linseed Oil & Methyl Salicylate Gel",
+    molecules: "Diclofenac + Linseed Oil + Methyl Salicylate",
     packing: "20 X 1 X 30g",
-    description: "A synergistic topical gel formula. Diclofenac reduces pain, Methyl Salicylate acts as a counter-irritant for a warming effect, and Linseed Oil helps in better penetration and reduces inflammation in deep-seated muscle pain.",
-    usage: "Massage gently into the painful joint. Use thrice daily.",
-    type: "Focus"
+    description: "Triple-action gel that warms the area and reduces deep muscle pain.",
+    usage: "Gently rub into painful joints 3 times daily for relief."
   },
   {
     id: "dr-reddy-71",
@@ -1022,11 +975,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr71/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Trypsin Chymotrypsin (1,00,000 AU) enteric coated tablets",
+    molecules: "Trypsin Chymotrypsin (1 Lakh AU)",
     packing: "10 X 20's",
-    description: "Chymopath Forte is a high-potency enzyme therapy for post-traumatic and post-operative edema. These enteric-coated tablets break down fibrin deposits and improve blood circulation in the affected area, significantly speeding up the healing process of hematomas and fractures.",
-    usage: "Edema/swelling reduction. Take on an empty stomach.",
-    type: "Focus"
+    description: "Enzyme therapy to rapidly reduce surgical and traumatic swelling.",
+    usage: "Mandatory: Take on empty stomach 30 mins before food."
   },
   {
     id: "dr-reddy-72",
@@ -1037,11 +989,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr72/600/600",
     rx: false,
     format: "Spray",
-    molecules: "Diclofenac Diethylamine Spray 1.16% w/w",
+    molecules: "Diclofenac 1.16% Spray",
     packing: "6x20g",
-    description: "Compact travel-friendly Nise D Spray. Perfect for emergency pain relief in gym bags or first-aid kits, providing the same high-efficacy Diclofenac delivery in a portable format.",
-    usage: "Emergency sports injury spray. Compact size.",
-    type: "Focus"
+    description: "Travel-friendly first-aid spray for immediate injury relief.",
+    usage: "Emergency injury spray. Keep in first-aid or gym bag."
   },
   {
     id: "dr-reddy-73",
@@ -1052,14 +1003,13 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr73/600/600",
     rx: false,
     format: "Gel",
-    molecules: "Diclofenac 1.16%, Virgin Linseed Oil & Methyl Salicylate Gel",
+    molecules: "Diclofenac + Linseed Oil + Methyl Salicylate",
     packing: "10 Monocartons",
-    description: "Bulk supply of high-efficacy Nise D Gel. Targeted for clinics and pharmacies, this formula remains the preferred choice for long-term management of chronic arthritic and inflammatory joint conditions.",
-    usage: "Clinic use. Apply to clean, dry skin area.",
-    type: "Focus"
+    description: "Professional bulk supply of high-efficacy pain relief gel.",
+    usage: "Professional clinic/home use. Rub twice daily for chronic pain."
   },
 
-  // RESPIRATORY (74-87)
+  // RESPIRATORY
   {
     id: "dr-reddy-74",
     name: "Acebrobid 100 Capsules",
@@ -1069,11 +1019,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr74/600/600",
     rx: true,
     format: "Capsule",
-    molecules: "Acebrophylline 100mg Capsules",
+    molecules: "Acebrophylline 100mg",
     packing: "10x10's",
-    description: "Acebrobid 100 contains Acebrophylline, a potent bronchodilator with mucolytic properties. It works by relaxing the airway muscles and thinning the mucus, making it easier to breathe in patients with asthma and chronic obstructive pulmonary disease (COPD).",
-    usage: "Asthma/COPD management. Usually once or twice daily.",
-    type: "Focus"
+    description: "Bronchodilator and mucolytic for asthma and chronic bronchitis.",
+    usage: "Breathing aid. Usually 1 capsule twice daily after meals."
   },
   {
     id: "dr-reddy-75",
@@ -1084,11 +1033,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr75/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Acebrophylline 200 mg SR Tablets",
+    molecules: "Acebrophylline 200 mg SR",
     packing: "10x1x10's",
-    description: "Sustained-release Acebrophylline for long-lasting relief from bronchospasms. This formulation ensures stable drug levels in the blood, providing consistent airway clearance throughout the day and night.",
-    usage: "Extended relief from chest congestion. Swallow whole.",
-    type: "Focus"
+    description: "Long-acting airway clearance for consistent management of COPD.",
+    usage: "Sustained-release tablet. Once daily at the same time."
   },
   {
     id: "dr-reddy-76",
@@ -1099,11 +1047,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr76/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Acebrophylline (100mg) + Acetylcysteine (600mg) Tablets",
+    molecules: "Acebrophylline + Acetylcysteine",
     packing: "10x1x10's",
-    description: "A dual-action respiratory therapy. Acebrophylline acts as a bronchodilator while Acetylcysteine is a powerful mucolytic that breaks down thick, sticky mucus. Ideal for productive cough in bronchitis or COPD.",
-    usage: "Break down thick mucus. Take with plenty of fluids.",
-    type: "Focus"
+    description: "Dual therapy to relax airways and break down thick, sticky mucus.",
+    usage: "Break down sticky mucus. Drink 2-3 liters of water daily."
   },
   {
     id: "dr-reddy-77",
@@ -1114,11 +1061,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr77/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Acebrophylline (200mg) SR + Montelukast (10mg) Tablets",
+    molecules: "Acebrophylline + Montelukast",
     packing: "10x1x10's",
-    description: "Advanced combination of Acebrophylline SR and Montelukast. This therapy targets both airway constriction and allergic inflammation, making it highly effective for management of allergic asthma.",
-    usage: "Allergic asthma control. Bedtime dose often recommended.",
-    type: "Focus"
+    description: "Targets both airway narrowing and allergic inflammation triggers.",
+    usage: "Allergic asthma management. Night dose preferred by MDs."
   },
   {
     id: "dr-reddy-78",
@@ -1129,11 +1075,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr78/600/600",
     rx: false,
     format: "Syrup",
-    molecules: "Chlorpheniramine Maleate 2mg/5ml + Phenylephrine 5mg/5ml Syrup",
+    molecules: "Chlorpheniramine + Phenylephrine",
     packing: "60ml",
-    description: "Dialex Cold is a comprehensive cold relief syrup. It contains an antihistamine to control sneezing and runny nose, and a nasal decongestant to relieve nasal blockage and sinus pressure.",
-    usage: "Cold/sneezing relief. Adults: 5ml twice daily.",
-    type: "Focus"
+    description: "Relieves sneezing, runny nose, and nasal congestion from common colds.",
+    usage: "Cold and congestion relief. 5ml twice daily for adults."
   },
   {
     id: "dr-reddy-79",
@@ -1144,11 +1089,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr79/600/600",
     rx: true,
     format: "Syrup",
-    molecules: "Dextromethorphan HBr 10mg/5ml + Chlorpheniramine Maleate 4mg/5ml Syrup",
+    molecules: "Dextromethorphan + Chlorpheniramine",
     packing: "100ml",
-    description: "A targeted cough suppressant for dry, irritating coughs. Dextromethorphan acts on the cough center in the brain while Chlorpheniramine provides relief from associated allergic symptoms.",
-    usage: "Dry cough suppressant. May cause drowsiness.",
-    type: "Focus"
+    description: "Targeted cough suppressant for dry, irritating, non-productive coughs.",
+    usage: "Dry cough relief. May cause slight drowsiness."
   },
   {
     id: "dr-reddy-80",
@@ -1159,11 +1103,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr80/600/600",
     rx: false,
     format: "Tablets",
-    molecules: "Acetylcysteine (600mg) Effervescent Tablet (Orange Flavour)",
+    molecules: "Acetylcysteine 600mg Effervescent",
     packing: "10X1X10",
-    description: "Diltoris contains high-dose Acetylcysteine in a convenient orange-flavored effervescent format. It is used as a potent mucolytic to clear excessive mucus from the lungs and as an antioxidant supplement.",
-    usage: "Dissolve in glass of water. Drink immediately once daily.",
-    type: "Focus"
+    description: "Fizzy orange tablet that clears excessive lung mucus and boosts antioxidants.",
+    usage: "Dissolve 1 tablet in 100ml water. Drink immediately once daily."
   },
   {
     id: "dr-reddy-81",
@@ -1174,11 +1117,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr81/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Montelukast 10mg + Fexofenadine 120mg Tablets",
+    molecules: "Montelukast + Fexofenadine",
     packing: "10x10's",
-    description: "FM 24 is a superior anti-allergic combination. Fexofenadine provides non-sedative relief from seasonal allergy symptoms, and Montelukast works as a leukotriene antagonist to prevent asthma symptoms and hay fever.",
-    usage: "Allergy/Hay fever relief. Non-drowsy formula.",
-    type: "Focus"
+    description: "Superior anti-allergic for hay fever and seasonal allergy symptoms.",
+    usage: "Non-drowsy allergy relief. Once daily at bedtime often."
   },
   {
     id: "dr-reddy-82",
@@ -1189,11 +1131,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr82/600/600",
     rx: false,
     format: "Spray",
-    molecules: "Oxymetazoline Hydrochloride Nasal Spray",
+    molecules: "Oxymetazoline HCl",
     packing: "10 X 1 X 10ml",
-    description: "Nostriol (Oxymetazoline) is a rapid-action nasal decongestant. It works by constricting the blood vessels in the nasal passages, providing immediate relief from nasal congestion caused by colds, hay fever, or sinusitis.",
-    usage: "2-3 sprays in each nostril twice daily. Limit use to 3 days.",
-    type: "Focus"
+    description: "Immediate relief from nasal blockage caused by colds or allergies.",
+    usage: "2 sprays per nostril. Use only for max 3 days consecutively."
   },
   {
     id: "dr-reddy-83",
@@ -1204,11 +1145,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr83/600/600",
     rx: true,
     format: "Syrup",
-    molecules: "Ambroxol HCl 15mg/5ml + Terbutaline Sulphate 1.25mg/5ml + Guaiphenesin 50mg/5ml + Menthol 1mg/5ml Syrup",
+    molecules: "Ambroxol + Terbutaline + Guaiphenesin + Menthol",
     packing: "25x100 ml",
-    description: "Throateasy GT is a quad-action expectorant. It combines a mucolytic (Ambroxol), a bronchodilator (Terbutaline), an expectorant (Guaiphenesin), and a cooling agent (Menthol) to treat productive coughs effectively.",
-    usage: "Productive cough relief. 5-10ml thrice daily.",
-    type: "Focus"
+    description: "Quad-action expectorant for chesty, productive cough clearance.",
+    usage: "Expectorant for productive cough. 10ml thrice daily."
   },
   {
     id: "dr-reddy-84",
@@ -1219,11 +1159,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr84/600/600",
     rx: false,
     format: "Lozenges",
-    molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Orange)",
+    molecules: "Dichlorobenzyl Alcohol + Amylmetacresol",
     packing: "24x10's",
-    description: "Zedex Lozenges contain two antiseptic agents that help fight throat infections. They provide symptomatic relief from sore throat, mouth infections, and throat irritation in a pleasant orange flavor.",
-    usage: "Sore throat relief. Dissolve one lozenge slowly in mouth every 3 hours.",
-    type: "Focus"
+    description: "Antiseptic throat soothing for irritation and mouth infections.",
+    usage: "Sore throat soothing. Dissolve slowly every 3 hours."
   },
   {
     id: "dr-reddy-85",
@@ -1234,11 +1173,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr85/600/600",
     rx: false,
     format: "Lozenges",
-    molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Orange) - Jar Pack",
+    molecules: "Dichlorobenzyl Alcohol + Amylmetacresol",
     packing: "24x10's",
-    description: "Carton packaging of Zedex antiseptic lozenges for convenient wholesale and retail distribution. Effective for rapid soothing of sore throat symptoms.",
-    usage: "Ideal for retail counter display. Antiseptic throat soothing.",
-    type: "Focus"
+    description: "Antiseptic lozenges for rapid relief from painful sore throat.",
+    usage: "Throat antiseptic. Avoid eating/drinking for 15 mins after use."
   },
   {
     id: "dr-reddy-86",
@@ -1249,11 +1187,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr86/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Deflazacort 6mg Tablets",
+    molecules: "Deflazacort 6mg",
     packing: "20X1X10",
-    description: "Defzacort 6 contains Deflazacort, a glucocorticoid with powerful anti-inflammatory and immunosuppressant properties. It is used to treat various conditions like asthma, allergies, and inflammatory joint disorders with a lower risk of metabolic side effects.",
-    usage: "Inflammatory disorder management. As prescribed by physician.",
-    type: "Focus"
+    description: "Potent anti-inflammatory steroid for asthma and joint inflammation.",
+    usage: "Steroid therapy. Take with food as directed by physician."
   },
   {
     id: "dr-reddy-87",
@@ -1264,14 +1201,13 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr87/600/600",
     rx: false,
     format: "Liquid",
-    molecules: "Saline Nasal Solution - Sodium Chloride I.P 0.65% w/v in Purified water, Benzalkonium Chloride 0.01% w/v",
+    molecules: "Saline Nasal Solution",
     packing: "20 X 1 X 1",
-    description: "Nostriol S is a sterile saline nasal solution. It helps in moisturizing dry or irritated nasal passages and clearing nasal crusting or thick mucus, making it safe for regular use to maintain nasal hygiene.",
-    usage: "Nasal hydration. Safe for frequent use and all ages.",
-    type: "Focus"
+    description: "Sterile saline to moisten dry nasal passages and clear crusting.",
+    usage: "Nasal hygiene. Safe for frequent daily use for all ages."
   },
 
-  // VMS (88-93)
+  // VMS
   {
     id: "dr-reddy-88",
     name: "Dr Excel D3 Capsules",
@@ -1281,11 +1217,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr88/600/600",
     rx: false,
     format: "Capsule",
-    molecules: "Cholecalciferol Capsules USP 60000 IU",
+    molecules: "Cholecalciferol 60000 IU",
     packing: "10X8'S",
-    description: "A high-dose Vitamin D3 supplement used to treat and prevent vitamin D deficiency. Vitamin D is essential for calcium absorption and maintaining healthy bones and teeth.",
-    usage: "Once weekly for 8-12 weeks or as directed. Take with fat-rich meal.",
-    type: "Focus"
+    description: "High-dose Vitamin D3 for bone health and calcium absorption.",
+    usage: "Once weekly for 8 weeks. Take with fat-rich meal for absorption."
   },
   {
     id: "dr-reddy-89",
@@ -1296,11 +1231,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr89/600/600",
     rx: true,
     format: "Syrup",
-    molecules: "Cyproheptadine HCl 2mg/5ml Syrup",
+    molecules: "Cyproheptadine HCl",
     packing: "8X4X2",
-    description: "An antihistamine used to relieve allergy symptoms such as watery eyes, runny nose, and itching. It is also commonly prescribed as an appetite stimulant in underweight patients.",
-    usage: "Appetite stimulant. 5-10ml twice daily before meals.",
-    type: "Focus"
+    description: "Appetite stimulant and allergy relief for healthy weight gain.",
+    usage: "Appetite boost. Take 5ml thrice daily before meals."
   },
   {
     id: "dr-reddy-90",
@@ -1311,11 +1245,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr90/600/600",
     rx: true,
     format: "Injection",
-    molecules: "Iron Succrose Injection 100mg/5ml",
+    molecules: "Iron Succrose 100mg/5ml",
     packing: "20x1x5ml",
-    description: "An intravenous iron replacement product used to treat iron deficiency anemia. It is particularly effective for patients who cannot tolerate oral iron or have chronic kidney conditions.",
-    usage: "Clinical anemia treatment. IV infusion only.",
-    type: "Focus"
+    description: "IV iron replacement for severe iron deficiency anemia cases.",
+    usage: "Clinical anemia IV treatment. Administered by professional only."
   },
   {
     id: "dr-reddy-91",
@@ -1326,11 +1259,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr91/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Sodium Feredetate 231mg, Folic Acid 1.5mg, Vitamin B12 15mcg Tablets",
+    molecules: "Sodium Feredetate + Folic Acid + B12",
     packing: "10x15's",
-    description: "A comprehensive hematinic supplement for the management of iron deficiency. Sodium feredetate provides iron with high bioavailability and minimal gastrointestinal irritation.",
-    usage: "Once daily. Safe for sensitive stomachs.",
-    type: "Focus"
+    description: "High-bioavailability iron complex for managing deficiency anemia.",
+    usage: "Blood builder. Once daily morning dose after breakfast."
   },
   {
     id: "dr-reddy-92",
@@ -1341,11 +1273,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr92/600/600",
     rx: false,
     format: "Capsule",
-    molecules: "Capsules of Zinc, B-Complex fortified with Vitamin C",
+    molecules: "Zinc + B-Complex + Vit C",
     packing: "8x30's",
-    description: "A balanced multivitamin and mineral supplement designed to boost immunity, support energy production, and improve overall health during periods of recovery or nutritional deficiency.",
-    usage: "Daily multivitamin. Once daily after breakfast.",
-    type: "Focus"
+    description: "Balanced multivitamin to boost immunity and energy recovery.",
+    usage: "Immunity booster. One capsule daily after major meal."
   },
   {
     id: "dr-reddy-93",
@@ -1356,14 +1287,13 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr93/600/600",
     rx: false,
     format: "Capsule",
-    molecules: "Amino acids, Minerals, Vitamins, Antioxidants with green tea extracts and wheat germ oil Capsules",
+    molecules: "Amino Acids + Minerals + Antioxidants",
     packing: "5x2x15's",
-    description: "A premium daily wellness supplement containing essential amino acids, minerals, and potent antioxidants like green tea extract to support vitality, improve focus, and protect against oxidative stress.",
-    usage: "Premium wellness boost. Once daily as dietary supplement.",
-    type: "Focus"
+    description: "Premium daily wellness boost for vitality and focus support.",
+    usage: "Advanced vitality. Best taken once daily with breakfast."
   },
 
-  // ORTHO (94-95)
+  // ORTHO
   {
     id: "dr-reddy-94",
     name: "Fbsoxta 40",
@@ -1373,11 +1303,10 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr94/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Febuxostat Tablets 40mg",
+    molecules: "Febuxostat 40mg",
     packing: "10x1x10's",
-    description: "A xanthine oxidase inhibitor used to lower uric acid levels in adults with gout. It works by inhibiting the enzyme responsible for uric acid production, preventing gout attacks.",
-    usage: "Gout management. Once daily morning dose.",
-    type: "Focus"
+    description: "Uric acid reducer used specifically to prevent gout attacks.",
+    usage: "Gout prevention. Once daily morning dose regularly."
   },
   {
     id: "dr-reddy-95",
@@ -1388,10 +1317,15 @@ export const products: Product[] = [
     img: "https://picsum.photos/seed/dr95/600/600",
     rx: true,
     format: "Tablets",
-    molecules: "Febuxostat Tablets 80mg",
+    molecules: "Febuxostat 80mg",
     packing: "10x1x10's",
-    description: "High-strength Febuxostat for the effective management of hyperuricemia in patients with gout. Provides superior uric acid control for those requiring more aggressive treatment.",
-    usage: "Advanced gout control. Follow MD prescription strictly.",
-    type: "Focus"
+    description: "High-strength therapy for effective uric acid control in gout.",
+    usage: "Strong gout control. Take consistently to prevent flares."
   }
+];
+
+// Consolidate all products into a single exported list
+export const products: Product[] = [
+  ...drReddyProducts,
+  // Future companies will be added here
 ];
