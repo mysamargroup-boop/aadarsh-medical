@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from 'react';
@@ -16,25 +17,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
+import { products } from '@/lib/product-data';
 
-const products = [
-  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Antibiotic", price: "120.00", img: "https://picsum.photos/seed/p1/600/600" },
-  { id: 2, name: "Calpol 650mg", company: "GSK", cat: "Antipyretic", price: "45.50", img: "https://picsum.photos/seed/p2/600/600" },
-  { id: 3, name: "Telma 40", company: "Glenmark", cat: "Cardiac", price: "185.00", img: "https://picsum.photos/seed/p3/600/600" },
-  { id: 4, name: "Dolo 650", company: "Micro Labs", cat: "Analgesic", price: "30.00", img: "https://picsum.photos/seed/p4/600/600" },
-  { id: 5, name: "Limcee Vitamin C", company: "Himalaya", cat: "Supplements", price: "85.00", img: "https://picsum.photos/seed/p5/600/600" },
-  { id: 6, name: "N95 Face Masks", company: "3M", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/600/600" },
-  { id: 7, name: "Accu-Chek Guide", company: "Roche", cat: "Medical Device", price: "1250.00", img: "https://picsum.photos/seed/p7/600/600" },
-  { id: 8, name: "Azithromycin 500mg", company: "Cipla", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/600/600" }
-];
-
-const categories = ["All", "Antibiotic", "Antipyretic", "Cardiac", "Analgesic", "Supplements", "Surgical", "Medical Device"];
+const categories = ["All", "Pharmaceuticals", "OTC & Healthcare", "Veterinary Medicines", "Medical Devices & Equipment", "Surgical & Healthcare Essentials"];
 
 export function ProductCatalog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredProducts = products.filter(p => {
+  const filteredProducts = products.slice(0, 12).filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          p.cat.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || p.cat === selectedCategory;
@@ -47,7 +38,7 @@ export function ProductCatalog() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
             <span className="text-secondary font-bold uppercase tracking-widest text-[10px]">Our Inventory</span>
-            <h2 className="text-primary font-headline font-bold text-2xl md:text-3xl mt-1">Available Wholesale</h2>
+            <h2 className="text-primary font-headline font-bold text-2xl md:text-3xl mt-1">Wholesale Catalog</h2>
           </div>
           
           <div className="flex gap-2 w-full md:w-auto">
@@ -165,8 +156,8 @@ function ProductCard({ product }: { product: any }) {
 
         <div className="mt-auto flex items-center justify-between">
           <div>
-            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">Wholesale Price</p>
-            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price}</p>
+            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">MRP</p>
+            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)}</p>
           </div>
           <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
             <Plus className="size-4" />

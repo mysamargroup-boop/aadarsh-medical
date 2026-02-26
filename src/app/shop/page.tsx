@@ -22,7 +22,8 @@ export default function ShopPage() {
   const filteredProducts = useMemo(() => {
     return allProducts.filter(p => {
       const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                           p.company.toLowerCase().includes(searchQuery.toLowerCase());
+                           p.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           p.molecules.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCat = selectedCats.length === 0 || selectedCats.includes(p.cat);
       const matchesRx = rxRequired === null || p.rx === rxRequired;
       return matchesSearch && matchesCat && matchesRx;
@@ -55,9 +56,9 @@ export default function ShopPage() {
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-              <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Wholesale Inventory</h1>
+              <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Pharma Inventory</h1>
               <p className="text-muted-foreground mt-2 max-w-xl text-sm leading-relaxed">
-                Browse our complete range of OTC, Veterinary, Medical Devices, and Surgical essentials.
+                Browse our complete wholesale range of medicines, veterinary supplies, and surgical essentials.
               </p>
             </div>
             
@@ -65,7 +66,7 @@ export default function ShopPage() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <input 
                 type="text" 
-                placeholder="Search products, brands..." 
+                placeholder="Search medicines, formula..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 rounded-[1.25rem] bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-primary shadow-sm"
@@ -187,7 +188,7 @@ function ShopProductCard({ product }: { product: any }) {
 
         <div className="mt-auto flex items-center justify-between">
           <div>
-            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">Wholesale Price</p>
+            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">MRP</p>
             <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)}</p>
           </div>
           <div className="w-6 h-6 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">

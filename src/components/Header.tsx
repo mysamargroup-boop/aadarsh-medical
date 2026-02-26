@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
@@ -17,6 +17,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -34,17 +35,21 @@ export function Header() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Shop', href: '/shop' },
-    { name: 'Categories', href: '/#categories' },
+    { 
+      name: 'Categories', 
+      href: '/#categories',
+      hasMegaMenu: true 
+    },
     { name: 'Why Us', href: '/#why-us' },
     { name: 'Contact', href: '/#contact' },
   ];
 
   const subNavItems = [
-    { name: 'Pharma', icon: <Pill size={16} />, href: '/shop' },
-    { name: 'OTC', icon: <ShieldPlus size={16} />, href: '/shop' },
-    { name: 'Vet', icon: <HeartPulse size={16} />, href: '/shop' },
-    { name: 'Devices', icon: <Microscope size={16} />, href: '/shop' },
-    { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop' },
+    { name: 'Pharma', icon: <Pill size={16} />, href: '/shop?cat=Pharmaceuticals' },
+    { name: 'OTC', icon: <ShieldPlus size={16} />, href: '/shop?cat=OTC %26 Healthcare' },
+    { name: 'Vet', icon: <HeartPulse size={16} />, href: '/shop?cat=Veterinary Medicines' },
+    { name: 'Devices', icon: <Microscope size={16} />, href: '/shop?cat=Medical Devices %26 Equipment' },
+    { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop?cat=Surgical %26 Healthcare Essentials' },
   ];
 
   const isActive = (path: string) => {
@@ -56,7 +61,6 @@ export function Header() {
 
   return (
     <>
-      {/* Header increased to z-[110] to overlay bottom navigation when menu is open */}
       <header className="fixed top-0 left-0 right-0 z-[110]">
         <nav className={cn("transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg", isScrolled ? "py-3 opacity-100" : "opacity-95")}>
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -69,12 +73,68 @@ export function Header() {
                 <span className="font-headline font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white">Aadarsh MedStore</span>
               </NextLink>
             </div>
+            
             <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0">
               {navLinks.map((link) => (
-                <NextLink key={link.name} href={link.href} className={cn("font-bold transition-colors text-sm lg:text-base", isActive(link.href) ? "text-white" : "text-white/80 hover:text-white")}>
-                  {link.name}
-                </NextLink>
+                <div 
+                  key={link.name}
+                  onMouseEnter={() => link.hasMegaMenu && setIsMegaMenuOpen(true)}
+                  onMouseLeave={() => link.hasMegaMenu && setIsMegaMenuOpen(false)}
+                  className="relative h-full flex items-center"
+                >
+                  <NextLink 
+                    href={link.href} 
+                    className={cn(
+                      "font-bold transition-colors text-sm lg:text-base py-2", 
+                      isActive(link.href) ? "text-white underline underline-offset-8" : "text-white/80 hover:text-white"
+                    )}
+                  >
+                    {link.name}
+                  </NextLink>
+
+                  {/* Desktop Mega Menu */}
+                  {link.hasMegaMenu && isMegaMenuOpen && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px] animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="bg-white rounded-2xl shadow-2xl border border-muted/20 overflow-hidden grid grid-cols-2">
+                        <div className="p-6 bg-muted/20">
+                          <h4 className="text-primary font-headline font-bold text-sm mb-4 uppercase tracking-wider">Product Segments</h4>
+                          <div className="space-y-3">
+                            {subNavItems.map((item) => (
+                              <NextLink 
+                                key={item.name} 
+                                href={item.href}
+                                className="flex items-center gap-3 p-2 rounded-xl hover:bg-white hover:text-secondary transition-all text-primary font-bold group/item"
+                              >
+                                <span className="text-secondary group-hover/item:scale-110 transition-transform">{item.icon}</span>
+                                <span className="text-xs">{item.name}</span>
+                                <ArrowRight size={12} className="ml-auto opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
+                              </NextLink>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="p-6 bg-white border-l">
+                          <h4 className="text-primary font-headline font-bold text-sm mb-4 uppercase tracking-wider">Top Concerns</h4>
+                          <div className="grid grid-cols-1 gap-2">
+                            {['Gastric Care', 'Diabetes', 'Heart Care', 'Liver Care', 'Bone & Joint'].map((concern) => (
+                              <NextLink 
+                                key={concern} 
+                                href={`/shop?q=${concern}`}
+                                className="text-[11px] font-medium text-muted-foreground hover:text-secondary p-2 rounded-lg hover:bg-muted/30 transition-colors"
+                              >
+                                • {concern}
+                              </NextLink>
+                            ))}
+                          </div>
+                          <Button asChild variant="link" className="mt-4 p-0 h-auto text-xs font-bold text-secondary">
+                            <NextLink href="/shop">Browse All Concerns →</NextLink>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
+              
               <div className="flex items-center gap-4">
                 <NextLink href="/shop" className="relative p-2 text-white hover:opacity-80">
                   <ShoppingCart size={24} />
@@ -85,6 +145,7 @@ export function Header() {
                 </Button>
               </div>
             </div>
+
             <div className="flex items-center md:hidden gap-3">
                <NextLink href="/shop" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
@@ -142,13 +203,12 @@ export function Header() {
             >
               Enquiry Portal
             </Button>
-            {/* Safe area spacer for mobile bottom navigation */}
             <div className="h-20 shrink-0" />
           </div>
         )}
       </header>
 
-      {/* Bottom Navigation for Mobile (z-index below the open mobile menu) */}
+      {/* Bottom Navigation for Mobile */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-[102] medical-gradient-dark rounded-2xl shadow-2xl border border-white/10 p-2.5 flex justify-around items-center">
         <NextLink href="/" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />

@@ -1,10 +1,13 @@
+
 "use client"
 
 import React from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
 
 const concerns = [
+  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", imageId: "concern-stomach" },
   { id: 'diabetes', title: "Diabetes", color: "bg-[#F0FDFA]", imageId: "concern-diabetes" },
   { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", imageId: "concern-heart" },
   { id: 'stomach', title: "Stomach Care", color: "bg-[#F0FDF4]", imageId: "concern-stomach" },
@@ -28,7 +31,8 @@ export function HealthConcerns() {
           {concerns.map((item) => {
             const img = PlaceHolderImages.find(p => p.id === item.imageId)?.imageUrl;
             return (
-              <div 
+              <Link 
+                href={`/shop?q=${item.title}`}
                 key={item.id} 
                 className="flex-shrink-0 w-28 md:w-36 snap-start group cursor-pointer"
               >
@@ -44,7 +48,7 @@ export function HealthConcerns() {
                 <h3 className="text-center text-[11px] md:text-xs font-bold text-primary leading-tight group-hover:text-emerald-600 transition-colors h-8 flex items-start justify-center px-1 uppercase tracking-tight">
                   {item.title}
                 </h3>
-              </div>
+              </Link>
             );
           })}
         </div>

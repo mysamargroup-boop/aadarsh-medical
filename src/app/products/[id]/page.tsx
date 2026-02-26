@@ -21,10 +21,12 @@ import {
   BadgeCheck,
   Plus,
   Minus,
-  ArrowLeft
+  Stethoscope,
+  Info,
+  Clock,
+  ShieldCheck
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { products } from '@/lib/product-data';
 
@@ -36,25 +38,14 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export default function ProductDetailPage() {
   const params = useParams();
-  const router = useRouter();
-  const [quantity, setQuantity] = useState(100);
-  const [priceTier, setPriceTier] = useState('tier2');
+  const [quantity, setQuantity] = useState(1);
 
   const product = useMemo(() => {
     return products.find(p => p.id === params.id) || products[0];
   }, [params.id]);
 
-  const tiers = [
-    { id: 'tier1', label: '1 - 49 units', price: product.price * 1.05 },
-    { id: 'tier2', label: '50 - 199 units', price: product.price, popular: true },
-    { id: 'tier3', label: '200+ units', price: product.price * 0.95 },
-  ];
-
-  const currentPrice = tiers.find(t => t.id === priceTier)?.price || product.price;
-  const totalPrice = (currentPrice * quantity).toLocaleString('en-IN');
-
   const handleEnquiry = () => {
-    const message = encodeURIComponent(`I am interested in ${product.name}. Quantity: ${quantity}. Price Tier: ${priceTier}.`);
+    const message = encodeURIComponent(`I am interested in ${product.name}. Quantity: ${quantity}.`);
     window.open(`https://wa.me/919630080706?text=${message}`, '_blank');
   };
 
@@ -75,15 +66,15 @@ export default function ProductDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="space-y-8">
               {/* Product Image Section */}
-              <div className="relative aspect-square bg-card rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
+              <div className="relative aspect-square bg-white rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
                   {product.rx && (
-                    <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                    <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
                       Prescription Required
                     </Badge>
                   )}
                   <br />
-                  <Badge className="bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                  <Badge className="bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
                     {product.format}
                   </Badge>
                 </div>
@@ -98,43 +89,45 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg hover:bg-muted/90">
-                    <Rotate3D className="mr-2" size={16} /> 360° View
+                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-sm text-secondary rounded-full shadow-lg border-none">
+                    <Rotate3D className="mr-2" size={16} /> 360°
                   </Button>
-                  <Button variant="secondary" size="sm" className="bg-muted text-secondary rounded-full shadow-lg hover:bg-muted/90">
+                  <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-sm text-secondary rounded-full shadow-lg border-none">
                     <PlayCircle className="mr-2" size={16} /> Video
                   </Button>
                 </div>
               </div>
 
               {/* Quality Badges Section (Left Side) */}
-              <div className="bg-white p-6 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
-                <h3 className="text-primary font-bold text-lg mb-2">Quality Assurance</h3>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
-                    <ThermometerSnowflake size={22} />
+              <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
+                <h3 className="text-primary font-bold text-lg mb-2 flex items-center gap-2">
+                  <ShieldCheck className="text-secondary" /> Quality Assurance
+                </h3>
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                    <ThermometerSnowflake size={24} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Controlled Storage</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Maintained under optimal conditions for efficacy.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintenance</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Stored under strict temperature controls for maximum efficacy.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
-                    <BadgeCheck size={22} />
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">
+                    <BadgeCheck size={24} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Authentic Supply</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized pharmaceutical channels.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">100% Authentic Supply</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from Dr. Reddy's authorized channels.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
-                    <FileText size={22} />
+                <div className="flex items-center gap-4 group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+                    <FileText size={24} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Full Traceability</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Complete batch details and expiry tracking.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Traceability</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Every unit is tracked with full batch, MFG and Expiry details.</p>
                   </div>
                 </div>
               </div>
@@ -150,67 +143,61 @@ export default function ProductDetailPage() {
                   </button>
                 </div>
                 <p className="text-lg text-muted-foreground mb-4 font-medium">{product.molecules}</p>
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">{product.company}</span></span>
-                  <span className="text-muted-foreground">Packing: <span className="text-primary font-bold">{product.packing}</span></span>
-                  <span className="flex items-center gap-1 text-green-600 font-bold">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs uppercase font-bold tracking-widest">
+                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary">{product.company}</span></span>
+                  <span className="text-muted-foreground">Packing: <span className="text-primary">{product.packing}</span></span>
+                  <span className="flex items-center gap-1.5 text-green-600">
                     <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
                   </span>
                 </div>
               </div>
 
-              {/* Description Section (Above Pricing) */}
-              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted shadow-sm">
-                <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
-                <p>{product.description}</p>
+              {/* Description & Usage */}
+              <div className="space-y-6">
+                <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm">
+                  <h3 className="text-primary font-bold text-lg mb-4 flex items-center gap-2">
+                    <Info className="text-secondary" size={20} /> Product Information
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
+                </div>
+
+                {product.usage && (
+                  <div className="bg-secondary/5 p-8 rounded-[2rem] border border-secondary/20 shadow-sm">
+                    <h3 className="text-secondary font-bold text-lg mb-4 flex items-center gap-2">
+                      <Stethoscope size={20} /> Usage & Indications
+                    </h3>
+                    <p className="text-primary font-medium text-sm leading-relaxed">{product.usage}</p>
+                  </div>
+                )}
               </div>
 
-              {/* Wholesale Pricing Tiers Card */}
-              <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
-                <CardContent className="p-8 space-y-6">
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers (Incl. GST)</p>
-                  
-                  <RadioGroup value={priceTier} onValueChange={setPriceTier} className="space-y-3">
-                    {tiers.map((tier) => (
-                      <div 
-                        key={tier.id}
-                        className={cn(
-                          "relative flex items-center justify-between p-5 rounded-2xl border transition-all cursor-pointer",
-                          priceTier === tier.id 
-                            ? "border-primary bg-primary/5 ring-1 ring-primary/50" 
-                            : "border-muted bg-card hover:border-primary/30"
-                        )}
-                      >
-                        {tier.popular && (
-                          <div className="absolute -top-2.5 right-6 bg-primary text-white text-[8px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                            Most Popular
-                          </div>
-                        )}
-                        <div className="flex items-center gap-4">
-                          <RadioGroupItem value={tier.id} id={tier.id} className="border-primary" />
-                          <Label htmlFor={tier.id} className="font-bold text-primary cursor-pointer">{tier.label}</Label>
-                        </div>
-                        <div className="text-right">
-                          <span className="font-bold text-primary text-lg">₹{tier.price.toFixed(2)}</span>
-                          <span className="text-[10px] text-muted-foreground ml-1">/unit</span>
-                        </div>
+              {/* Pricing Section */}
+              <Card className="rounded-[2.5rem] border-muted overflow-hidden shadow-none bg-muted/10 border-none">
+                <CardContent className="p-8 space-y-8">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-1">Maximum Retail Price</p>
+                      <div className="flex items-end gap-1">
+                        <span className="text-4xl font-headline font-bold text-primary">₹{product.price.toFixed(2)}</span>
+                        <span className="text-muted-foreground font-bold text-xs mb-1">/ unit</span>
                       </div>
-                    ))}
-                  </RadioGroup>
-
-                  <div className="flex flex-row items-center justify-between gap-4 pt-6 border-t border-muted w-full">
-                    <div className="text-left">
-                      <p className="text-[10px] text-muted-foreground font-bold uppercase">Total (incl. GST)</p>
-                      <p className="text-2xl sm:text-3xl font-headline font-bold text-primary">₹{totalPrice}</p>
+                      <p className="text-[10px] text-muted-foreground mt-1 font-bold italic">*Incl. of all taxes (GST)</p>
                     </div>
+                    <div className="bg-white px-4 py-2 rounded-xl border border-muted shadow-sm">
+                       <p className="text-[8px] font-bold uppercase text-secondary mb-1">Availability</p>
+                       <p className="text-[10px] font-bold text-primary">Ready for Supply</p>
+                    </div>
+                  </div>
 
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center bg-white rounded-xl p-0.5 border shadow-sm">
+                  <div className="flex items-center justify-between gap-4 pt-6 border-t border-muted/30">
+                    <div className="flex-1">
+                      <Label className="text-[10px] uppercase font-bold text-muted-foreground mb-2 block">Order Quantity</Label>
+                      <div className="flex items-center bg-white rounded-xl p-1 border shadow-inner w-fit">
                         <Button 
                           variant="ghost" 
                           size="icon" 
-                          className="h-8 w-8 rounded-lg hover:bg-secondary/10"
-                          onClick={() => setQuantity(q => Math.max(1, q - 10))}
+                          className="h-9 w-9 rounded-lg hover:bg-secondary/10"
+                          onClick={() => setQuantity(q => Math.max(1, q - 1))}
                         >
                           <Minus size={14} className="text-primary" />
                         </Button>
@@ -218,32 +205,41 @@ export default function ProductDetailPage() {
                           type="number" 
                           value={quantity} 
                           onChange={(e) => setQuantity(Number(e.target.value))}
-                          className="w-12 text-center bg-transparent font-bold text-primary border-none outline-none text-sm"
+                          className="w-14 text-center bg-transparent font-bold text-primary border-none outline-none text-sm"
                         />
                         <Button 
                           variant="ghost" 
                           size="icon" 
-                          className="h-8 w-8 rounded-lg hover:bg-secondary/10"
-                          onClick={() => setQuantity(q => q + 10)}
+                          className="h-9 w-9 rounded-lg hover:bg-secondary/10"
+                          onClick={() => setQuantity(q => q + 1)}
                         >
                           <Plus size={14} className="text-primary" />
                         </Button>
                       </div>
+                    </div>
+                    
+                    <div className="text-right">
+                       <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">Total MRP</p>
+                       <p className="text-2xl font-bold text-secondary">₹{(product.price * quantity).toLocaleString('en-IN')}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Button 
                       onClick={handleEnquiry}
-                      size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-lg group border-none">
+                      size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-base group border-none">
                       <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
                     </Button>
                     <Button 
                       onClick={() => window.open('https://wa.me/919630080706', '_blank')}
-                      size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-lg shadow-lg shadow-green-500/10 border-none">
+                      size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-base shadow-lg shadow-green-500/10 border-none">
                       <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
                     </Button>
                   </div>
+
+                  <p className="text-[10px] text-center text-muted-foreground flex items-center justify-center gap-2">
+                    <Clock size={12} /> Same-day processing for orders before 4 PM
+                  </p>
                 </CardContent>
               </Card>
             </div>
