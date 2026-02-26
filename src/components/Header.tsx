@@ -70,18 +70,18 @@ export function Header() {
           "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
           isScrolled ? "py-2.5" : "py-4"
         )}>
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
             <div className="flex items-center gap-2 md:gap-4 shrink-0">
               <button className="md:hidden p-2 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
               <NextLink href="/" className="flex items-center gap-2 group whitespace-nowrap">
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-lg md:text-xl shadow-lg shrink-0">A</div>
-                <span className="font-headline font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white">Aadarsh MedStore</span>
+                <span className="font-headline font-bold text-sm sm:text-lg md:text-xl lg:text-2xl text-white">Aadarsh MedStore</span>
               </NextLink>
             </div>
             
-            <div className="hidden md:flex items-center gap-6 lg:gap-8 shrink-0 h-full">
+            <div className="hidden md:flex items-center gap-4 lg:gap-6 shrink-0 h-full">
               {navLinks.map((link) => (
                 <div 
                   key={link.name}
@@ -168,12 +168,12 @@ export function Header() {
                 </div>
               ))}
               
-              <div className="flex items-center gap-4 ml-4">
+              <div className="flex items-center gap-3 ml-2">
                 <NextLink href="/shop" className="relative p-2 text-white hover:scale-110 transition-transform">
                   <ShoppingCart size={24} />
-                  <span className="absolute top-0 right-0 w-4.5 h-4.5 bg-accent text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-md border-2 border-primary">0</span>
+                  <span className="absolute top-1 right-1 w-4 h-4 bg-accent text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-md">0</span>
                 </NextLink>
-                <Button onClick={handleEnquiryClick} className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-xl transition-all font-bold text-sm lg:text-base border-none h-11">
+                <Button onClick={handleEnquiryClick} className="bg-white text-primary hover:bg-white/90 rounded-full px-4 lg:px-6 shadow-xl transition-all font-bold text-sm lg:text-base border-none h-11 shrink-0">
                   Enquiry Portal
                 </Button>
               </div>
@@ -182,12 +182,13 @@ export function Header() {
             <div className="flex items-center md:hidden gap-3">
                <NextLink href="/shop" className="relative p-2 text-white">
                   <ShoppingCart size={22} />
-                  <span className="absolute top-0 right-0 w-4 h-4 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-primary">0</span>
+                  <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-accent text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
                 </NextLink>
             </div>
           </div>
         </nav>
 
+        {/* Sub-Navigation for Desktop */}
         <div className={cn(
           "bg-white/10 backdrop-blur-md hidden md:block border-t border-white/5 transition-all duration-300",
           isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100"
@@ -260,7 +261,7 @@ export function Header() {
         <NextLink href="/shop" className="relative flex flex-col items-center gap-1 text-white/60">
           <ShoppingCart size={20} />
           <span className="text-[10px] font-bold">Cart</span>
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center border border-primary">0</span>
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-accent text-white text-[8px] font-bold rounded-full flex items-center justify-center">0</span>
         </NextLink>
         <NextLink href="https://wa.me/919630080706" className="flex flex-col items-center gap-1 text-white/60 hover:text-white">
           <WhatsAppIcon className="w-5 h-5" />
