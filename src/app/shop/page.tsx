@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal, ChevronLeft } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
-import { products as allProducts } from '@/lib/product-data';
+import { products as allProducts, getProductUrl } from '@/lib/product-data';
 import { cn } from '@/lib/utils';
 
 const ITEMS_PER_PAGE = 24;
@@ -23,11 +23,11 @@ export default function ShopPage() {
   const [rxRequired, setRxRequired] = useState<boolean | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Debounce logic: 100ms delay as requested
+  // Debounce logic
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearch(searchQuery);
-      setCurrentPage(1); // Reset to first page on new search
+      setCurrentPage(1);
     }, 100);
 
     return () => clearTimeout(handler);
@@ -146,7 +146,7 @@ export default function ShopPage() {
 
               {paginatedProducts.length > 0 ? (
                 <>
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-4 md:gap-6">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                     {paginatedProducts.map((p) => (
                       <ShopProductCard key={p.id} product={p} />
                     ))}
@@ -216,7 +216,7 @@ function ShopProductCard({ product }: { product: any }) {
 
   return (
     <Link 
-      href={`/products/${product.id}`}
+      href={getProductUrl(product)}
       className="group relative bg-white rounded-2xl border border-border hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1"
     >
       <div className="relative aspect-square overflow-hidden bg-muted/30">

@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -17,7 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
-import { products } from '@/lib/product-data';
+import { products, getProductUrl } from '@/lib/product-data';
 
 const categories = ["All", "Pharmaceuticals", "OTC & Healthcare", "Veterinary Medicines", "Medical Devices & Equipment", "Surgical & Healthcare Essentials"];
 
@@ -125,7 +124,7 @@ function ProductCard({ product }: { product: any }) {
 
   return (
     <Link 
-      href={`/products/${product.id}`}
+      href={getProductUrl(product)}
       className="group relative bg-white rounded-[1.5rem] border border-border hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1"
     >
       <div className="relative aspect-square overflow-hidden bg-muted/30">
