@@ -1,10 +1,16 @@
 "use client"
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="medical-gradient-dark text-background pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -100,7 +106,7 @@ export function Footer() {
             <span>Wholesale DL: 20B/461/36/2017</span>
           </div>
           <div className="space-y-2">
-            <p>© {new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
+            <p>© {year || new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
           </div>
         </div>
       </div>
