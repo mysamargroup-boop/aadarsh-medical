@@ -8,12 +8,13 @@ export interface Product {
   rx: boolean;
   molecules: string;
   packing: string;
-  format: 'Tablets' | 'Suspension' | 'Injection' | 'Other';
+  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Other';
   description: string;
   type?: 'Popular' | 'Focus';
 }
 
 export const products: Product[] = [
+  // ANTI-INFECTIVES (1-24)
   {
     id: "dr-reddy-1",
     name: "Cefiwok CV",
@@ -286,5 +287,219 @@ export const products: Product[] = [
     molecules: "Cefuroxime 1500mg with WFI",
     packing: "8 X 1 X 1",
     description: "Injectable Cefuroxime (1.5g) for intensive care settings. Provides broad-spectrum coverage against many Gram-positive and Gram-negative organisms."
+  },
+
+  // DERMATOLOGY (25-33)
+  {
+    id: "dr-reddy-25",
+    name: "Baxysporin Powder",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 85.00,
+    img: "https://picsum.photos/seed/dr25/600/600",
+    rx: false,
+    format: "Powder",
+    molecules: "Neomycin sulphate IP 5mg + Bacitracin zinc IP 250 units + Sulphacetamide sodium IP 60 mg",
+    packing: "10x10g",
+    description: "Baxysporin Powder is a triple antibiotic powder containing Neomycin, Bacitracin, and Sulphacetamide. It is used to prevent and treat minor skin infections caused by small cuts, scrapes, or burns. Neomycin and Bacitracin kill bacteria, while Sulphacetamide inhibits their growth.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-26",
+    name: "Candigurd B",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 98.00,
+    img: "https://picsum.photos/seed/dr26/600/600",
+    rx: true,
+    format: "Cream",
+    molecules: "Clotrimazole 1% w/w + Beclometasone Dipropionate 0.025% Cream",
+    packing: "20x1x10g",
+    description: "Candigurd B Cream is a combination medicine used to treat various types of skin infections, typically those associated with inflammation and itching. Clotrimazole is an antifungal that stops the growth of fungi, and Beclometasone is a steroid that reduces redness, swelling, and itchiness.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-27",
+    name: "Candigurd Powder (Small)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 104.50,
+    img: "https://picsum.photos/seed/dr27/600/600",
+    rx: false,
+    format: "Powder",
+    molecules: "Clotrimazole 1% w/w Powder",
+    packing: "6x1's",
+    description: "Candigurd Powder contains Clotrimazole, a broad-spectrum antifungal. It is effective for treating prickly heat, fungal infections caused by sweat and moisture, and skin irritation in folds of the body.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-28",
+    name: "Candigurd Powder (Large)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 148.50,
+    img: "https://picsum.photos/seed/dr28/600/600",
+    rx: false,
+    format: "Powder",
+    molecules: "Clotrimazole 1% w/w Powder",
+    packing: "5x1's",
+    description: "Standard antifungal dusting powder for larger areas or prolonged use. Prevents fungal growth and keeps the skin dry and comfortable.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-29",
+    name: "Eclospan Cream",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 188.50,
+    img: "https://picsum.photos/seed/dr29/600/600",
+    rx: true,
+    format: "Cream",
+    molecules: "Beclomethasone dipropionate (0.025% w/w) + Neomycin Sulphate (0.5% w/w) + Miconazole Nitrate (2% w/w)",
+    packing: "25x1x15g",
+    description: "A comprehensive triple-action cream. Beclomethasone reduces inflammation, Neomycin treats bacterial infections, and Miconazole treats fungal infections, making it ideal for mixed skin infections.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-30",
+    name: "Eclospan M",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 225.00,
+    img: "https://picsum.photos/seed/dr30/600/600",
+    rx: true,
+    format: "Cream",
+    molecules: "Mometasone (0.1 % w/w) Cream",
+    packing: "20x1x10g",
+    description: "Eclospan M contains Mometasone, a medium-potency corticosteroid. It is used to reduce the swelling, itchiness, and redness of various skin conditions such as eczema and psoriasis.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-31",
+    name: "Eclospan S",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 182.00,
+    img: "https://picsum.photos/seed/dr31/600/600",
+    rx: true,
+    format: "Ointment",
+    molecules: "Clobetasol 0.05% w/w + Salicylic Acid 3% w/w Ointment",
+    packing: "20x1x20g",
+    description: "A potent combination of Clobetasol (steroid) and Salicylic Acid (keratolytic). Used to treat chronic plaque psoriasis and other scaly skin conditions where thick skin needs to be softened for better steroid penetration.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-32",
+    name: "Ketoluxe ZPTO",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 410.00,
+    img: "https://picsum.photos/seed/dr32/600/600",
+    rx: false,
+    format: "Shampoo",
+    molecules: "Ketoconazole 2% w/v + Pyrithione Zinc 1% w/v Shampoo",
+    packing: "6 X 1 X 100ml",
+    description: "Ketoluxe ZPTO is an anti-dandruff shampoo combining two active ingredients. Ketoconazole is an antifungal that kills dandruff-causing fungi, while Pyrithione Zinc helps regulate scalp health and reduces flaking.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-33",
+    name: "Candigurd Soap",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 95.00,
+    img: "https://picsum.photos/seed/dr33/600/600",
+    rx: false,
+    format: "Soap",
+    molecules: "Sulfiram (5%) Soap",
+    packing: "12 X 1 (Shrink Wrap)",
+    description: "Candigurd Soap with Sulfiram is an antiseptic soap used for the treatment and prevention of scabies and other skin parasites. It helps maintain skin hygiene and prevents the spread of skin infections.",
+    type: "Focus"
+  },
+
+  // GASTRO INTESTINAL (34-39)
+  {
+    id: "dr-reddy-34",
+    name: "Omez Lax L (100ml)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 131.25,
+    img: "https://picsum.photos/seed/dr34/600/600",
+    rx: false,
+    format: "Suspension",
+    molecules: "Lactulose Solution 10g/15ml",
+    packing: "100ml",
+    description: "Omez Lax L contains Lactulose, a synthetic sugar used to treat constipation. It works by drawing water into the colon, which softens the stool and makes it easier to pass. It is also used in the management of hepatic encephalopathy.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-35",
+    name: "Omez Lax L (200ml)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 262.79,
+    img: "https://picsum.photos/seed/dr35/600/600",
+    rx: false,
+    format: "Suspension",
+    molecules: "Lactulose Solution 10g/15ml",
+    packing: "200ml",
+    description: "Double volume Lactulose solution for extended treatment of chronic constipation or hepatic conditions. Safe for long-term use under medical supervision.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-36",
+    name: "Omezyme (Pineapple)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 160.00,
+    img: "https://picsum.photos/seed/dr36/600/600",
+    rx: false,
+    format: "Syrup",
+    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml) -- Syrup (Pineapple Flavor)",
+    packing: "200ml",
+    description: "Omezyme is a digestive syrup containing Diastase and Pepsin. Diastase helps in the digestion of starch and carbohydrates, while Pepsin helps in the digestion of proteins, aiding in overall digestion and relieving acidity or bloating.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-37",
+    name: "Omezyme (Saunf)",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 160.00,
+    img: "https://picsum.photos/seed/dr37/600/600",
+    rx: false,
+    format: "Syrup",
+    molecules: "Diastase (50mg/5ml) + Pepsin (10mg/5ml) -- Syrup (Saunf Flavor)",
+    packing: "200ml",
+    description: "Digestive enzyme supplement in a pleasant Fennel (Saunf) flavor. Helps improve digestion and reduces symptoms of dyspepsia and abdominal discomfort.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-38",
+    name: "Rebalanz ORS",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 22.19,
+    img: "https://picsum.photos/seed/dr38/600/600",
+    rx: false,
+    format: "Sachet",
+    molecules: "Rebalanz ORS Powder 21gms",
+    packing: "30x21g",
+    description: "Rebalanz ORS is a WHO-recommended Oral Rehydration Salt formula used to replenish fluids and electrolytes lost due to dehydration, typically caused by diarrhea or vomiting. It contains a precise balance of salts and glucose to ensure rapid rehydration.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-39",
+    name: "Rebalanz ORS Apple",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 29.40,
+    img: "https://picsum.photos/seed/dr39/600/600",
+    rx: false,
+    format: "Liquid",
+    molecules: "Oral Rehydration Salt - WHO recommended formula Apple flavor solution",
+    packing: "30x1x200ml",
+    description: "Ready-to-drink Oral Rehydration Solution in a refreshing Apple flavor. Perfect for immediate use in children and adults to manage dehydration quickly and effectively.",
+    type: "Focus"
   }
 ];
