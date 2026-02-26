@@ -2,7 +2,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight, ArrowRight, Building2, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -35,21 +35,17 @@ export function Header() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Inventory', href: '/shop' },
-    { 
-      name: 'Categories', 
-      href: '/#categories',
-      hasMegaMenu: true 
-    },
+    { name: 'Categories', href: '/categories' },
     { name: 'Why Us', href: '/#why-us' },
     { name: 'Contact', href: '/#contact' },
   ];
 
   const subNavItems = [
     { name: 'Pharma', icon: <Pill size={16} />, href: '/shop?cat=Pharmaceuticals' },
-    { name: 'OTC', icon: <ShieldPlus size={16} />, href: '/shop?cat=OTC %26 Healthcare' },
+    { name: 'OTC', icon: <ShieldPlus size={16} />, href: '/shop?cat=OTC & Healthcare' },
     { name: 'Vet', icon: <HeartPulse size={16} />, href: '/shop?cat=Veterinary Medicines' },
-    { name: 'Devices', icon: <Microscope size={16} />, href: '/shop?cat=Medical Devices %26 Equipment' },
-    { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop?cat=Surgical %26 Healthcare Essentials' },
+    { name: 'Devices', icon: <Microscope size={16} />, href: '/shop?cat=Medical Devices & Equipment' },
+    { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop?cat=Surgical & Healthcare Essentials' },
   ];
 
   const brands = [
@@ -57,15 +53,21 @@ export function Header() {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/' && pathname === '/') return true;
-    if (path !== '/' && pathname.startsWith(path)) return true;
-    if (path.startsWith('/#') && pathname === '/') return true;
-    return false;
+    // Hash links should never be considered active.
+    if (path.includes('#')) {
+      return false;
+    }
+    // For the home page, require an exact match.
+    if (path === '/') {
+      return pathname === '/';
+    }
+    // For all other links (e.g., /shop), use startsWith to handle query params.
+    return pathname.startsWith(path);
   };
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[110]">
+      <header className="fixed top-0 left-0 right-0 z-[1000]">
         <nav className={cn(
           "transition-all duration-300 px-4 md:px-8 py-4 medical-gradient-subnav shadow-lg",
           isScrolled ? "py-2.5" : "py-4"
@@ -85,8 +87,6 @@ export function Header() {
               {navLinks.map((link) => (
                 <div 
                   key={link.name}
-                  onMouseEnter={() => link.hasMegaMenu && setIsMegaMenuOpen(true)}
-                  onMouseLeave={() => link.hasMegaMenu && setIsMegaMenuOpen(false)}
                   className="relative flex items-center h-full"
                 >
                   <NextLink 
@@ -98,73 +98,6 @@ export function Header() {
                   >
                     {link.name}
                   </NextLink>
-
-                  {/* Desktop Mega Menu */}
-                  {link.hasMegaMenu && isMegaMenuOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[850px] animate-in fade-in slide-in-from-top-2 duration-300">
-                      <div className="bg-white rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-muted/20 overflow-hidden grid grid-cols-3">
-                        {/* Section 1: Segments */}
-                        <div className="p-8 bg-slate-50/50">
-                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <LayoutGrid size={14} /> Shop by Segment
-                          </h4>
-                          <div className="space-y-4">
-                            {subNavItems.map((item) => (
-                              <NextLink 
-                                key={item.name} 
-                                href={item.href}
-                                className="flex items-center gap-4 p-2 rounded-2xl hover:bg-white hover:shadow-sm hover:scale-[1.02] transition-all text-primary font-bold group/item"
-                              >
-                                <span className="p-2.5 bg-white rounded-xl text-secondary group-hover/item:gradient-button group-hover/item:text-white transition-all shadow-sm border border-muted/20">{item.icon}</span>
-                                <span className="text-sm">{item.name}</span>
-                              </NextLink>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Section 2: Brands */}
-                        <div className="p-8 bg-white border-x border-slate-100">
-                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <Building2 size={14} /> Top Manufacturers
-                          </h4>
-                          <div className="grid grid-cols-1 gap-1">
-                            {brands.map((brand) => (
-                              <NextLink 
-                                key={brand} 
-                                href={`/shop?q=${brand}`}
-                                className="text-sm font-semibold text-primary/70 hover:text-secondary p-2 rounded-xl hover:bg-slate-50 transition-all flex items-center justify-between group/brand"
-                              >
-                                {brand}
-                                <ChevronRight size={14} className="opacity-0 group-hover/brand:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
-                              </NextLink>
-                            ))}
-                          </div>
-                          <NextLink href="/shop" className="mt-6 inline-flex items-center text-[11px] font-bold text-secondary hover:underline px-2">
-                            View all 29+ Partners <ArrowRight size={12} className="ml-1" />
-                          </NextLink>
-                        </div>
-
-                        {/* Section 3: Concerns */}
-                        <div className="p-8 bg-slate-50/30">
-                          <h4 className="text-secondary font-headline font-bold text-[11px] uppercase tracking-widest mb-6 flex items-center gap-2">
-                            <Activity size={14} /> Health Concerns
-                          </h4>
-                          <div className="grid grid-cols-1 gap-2.5">
-                            {['Gastric Care', 'Diabetes', 'Heart Care', 'Liver Care', 'Bone & Joint', 'Kidney Care', 'Derma Care'].map((concern) => (
-                              <NextLink 
-                                key={concern} 
-                                href={`/shop?q=${concern}`}
-                                className="text-sm font-medium text-primary/60 hover:text-secondary flex items-center gap-2 group/concern"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover/concern:bg-secondary transition-colors" />
-                                {concern}
-                              </NextLink>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               ))}
               

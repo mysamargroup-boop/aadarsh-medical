@@ -11,6 +11,15 @@ export function Footer() {
     setYear(new Date().getFullYear());
   }, []);
 
+  const quickLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Shop Catalog', href: '/shop' },
+    { name: 'Categories', href: '/shop' },
+    { name: 'Blogs', href: '/blogs' },
+    { name: 'Wholesale Inquiry', href: '#' },
+    { name: 'Contact Us', href: '#' },
+  ];
+
   return (
     <footer className="medical-gradient-dark text-background pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -49,11 +58,11 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary rounded-full" />
             </h4>
             <ul className="space-y-4 text-background/70">
-              {['Home', 'Shop Catalog', 'Categories', 'Wholesale Inquiry', 'Contact Us'].map(item => (
-                <li key={item}>
-                  <Link href={item === 'Shop Catalog' ? '/shop' : '#'} className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
+              {quickLinks.map(item => (
+                <li key={item.name}>
+                  <Link href={item.href} className="hover:text-secondary hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

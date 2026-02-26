@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React from 'react';
 import { SlidersHorizontal, Check, Search } from 'lucide-react';
@@ -17,12 +17,22 @@ import { cn } from '@/lib/utils';
 interface ShopFiltersProps {
   selectedCats: string[];
   toggleCategory: (cat: string) => void;
+  selectedBrands: string[];
+  toggleBrand: (brand: string) => void;
   rxRequired: boolean | null;
   setRxRequired: (val: boolean | null) => void;
   clearFilters: () => void;
 }
 
-export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxRequired, clearFilters }: ShopFiltersProps) {
+export function ShopFilters({ 
+  selectedCats, 
+  toggleCategory, 
+  selectedBrands,
+  toggleBrand,
+  rxRequired, 
+  setRxRequired, 
+  clearFilters 
+}: ShopFiltersProps) {
   const categories = [
     { label: "Pharmaceuticals", id: "Pharmaceuticals" },
     { label: "OTC & Healthcare", id: "OTC & Healthcare" },
@@ -130,9 +140,21 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
               </div>
               <div className="max-h-48 overflow-y-auto no-scrollbar space-y-3">
                 {brands.map((brand) => (
-                  <div key={brand} className="flex items-center space-x-3 group cursor-pointer">
-                    <Checkbox id={`brand-${brand}`} className="border-muted-foreground/30" />
-                    <Label htmlFor={`brand-${brand}`} className="text-sm text-muted-foreground group-hover:text-primary cursor-pointer transition-colors">{brand}</Label>
+                  <div key={brand} className="flex items-center space-x-3 group cursor-pointer" onClick={() => toggleBrand(brand)}>
+                    <Checkbox 
+                      id={`brand-${brand}`}
+                      checked={selectedBrands.includes(brand)}
+                      className="border-muted-foreground/30" 
+                    />
+                    <Label 
+                      htmlFor={`brand-${brand}`} 
+                      className={cn(
+                        "text-sm transition-colors cursor-pointer",
+                        selectedBrands.includes(brand) ? "text-primary font-bold" : "text-muted-foreground group-hover:text-primary"
+                      )}
+                    >
+                      {brand}
+                    </Label>
                   </div>
                 ))}
               </div>
