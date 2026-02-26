@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -11,21 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Plus, Search, ChevronRight, LayoutGrid, List, SlidersHorizontal } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
-
-const allProducts = [
-  { id: 1, name: "Augmentin 625 DUO", company: "GlaxoSmithKline", cat: "Pharmaceuticals", price: "120.00", img: "https://picsum.photos/seed/p1/600/600", rx: true },
-  { id: 2, name: "ENO Fruit Salt", company: "GSK", cat: "OTC & Healthcare", price: "15.00", img: "https://picsum.photos/seed/p2/600/600", rx: false },
-  { id: 3, name: "Crocin Advance", company: "GSK", cat: "OTC & Healthcare", price: "45.00", img: "https://picsum.photos/seed/p3/600/600", rx: false },
-  { id: 4, name: "Sensodyne Paste", company: "GSK", cat: "OTC & Healthcare", price: "180.00", img: "https://picsum.photos/seed/p4/600/600", rx: false },
-  { id: 5, name: "WellcomeVet Calcium", company: "WellcomeVet", cat: "Veterinary Medicines", price: "285.00", img: "https://picsum.photos/seed/p5/600/600", rx: false },
-  { id: 6, name: "Digital BP Machine", company: "Omron", cat: "Medical Devices & Equipment", price: "2450.00", img: "https://picsum.photos/seed/p6/600/600", rx: false },
-  { id: 7, name: "Nebulizer Kit", company: "Phillips", cat: "Medical Devices & Equipment", price: "1850.00", img: "https://picsum.photos/seed/p7/600/600", rx: false },
-  { id: 8, name: "Azithromycin 500mg", company: "Cipla", cat: "Pharmaceuticals", price: "115.00", img: "https://picsum.photos/seed/p8/600/600", rx: true },
-  { id: 9, name: "Surgical Syringes (Box)", company: "Dispovan", cat: "Surgical & Healthcare Essentials", price: "450.00", img: "https://picsum.photos/seed/p9/600/600", rx: false },
-  { id: 10, name: "Cotton Bandages", company: "Surgicals", cat: "Surgical & Healthcare Essentials", price: "125.00", img: "https://picsum.photos/seed/p10/600/600", rx: false },
-  { id: 11, name: "Digital Thermometer", company: "Dr. Trust", cat: "Medical Devices & Equipment", price: "245.00", img: "https://picsum.photos/seed/p11/600/600", rx: false },
-  { id: 12, name: "Hempushpa Syrup", company: "Rajvaidya", cat: "OTC & Healthcare", price: "310.00", img: "https://picsum.photos/seed/p12/600/600", rx: false },
-];
+import { products as allProducts } from '@/lib/product-data';
 
 export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -201,10 +188,10 @@ function ShopProductCard({ product }: { product: any }) {
         <div className="mt-auto flex items-center justify-between">
           <div>
             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">Wholesale Price</p>
-            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price}</p>
+            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)}</p>
           </div>
-          <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
-            <Plus className="size-4" />
+          <div className="w-6 h-6 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
+            <Plus className="size-3" />
           </div>
         </div>
       </div>

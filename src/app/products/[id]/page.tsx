@@ -1,8 +1,10 @@
+
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -18,11 +20,13 @@ import {
   FileText,
   BadgeCheck,
   Plus,
-  Minus
+  Minus,
+  ArrowLeft
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { products } from '@/lib/product-data';
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -31,20 +35,26 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export default function ProductDetailPage() {
+  const params = useParams();
+  const router = useRouter();
   const [quantity, setQuantity] = useState(100);
   const [priceTier, setPriceTier] = useState('tier2');
 
+  const product = useMemo(() => {
+    return products.find(p => p.id === params.id) || products[0];
+  }, [params.id]);
+
   const tiers = [
-    { id: 'tier1', label: '1 - 49 Strips', price: 201.50 },
-    { id: 'tier2', label: '50 - 199 Strips', price: 185.00, popular: true },
-    { id: 'tier3', label: '200+ Strips', price: 172.00 },
+    { id: 'tier1', label: '1 - 49 units', price: product.price * 1.05 },
+    { id: 'tier2', label: '50 - 199 units', price: product.price, popular: true },
+    { id: 'tier3', label: '200+ units', price: product.price * 0.95 },
   ];
 
-  const currentPrice = tiers.find(t => t.id === priceTier)?.price || 0;
+  const currentPrice = tiers.find(t => t.id === priceTier)?.price || product.price;
   const totalPrice = (currentPrice * quantity).toLocaleString('en-IN');
 
   const handleEnquiry = () => {
-    const message = encodeURIComponent(`I am interested in Augmentin 625 Duo. Quantity: ${quantity}. Price Tier: ${priceTier}.`);
+    const message = encodeURIComponent(`I am interested in ${product.name}. Quantity: ${quantity}. Price Tier: ${priceTier}.`);
     window.open(`https://wa.me/919630080706?text=${message}`, '_blank');
   };
 
@@ -57,9 +67,9 @@ export default function ProductDetailPage() {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <Link href="/shop" className="hover:text-primary transition-colors">Pharmaceuticals</Link>
+            <Link href="/shop" className="hover:text-primary transition-colors">{product.cat}</Link>
             <ChevronRight size={14} />
-            <span className="text-primary font-bold">Augmentin 625 Duo</span>
+            <span className="text-primary font-bold">{product.name}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -67,22 +77,23 @@ export default function ProductDetailPage() {
               {/* Product Image Section */}
               <div className="relative aspect-square bg-card rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
                 <div className="absolute top-6 left-6 z-10 space-y-2">
-                  <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
-                    Prescription Required
-                  </Badge>
+                  {product.rx && (
+                    <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
+                      Prescription Required
+                    </Badge>
+                  )}
                   <br />
                   <Badge className="bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-tight">
-                    Cold Chain
+                    {product.format}
                   </Badge>
                 </div>
 
                 <div className="absolute inset-0">
                   <Image 
-                    src="https://picsum.photos/seed/augmentin/800/800"
-                    alt="Augmentin 625 Duo"
+                    src={product.img}
+                    alt={product.name}
                     fill
                     className="object-cover"
-                    data-ai-hint="medicine box"
                   />
                 </div>
 
@@ -96,27 +107,6 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              {/* Thumbnails Section */}
-              <div className="grid grid-cols-4 gap-4">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className={cn(
-                    "aspect-square rounded-2xl bg-card border cursor-pointer hover:border-secondary transition-all overflow-hidden",
-                    i === 1 ? "border-secondary ring-2 ring-secondary/20" : "border-muted"
-                  )}>
-                    <Image 
-                      src={`https://picsum.photos/seed/augmentin-${i}/200/200`}
-                      alt="Thumbnail"
-                      width={200}
-                      height={200}
-                      className="object-cover h-full w-full"
-                    />
-                  </div>
-                ))}
-                <div className="aspect-square rounded-2xl bg-card border border-muted flex items-center justify-center text-muted-foreground hover:border-secondary transition-all cursor-pointer">
-                  <PlayCircle size={32} />
-                </div>
-              </div>
-
               {/* Quality Badges Section (Left Side) */}
               <div className="bg-white p-6 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
                 <h3 className="text-primary font-bold text-lg mb-2">Quality Assurance</h3>
@@ -125,8 +115,8 @@ export default function ProductDetailPage() {
                     <ThermometerSnowflake size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintained</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Stored between 2°C - 8°C throughout.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Controlled Storage</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Maintained under optimal conditions for efficacy.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -134,8 +124,8 @@ export default function ProductDetailPage() {
                     <BadgeCheck size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">WHO-GMP Certified</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized manufacturers.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Authentic Supply</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced from authorized pharmaceutical channels.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -143,8 +133,8 @@ export default function ProductDetailPage() {
                     <FileText size={22} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Tracking</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Full traceability with Expiry Date.</p>
+                    <h4 className="font-bold text-sm text-primary leading-tight">Full Traceability</h4>
+                    <p className="text-[11px] text-muted-foreground leading-tight">Complete batch details and expiry tracking.</p>
                   </div>
                 </div>
               </div>
@@ -154,15 +144,15 @@ export default function ProductDetailPage() {
               {/* Title Section */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Augmentin 625 Duo</h1>
+                  <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">{product.name}</h1>
                   <button className="p-3 bg-white rounded-full text-muted-foreground hover:text-destructive transition-colors border shadow-sm">
                     <Heart size={20} />
                   </button>
                 </div>
-                <p className="text-lg text-muted-foreground mb-4 font-medium">Amoxycillin (500mg) + Clavulanic Acid (125mg)</p>
+                <p className="text-lg text-muted-foreground mb-4 font-medium">{product.molecules}</p>
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">GlaxoSmithKline</span></span>
-                  <span className="text-muted-foreground">SKU: <span className="text-primary font-bold">AUG-625-D</span></span>
+                  <span className="text-muted-foreground">Manufacturer: <span className="text-secondary font-bold">{product.company}</span></span>
+                  <span className="text-muted-foreground">Packing: <span className="text-primary font-bold">{product.packing}</span></span>
                   <span className="flex items-center gap-1 text-green-600 font-bold">
                     <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" /> In Stock
                   </span>
@@ -172,15 +162,10 @@ export default function ProductDetailPage() {
               {/* Description Section (Above Pricing) */}
               <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed bg-card p-8 rounded-[2rem] border border-muted shadow-sm">
                 <h3 className="text-primary font-bold text-lg mb-4">Product Description</h3>
-                <p>
-                  Augmentin 625 Duo Tablet is a penicillin-type of antibiotic that helps your body fight infections caused by bacteria. It is used to treat infections of the lungs (e.g., pneumonia), ear, nasal sinus, urinary tract, skin, and soft tissue.
-                </p>
-                <p className="mt-4">
-                  Sourced directly from GlaxoSmithKline, ensuring the highest standards of purity and efficacy. Each batch is fully traceable and stored under strict cold chain conditions where required.
-                </p>
+                <p>{product.description}</p>
               </div>
 
-              {/* Wholesale Pricing Tiers (Incl. GST) Card */}
+              {/* Wholesale Pricing Tiers Card */}
               <Card className="rounded-[2rem] border-muted overflow-hidden shadow-none bg-muted/10">
                 <CardContent className="p-8 space-y-6">
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Wholesale Pricing Tiers (Incl. GST)</p>
@@ -207,7 +192,7 @@ export default function ProductDetailPage() {
                         </div>
                         <div className="text-right">
                           <span className="font-bold text-primary text-lg">₹{tier.price.toFixed(2)}</span>
-                          <span className="text-[10px] text-muted-foreground ml-1">/strip</span>
+                          <span className="text-[10px] text-muted-foreground ml-1">/unit</span>
                         </div>
                       </div>
                     ))}
@@ -261,49 +246,6 @@ export default function ProductDetailPage() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-
-          <div className="pt-16 border-t">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl font-headline font-bold text-primary">Complete Your Surgical Kit</h2>
-                <p className="text-muted-foreground mt-1 text-sm">Frequently bought together by hospitals and retailers.</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {[
-                { name: "Paracetamol 650mg - 50 Strip Box", cat: "Analgesic", price: "120.00", img: "https://picsum.photos/seed/p1/400/400" },
-                { name: "Limcee Vitamin C Chewable", cat: "Supplements", price: "85.00", img: "https://picsum.photos/seed/p5/400/400" },
-                { name: "N95 Face Masks - Box of 50", cat: "Surgical", price: "450.00", img: "https://picsum.photos/seed/p6/400/400" },
-                { name: "Azithromycin 500mg Tablets", cat: "Antibiotics", price: "115.00", img: "https://picsum.photos/seed/p8/400/400" }
-              ].map((p, i) => (
-                <Link key={i} href={`/products/${i + 1}`} className="group relative bg-white rounded-2xl border border-border hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full transform hover:-translate-y-1">
-                  <div className="relative aspect-square bg-muted/20 overflow-hidden">
-                    <Image src={p.img} alt={p.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute top-3 left-3 z-10">
-                      <Badge className="bg-white/95 text-primary text-[8px] font-bold border-none shadow-sm px-2 py-0.5 rounded-full">
-                        {p.cat}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-4 flex-1 flex flex-col">
-                    <h3 className="font-bold text-primary mb-3 line-clamp-1 text-sm leading-tight group-hover:text-secondary transition-colors">
-                      {p.name}
-                    </h3>
-                    <div className="mt-auto flex items-center justify-between">
-                      <div>
-                        <p className="text-[8px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1">Wholesale</p>
-                        <p className="font-bold text-primary text-sm">₹{p.price}</p>
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-muted/80 text-primary group-hover:gradient-button group-hover:text-white flex items-center justify-center transition-all duration-300">
-                        <Plus className="size-4" />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
             </div>
           </div>
         </div>
