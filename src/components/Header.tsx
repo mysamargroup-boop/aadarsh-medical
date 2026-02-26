@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Pill, ShieldPlus, HeartPulse, Microscope, Syringe, ChevronRight, ArrowRight, Building2, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
@@ -34,7 +34,7 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
+    { name: 'Inventory', href: '/shop' },
     { 
       name: 'Categories', 
       href: '/#categories',
@@ -50,6 +50,10 @@ export function Header() {
     { name: 'Vet', icon: <HeartPulse size={16} />, href: '/shop?cat=Veterinary Medicines' },
     { name: 'Devices', icon: <Microscope size={16} />, href: '/shop?cat=Medical Devices %26 Equipment' },
     { name: 'Surgical', icon: <Syringe size={16} />, href: '/shop?cat=Surgical %26 Healthcare Essentials' },
+  ];
+
+  const brands = [
+    "Dr. Reddy's", "Macleods", "Lupin", "Abbott", "Cipla", "Torrent", "Sun Pharma", "Alkem"
   ];
 
   const isActive = (path: string) => {
@@ -94,40 +98,62 @@ export function Header() {
 
                   {/* Desktop Mega Menu */}
                   {link.hasMegaMenu && isMegaMenuOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px] animate-in fade-in slide-in-from-top-2 duration-200">
-                      <div className="bg-white rounded-2xl shadow-2xl border border-muted/20 overflow-hidden grid grid-cols-2">
-                        <div className="p-6 bg-muted/20">
-                          <h4 className="text-primary font-headline font-bold text-sm mb-4 uppercase tracking-wider">Product Segments</h4>
-                          <div className="space-y-3">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[750px] animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="bg-white rounded-[2rem] shadow-2xl border border-muted/20 overflow-hidden grid grid-cols-3">
+                        <div className="p-8 bg-muted/20">
+                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <LayoutGrid size={14} className="text-secondary" /> Shop by Segment
+                          </h4>
+                          <div className="space-y-4">
                             {subNavItems.map((item) => (
                               <NextLink 
                                 key={item.name} 
                                 href={item.href}
-                                className="flex items-center gap-3 p-2 rounded-xl hover:bg-white hover:text-secondary transition-all text-primary font-bold group/item"
+                                className="flex items-center gap-3 p-1 rounded-xl hover:text-secondary transition-all text-primary font-bold group/item"
                               >
-                                <span className="text-secondary group-hover/item:scale-110 transition-transform">{item.icon}</span>
+                                <span className="p-2 bg-white rounded-lg text-secondary group-hover/item:gradient-button group-hover/item:text-white transition-all shadow-sm">{item.icon}</span>
                                 <span className="text-xs">{item.name}</span>
-                                <ArrowRight size={12} className="ml-auto opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0" />
                               </NextLink>
                             ))}
                           </div>
                         </div>
-                        <div className="p-6 bg-white border-l">
-                          <h4 className="text-primary font-headline font-bold text-sm mb-4 uppercase tracking-wider">Top Concerns</h4>
+
+                        <div className="p-8 bg-white border-x">
+                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <Building2 size={14} className="text-secondary" /> Top Manufacturers
+                          </h4>
+                          <div className="grid grid-cols-1 gap-1">
+                            {brands.map((brand) => (
+                              <NextLink 
+                                key={brand} 
+                                href={`/shop?q=${brand}`}
+                                className="text-[11px] font-bold text-muted-foreground hover:text-secondary p-2.5 rounded-xl hover:bg-muted/30 transition-all flex items-center justify-between group/brand"
+                              >
+                                {brand}
+                                <ChevronRight size={12} className="opacity-0 group-hover/brand:opacity-100 transition-opacity" />
+                              </NextLink>
+                            ))}
+                          </div>
+                          <Button asChild variant="link" className="mt-4 p-0 h-auto text-xs font-bold text-secondary">
+                            <NextLink href="/shop">View all 29+ Partners →</NextLink>
+                          </Button>
+                        </div>
+
+                        <div className="p-8 bg-muted/5">
+                          <h4 className="text-primary font-headline font-bold text-[10px] uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <Activity size={14} className="text-secondary" /> Health Concerns
+                          </h4>
                           <div className="grid grid-cols-1 gap-2">
-                            {['Gastric Care', 'Diabetes', 'Heart Care', 'Liver Care', 'Bone & Joint'].map((concern) => (
+                            {['Gastric Care', 'Diabetes', 'Heart Care', 'Liver Care', 'Bone & Joint', 'Kidney Care', 'Derma Care'].map((concern) => (
                               <NextLink 
                                 key={concern} 
                                 href={`/shop?q=${concern}`}
-                                className="text-[11px] font-medium text-muted-foreground hover:text-secondary p-2 rounded-lg hover:bg-muted/30 transition-colors"
+                                className="text-[11px] font-medium text-muted-foreground hover:text-secondary p-2 rounded-lg hover:bg-white hover:shadow-sm transition-all"
                               >
                                 • {concern}
                               </NextLink>
                             ))}
                           </div>
-                          <Button asChild variant="link" className="mt-4 p-0 h-auto text-xs font-bold text-secondary">
-                            <NextLink href="/shop">Browse All Concerns →</NextLink>
-                          </Button>
                         </div>
                       </div>
                     </div>
