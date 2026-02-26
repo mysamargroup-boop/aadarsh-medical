@@ -8,7 +8,7 @@ export interface Product {
   rx: boolean;
   molecules: string;
   packing: string;
-  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Other';
+  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Capsule' | 'Other';
   description: string;
   type?: 'Popular' | 'Focus';
 }
@@ -417,7 +417,7 @@ export const products: Product[] = [
     type: "Focus"
   },
 
-  // GASTRO INTESTINAL (34-39)
+  // GASTRO INTESTINAL (34-54)
   {
     id: "dr-reddy-34",
     name: "Omez Lax L (100ml)",
@@ -500,6 +500,216 @@ export const products: Product[] = [
     molecules: "Oral Rehydration Salt - WHO recommended formula Apple flavor solution",
     packing: "30x1x200ml",
     description: "Ready-to-drink Oral Rehydration Solution in a refreshing Apple flavor. Perfect for immediate use in children and adults to manage dehydration quickly and effectively.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-40",
+    name: "Rebalanz ORS Orange",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 29.40,
+    img: "https://picsum.photos/seed/dr40/600/600",
+    rx: false,
+    format: "Liquid",
+    molecules: "Oral Rehydration Salt - WHO recommended formula Orange flavor solution",
+    packing: "30x1x200ml",
+    description: "Ready-to-drink Oral Rehydration Solution in a vibrant Orange flavor. Designed for rapid fluid and electrolyte replacement according to WHO guidelines.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-41",
+    name: "Rediout + Chew Tab",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 35.00,
+    img: "https://picsum.photos/seed/dr41/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Albendazole (400mg) + Ivermectin (6mg)",
+    packing: "10x10's",
+    description: "Anti-parasitic combination of Albendazole and Ivermectin. Used for the treatment of various parasitic worm infestations, providing a dual-action approach for broader efficacy.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-42",
+    name: "Rediout Chew Tab",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 9.26,
+    img: "https://picsum.photos/seed/dr42/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Albendazole (400 mg)",
+    packing: "10x10's",
+    description: "Contains Albendazole, a broad-spectrum anthelmintic agent. Effective against roundworms, hookworms, and other common intestinal parasites in a convenient chewable format.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-43",
+    name: "Supadrot DS",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 160.00,
+    img: "https://picsum.photos/seed/dr43/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Drotaverine (80 mg)",
+    packing: "20X15",
+    description: "High-strength Drotaverine, an antispasmodic medication used to relieve smooth muscle spasms, especially in the gastrointestinal, biliary, and renal tracts.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-44",
+    name: "Udiwok 300 Tablets",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 637.00,
+    img: "https://picsum.photos/seed/dr44/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Ursodeoxycholic Acid 300mg",
+    packing: "10x15's",
+    description: "Contains Ursodeoxycholic Acid, a naturally occurring bile acid used to dissolve certain types of cholesterol gallstones and treat chronic liver diseases like primary biliary cirrhosis.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-45",
+    name: "Udiwok 150 Tablets",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 231.50,
+    img: "https://picsum.photos/seed/dr45/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Ursodeoxycholic Acid 150mg",
+    packing: "10x10's",
+    description: "Lower strength Ursodeoxycholic Acid for maintenance therapy or specific titration in hepatic disorders and gallstone management.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-46",
+    name: "Zovanta CT",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 277.98,
+    img: "https://picsum.photos/seed/dr46/600/600",
+    rx: true,
+    format: "Capsule",
+    molecules: "Cinitapride (3mg) SR + Pantoprazole (40mg) EC",
+    packing: "10x1x10's",
+    description: "Advanced combination of Cinitapride (prokinetic) and Pantoprazole (PPI). Used for treating gastro-esophageal reflux disease (GERD) and associated dyspepsia where delayed gastric emptying is a factor.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-47",
+    name: "Zovanta D",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 121.63,
+    img: "https://picsum.photos/seed/dr47/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Pantoprazole 40mg + Domperidone 10mg",
+    packing: "10X15's",
+    description: "Effective combination of Pantoprazole for acid suppression and Domperidone for nausea control. Indicated for acid reflux, ulcers, and bloating.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-48",
+    name: "Zovanta DSR Capsules",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 248.00,
+    img: "https://picsum.photos/seed/dr48/600/600",
+    rx: true,
+    format: "Capsule",
+    molecules: "Pantoprazole 40mg + Domperidone 30mg prolonged release",
+    packing: "10X15's",
+    description: "Prolonged-release combination for sustained relief from acid reflux and heartburn, especially when accompanied by persistent nausea or gastroparesis.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-49",
+    name: "Zovanta Injection",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 57.48,
+    img: "https://picsum.photos/seed/dr49/600/600",
+    rx: true,
+    format: "Injection",
+    molecules: "Pantoprazole for Injection BP 40mg",
+    packing: "10X1X1",
+    description: "Injectable Pantoprazole for rapid and potent reduction of gastric acid production in acute clinical settings like severe peptic ulcers or surgical prophylaxis.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-50",
+    name: "Zovanta Tablets",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 211.00,
+    img: "https://picsum.photos/seed/dr50/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Pantoprazole 40mg",
+    packing: "10X15's",
+    description: "Pure Pantoprazole (40mg) for the reliable treatment of peptic ulcers, GERD, and hypersecretory conditions like Zollinger-Ellison syndrome.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-51",
+    name: "Comiffin+",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 220.00,
+    img: "https://picsum.photos/seed/dr51/600/600",
+    rx: false,
+    format: "Suspension",
+    molecules: "Magnesium hydroxide (11.25ml) + Paraffin oil (3.75ml) + Sodium Picosulfate (10mg)",
+    packing: "170ml",
+    description: "A comprehensive triple-action laxative. Magnesium hydroxide, Paraffin oil, and Sodium Picosulfate work together to provide effective relief from constipation by softening the stool and stimulating bowel motility.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-52",
+    name: "Supadrot",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 130.00,
+    img: "https://picsum.photos/seed/dr52/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Drotaverine Tablets 40mg",
+    packing: "20 X 15",
+    description: "Standard strength Drotaverine for relieving pain associated with smooth muscle spasms in abdominal cramps, menstrual pain, and irritable bowel syndrome.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-53",
+    name: "Supadrot M",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 200.00,
+    img: "https://picsum.photos/seed/dr53/600/600",
+    rx: true,
+    format: "Tablets",
+    molecules: "Drotaverine (80mg) + Mefenamic Acid (250mg)",
+    packing: "20 X 10",
+    description: "Dual-action relief combining Drotaverine (antispasmodic) and Mefenamic Acid (analgesic). Specifically indicated for severe spasmodic pain in conditions like dysmenorrhea or colic.",
+    type: "Focus"
+  },
+  {
+    id: "dr-reddy-54",
+    name: "Zovanta L",
+    company: "Dr. Reddy's",
+    cat: "Pharmaceuticals",
+    price: 200.35,
+    img: "https://picsum.photos/seed/dr54/600/600",
+    rx: true,
+    format: "Capsule",
+    molecules: "Pantoprazole 40mg + Levosulpiride 75mg",
+    packing: "10x1x10's",
+    description: "Combines a potent PPI (Pantoprazole) with a prokinetic (Levosulpiride). Ideal for GERD complicated by functional dyspepsia or diabetic gastroparesis.",
     type: "Focus"
   }
 ];
