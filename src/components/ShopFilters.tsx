@@ -32,7 +32,7 @@ export function ShopFilters({ selectedCats, toggleCategory, rxRequired, setRxReq
   ];
 
   const brands = [
-    "GlaxoSmithKline", "WellcomeVet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
+    "Dr. Reddy's", "Glaxo Smith Kline", "Wellcome Vet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
   ];
 
   const dosageForms = [
