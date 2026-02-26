@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState, useMemo } from 'react';
@@ -95,40 +94,6 @@ export default function ProductDetailPage() {
                   <Button variant="secondary" size="sm" className="bg-white/90 backdrop-blur-sm text-secondary rounded-full shadow-lg border-none">
                     <PlayCircle className="mr-2" size={16} /> Video
                   </Button>
-                </div>
-              </div>
-
-              {/* Quality Badges Section (Left Side) */}
-              <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
-                <h3 className="text-primary font-bold text-lg mb-2 flex items-center gap-2">
-                  <ShieldCheck className="text-secondary" /> Quality Assurance
-                </h3>
-                <div className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                    <ThermometerSnowflake size={24} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain Maintenance</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Stored under strict temperature controls for maximum efficacy.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">
-                    <BadgeCheck size={24} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">100% Authentic Supply</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Sourced directly from Dr. Reddy's authorized channels.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
-                    <FileText size={24} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-sm text-primary leading-tight">Batch Traceability</h4>
-                    <p className="text-[11px] text-muted-foreground leading-tight">Every unit is tracked with full batch, MFG and Expiry details.</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -242,6 +207,42 @@ export default function ProductDetailPage() {
                   </p>
                 </CardContent>
               </Card>
+
+              {/* Quality Badges Section (Moved below buttons) */}
+              <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">
+                <h3 className="text-primary font-bold text-lg mb-2 flex items-center gap-2">
+                  <ShieldCheck className="text-secondary" /> Quality Assurance
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
+                      <ThermometerSnowflake size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-sm text-primary leading-tight">Cold Chain</h4>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Strict temperature controls.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">
+                      <BadgeCheck size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-sm text-primary leading-tight">Authentic Supply</h4>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Direct from partners.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+                      <FileText size={24} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-sm text-primary leading-tight">Traceability</h4>
+                      <p className="text-[11px] text-muted-foreground leading-tight">Full batch details.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
