@@ -26,8 +26,8 @@ export interface Product {
   // New Categorization
   cat: string; // Legacy field for compatibility
   subCat?: string; // Legacy field for compatibility
-  primaryCategory: PrimaryCategory;
-  healthConditions: string[];
+  primaryCategory?: string;
+  healthConditions?: string[];
   targetAudience?: string[];
 }
 
