@@ -24,14 +24,14 @@ interface ShopFiltersProps {
   clearFilters: () => void;
 }
 
-export function ShopFilters({ 
-  selectedCats, 
-  toggleCategory, 
+export function ShopFilters({
+  selectedCats,
+  toggleCategory,
   selectedBrands,
   toggleBrand,
-  rxRequired, 
-  setRxRequired, 
-  clearFilters 
+  rxRequired,
+  setRxRequired,
+  clearFilters
 }: ShopFiltersProps) {
   const categories = [
     { label: "Pharmaceuticals", id: "Pharmaceuticals" },
@@ -42,7 +42,7 @@ export function ShopFilters({
   ];
 
   const brands = [
-    "Dr. Reddy's", "Glaxo Smith Kline", "Wellcome Vet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
+    "Dr. Reddy's", "Dr. Reddy's (Leo)", "Glaxo Smith Kline", "Wellcome Vet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
   ];
 
   const dosageForms = [
@@ -56,8 +56,8 @@ export function ShopFilters({
           <SlidersHorizontal size={18} className="text-secondary" />
           <span className="font-headline font-bold text-primary">Refine Search</span>
         </div>
-        <Button 
-          variant="link" 
+        <Button
+          variant="link"
           onClick={clearFilters}
           className="text-xs font-bold text-secondary p-0 h-auto hover:text-primary transition-colors"
         >
@@ -77,7 +77,7 @@ export function ShopFilters({
         <div className="space-y-4">
           <h3 className="font-bold text-primary text-[10px] uppercase tracking-[0.2em]">Prescription</h3>
           <div className="grid grid-cols-1 gap-3">
-            <button 
+            <button
               onClick={() => setRxRequired(true)}
               className={cn(
                 "flex items-center justify-between p-3 rounded-xl border text-xs font-bold transition-all",
@@ -86,7 +86,7 @@ export function ShopFilters({
             >
               Prescription Required {rxRequired === true && <Check size={14} />}
             </button>
-            <button 
+            <button
               onClick={() => setRxRequired(false)}
               className={cn(
                 "flex items-center justify-between p-3 rounded-xl border text-xs font-bold transition-all",
@@ -105,8 +105,8 @@ export function ShopFilters({
             </AccordionTrigger>
             <AccordionContent className="space-y-3 pt-1">
               {categories.map((cat) => (
-                <div 
-                  key={cat.id} 
+                <div
+                  key={cat.id}
                   className="flex items-center justify-between group cursor-pointer"
                   onClick={() => toggleCategory(cat.id)}
                 >
@@ -141,13 +141,13 @@ export function ShopFilters({
               <div className="max-h-48 overflow-y-auto no-scrollbar space-y-3">
                 {brands.map((brand) => (
                   <div key={brand} className="flex items-center space-x-3 group cursor-pointer" onClick={() => toggleBrand(brand)}>
-                    <Checkbox 
+                    <Checkbox
                       id={`brand-${brand}`}
                       checked={selectedBrands.includes(brand)}
-                      className="border-muted-foreground/30" 
+                      className="border-muted-foreground/30"
                     />
-                    <Label 
-                      htmlFor={`brand-${brand}`} 
+                    <Label
+                      htmlFor={`brand-${brand}`}
                       className={cn(
                         "text-sm transition-colors cursor-pointer",
                         selectedBrands.includes(brand) ? "text-primary font-bold" : "text-muted-foreground group-hover:text-primary"
@@ -188,7 +188,7 @@ export function ShopFilters({
           </AccordionItem>
         </Accordion>
       </div>
-      
+
       <div className="p-6 border-t lg:hidden bg-muted/10">
         <Button className="w-full h-12 gradient-button text-white rounded-xl font-bold shadow-lg shadow-secondary/20">
           Apply Filters <Check size={18} className="ml-2" />
