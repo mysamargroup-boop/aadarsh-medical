@@ -16,29 +16,27 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       <Hero />
-      
+
       <PromoBanner />
-      
+
       <LogoSlider />
 
       <HealthConcerns />
-      
+
       <Categories />
-      
+
       <WhyChooseUs />
-      
+
       <ProductCatalog />
-      
+
       <LegalSection />
-      
+
       <ContactSection />
-      
+
       <Footer />
-      
-      {/* AI Assistant Tool (WhatsApp Redirect) */}
-      <AiAssistant />
+
     </main>
   );
 }

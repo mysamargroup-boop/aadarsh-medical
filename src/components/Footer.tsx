@@ -16,7 +16,8 @@ export function Footer() {
     { name: 'Shop Catalog', href: '/shop' },
     { name: 'Categories', href: '/shop' },
     { name: 'Blogs', href: '/blogs' },
-    { name: 'Wholesale Inquiry', href: '#' },
+    { name: 'Bank Details', href: '/bank-details' },
+    { name: 'Wholesale Inquiry', href: '/inquiry' },
     { name: 'Contact Us', href: '#' },
   ];
 
@@ -98,7 +99,10 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-secondary shrink-0" size={20} />
-                <span>+91 9630080706</span>
+                <div className="flex flex-col">
+                  <span>+91 9630080706</span>
+                  <span className="text-xs text-background/50">+91 9243967137</span>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-secondary shrink-0" size={20} />
@@ -116,6 +120,7 @@ export function Footer() {
           </div>
           <div className="space-y-2">
             <p>© {year || new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
+            <p className="text-secondary/60 font-medium">Designed By Samar</p>
           </div>
         </div>
       </div>

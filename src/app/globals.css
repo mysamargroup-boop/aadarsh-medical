@@ -2,22 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * THEME CONFIGURATION
+ * -------------------
+ * You can change the primary and secondary colors of the website here.
+ * The values are in HSL format (Hue Saturation Lightness).
+ * 
+ * Primary: Used for main brand color, buttons, and headings.
+ * Secondary: Used for accents, icons, and highlights.
+ * Accent: Used for secondary call-to-actions.
+ */
 @layer base {
   :root {
+    /* Primary: Emerald/Teal Green */
+    --primary: 172 100% 25%;
+    --primary-foreground: 170 100% 96%;
+    
+    /* Secondary: Vibrant Green */
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 170 100% 96%;
+    
+    /* Accent: Teal Blue */
+    --accent: 175 70% 45%;
+    --accent-foreground: 170 100% 96%;
+    
     --background: 170 40% 98%;
     --foreground: 180 50% 5%;
     --card: 0 0% 100%;
     --card-foreground: 180 50% 5%;
     --popover: 0 0% 100%;
     --popover-foreground: 180 50% 5%;
-    --primary: 172 100% 25%;
-    --primary-foreground: 170 100% 96%;
-    --secondary: 160 84% 39%;
-    --secondary-foreground: 170 100% 96%;
     --muted: 170 30% 94%;
     --muted-foreground: 180 30% 30%;
-    --accent: 175 70% 45%;
-    --accent-foreground: 170 100% 96%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 170 20% 90%;

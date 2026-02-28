@@ -22,6 +22,8 @@ interface ShopFiltersProps {
   rxRequired: boolean | null;
   setRxRequired: (val: boolean | null) => void;
   clearFilters: () => void;
+  priceRange: [number];
+  setPriceRange: (val: [number]) => void;
 }
 
 export function ShopFilters({
@@ -98,7 +100,39 @@ export function ShopFilters({
           </div>
         </div>
 
-        <Accordion type="multiple" defaultValue={["Category", "Brand"]} className="w-full">
+        <Accordion type="multiple" defaultValue={["Price", "Category", "Brand"]} className="w-full">
+          <AccordionItem value="Price" className="border-t border-muted/30">
+            <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
+              Price Range
+            </AccordionTrigger>
+            <AccordionContent className="space-y-6 pt-4 px-1">
+              <Slider
+                value={priceRange}
+                onValueChange={setPriceRange}
+                max={5000}
+                step={100}
+                className="text-secondary"
+              />
+              <div className="flex items-center justify-between text-[11px] font-bold text-muted-foreground">
+                <span>Min: ₹0</span>
+                <span>Max: ₹{priceRange[0]}</span>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="UseCase" className="border-muted/30">
+            <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
+              Shop by Health Condition
+            </AccordionTrigger>
+            <AccordionContent className="grid grid-cols-2 gap-2 pt-1">
+              {["Cancer", "Stomach Ache", "Derma Care", "Diabetes", "Heart Care", "Pain Relief", "Fever", "Asthma"].map((issue) => (
+                <button key={issue} className="px-3 py-2 rounded-lg bg-muted/20 text-[10px] font-bold text-muted-foreground hover:bg-secondary/10 hover:text-secondary border border-transparent transition-all">
+                  {issue}
+                </button>
+              ))}
+            </AccordionContent>
+          </AccordionItem>
+
           <AccordionItem value="Category" className="border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Product Segments
@@ -174,18 +208,7 @@ export function ShopFilters({
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="Price" className="border-none">
-            <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
-              Wholesale Price
-            </AccordionTrigger>
-            <AccordionContent className="space-y-6 pt-4 px-1">
-              <Slider defaultValue={[1000]} max={5000} step={100} className="text-secondary" />
-              <div className="flex items-center justify-between text-[11px] font-bold text-muted-foreground">
-                <span>Min: ₹0</span>
-                <span>Max: ₹5000</span>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
+
         </Accordion>
       </div>
 

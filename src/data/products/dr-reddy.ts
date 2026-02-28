@@ -1671,8 +1671,10 @@ export const drReddyProducts: Product[] = [
         benefits: "Placeholder for benefits. Please update.",
         sideEffects: "Placeholder for sideEffects. Please update.",
         storage: "Placeholder for storage. Please update."
-    },
-    ,
+    }
+];
+
+export const drReddyLeoProducts: Product[] = [
     {
         id: "dr-reddy-leo-plagril-75",
         name: "Plagril 75",
@@ -2698,7 +2700,7 @@ export const drReddyProducts: Product[] = [
         rx: true,
         molecules: "Montelukast 10mg + Fexofenadine 120mg Tablets",
         packing: "10x15's",
-        format: "Tablet",
+        format: "Tablets",
         description: "Emlukast 24 combines Montelukast to reduce airway inflammation and Fexofenadine to block histamine responses.",
         usage: "Take one tablet daily in the evening, with or without food, as directed by a physician.",
         benefits: "Effectively manages allergic rhinitis and asthma by reducing airway inflammation and blocking allergic responses.",
@@ -2734,7 +2736,7 @@ export const drReddyProducts: Product[] = [
         rx: false,
         molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Ginger)",
         packing: "24x10's",
-        format: "Lozenge",
+        format: "Lozenges",
         description: "Zedex Lozenges provide symptomatic relief from early signs of throat infection, offering an antiseptic effect and a soothing ginger flavor.",
         usage: "Dissolve one lozenge slowly in the mouth every 2 to 3 hours as needed. Do not chew or swallow whole.",
         benefits: "Delivers rapid, soothing relief for sore throats and contains mild antiseptics to help clear local oral infections.",
@@ -2752,7 +2754,7 @@ export const drReddyProducts: Product[] = [
         rx: false,
         molecules: "2,4-Dichlorobenzyl Alcohol + Amylmetacresol Lozenges (Ginger) - Jar Pack",
         packing: "24x10's",
-        format: "Lozenge",
+        format: "Lozenges",
         description: "Zedex Lozenges provide symptomatic relief from early signs of throat infection, offering an antiseptic effect and a soothing ginger flavor. Large jar pack.",
         usage: "Dissolve one lozenge slowly in the mouth every 2 to 3 hours as needed. Do not chew or swallow whole.",
         benefits: "Delivers rapid, soothing relief for sore throats and contains mild antiseptics to help clear local oral infections.",

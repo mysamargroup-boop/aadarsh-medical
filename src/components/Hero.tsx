@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Pill, Activity, PlusCircle, ChevronRight, ChevronLeft } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -49,7 +50,7 @@ export function Hero() {
       </div>
 
       {slides.map((slide, index) => (
-        <div 
+        <div
           key={index}
           className={cn(
             "absolute inset-0 transition-opacity duration-1000 flex items-center",
@@ -58,8 +59,8 @@ export function Hero() {
         >
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
-            <Image 
-              src={slide.image || ''} 
+            <Image
+              src={slide.image || ''}
               alt={slide.title}
               fill
               className="object-cover opacity-30 mix-blend-overlay"
@@ -77,13 +78,17 @@ export function Hero() {
                 {slide.subtitle}
               </p>
               <div className="flex flex-wrap gap-4 animate-in slide-in-from-bottom delay-200 duration-700">
-                <Button size="lg" className="gradient-button text-white px-8 h-12 md:h-14 rounded-full text-base md:text-lg shadow-xl shadow-secondary/20 group border-none">
-                  {slide.cta}
-                  <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-background hover:bg-white/20 h-12 md:h-14 rounded-full px-8 text-base md:text-lg">
-                  Learn More
-                </Button>
+                <NextLink href="/shop">
+                  <Button size="lg" className="gradient-button text-white px-8 h-12 md:h-14 rounded-full text-base md:text-lg shadow-xl shadow-secondary/20 group border-none">
+                    {slide.cta}
+                    <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </NextLink>
+                <NextLink href="/shop">
+                  <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-md border-white/30 text-background hover:bg-white/20 h-12 md:h-14 rounded-full px-8 text-base md:text-lg">
+                    Learn More
+                  </Button>
+                </NextLink>
               </div>
             </div>
           </div>
@@ -93,7 +98,7 @@ export function Hero() {
       {/* Slide Navigation */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {slides.map((_, index) => (
-          <button 
+          <button
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={cn(

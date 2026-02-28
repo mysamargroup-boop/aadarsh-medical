@@ -63,7 +63,7 @@ export function PromoBanner() {
       <div className="max-w-[1920px] mx-auto relative flex flex-col md:flex-row items-stretch min-h-[360px]">
         {/* Left/Center Content: Brand & Product Visuals */}
         <div className="flex-1 relative min-h-[280px] md:min-h-[360px] flex items-center transition-all duration-700">
-          <Image 
+          <Image
             src={currentPromo.imageUrl || ''}
             alt={currentPromo.tag}
             fill
@@ -71,12 +71,12 @@ export function PromoBanner() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#064E3B]/60 to-transparent" />
-          
+
           <div className="relative z-10 p-6 md:p-14 flex flex-col justify-center h-full max-w-2xl">
             <div className="bg-white/95 backdrop-blur-sm rounded-full px-5 py-1.5 w-fit mb-6 shadow-sm animate-in fade-in slide-in-from-left duration-500">
               <span className="text-emerald-700 font-bold text-sm md:text-base uppercase tracking-widest">{currentPromo.tag}</span>
             </div>
-            
+
             <h2 className="text-white font-headline font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-3 drop-shadow-md animate-in fade-in slide-in-from-bottom duration-700">
               {currentPromo.title}
             </h2>
@@ -89,43 +89,43 @@ export function PromoBanner() {
             {currentPromo.bannerTitle}
           </h3>
           <p className="text-white/80 text-sm md:text-base mb-8 leading-relaxed">{currentPromo.description}</p>
-          
+
           <Button className="bg-white hover:bg-white/90 text-emerald-800 rounded-lg h-11 px-7 w-fit font-bold text-base shadow-lg border-none">
             View notices
           </Button>
         </div>
 
         {/* Navigation Controls Overlay */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-5 bg-black/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/10">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-5 bg-gradient-to-r from-emerald-700 to-teal-800 px-5 py-2 rounded-full border border-emerald-500/30 shadow-xl">
           <div className="flex items-center gap-1.5">
-            <button 
+            <button
               onClick={prevSlide}
               className="text-white/70 hover:text-white transition-colors p-1"
             >
               <ChevronLeft size={18} />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="text-white/70 hover:text-white transition-colors p-1"
             >
               <ChevronRight size={18} />
             </button>
           </div>
-          
+
           <div className="flex items-center gap-1.5">
             {promos.map((_, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 onClick={() => setCurrentIndex(i)}
                 className={cn(
                   "h-1 rounded-full cursor-pointer transition-all duration-300",
                   currentIndex === i ? "w-6 bg-white" : "w-1.5 bg-white/40"
-                )} 
+                )}
               />
             ))}
           </div>
 
-          <button 
+          <button
             onClick={() => setIsPlaying(!isPlaying)}
             className="text-white/70 hover:text-white transition-colors p-1"
           >

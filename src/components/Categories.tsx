@@ -58,17 +58,17 @@ export function Categories() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Product Segments</span>
-            <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Comprehensive Catalog</h2>
+            <span className="text-secondary font-bold uppercase tracking-widest text-xs">Browse Categories</span>
+            <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Our Product Range</h2>
           </div>
           <p className="text-muted-foreground max-w-md text-base opacity-80">
-            Authorized wholesale distributor for hospitals and retail pharmacies across Central India.
+            Authorized distributor for hospitals and retail pharmacies across Central India.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat, idx) => (
-            <Link 
+            <Link
               key={idx}
               href={cat.href}
               className="group relative overflow-hidden rounded-3xl bg-white border border-border hover:border-secondary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col"
@@ -101,12 +101,12 @@ function CategoryImage({ image, title, icon }: { image: string, title: string, i
   return (
     <div className="h-44 relative overflow-hidden bg-muted/20">
       {isLoading && <Skeleton className="absolute inset-0 z-10" />}
-      <Image 
-        src={image} 
-        alt={title} 
-        fill 
+      <Image
+        src={image}
+        alt={title}
+        fill
         onLoad={() => setIsLoading(false)}
-        className={`object-cover group-hover:scale-110 transition-transform duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`} 
+        className={`object-cover group-hover:scale-110 transition-transform duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
       <div className="absolute bottom-4 left-6 p-2.5 bg-white/95 backdrop-blur-md rounded-xl text-secondary shadow-lg group-hover:gradient-button group-hover:text-white transition-all duration-300 z-20">

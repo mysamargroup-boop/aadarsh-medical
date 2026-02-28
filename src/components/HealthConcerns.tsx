@@ -20,7 +20,7 @@ const concerns = [
 
 export function HealthConcerns() {
   return (
-    <section className="py-14 bg-white overflow-hidden">
+    <section className="pt-6 pb-14 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="mb-8">
           <h2 className="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-2 font-headline">Shop by health concerns</h2>
@@ -31,13 +31,13 @@ export function HealthConcerns() {
           {concerns.map((item) => {
             const img = PlaceHolderImages.find(p => p.id === item.imageId)?.imageUrl;
             return (
-              <Link 
-                href={`/shop?q=${item.title}`}
-                key={item.id} 
+              <Link
+                href={item.id === 'derma' ? '/shop?q=Derma' : `/shop?q=${item.title}`}
+                key={item.id}
                 className="flex-shrink-0 w-28 md:w-36 snap-start group cursor-pointer"
               >
                 <div className={`aspect-square rounded-2xl ${item.color} overflow-hidden mb-3 border border-border/20 group-hover:shadow-md transition-all relative`}>
-                  <Image 
+                  <Image
                     src={img || `https://picsum.photos/seed/${item.id}/400/400`}
                     alt={item.title}
                     fill

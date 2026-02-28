@@ -65,8 +65,8 @@ export function ContactSection() {
                 </a>
               </Button>
               <Button asChild className="gradient-button text-white rounded-full px-7 h-12 font-bold shadow-lg border-none">
-                <a href="https://wa.me/join/yourgroup" target="_blank" rel="noopener noreferrer">
-                  <Users className="mr-2" size={20} /> Join Wholesale Group
+                <a href="https://chat.whatsapp.com/Bo64bJcFyE31vlI4G5onFm?mode=hq2tswa" target="_blank" rel="noopener noreferrer">
+                  <Users className="mr-2" size={20} /> Join Group
                 </a>
               </Button>
             </div>
@@ -95,15 +95,15 @@ export function ContactSection() {
 
 function UserIcon({ size }: { size: number }) {
   return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
