@@ -7,15 +7,15 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 
 const concerns = [
-  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", imageId: "concern-gastric" },
-  { id: 'diabetes', title: "Diabetes", color: "bg-[#F0FDFA]", imageId: "concern-diabetes" },
-  { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", imageId: "concern-heart" },
-  { id: 'stomach', title: "Stomach Care", color: "bg-[#F0FDF4]", imageId: "concern-stomach" },
-  { id: 'liver', title: "Liver Care", color: "bg-[#FFF7ED]", imageId: "concern-liver" },
-  { id: 'bone', title: "Bone & Joint", color: "bg-[#F5F3FF]", imageId: "concern-bone" },
-  { id: 'kidney', title: "Kidney Care", color: "bg-[#ECFEFF]", imageId: "concern-kidney" },
-  { id: 'derma', title: "Derma Care", color: "bg-[#FFF1F2]", imageId: "concern-derma" },
-  { id: 'respiratory', title: "Respiratory", color: "bg-[#FEFCE8]", imageId: "concern-respiratory" },
+  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", image: "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'diabetes', title: "Diabetes", color: "bg-[#F0FDFA]", image: "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", image: "https://images.unsplash.com/photo-1628595354825-d97ad2a1d337?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'stomach', title: "Stomach Care", color: "bg-[#F0FDF4]", image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'liver', title: "Liver Care", color: "bg-[#FFF7ED]", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'bone', title: "Bone & Joint", color: "bg-[#F5F3FF]", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'kidney', title: "Kidney Care", color: "bg-[#ECFEFF]", image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'derma', title: "Derma Care", color: "bg-[#FFF1F2]", image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'respiratory', title: "Respiratory", color: "bg-[#FEFCE8]", image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400&h=400" },
 ];
 
 export function HealthConcerns() {
@@ -29,7 +29,6 @@ export function HealthConcerns() {
 
         <div className="flex overflow-x-auto pb-6 gap-4 md:gap-5 scroll-smooth snap-x no-scrollbar">
           {concerns.map((item) => {
-            const img = PlaceHolderImages.find(p => p.id === item.imageId)?.imageUrl;
             return (
               <Link
                 href={item.id === 'derma' ? '/shop?q=Derma' : `/shop?q=${item.title}`}
@@ -38,11 +37,10 @@ export function HealthConcerns() {
               >
                 <div className={`aspect-square rounded-2xl ${item.color} overflow-hidden mb-3 border border-border/20 group-hover:shadow-md transition-all relative`}>
                   <Image
-                    src={img || `https://picsum.photos/seed/${item.id}/400/400`}
+                    src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    data-ai-hint={item.title}
                   />
                 </div>
                 <h3 className="text-center text-[11px] md:text-xs font-bold text-primary leading-tight group-hover:text-emerald-600 transition-colors h-8 flex items-start justify-center px-1 uppercase tracking-tight">
