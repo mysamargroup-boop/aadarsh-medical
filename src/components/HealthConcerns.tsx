@@ -7,7 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 
 const concerns = [
-  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", imageId: "concern-stomach" },
+  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", imageId: "concern-gastric" },
   { id: 'diabetes', title: "Diabetes", color: "bg-[#F0FDFA]", imageId: "concern-diabetes" },
   { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", imageId: "concern-heart" },
   { id: 'stomach', title: "Stomach Care", color: "bg-[#F0FDF4]", imageId: "concern-stomach" },

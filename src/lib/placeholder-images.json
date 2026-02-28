@@ -55,51 +55,57 @@
       "imageHint": "medical banner"
     },
     {
+      "id": "concern-gastric",
+      "description": "Gastric care health concern icon",
+      "imageUrl": "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageHint": "medical consultation gastric"
+    },
+    {
       "id": "concern-diabetes",
       "description": "Diabetes health concern icon",
-      "imageUrl": "https://picsum.photos/seed/diabetes/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "glucometer diabetes"
     },
     {
       "id": "concern-heart",
       "description": "Heart care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/heart/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1628595354825-d97ad2a1d337?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "heart health"
     },
     {
       "id": "concern-stomach",
       "description": "Stomach care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/stomach/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "stomach ache"
     },
     {
       "id": "concern-liver",
       "description": "Liver care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/liver/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "liver health"
     },
     {
       "id": "concern-bone",
       "description": "Bone, Joint & Muscle care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/bone/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "joint pain"
     },
     {
       "id": "concern-kidney",
       "description": "Kidney care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/kidney/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "kidney medical"
     },
     {
       "id": "concern-derma",
       "description": "Derma care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/derma/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "dermatology care"
     },
     {
       "id": "concern-respiratory",
       "description": "Respiratory care health concern icon",
-      "imageUrl": "https://picsum.photos/seed/respiratory/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400&h=400",
       "imageHint": "respiratory inhaler"
     }
   ]
