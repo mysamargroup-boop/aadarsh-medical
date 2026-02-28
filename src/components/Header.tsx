@@ -151,8 +151,8 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-[1000]">
         <nav className={cn(
-          "transition-all duration-300 px-4 md:px-8 py-4 bg-gradient-to-r from-white via-emerald-50 to-emerald-600 shadow-lg",
-          isScrolled ? "py-2.5" : "py-4"
+          "transition-all duration-300 px-4 md:px-8 py-2 md:py-3 bg-gradient-to-r from-white via-emerald-50 to-emerald-600 shadow-lg",
+          isScrolled ? "py-1.5 md:py-2" : "py-2 md:py-3"
         )}>
           <div className="relative max-w-7xl mx-auto flex items-center justify-between gap-2">
             <div className="flex items-center md:w-full">
@@ -162,7 +162,7 @@ export function Header() {
 
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:flex-1 flex justify-center md:justify-start z-10 pointer-events-none md:pointer-events-auto">
                 <NextLink href="/" className="flex items-center group whitespace-nowrap pointer-events-auto">
-                  <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shrink-0 overflow-hidden relative">
                     <Image src="/logo.png" alt="Aadarsh MedStore Logo" fill className="object-contain" priority />
                   </div>
                 </NextLink>
@@ -178,8 +178,8 @@ export function Header() {
                   <NextLink
                     href={link.href}
                     className={cn(
-                      "font-bold transition-all text-sm lg:text-base py-4 flex items-center h-full border-b-2 border-transparent",
-                      isActive(link.href) ? "text-white border-white" : "text-white/80 hover:text-white"
+                      "font-bold transition-all text-sm lg:text-base py-2 flex items-center h-full border-b-2 border-transparent",
+                      isActive(link.href) ? "text-emerald-900 border-emerald-900" : "text-emerald-800/80 hover:text-emerald-950"
                     )}
                   >
                     {link.name}
@@ -190,7 +190,7 @@ export function Header() {
               <div className="flex items-center gap-3 ml-2">
                 <button
                   onClick={() => setIsCartOpen(true)}
-                  className="relative p-2 text-white hover:scale-110 transition-transform"
+                  className="relative p-2 text-emerald-900 hover:scale-110 transition-transform"
                 >
                   <ShoppingCart size={24} />
                   {totalItems > 0 && (
@@ -201,10 +201,10 @@ export function Header() {
                 </button>
                 <NextLink
                   href="/shop?wishlist=true"
-                  className="relative p-2 text-white hover:scale-110 transition-transform flex items-center justify-center border-none"
+                  className="relative p-2 text-emerald-900 hover:scale-110 transition-transform flex items-center justify-center border-none"
                   title="Wishlist"
                 >
-                  <Heart size={24} className={cn("transition-all", wishlist.length > 0 ? "fill-white text-white" : "text-white/90")} />
+                  <Heart size={24} className={cn("transition-all", wishlist.length > 0 ? "fill-emerald-900 text-emerald-900" : "text-emerald-900/90")} />
                   {wishlist.length > 0 && (
                     <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-secondary text-white text-[9px] font-bold rounded-full flex items-center justify-center shadow-md animate-in zoom-in duration-300">
                       {wishlist.length}
