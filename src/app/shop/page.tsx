@@ -177,7 +177,7 @@ function ShopContent() {
               />
             </aside>
 
-            <div className="flex-1 w-full">
+            <div className="flex-1 min-w-0 w-full lg:w-auto">
               <div className="bg-white p-4 rounded-[1.5rem] border border-muted/30 shadow-sm mb-6 flex items-center justify-between">
                 <span className="text-sm text-muted-foreground font-medium">
                   Showing <span className="text-primary font-bold">{paginatedProducts.length}</span> of <span className="text-primary font-bold">{filteredProducts.length}</span> items
