@@ -31,7 +31,7 @@ function ShopContent() {
   const [rxRequired, setRxRequired] = useState<boolean | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [priceRange, setPriceRange] = useState<[number]>([5000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
 
   useEffect(() => {
     const cat = searchParams.get('cat');
@@ -79,13 +79,15 @@ function ShopContent() {
     return allProducts.filter(p => {
       const matchesSearch = p.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
         p.company.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
-        p.molecules.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+        (p.molecules && p.molecules.toLowerCase().includes(debouncedSearch.toLowerCase())) ||
+        (p.material && p.material.toLowerCase().includes(debouncedSearch.toLowerCase())) ||
+        (p.composition && p.composition.toLowerCase().includes(debouncedSearch.toLowerCase())) ||
         (p.subCat && p.subCat.toLowerCase().includes(debouncedSearch.toLowerCase()));
       const matchesCat = selectedCats.length === 0 || selectedCats.includes(p.cat);
       const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(p.company);
       const matchesSubCat = !selectedSubCat || p.subCat === selectedSubCat;
       const matchesRx = rxRequired === null || p.rx === rxRequired;
-      const matchesPrice = p.price <= priceRange[0];
+      const matchesPrice = p.price >= priceRange[0] && p.price <= priceRange[1];
       return matchesSearch && matchesCat && matchesBrand && matchesSubCat && matchesRx && matchesPrice;
     });
   }, [debouncedSearch, selectedCats, selectedBrands, selectedSubCat, rxRequired, priceRange]);
@@ -118,7 +120,7 @@ function ShopContent() {
     setRxRequired(null);
     setSearchQuery('');
     setDebouncedSearch('');
-    setPriceRange([5000]);
+    setPriceRange([0, 5000]);
     setCurrentPage(1);
   };
 
@@ -213,6 +215,223 @@ function ShopContent() {
                   </div>
                 </div>
               </div>
+
+              {/* Brand Catalogue Links */}
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Macleods' && (
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50/50 p-6 rounded-[1.5rem] border border-blue-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Macleods Pharmaceuticals Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Download or view the complete product list and prices directly from our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1yvqoFU5WhHPKqGtogQ-ESFa3wQpHyfBW/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Orthopaedics' && (
+                <div className="bg-gradient-to-r from-teal-50 to-cyan-50/50 p-6 rounded-[1.5rem] border border-teal-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Tynor Orthopaedics Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Download or view the complete product list and dimensions from our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/17JpLfSUVb2BvQIN20A_sjWW44ufy7XDg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Mankind' && (
+                <div className="bg-gradient-to-r from-rose-50 to-orange-50/50 p-6 rounded-[1.5rem] border border-rose-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Pharma Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Access the complete wholesale product list and prices directly from our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Mankind Prime' && (
+                <div className="bg-gradient-to-r from-orange-50 to-yellow-50/50 p-6 rounded-[1.5rem] border border-orange-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Prime Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">Access the complete wholesale product list and prices directly from our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.some(b => b.includes("Dr. Reddy's")) && (
+                <div className="flex flex-col gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50/50 p-6 rounded-[1.5rem] border border-purple-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Dr. Reddy's (Max) Full Catalogue</h3>
+                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1ACwhcefxThaQ0SU1mgv0xYjENfcuF47m/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View Max catalogue
+                    </a>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-fuchsia-50 to-pink-50/50 p-6 rounded-[1.5rem] border border-fuchsia-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Dr. Reddy's (Leo) Full Catalogue</h3>
+                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1kjra2x3cZwu1rl6lF0BD9ABGAVZMioTz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View Leo catalogue
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === "Aristo" && (
+                <div className="bg-gradient-to-r from-red-50 to-rose-50/50 p-6 rounded-[1.5rem] border border-red-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Aristo Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1EZYt_OMZuT1_UIYfboKwqebDjdNM50NU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && (selectedBrands[0] === 'Sushima' || selectedBrands[0] === 'Sushima Pharmaceuticals') && (
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50/50 p-6 rounded-[1.5rem] border border-emerald-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Sushima Pharmaceuticals Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1bjnASIxDk0kXRDRUAxRrPZlF3HFZyVEJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Sarabhai' && (
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50/50 p-6 rounded-[1.5rem] border border-blue-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Sarabhai Chemicals Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1YrYXoqCngrT5kKqoWH4iuzYtabDrJGit/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && (selectedBrands[0] === 'Welcomevet Pharma' || selectedBrands[0] === 'Wellcome Vet') && (
+                <div className="bg-gradient-to-r from-orange-50 to-amber-50/50 p-6 rounded-[1.5rem] border border-orange-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Welcomevet Pharma Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1UehpABPuy9NWakVZUYbis6dqqKBls5xz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Univentis' && (
+                <div className="bg-gradient-to-r from-indigo-50 to-violet-50/50 p-6 rounded-[1.5rem] border border-indigo-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Univentis Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1Te1v4TVqBYqhKYls6sRvH3wHtErV20po/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Laborate' && (
+                <div className="bg-gradient-to-r from-pink-50 to-rose-50/50 p-6 rounded-[1.5rem] border border-pink-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Laborate Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1NoWyslxTgrgU-Y2gil3h9-94KVhnTuRd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Troikaa' && (
+                <div className="bg-gradient-to-r from-slate-50 to-zinc-50/50 p-6 rounded-[1.5rem] border border-slate-200 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Troikaa Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/16Ls5MKgr7H37UwMWKom3QBTJ2aaZRD9d/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Torrent Pharma' && (
+                <div className="bg-gradient-to-r from-sky-50 to-blue-50/50 p-6 rounded-[1.5rem] border border-sky-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Torrent Pharma Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1EpO-kBHhN3sdaw4dCiSQXtD6kkqSEkIn/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Alembic' && (
+                <div className="bg-gradient-to-r from-cyan-50 to-teal-50/50 p-6 rounded-[1.5rem] border border-cyan-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Alembic Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1KWHuo0j6T8UKEyOC3TqIrC04A_s_4SXW/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
+
+              {selectedBrands.includes("Lupin") && (
+                <div className="flex flex-col gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-emerald-50 to-green-50/50 p-6 rounded-[1.5rem] border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Lupin Gx Full Catalogue</h3>
+                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1HuWr4v4ga6z-aYr_NT5supOdCPNzZOj9/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View Gx catalogue
+                    </a>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-teal-50 to-emerald-50/50 p-6 rounded-[1.5rem] border border-teal-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Lupin OTC Full Catalogue</h3>
+                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1HJZf1fC2ru2-AXS2vk5JeNg1JLfkeKdg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View OTC catalogue
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {selectedBrands.length === 1 && selectedBrands[0] === 'Medigrip' && (
+                <div className="bg-gradient-to-r from-red-50 to-orange-50/50 p-6 rounded-[1.5rem] border border-red-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Medigrip Full Catalogue</h3>
+                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                  </div>
+                  <a href="https://drive.google.com/file/d/1FGeGGI2MLAgJeXtvwN6b4t1i0QY9VRfd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                    View full catalogue (PDF)
+                  </a>
+                </div>
+              )}
 
               {isLoading ? (
                 <div className={cn("gap-4 md:gap-6", {
@@ -400,14 +619,26 @@ function ShopProductCard({ product }: { product: any }) {
           {product.name}
         </h3>
 
-        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-4 opacity-80">
+        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-2 opacity-80">
           {product.company}
         </p>
 
+        {(product.molecules || product.material || product.composition) && (
+          <p className="text-[11px] font-bold text-primary/80 bg-primary/5 border border-primary/10 px-2 py-1 rounded-md mb-2 line-clamp-2 leading-relaxed group-hover:bg-primary/10 transition-colors">
+            {product.molecules || product.material || product.composition}
+          </p>
+        )}
+
+        {product.sizes && (
+          <p className="text-[11px] text-secondary font-bold tracking-wider mb-2 bg-secondary/10 inline-block px-2 py-0.5 rounded-md">
+            Sizes: {product.sizes}
+          </p>
+        )}
+        <div className="flex-1" />
         <div className="mt-auto flex items-center justify-between">
           <div>
             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">MRP</p>
-            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)} <span className="text-[10px] font-normal text-muted-foreground block md:inline mt-0.5 md:mt-0">/strip</span></p>
+            <p className="text-primary font-bold text-base md:text-lg leading-none">₹{product.price.toFixed(2)} <span className="text-[10px] font-normal text-muted-foreground inline-block ml-0.5">/strip</span></p>
           </div>
           <button
             onClick={handleAddToCart}
@@ -485,15 +716,31 @@ function ShopProductListCard({ product }: { product: any }) {
           <p className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-80">
             {product.company}
           </p>
-          <p className="text-xs text-muted-foreground line-clamp-1 max-w-md hidden md:block">
-            {product.molecules}
-          </p>
+          {(product.molecules || product.material) && (
+            <div className="mt-1.5 flex flex-wrap gap-2">
+              <span className="text-[11px] font-bold text-primary/80 bg-primary/5 border border-primary/10 px-2.5 py-1 rounded-md inline-block max-w-md line-clamp-2">
+                {product.molecules || product.material}
+              </span>
+            </div>
+          )}
+          {product.composition && (
+            <div className="mt-1.5 hidden md:block">
+              <span className="text-[11px] font-bold text-primary/80 bg-primary/5 border border-primary/10 px-2.5 py-1 rounded-md inline-block max-w-md line-clamp-2">
+                {product.composition}
+              </span>
+            </div>
+          )}
+          {product.sizes && (
+            <p className="text-[11px] text-secondary font-bold tracking-wider mt-2 bg-secondary/10 inline-block px-2 py-0.5 rounded-md">
+              Sizes: {product.sizes}
+            </p>
+          )}
         </div>
 
         <div className="flex items-center gap-4 md:gap-10 mt-4 md:mt-0 relative z-30">
           <div className="text-right">
             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest leading-none mb-1 opacity-70">MRP</p>
-            <p className="text-primary font-bold text-xl leading-none">₹{product.price.toFixed(2)} <span className="text-xs font-normal text-muted-foreground">/strip</span></p>
+            <p className="text-primary font-bold text-xl leading-none">₹{product.price.toFixed(2)} <span className="text-xs font-normal text-muted-foreground inline-block ml-0.5">/strip</span></p>
           </div>
           <button
             onClick={handleAddToCart}

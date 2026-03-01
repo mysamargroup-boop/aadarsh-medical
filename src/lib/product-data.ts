@@ -13,9 +13,12 @@ export interface Product {
   price: number;
   img: string;
   rx: boolean;
-  molecules: string;
+  molecules?: string;
+  material?: string;
+  composition?: string;
+  sizes?: string;
   packing: string;
-  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Capsule' | 'Gel' | 'Spray' | 'Test Kit' | 'Lozenges' | 'Other';
+  format: 'Tablets' | 'Suspension' | 'Injection' | 'Cream' | 'Ointment' | 'Powder' | 'Shampoo' | 'Soap' | 'Syrup' | 'Sachet' | 'Liquid' | 'Capsule' | 'Gel' | 'Spray' | 'Test Kit' | 'Lozenges' | 'Drops' | 'Dry Syrup' | 'Aid' | 'Support' | 'Belt' | 'Brace' | 'Other';
   description: string;
   usage?: string;
   type?: 'Popular' | 'Focus';
@@ -33,11 +36,25 @@ export interface Product {
 
 import { drReddyProducts } from '@/data/products/dr-reddy';
 import { macleodsProducts } from '@/data/products/macleods';
+import { aristoProducts } from '@/data/products/aristo';
+import { mankindProducts } from '@/data/products/mankind';
+import { orthopaedicsProducts } from '@/data/products/orthopaedics';
+import { troikaaProducts } from '@/data/products/troikaa';
+import { medigripProducts } from '@/data/products/medigrip';
+import { torrentProducts } from '@/data/products/torrent';
+import { laborateProducts } from '@/data/products/laborate';
 
 // Combine all products from data files
 export const allProducts: Product[] = [
   ...drReddyProducts,
-  ...macleodsProducts
+  ...macleodsProducts,
+  ...aristoProducts,
+  ...mankindProducts,
+  ...orthopaedicsProducts,
+  ...troikaaProducts,
+  ...medigripProducts,
+  ...torrentProducts,
+  ...laborateProducts
 ];
 
 // Helper to get products by brand
@@ -45,7 +62,7 @@ export const getProductsByBrand = (brandName: string) => {
   return allProducts.filter(p => p.company === brandName);
 };
 
-export const brands = ["Dr. Reddy's", "WellcomeVet Pharma", "Dr. Best", "Macleods"];
+export const brands = ["Dr. Reddy's", "WellcomeVet Pharma", "Dr. Best", "Macleods", "Aristo", "Mankind", "Orthopaedics", "Medigrip", "Torrent Pharma", "Troikaa", "Laborate"];
 
 /**
  * Helper to generate SEO friendly URLs

@@ -7,15 +7,15 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 
 const concerns = [
-  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", image: "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'gastric', title: "Gastric Care", color: "bg-[#FFF7ED]", image: "/images/categories/gastric_care.png" },
   { id: 'diabetes', title: "Diabetes", color: "bg-[#F0FDFA]", image: "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&q=80&w=400&h=400" },
-  { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", image: "https://images.unsplash.com/photo-1628595354825-d97ad2a1d337?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'heart', title: "Heart Care", color: "bg-[#FDF2F8]", image: "/images/categories/heart_care.png" },
   { id: 'stomach', title: "Stomach Care", color: "bg-[#F0FDF4]", image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400&h=400" },
   { id: 'liver', title: "Liver Care", color: "bg-[#FFF7ED]", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=400" },
   { id: 'bone', title: "Bone & Joint", color: "bg-[#F5F3FF]", image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400&h=400" },
   { id: 'kidney', title: "Kidney Care", color: "bg-[#ECFEFF]", image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400&h=400" },
   { id: 'derma', title: "Derma Care", color: "bg-[#FFF1F2]", image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400&h=400" },
-  { id: 'respiratory', title: "Respiratory", color: "bg-[#FEFCE8]", image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400&h=400" },
+  { id: 'respiratory', title: "Respiratory", color: "bg-[#FEFCE8]", image: "/images/categories/respiratory_care.png" },
 ];
 
 export function HealthConcerns() {

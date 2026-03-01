@@ -7,6 +7,8 @@ import { Categories } from '@/components/Categories';
 import { HealthConcerns } from '@/components/HealthConcerns';
 import { ProductCatalog } from '@/components/ProductCatalog';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
+import { CompanySection } from '@/components/CompanySection';
+import { ConcernProducts } from '@/components/ConcernProducts';
 import { LegalSection } from '@/components/LegalSection';
 import { ContactSection } from '@/components/ContactSection';
 import { Footer } from '@/components/Footer';
@@ -24,6 +26,10 @@ export default function Home() {
       <LogoSlider />
 
       <HealthConcerns />
+
+      <ConcernProducts />
+
+      <CompanySection />
 
       <Categories />
 

@@ -1,5 +1,5 @@
 
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -102,7 +102,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'scroll': 'scroll 30s linear infinite',
+        'scroll': 'scroll 15s linear infinite',
         'float-slow': 'float 6s ease-in-out infinite',
         'float-medium': 'float 4s ease-in-out infinite',
       },

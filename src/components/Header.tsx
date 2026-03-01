@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Heart, Pill, ShieldPlus, PawPrint, Stethoscope, Scissors, ChevronRight, ArrowRight, Building2, Activity } from 'lucide-react';
+import { Menu, X, Phone, Home, LayoutGrid, ShoppingCart, Heart, Pill, ShieldPlus, PawPrint, Stethoscope, Scissors, ChevronRight, ArrowRight, Building2, Activity, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
@@ -81,7 +81,8 @@ const megaMenuData: Record<string, { subCategories: { name: string; href: string
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [isCategoriesHovered, setIsCategoriesHovered] = useState(false);
+  const [activeMegaCategory, setActiveMegaCategory] = useState<string>('Pharma');
   const { totalItems, wishlist, isCartOpen, setIsCartOpen } = useCart();
   const [isWhislistOpen, setIsWishlistOpen] = useState(false);
   const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
@@ -100,17 +101,17 @@ export function Header() {
     window.open('https://wa.me/919630080706?text=Hi Abhishek, I want to inquire about wholesale medicine supply for my organization.', '_blank');
   };
 
-  const handleCategoryEnter = (name: string) => {
+  const handleCategoriesEnter = () => {
     if (megaMenuTimeoutRef.current) {
       clearTimeout(megaMenuTimeoutRef.current);
       megaMenuTimeoutRef.current = null;
     }
-    setHoveredCategory(name);
+    setIsCategoriesHovered(true);
   };
 
-  const handleCategoryLeave = () => {
+  const handleCategoriesLeave = () => {
     megaMenuTimeoutRef.current = setTimeout(() => {
-      setHoveredCategory(null);
+      setIsCategoriesHovered(false);
     }, 300); // Increased timeout for better stability
   };
 
@@ -149,12 +150,34 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[1000]">
+      {/* Top Bar */}
+      <div className="hidden md:flex bg-secondary text-white text-xs py-1.5 px-4 md:px-8 justify-between items-center z-[1001] relative">
+        <div className="flex items-center gap-4">
+          <a href="mailto:adarshmedicalstores2020@gmail.com" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+            <Mail size={12} />
+            adarshmedicalstores2020@gmail.com
+          </a>
+          <a href="tel:+919630080706" className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+            <Phone size={12} />
+            +91 9630080706
+          </a>
+        </div>
+        <div className="flex items-center gap-4 text-white/90">
+          <span>Garhakota Dist Sagar, MP</span>
+          <span className="w-1 h-1 rounded-full bg-white/30" />
+          <span>GST: 23AZQPP5467M1ZJ</span>
+        </div>
+      </div>
+
+      <header className={cn(
+        "fixed left-0 right-0 z-[1000] transition-all duration-300",
+        isScrolled ? "top-0" : "top-0 md:top-[28px]"
+      )}>
         <nav className={cn(
-          "transition-all duration-300 px-4 md:px-8 py-2 md:py-3 bg-gradient-to-r from-white via-emerald-50 to-emerald-600 shadow-lg",
-          isScrolled ? "py-1.5 md:py-2" : "py-2 md:py-3"
+          "transition-all duration-300 px-4 md:px-8 bg-gradient-to-r from-teal-50/90 via-emerald-50/95 to-teal-100/90 backdrop-blur-md shadow-sm border-b border-emerald-200/60",
+          isScrolled ? "py-2 shadow-md md:py-2" : "py-2 md:py-3"
         )}>
-          <div className="relative max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="relative max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center md:w-full">
               <button className="md:hidden p-2 text-emerald-700 z-20 relative" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -162,8 +185,8 @@ export function Header() {
 
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:flex-1 flex justify-center md:justify-start z-10 pointer-events-none md:pointer-events-auto">
                 <NextLink href="/" className="flex items-center group whitespace-nowrap pointer-events-auto">
-                  <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shrink-0 overflow-hidden relative">
-                    <Image src="/logo.png" alt="Aadarsh MedStore Logo" fill className="object-contain" priority />
+                  <div className="w-32 h-12 md:w-48 md:h-16 flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <Image src="/logo.png" alt="Aadarsh Medical Logo" fill className="object-contain" priority />
                   </div>
                 </NextLink>
               </div>
@@ -173,13 +196,15 @@ export function Header() {
               {navLinks.map((link) => (
                 <div
                   key={link.name}
-                  className="relative flex items-center h-full"
+                  className="relative flex items-center h-full cursor-pointer py-2 md:py-4 -my-2 md:-my-4"
+                  onMouseEnter={() => link.name === 'Categories' ? handleCategoriesEnter() : undefined}
+                  onMouseLeave={() => link.name === 'Categories' ? handleCategoriesLeave() : undefined}
                 >
                   <NextLink
                     href={link.href}
                     className={cn(
-                      "font-bold transition-all text-sm lg:text-base py-2 flex items-center h-full border-b-2 border-transparent",
-                      isActive(link.href) ? "text-emerald-900 border-emerald-900" : "text-emerald-800/80 hover:text-emerald-950"
+                      "font-bold transition-all text-sm lg:text-base py-1.5 flex items-center h-full border-b-2 border-transparent hover:scale-105",
+                      isActive(link.href) ? "text-emerald-950 border-emerald-900" : "text-emerald-900/90 hover:text-emerald-950"
                     )}
                   >
                     {link.name}
@@ -224,7 +249,7 @@ export function Header() {
             <div className="flex items-center md:hidden gap-3">
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2 text-white"
+                className="relative p-2 text-emerald-900"
               >
                 <ShoppingCart size={22} />
                 {totalItems > 0 && (
@@ -235,10 +260,10 @@ export function Header() {
               </button>
               <NextLink
                 href="/shop?wishlist=true"
-                className="relative p-2 text-white flex items-center justify-center border-none"
+                className="relative p-2 text-emerald-900 flex items-center justify-center border-none"
                 title="Wishlist"
               >
-                <Heart size={22} className={cn("transition-all", wishlist.length > 0 ? "fill-white text-white" : "text-white/90")} />
+                <Heart size={22} className={cn("transition-all", wishlist.length > 0 ? "fill-emerald-900 text-emerald-900" : "text-emerald-900/90")} />
                 {wishlist.length > 0 && (
                   <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-secondary text-white text-[8px] font-bold rounded-full flex items-center justify-center animate-in zoom-in duration-300">
                     {wishlist.length}
@@ -249,77 +274,70 @@ export function Header() {
           </div>
         </nav>
 
-        {/* Sub-Navigation for Desktop with Mega Menu */}
-        <div className={cn(
-          "bg-[#047857]/95 backdrop-blur-md hidden md:block border-t border-white/10 transition-all duration-300 relative z-40",
-          isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto py-2.5 opacity-100 shadow-md"
-        )}>
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="flex items-center justify-center gap-8 lg:gap-12">
-              {subNavItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() => handleCategoryEnter(item.name)}
-                  onMouseLeave={handleCategoryLeave}
-                >
-                  <NextLink href={item.href} className="flex items-center gap-2 text-white hover:text-white transition-all group py-2">
-                    <span className="group-hover:scale-110 transition-transform opacity-90 group-hover:opacity-100">{item.icon}</span>
-                    <span className="text-[11px] font-bold tracking-tight whitespace-nowrap uppercase text-white">{item.name}</span>
-                  </NextLink>
-
-                  {/* Active indicator line */}
-                  {hoveredCategory === item.name && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full" />
-                  )}
+        {/* Mega Menu Dropdown */}
+        {isCategoriesHovered && (
+          <div
+            className="absolute left-0 right-0 top-full z-[9999] animate-in fade-in slide-in-from-top-2 duration-200 hidden md:block"
+            onMouseEnter={handleCategoriesEnter}
+            onMouseLeave={handleCategoriesLeave}
+          >
+            <div className="bg-white shadow-2xl border-t border-emerald-100">
+              <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 flex gap-8">
+                {/* Left Sidebar for Categories */}
+                <div className="w-64 border-r border-muted/20 pr-6 flex flex-col gap-2 shrink-0">
+                  <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-4 pl-4">Shop By Category</h3>
+                  {['Pharma', 'OTC', 'Vet', 'Devices', 'Surgical'].map(key => {
+                    const itemIcon = subNavItems.find(i => i.name === key)?.icon;
+                    return (
+                      <button
+                        key={key}
+                        onMouseEnter={() => setActiveMegaCategory(key)}
+                        className={cn(
+                          "flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-bold text-sm w-full text-left",
+                          activeMegaCategory === key ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted/30 hover:text-primary"
+                        )}
+                      >
+                        {itemIcon} {key}
+                      </button>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mega Menu Dropdown */}
-          {hoveredCategory && megaMenuData[hoveredCategory] && (
-            <div
-              className="absolute left-0 right-0 top-full z-[9999] animate-in fade-in slide-in-from-top-2 duration-200"
-              onMouseEnter={() => handleCategoryEnter(hoveredCategory)}
-              onMouseLeave={handleCategoryLeave}
-            >
-              <div className="bg-white shadow-2xl border-t border-emerald-100">
-                <div className="max-w-7xl mx-auto px-8 py-8">
-                  <div className="grid grid-cols-12 gap-8">
-                    {/* Left: Description & CTA */}
+                {/* Right Content */}
+                <div className="flex-1">
+                  <div className="grid grid-cols-12 gap-8 h-full">
+                    {/* Description & CTA */}
                     <div className="col-span-4 border-r border-muted/10 pr-8">
                       <div className="flex items-center gap-3 mb-4">
-                        {subNavItems.find(i => i.name === hoveredCategory)?.icon && (
-                          <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center [&_svg]:w-6 [&_svg]:h-6">
-                            {subNavItems.find(i => i.name === hoveredCategory)!.icon}
-                          </div>
-                        )}
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center [&_svg]:w-6 [&_svg]:h-6">
+                          {subNavItems.find(i => i.name === activeMegaCategory)?.icon}
+                        </div>
                         <div>
-                          <h3 className="font-headline font-bold text-primary text-xl uppercase tracking-wider">{hoveredCategory}</h3>
+                          <h3 className="font-headline font-bold text-primary text-xl uppercase tracking-wider">{activeMegaCategory}</h3>
                           <div className="h-1 w-12 bg-secondary rounded-full mt-1" />
                         </div>
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-xs">
-                        {megaMenuData[hoveredCategory].description}
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-8">
+                        {megaMenuData[activeMegaCategory]?.description}
                       </p>
                       <NextLink
-                        href={subNavItems.find(i => i.name === hoveredCategory)?.href || '/shop'}
+                        href={subNavItems.find(i => i.name === activeMegaCategory)?.href || '/shop'}
+                        onClick={() => setIsCategoriesHovered(false)}
                         className="inline-flex items-center gap-2 bg-primary text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-primary/90 transition-all shadow-md group"
                       >
-                        View All Products <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        View All <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </NextLink>
                     </div>
 
-                    {/* Middle: Sub-Categories (Split into 2 columns) */}
+                    {/* Sub-Categories (Split into 2 columns) */}
                     <div className="col-span-5 grid grid-cols-2 gap-8">
                       <div>
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Categories</h4>
                         <div className="flex flex-col gap-1">
-                          {megaMenuData[hoveredCategory].subCategories.slice(0, Math.ceil(megaMenuData[hoveredCategory].subCategories.length / 2)).map((sub) => (
+                          {megaMenuData[activeMegaCategory]?.subCategories.slice(0, Math.ceil(megaMenuData[activeMegaCategory].subCategories.length / 2)).map((sub) => (
                             <NextLink
                               key={sub.name}
                               href={sub.href}
+                              onClick={() => setIsCategoriesHovered(false)}
                               className="group flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-emerald-50 transition-all"
                             >
                               <ChevronRight size={12} className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity -ml-1" />
@@ -329,12 +347,13 @@ export function Header() {
                         </div>
                       </div>
                       <div>
-                        <div className="h-[21px] mb-4" /> {/* Spacer to align with first column header */}
+                        <div className="h-[21px] mb-4" /> {/* Spacer */}
                         <div className="flex flex-col gap-1">
-                          {megaMenuData[hoveredCategory].subCategories.slice(Math.ceil(megaMenuData[hoveredCategory].subCategories.length / 2)).map((sub) => (
+                          {megaMenuData[activeMegaCategory]?.subCategories.slice(Math.ceil(megaMenuData[activeMegaCategory].subCategories.length / 2)).map((sub) => (
                             <NextLink
                               key={sub.name}
                               href={sub.href}
+                              onClick={() => setIsCategoriesHovered(false)}
                               className="group flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-emerald-50 transition-all"
                             >
                               <ChevronRight size={12} className="text-secondary opacity-0 group-hover:opacity-100 transition-opacity -ml-1" />
@@ -345,14 +364,15 @@ export function Header() {
                       </div>
                     </div>
 
-                    {/* Right: Brands */}
-                    <div className="col-span-3 bg-slate-50/50 rounded-2xl p-6 border border-slate-100">
+                    {/* Brands */}
+                    <div className="col-span-3 bg-slate-50/50 rounded-2xl p-6 border border-slate-100 flex flex-col">
                       <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">Featured Brands</h4>
-                      <div className="flex flex-col gap-2">
-                        {megaMenuData[hoveredCategory].brands.map((brand) => (
+                      <div className="flex flex-col gap-2 flex-1">
+                        {megaMenuData[activeMegaCategory]?.brands.map((brand) => (
                           <NextLink
                             key={brand}
                             href={`/shop?brand=${encodeURIComponent(brand)}`}
+                            onClick={() => setIsCategoriesHovered(false)}
                             className="group flex items-center justify-between py-2 px-3 bg-white rounded-xl border border-muted/20 hover:border-secondary transition-all"
                           >
                             <span className="text-xs font-bold text-primary group-hover:text-secondary transition-colors">{brand}</span>
@@ -365,8 +385,8 @@ export function Header() {
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (

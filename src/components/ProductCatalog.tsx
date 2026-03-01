@@ -24,12 +24,6 @@ const categories = ["All", "Pharmaceuticals", "OTC & Healthcare", "Veterinary Me
 export function ProductCatalog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-  React.useEffect(() => {
-    const timer = setTimeout(() => setIsInitialLoading(false), 1200);
-    return () => clearTimeout(timer);
-  }, []);
 
   const filteredProducts = products.slice(0, 10).filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -90,21 +84,7 @@ export function ProductCatalog() {
           </div>
         </div>
 
-        {isInitialLoading ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {[...Array(10)].map((_, i) => (
-              <div key={i} className="bg-white rounded-[1.5rem] border border-border p-4 h-[350px] animate-pulse">
-                <Skeleton className="aspect-square w-full rounded-2xl mb-4" />
-                <Skeleton className="h-4 w-3/4 mb-2" />
-                <Skeleton className="h-3 w-1/2 mb-4" />
-                <div className="flex justify-between items-end">
-                  <Skeleton className="h-8 w-1/3" />
-                  <Skeleton className="h-9 w-9 rounded-full" />
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : filteredProducts.length > 0 ? (
+        {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {filteredProducts.map((p) => (
               <ProductCard key={p.id} product={p} />
@@ -141,7 +121,6 @@ export function ProductCatalog() {
 }
 
 function ProductCard({ product }: { product: any }) {
-  const [isLoading, setIsLoading] = useState(true);
   const { addToCart } = useCart();
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -156,13 +135,11 @@ function ProductCard({ product }: { product: any }) {
       <Link href={getProductUrl(product)} className="absolute inset-0 z-10" />
 
       <div className="relative aspect-square overflow-hidden bg-muted/30">
-        {isLoading && <Skeleton className="absolute inset-0 z-20" />}
         <Image
           src={product.img}
           alt={product.name}
           fill
-          onLoad={() => setIsLoading(false)}
-          className={`object-cover group-hover:scale-110 transition-transform duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          className={`object-cover group-hover:scale-110 transition-transform duration-700 opacity-100`}
           data-ai-hint="medical product"
         />
         <div className="absolute top-3 left-3 z-20">
@@ -177,9 +154,24 @@ function ProductCard({ product }: { product: any }) {
           {product.name}
         </h3>
 
-        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wider mb-4 opacity-80">
+        <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-wider mb-2 opacity-80">
           {product.company}
         </p>
+
+        {(product.molecules || product.material || product.composition) && (
+          <div className="mb-2">
+            <span className="text-[10px] bg-secondary/10 text-secondary px-2 py-0.5 rounded-md font-bold border border-secondary/10">
+              {product.molecules || product.material || product.composition}
+            </span>
+          </div>
+        )}
+
+        {product.sizes && (
+          <p className="text-[11px] text-secondary font-bold tracking-wider mb-2 bg-secondary/10 inline-block px-2 py-0.5 rounded-md">
+            Sizes: {product.sizes}
+          </p>
+        )}
+        <div className="flex-1" />
 
         <div className="mt-auto flex items-center justify-between">
           <div>

@@ -31,7 +31,7 @@ export function WhyChooseUs() {
     <section id="why-us" className="py-20 relative overflow-hidden">
       {/* Background Gradient Strip */}
       <div className="absolute inset-0 bg-secondary/5 -skew-y-3 translate-y-24 scale-110 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-14">
           <span className="text-secondary font-bold uppercase tracking-widest text-xs">Our Strength</span>
@@ -40,7 +40,7 @@ export function WhyChooseUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlights.map((item, idx) => (
-            <div 
+            <div
               key={idx}
               className="bg-white p-8 rounded-3xl border border-border shadow-lg shadow-primary/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
             >

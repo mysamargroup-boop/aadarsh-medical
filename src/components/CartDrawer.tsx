@@ -21,7 +21,7 @@ export function CartDrawer({ open, onOpenChange }: { open: boolean, onOpenChange
     const handleCheckout = () => {
         const phoneNumber = "+919000000000"; // Placeholder - User can change this later
 
-        let message = `*Enquiry from Aadarsh MedStore*\n\n`;
+        let message = `*Enquiry from Aadarsh Medical*\n\n`;
         message += `I want to enquire about the following products:\n\n`;
 
         items.forEach((item, index) => {

@@ -1,10 +1,23 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, MessageCircle, Mail, MapPin, Send, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    organization: '',
+    details: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = `*New Inquiry from Website*\n\n*Name:* ${formData.name}\n*Mobile:* ${formData.mobile}\n*Organization:* ${formData.organization}\n*Details:* ${formData.details}`;
+    const whatsappNumber = "919630080706";
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  };
   return (
     <section id="contact" className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -75,14 +88,42 @@ export function ContactSection() {
           <div className="bg-muted/30 p-8 md:p-10 rounded-[2.5rem] border border-border shadow-inner relative overflow-hidden group">
             <div className="faint-pattern absolute inset-0 opacity-10" />
             <h3 className="relative z-10 text-primary font-headline font-bold text-xl mb-8">Send an Inquiry</h3>
-            <form className="relative z-10 space-y-4">
+            <form onSubmit={handleSubmit} className="relative z-10 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" placeholder="Your Name" className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm" />
-                <input type="tel" placeholder="Mobile Number" className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm" />
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm"
+                />
+                <input
+                  type="tel"
+                  placeholder="Mobile Number"
+                  required
+                  value={formData.mobile}
+                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                  className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm"
+                />
               </div>
-              <input type="text" placeholder="Organization / Pharmacy Name" className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm" />
-              <textarea placeholder="List products or your inquiry details (e.g., ENO, Crocin, BP Machines...)" rows={4} className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm resize-none" />
-              <Button className="w-full h-12 gradient-button text-white rounded-xl font-bold text-base group border-none">
+              <input
+                type="text"
+                placeholder="Organization / Pharmacy Name"
+                required
+                value={formData.organization}
+                onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm"
+              />
+              <textarea
+                placeholder="List products or your inquiry details (e.g., ENO, Crocin, BP Machines...)"
+                required
+                rows={4}
+                value={formData.details}
+                onChange={(e) => setFormData({ ...formData, details: e.target.value })}
+                className="w-full px-5 py-3.5 rounded-xl bg-white border border-border focus:ring-2 focus:ring-secondary outline-none font-medium text-sm resize-none"
+              />
+              <Button type="submit" className="w-full h-12 gradient-button text-white rounded-xl font-bold text-base group border-none">
                 Submit Inquiry <Send className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
               </Button>
             </form>

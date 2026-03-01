@@ -48,6 +48,14 @@ const categories = [
     color: "from-sky-500/10 to-sky-600/10",
     image: PlaceHolderImages.find(img => img.id === 'surgical-cat')?.imageUrl,
     href: "/shop?cat=Surgical & Healthcare Essentials"
+  },
+  {
+    title: "Orthopaedic Appliances & Fracture Aids",
+    desc: "Walking Sticks, Belts, Splints, Collars, Crepe Bandages, and Neoprene Supports.",
+    icon: <ShieldPlus className="w-8 h-8" />,
+    color: "from-indigo-500/10 to-indigo-600/10",
+    image: "/products/generic-aid.jpg",
+    href: "/shop?cat=Orthopaedic Appliances & Fracture Aids"
   }
 ];
 
@@ -96,17 +104,13 @@ export function Categories() {
 }
 
 function CategoryImage({ image, title, icon }: { image: string, title: string, icon: React.ReactNode }) {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className="h-44 relative overflow-hidden bg-muted/20">
-      {isLoading && <Skeleton className="absolute inset-0 z-10" />}
       <Image
         src={image}
         alt={title}
         fill
-        onLoad={() => setIsLoading(false)}
-        className={`object-cover group-hover:scale-110 transition-transform duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        className={`object-cover group-hover:scale-110 transition-transform duration-700 opacity-100`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
       <div className="absolute bottom-4 left-6 p-2.5 bg-white/95 backdrop-blur-md rounded-xl text-secondary shadow-lg group-hover:gradient-button group-hover:text-white transition-all duration-300 z-20">

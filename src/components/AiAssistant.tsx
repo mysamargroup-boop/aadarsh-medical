@@ -21,13 +21,12 @@ interface AiAssistantProps {
 
 export function AiAssistant({ externalOpen, onClose }: AiAssistantProps) {
   const [internalOpen, setInternalOpen] = useState(false);
-  const isOpen = externalOpen !== undefined ? externalOpen : internalOpen;
+  const isOpen = externalOpen || internalOpen;
 
   const setIsOpen = (val: boolean) => {
-    if (externalOpen !== undefined) {
-      if (!val && onClose) onClose();
-    } else {
-      setInternalOpen(val);
+    setInternalOpen(val);
+    if (!val && onClose && externalOpen) {
+      onClose();
     }
   };
 
@@ -39,7 +38,7 @@ export function AiAssistant({ externalOpen, onClose }: AiAssistantProps) {
 
     // Direct WhatsApp redirection
     const whatsappNumber = "919630080706";
-    const message = encodeURIComponent(`Hello Aadarsh MedStore, I have an inquiry about: ${query}`);
+    const message = encodeURIComponent(`Hello Aadarsh Medical, I have an inquiry about: ${query}`);
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 
     // Reset and close

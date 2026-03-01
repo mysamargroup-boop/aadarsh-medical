@@ -17,15 +17,15 @@
     /* Primary: Emerald/Teal Green */
     --primary: 172 100% 25%;
     --primary-foreground: 170 100% 96%;
-    
+
     /* Secondary: Vibrant Green */
     --secondary: 160 84% 39%;
     --secondary-foreground: 170 100% 96%;
-    
+
     /* Accent: Teal Blue */
     --accent: 175 70% 45%;
     --accent-foreground: 170 100% 96%;
-    
+
     --background: 170 40% 98%;
     --foreground: 180 50% 5%;
     --card: 0 0% 100%;
@@ -47,6 +47,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -56,11 +57,11 @@
     width: 6px;
     height: 6px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #10B981 0%, #0D9488 100%);
     border-radius: 10px;
@@ -81,6 +82,7 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -115,7 +117,7 @@
 }
 
 .medical-gradient-dark {
-  background: linear-gradient(180deg, #064E3B 0%, #065F46 100%);
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%);
 }
 
 .medical-gradient-subnav {

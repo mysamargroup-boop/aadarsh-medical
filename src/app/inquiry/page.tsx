@@ -60,7 +60,7 @@ export default function InquiryPage() {
                                 <div className="md:col-span-2 medical-gradient-dark p-8 md:p-12 text-white">
                                     <h1 className="text-3xl font-headline font-bold mb-6">Wholesale Inquiry</h1>
                                     <p className="text-white/80 text-sm leading-relaxed mb-10">
-                                        Partner with Aadarsh MedStore for reliable pharmaceutical distribution. Fill out the form, and our procurement team will contact you within 24 hours.
+                                        Partner with Aadarsh Medical for reliable pharmaceutical distribution. Fill out the form, and our procurement team will contact you within 24 hours.
                                     </p>
 
                                     <div className="space-y-6">
@@ -179,7 +179,7 @@ export default function InquiryPage() {
                             </div>
                             <h2 className="text-3xl font-headline font-bold text-primary mb-4">Inquiry Received!</h2>
                             <p className="text-muted-foreground max-w-md mx-auto mb-10 leading-relaxed">
-                                Thank you for your interest in Aadarsh MedStore. Our team is reviewing your requirements and will get back to you shortly.
+                                Thank you for your interest in Aadarsh Medical. Our team is reviewing your requirements and will get back to you shortly.
                             </p>
                             <Button asChild className="h-12 px-8 rounded-full gradient-button text-white font-bold">
                                 <Link href="/">Return to Home</Link>

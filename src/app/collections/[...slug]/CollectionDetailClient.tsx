@@ -109,7 +109,9 @@ export default function CollectionDetailClient() {
                                         <Heart size={20} />
                                     </button>
                                 </div>
-                                <p className="text-lg text-muted-foreground mb-4 font-medium">{product.molecules}</p>
+                                <div className="inline-block px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-xl mb-4">
+                                    <p className="text-lg text-secondary font-bold leading-none">{product.molecules}</p>
+                                </div>
                                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs uppercase font-bold tracking-widest">
                                     <span className="text-muted-foreground">Manufacturer: <span className="text-secondary">{product.company}</span></span>
                                     <span className="text-muted-foreground">Packing: <span className="text-primary">{product.packing}</span></span>
@@ -127,21 +129,12 @@ export default function CollectionDetailClient() {
                                     </h3>
                                     <p className="text-muted-foreground text-sm leading-relaxed">{product.description}</p>
                                 </div>
-
-                                {product.usage && (
-                                    <div className="bg-secondary/5 p-8 rounded-[2rem] border border-secondary/20 shadow-sm">
-                                        <h3 className="text-secondary font-bold text-lg mb-4 flex items-center gap-2">
-                                            <Stethoscope size={20} /> Usage & Indications
-                                        </h3>
-                                        <p className="text-primary font-medium text-sm leading-relaxed">{product.usage}</p>
-                                    </div>
-                                )}
                             </div>
 
                             {/* Pricing Section */}
                             <Card className="rounded-[2.5rem] border-muted overflow-hidden shadow-none bg-muted/10 border-none">
                                 <CardContent className="p-8 space-y-8">
-                                    <div className="flex items-center justify-between">
+                                    <div className="flex items-start md:items-center justify-between gap-4 sm:gap-6">
                                         <div>
                                             <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-1">Maximum Retail Price</p>
                                             <div className="flex items-end gap-1">
@@ -150,7 +143,7 @@ export default function CollectionDetailClient() {
                                             </div>
                                             <p className="text-[10px] text-muted-foreground mt-1 font-bold italic">*Incl. of all taxes (GST)</p>
                                         </div>
-                                        <div className="bg-white px-4 py-2 rounded-xl border border-muted shadow-sm">
+                                        <div className="bg-white px-4 py-2 rounded-xl border border-muted shadow-sm shrink-0 text-center">
                                             <p className="text-[8px] font-bold uppercase text-secondary mb-1">Availability</p>
                                             <p className="text-[10px] font-bold text-primary">Ready for Supply</p>
                                         </div>
@@ -209,6 +202,17 @@ export default function CollectionDetailClient() {
                                     </p>
                                 </CardContent>
                             </Card>
+
+                            <div className="space-y-6">
+                                {product.usage && (
+                                    <div className="bg-secondary/5 p-8 rounded-[2rem] border border-secondary/20 shadow-sm">
+                                        <h3 className="text-secondary font-bold text-lg mb-4 flex items-center gap-2">
+                                            <Stethoscope size={20} /> Usage & Indications
+                                        </h3>
+                                        <p className="text-primary font-medium text-sm leading-relaxed">{product.usage}</p>
+                                    </div>
+                                )}
+                            </div>
 
                             {/* Quality Badges Section */}
                             <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm flex flex-col gap-6">

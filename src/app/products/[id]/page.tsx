@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const product = products.find(p => p.id === id);
 
-  if (!product) return { title: 'Product Not Found | Aadarsh MedStore' };
+  if (!product) return { title: 'Product Not Found | Aadarsh Medical' };
 
   return {
-    title: `${product.name} | Aadarsh MedStore`,
+    title: `${product.name} | Aadarsh Medical`,
     description: `Buy ${product.name} (${product.company}) at wholesale prices. ${product.description.slice(0, 150)}...`,
     openGraph: {
-      title: `${product.name} | Aadarsh MedStore`,
+      title: `${product.name} | Aadarsh Medical`,
       description: product.description,
       images: [product.img],
     }

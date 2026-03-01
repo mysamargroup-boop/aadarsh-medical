@@ -1,4 +1,4 @@
-# **App Name**: Aadarsh MedStore
+# **App Name**: Aadarsh Medical
 
 ## Core Features:
 

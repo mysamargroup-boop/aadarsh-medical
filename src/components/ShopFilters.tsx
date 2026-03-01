@@ -22,8 +22,8 @@ interface ShopFiltersProps {
   rxRequired: boolean | null;
   setRxRequired: (val: boolean | null) => void;
   clearFilters: () => void;
-  priceRange: [number];
-  setPriceRange: (val: [number]) => void;
+  priceRange: [number, number];
+  setPriceRange: (val: [number, number]) => void;
 }
 
 export function ShopFilters({
@@ -33,7 +33,9 @@ export function ShopFilters({
   toggleBrand,
   rxRequired,
   setRxRequired,
-  clearFilters
+  clearFilters,
+  priceRange,
+  setPriceRange
 }: ShopFiltersProps) {
   const categories = [
     { label: "Pharmaceuticals", id: "Pharmaceuticals" },
@@ -41,10 +43,11 @@ export function ShopFilters({
     { label: "Veterinary Medicines", id: "Veterinary Medicines" },
     { label: "Medical Devices & Equipment", id: "Medical Devices & Equipment" },
     { label: "Surgical & Healthcare Essentials", id: "Surgical & Healthcare Essentials" },
+    { label: "Orthopaedic Appliances & Fracture Aids", id: "Orthopaedic Appliances & Fracture Aids" },
   ];
 
   const brands = [
-    "Dr. Reddy's", "Dr. Reddy's (Leo)", "Glaxo Smith Kline", "Wellcome Vet", "Tineta Pharma", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust"
+    "Dr. Reddy's", "Dr. Reddy's (Max)", "Dr. Reddy's (Leo)", "Glaxo Smith Kline", "Wellcome Vet", "Welcomevet Pharma", "Tineta Pharma", "Sushima", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust", "Macleods", "Aristo", "Mankind", "Mankind Prime", "Orthopaedics", "Sarabhai", "Univentis", "Laborate", "Troikaa", "Torrent Pharma", "Alembic", "Lupin", "Medigrip"
   ];
 
   const dosageForms = [
@@ -69,14 +72,6 @@ export function ShopFilters({
 
       <div className="p-6 flex-1 overflow-y-auto no-scrollbar space-y-8">
         <div className="space-y-4">
-          <h3 className="font-bold text-primary text-[10px] uppercase tracking-[0.2em]">Stock Availability</h3>
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <Checkbox id="in-stock-filter" defaultChecked className="border-muted-foreground/30 data-[state=checked]:bg-secondary" />
-            <Label htmlFor="in-stock-filter" className="text-sm text-muted-foreground cursor-pointer group-hover:text-primary transition-colors">In Stock Only</Label>
-          </div>
-        </div>
-
-        <div className="space-y-4">
           <h3 className="font-bold text-primary text-[10px] uppercase tracking-[0.2em]">Prescription</h3>
           <div className="grid grid-cols-1 gap-3">
             <button
@@ -100,7 +95,7 @@ export function ShopFilters({
           </div>
         </div>
 
-        <Accordion type="multiple" defaultValue={["Price", "Category", "Brand"]} className="w-full">
+        <Accordion type="single" collapsible defaultValue="Price" className="w-full">
           <AccordionItem value="Price" className="border-t border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Price Range
@@ -108,19 +103,22 @@ export function ShopFilters({
             <AccordionContent className="space-y-6 pt-4 px-1">
               <Slider
                 value={priceRange}
-                onValueChange={setPriceRange}
+                onValueChange={(val) => setPriceRange(val as [number, number])}
+                min={0}
                 max={5000}
-                step={100}
+                step={50}
                 className="text-secondary"
               />
               <div className="flex items-center justify-between text-[11px] font-bold text-muted-foreground">
-                <span>Min: ₹0</span>
-                <span>Max: ₹{priceRange[0]}</span>
+                <span>Min: ₹{priceRange[0]}</span>
+                <span>Max: ₹{priceRange[1]}</span>
               </div>
             </AccordionContent>
           </AccordionItem>
+        </Accordion>
 
-          <AccordionItem value="UseCase" className="border-muted/30">
+        <Accordion type="multiple" defaultValue={["Category", "Brand"]} className="w-full">
+          <AccordionItem value="UseCase" className="border-t border-muted/30">
             <AccordionTrigger className="hover:no-underline py-4 text-primary font-bold text-[10px] uppercase tracking-[0.2em]">
               Shop by Health Condition
             </AccordionTrigger>

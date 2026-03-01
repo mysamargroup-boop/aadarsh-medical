@@ -66,7 +66,7 @@ export function Navigation() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:flex items-center gap-2 shrink-0 z-10 pointer-events-none md:pointer-events-auto">
               <Link href="/" className="flex items-center gap-2 group whitespace-nowrap pointer-events-auto">
                 <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shrink-0 overflow-hidden relative">
-                  <Image src="/logo.png" alt="Aadarsh MedStore Logo" fill className="object-contain" priority />
+                  <Image src="/logo.png" alt="Aadarsh Medical Logo" fill className="object-contain" priority />
                 </div>
               </Link>
             </div>

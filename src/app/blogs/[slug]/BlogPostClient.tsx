@@ -58,7 +58,7 @@ export default function BlogPostClient() {
     return (
         <main className="min-h-screen bg-muted/20">
             <Header />
-            <div className="pt-24 md:pt-32 pb-20">
+            <div className="pt-36 md:pt-48 pb-20">
                 <div className="max-w-5xl mx-auto px-4 md:px-8">
                     <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                         <Link href="/" className="hover:text-primary transition-colors">Home</Link>

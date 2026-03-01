@@ -42,13 +42,14 @@ export default function ProductDetailClient() {
     const [quantity, setQuantity] = useState(1);
     const { addToCart, toggleWishlist, wishlist, setIsCartOpen } = useCart();
 
-    const isWishlisted = useMemo(() => {
-        return wishlist.includes(params.id as string);
-    }, [wishlist, params.id]);
-
     const product = useMemo(() => {
-        return products.find(p => p.id === params.id) || products[0];
+        const decodedId = decodeURIComponent(params.id as string);
+        return products.find(p => p.id === decodedId) || products[0];
     }, [params.id]);
+
+    const isWishlisted = useMemo(() => {
+        return wishlist.includes(product.id);
+    }, [wishlist, product.id]);
 
     const handleWhatsAppChat = () => {
         const message = encodeURIComponent(`Hi, I want to enquire about ${product.name}.`);
@@ -123,7 +124,11 @@ export default function ProductDetailClient() {
                                         <Heart size={20} className={isWishlisted ? "fill-secondary" : ""} />
                                     </button>
                                 </div>
-                                <p className="text-lg text-muted-foreground mb-4 font-medium">{product.molecules}</p>
+                                {(product.molecules || product.material || product.composition) && (
+                                    <div className="inline-block px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-xl mb-4">
+                                        <p className="text-lg text-secondary font-bold leading-none">{product.molecules || product.material || product.composition}</p>
+                                    </div>
+                                )}
                                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs uppercase font-bold tracking-widest">
                                     <span className="text-muted-foreground">Manufacturer: <span className="text-secondary">{product.company}</span></span>
                                     <span className="text-muted-foreground">Packing: <span className="text-primary">{product.packing}</span></span>
@@ -135,17 +140,19 @@ export default function ProductDetailClient() {
 
                             <div className="bg-white p-8 rounded-[2rem] border border-muted shadow-sm">
                                 <h3 className="text-primary font-bold text-lg mb-4 flex items-center gap-2">
-                                    <Info className="text-secondary" size={20} /> Chemical Formula / Composition
+                                    <Info className="text-secondary" size={20} /> {['Medical Devices & Equipments', 'Surgical Dressings'].includes(product.primaryCategory || product.cat) ? 'Material / Details' : 'Chemical Formula / Composition'}
                                 </h3>
-                                <div className="p-4 bg-secondary/5 rounded-2xl border border-secondary/20 inline-block">
-                                    <p className="text-secondary font-bold text-lg leading-relaxed">{product.molecules}</p>
-                                </div>
+                                {(product.molecules || product.material || product.composition) && (
+                                    <div className="p-4 bg-secondary/5 rounded-2xl border border-secondary/20 inline-block">
+                                        <p className="text-secondary font-bold text-lg leading-relaxed">{product.molecules || product.material || product.composition}</p>
+                                    </div>
+                                )}
                                 <p className="text-muted-foreground text-sm mt-4 leading-relaxed">{product.description}</p>
                             </div>
 
                             <Card className="rounded-[2.5rem] border-muted overflow-hidden shadow-none bg-muted/10 border-none">
                                 <CardContent className="p-8 space-y-8">
-                                    <div className="flex items-center justify-between">
+                                    <div className="flex items-start md:items-center justify-between gap-4 sm:gap-6">
                                         <div>
                                             <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-1">Maximum Retail Price</p>
                                             <div className="flex items-end gap-1">
@@ -154,7 +161,7 @@ export default function ProductDetailClient() {
                                             </div>
                                             <p className="text-[10px] text-muted-foreground mt-1 font-bold italic">*Incl. of all taxes (GST)</p>
                                         </div>
-                                        <div className="bg-white px-4 py-2 rounded-xl border border-muted shadow-sm">
+                                        <div className="bg-white px-4 py-2 rounded-xl border border-muted shadow-sm shrink-0 text-center">
                                             <p className="text-[8px] font-bold uppercase text-secondary mb-1">Availability</p>
                                             <p className="text-[10px] font-bold text-primary">Ready for Supply</p>
                                         </div>
@@ -206,6 +213,7 @@ export default function ProductDetailClient() {
                                         <p className="text-primary font-medium text-sm leading-relaxed">{product.usage}</p>
                                     </div>
                                 )}
+
 
                                 {product.benefits && (
                                     <div className="bg-green-50 p-8 rounded-[2rem] border border-green-200 shadow-sm">
