@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold mb-6">Get in Touch</h1>
                         <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed">
-                            Have questions about our wholesale products or need assistance? Our team is here to help you.
+                            Have questions about our products or need assistance? Our team is here to help you.
                         </p>
                     </div>
                 </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                                         >
                                             <option value="" disabled>Select a subject</option>
                                             <option value="General Inquiry">General Inquiry</option>
-                                            <option value="Wholesale Orders">Wholesale Orders</option>
+                                            <option value="Bulk Orders">Bulk Orders</option>
                                             <option value="Product Availability">Product Availability</option>
                                             <option value="Feedback / Other">Feedback / Other</option>
                                         </select>

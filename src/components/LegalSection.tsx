@@ -15,7 +15,7 @@ export function LegalSection() {
             </div>
             <h2 className="text-primary font-headline font-bold text-3xl mb-4">Compliant & Certified</h2>
             <p className="text-muted-foreground leading-relaxed">
-              We operate with full transparency and strictly adhere to medical wholesale regulations in India. Your trust is our core asset.
+              We operate with full transparency and strictly adhere to medical supply regulations in India. Your trust is our core asset.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export function LegalSection() {
                 <FileText size={24} />
               </div>
               <div>
-                <p className="text-xs font-bold text-muted-foreground uppercase mb-1">Wholesale Drug Licenses</p>
+                <p className="text-xs font-bold text-muted-foreground uppercase mb-1">Drug Licenses (B)</p>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 mt-1">
                   <p className="text-primary font-secondary font-bold">20B/461/36/2017</p>
                   <p className="text-primary font-secondary font-bold">21B/462/36/2017</p>

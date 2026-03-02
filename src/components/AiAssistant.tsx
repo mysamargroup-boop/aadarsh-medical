@@ -95,7 +95,7 @@ export function AiAssistant({ externalOpen, onClose }: AiAssistantProps) {
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { label: "Check Stock", icon: <Bot size={14} /> },
-                    { label: "Wholesale Price", icon: <ShoppingCart size={14} /> },
+                    { label: "Price List", icon: <ShoppingCart size={14} /> },
                     { label: "New Order", icon: <Send size={14} /> },
                     { label: "Retail Inquiry", icon: <MessageCircle size={14} /> }
                   ].map(item => (

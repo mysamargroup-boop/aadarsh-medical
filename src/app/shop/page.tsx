@@ -140,7 +140,7 @@ function ShopContent() {
             <div>
               <h1 className="text-3xl md:text-4xl font-headline font-bold text-primary">Pharma Inventory</h1>
               <p className="text-muted-foreground mt-2 max-w-xl text-sm leading-relaxed">
-                Browse our complete wholesale range of medicines, veterinary supplies, and surgical essentials.
+                Browse our complete range of medicines, veterinary supplies, and surgical essentials.
               </p>
             </div>
 
@@ -245,7 +245,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-rose-50 to-orange-50/50 p-6 rounded-[1.5rem] border border-rose-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Pharma Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Access the complete wholesale product list and prices directly from our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -257,7 +257,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-orange-50 to-yellow-50/50 p-6 rounded-[1.5rem] border border-orange-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Prime Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Access the complete wholesale product list and prices directly from our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -270,7 +270,7 @@ function ShopContent() {
                   <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50/50 p-6 rounded-[1.5rem] border border-purple-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
                     <div>
                       <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Dr. Reddy's (Max) Full Catalogue</h3>
-                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                      <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                     </div>
                     <a href="https://drive.google.com/file/d/1ACwhcefxThaQ0SU1mgv0xYjENfcuF47m/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                       View Max catalogue
@@ -280,7 +280,7 @@ function ShopContent() {
                   <div className="bg-gradient-to-r from-fuchsia-50 to-pink-50/50 p-6 rounded-[1.5rem] border border-fuchsia-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
                     <div>
                       <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Dr. Reddy's (Leo) Full Catalogue</h3>
-                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                      <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                     </div>
                     <a href="https://drive.google.com/file/d/1kjra2x3cZwu1rl6lF0BD9ABGAVZMioTz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                       View Leo catalogue
@@ -293,7 +293,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-red-50 to-rose-50/50 p-6 rounded-[1.5rem] border border-red-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Aristo Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1EZYt_OMZuT1_UIYfboKwqebDjdNM50NU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -305,7 +305,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50/50 p-6 rounded-[1.5rem] border border-emerald-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Sushima Pharmaceuticals Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1bjnASIxDk0kXRDRUAxRrPZlF3HFZyVEJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -317,7 +317,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-blue-50 to-cyan-50/50 p-6 rounded-[1.5rem] border border-blue-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Sarabhai Chemicals Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1YrYXoqCngrT5kKqoWH4iuzYtabDrJGit/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -329,7 +329,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-orange-50 to-amber-50/50 p-6 rounded-[1.5rem] border border-orange-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Welcomevet Pharma Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1UehpABPuy9NWakVZUYbis6dqqKBls5xz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -341,7 +341,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-indigo-50 to-violet-50/50 p-6 rounded-[1.5rem] border border-indigo-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Univentis Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1Te1v4TVqBYqhKYls6sRvH3wHtErV20po/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -353,7 +353,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-pink-50 to-rose-50/50 p-6 rounded-[1.5rem] border border-pink-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Laborate Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1NoWyslxTgrgU-Y2gil3h9-94KVhnTuRd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -365,7 +365,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-slate-50 to-zinc-50/50 p-6 rounded-[1.5rem] border border-slate-200 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Troikaa Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/16Ls5MKgr7H37UwMWKom3QBTJ2aaZRD9d/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -377,7 +377,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-sky-50 to-blue-50/50 p-6 rounded-[1.5rem] border border-sky-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Torrent Pharma Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1EpO-kBHhN3sdaw4dCiSQXtD6kkqSEkIn/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -389,7 +389,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-cyan-50 to-teal-50/50 p-6 rounded-[1.5rem] border border-cyan-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Alembic Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1KWHuo0j6T8UKEyOC3TqIrC04A_s_4SXW/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -402,7 +402,7 @@ function ShopContent() {
                   <div className="bg-gradient-to-r from-emerald-50 to-green-50/50 p-6 rounded-[1.5rem] border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
                     <div>
                       <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Lupin Gx Full Catalogue</h3>
-                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                      <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                     </div>
                     <a href="https://drive.google.com/file/d/1HuWr4v4ga6z-aYr_NT5supOdCPNzZOj9/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                       View Gx catalogue
@@ -412,7 +412,7 @@ function ShopContent() {
                   <div className="bg-gradient-to-r from-teal-50 to-emerald-50/50 p-6 rounded-[1.5rem] border border-teal-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
                     <div>
                       <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Lupin OTC Full Catalogue</h3>
-                      <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                      <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                     </div>
                     <a href="https://drive.google.com/file/d/1HJZf1fC2ru2-AXS2vk5JeNg1JLfkeKdg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                       View OTC catalogue
@@ -425,7 +425,7 @@ function ShopContent() {
                 <div className="bg-gradient-to-r from-red-50 to-orange-50/50 p-6 rounded-[1.5rem] border border-red-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
                     <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Medigrip Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">View the wholesale product list and pricing details directly through our Drive.</p>
+                    <p className="text-muted-foreground text-sm mt-1">View the product list and pricing details directly through our Drive.</p>
                   </div>
                   <a href="https://drive.google.com/file/d/1FGeGGI2MLAgJeXtvwN6b4t1i0QY9VRfd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
@@ -463,7 +463,7 @@ function ShopContent() {
 
                   {/* Pagination Controls */}
                   {totalPages > 1 && (
-                    <div className="mt-12 flex items-center justify-center gap-2">
+                    <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
                       <Button
                         variant="outline"
                         size="icon"

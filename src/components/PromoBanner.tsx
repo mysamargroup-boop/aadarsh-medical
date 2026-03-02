@@ -21,7 +21,7 @@ const promos = [
     tag: "Pain Relief",
     title: "FAST ACTION AGAINST CHRONIC PAIN",
     description: "New Batch Available",
-    bannerTitle: "Wholesale Pharma Inventory",
+    bannerTitle: "Pharma Inventory",
     imageUrl: PlaceHolderImages.find(img => img.id === 'hero-1')?.imageUrl,
   },
   {

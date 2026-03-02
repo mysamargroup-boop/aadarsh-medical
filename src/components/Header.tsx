@@ -98,7 +98,7 @@ export function Header() {
   }, []);
 
   const handleEnquiryClick = () => {
-    window.open('https://wa.me/919630080706?text=Hi Abhishek, I want to inquire about wholesale medicine supply for my organization.', '_blank');
+    window.open('https://wa.me/919630080706?text=Hi Abhishek, I want to inquire about medicine supply for my organization.', '_blank');
   };
 
   const handleCategoriesEnter = () => {

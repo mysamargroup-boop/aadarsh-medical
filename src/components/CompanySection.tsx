@@ -52,7 +52,7 @@ export function CompanySection() {
                             Our <span className="text-secondary italic">Pharma</span> Partners
                         </h2>
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                            We collaborate with world-class pharmaceutical manufacturing companies to bring you genuine medical supplies at authorized wholesale rates.
+                            We collaborate with world-class pharmaceutical manufacturing companies to bring you genuine medical supplies at authorized rates.
                         </p>
                     </div>
                     <Link

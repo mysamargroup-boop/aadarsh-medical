@@ -23,7 +23,7 @@ export function LogoSlider() {
   return (
     <section className="pt-12 pb-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
-        <p className="text-muted-foreground font-semibold uppercase tracking-wider text-sm mb-2">Authorized Wholesale Distributor of</p>
+        <p className="text-muted-foreground font-semibold uppercase tracking-wider text-sm mb-2">Authorized Distributor of</p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 mt-2">
           <h2 className="text-primary font-headline font-bold text-3xl">Our Pharma Partners</h2>
           <a href="/brands" className="text-secondary text-sm font-semibold hover:underline bg-secondary/10 px-4 py-1.5 rounded-full inline-block">View All</a>

@@ -22,7 +22,7 @@ const highlights = [
   {
     icon: <CheckCircle2 className="w-9 h-9" />,
     title: "Trusted Credentials",
-    desc: "Serving since 2015 with valid Wholesale & Retail drug licenses."
+    desc: "Serving since 2015 with valid Retail drug licenses."
   }
 ];
 

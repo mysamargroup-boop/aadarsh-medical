@@ -34,7 +34,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-teal-100/80 leading-relaxed max-w-xs">
-              Premier pharmaceutical wholesale distributor serving Sagar and Central India with integrity and reliability since 2015.
+              Premier pharmaceutical distributor serving Sagar and Central India with integrity and reliability since 2015.
             </p>
             <div className="flex gap-4">
               <Link href="https://www.facebook.com/share/15ffXat1id/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">

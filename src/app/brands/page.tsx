@@ -10,31 +10,31 @@ const brands = [
         name: 'Mankind',
         src: '/images/partners/converted-mankind.webp',
         pdfUrl: 'https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link',
-        description: 'Explore the complete wholesale catalog for Mankind Pharma products.'
+        description: 'Explore the complete catalog for Mankind Pharma products.'
     },
     {
         name: 'Mankind Prime',
         src: '',
         pdfUrl: 'https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link',
-        description: 'Explore the complete wholesale catalog for Mankind Prime products.'
+        description: 'Explore the complete catalog for Mankind Prime products.'
     },
     {
         name: "Dr. Reddy's (Max)",
         src: '/images/partners/converted-dr-reddy.webp',
         pdfUrl: 'https://drive.google.com/file/d/1ACwhcefxThaQ0SU1mgv0xYjENfcuF47m/view?usp=drive_link',
-        description: "Detailed product list and pricing for Dr. Reddy's Max wholesale distribution."
+        description: "Detailed product list and pricing for Dr. Reddy's Max distribution."
     },
     {
         name: "Dr. Reddy's (Leo)",
         src: '/images/partners/converted-dr-reddy.webp',
         pdfUrl: 'https://drive.google.com/file/d/1kjra2x3cZwu1rl6lF0BD9ABGAVZMioTz/view?usp=drive_link',
-        description: "Detailed product list and pricing for Dr. Reddy's Leo wholesale distribution."
+        description: "Detailed product list and pricing for Dr. Reddy's Leo distribution."
     },
     {
         name: 'Macleods',
         src: '/images/partners/converted-macleods.webp',
         pdfUrl: 'https://drive.google.com/file/d/1yvqoFU5WhHPKqGtogQ-ESFa3wQpHyfBW/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Macleods Pharmaceutical products.'
+        description: 'Comprehensive catalogue of Macleods Pharmaceutical products.'
     },
     {
         name: 'Tynor (Orthopaedics)',
@@ -46,13 +46,13 @@ const brands = [
         name: 'Aristo',
         src: '/images/partners/converted-aristo.webp',
         pdfUrl: 'https://drive.google.com/file/d/1EZYt_OMZuT1_UIYfboKwqebDjdNM50NU/view?usp=drive_link',
-        description: 'Complete wholesale catalog for Aristo products.'
+        description: 'Complete catalog for Aristo products.'
     },
     {
         name: 'Sushima',
         src: '/images/partners/converted-sushima.webp',
         pdfUrl: 'https://drive.google.com/file/d/1bjnASIxDk0kXRDRUAxRrPZlF3HFZyVEJ/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Sushima Pharmaceuticals products.'
+        description: 'Comprehensive catalogue of Sushima Pharmaceuticals products.'
     },
     {
         name: 'Sarabhai',
@@ -64,50 +64,50 @@ const brands = [
         name: 'Welcomevet Pharma',
         src: '',
         pdfUrl: 'https://drive.google.com/file/d/1UehpABPuy9NWakVZUYbis6dqqKBls5xz/view?usp=drive_link',
-        description: 'Explore the complete wholesale catalog for Welcomevet Pharma.'
+        description: 'Explore the complete catalog for Welcomevet Pharma.'
     },
     {
         name: 'Univentis',
         src: '',
         pdfUrl: 'https://drive.google.com/file/d/1Te1v4TVqBYqhKYls6sRvH3wHtErV20po/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Univentis products.'
+        description: 'Comprehensive catalogue of Univentis products.'
     },
     { name: 'Cipla', src: '/images/partners/converted-cipla.webp' },
     {
         name: 'Lupin Gx',
         src: '/images/partners/converted-lupin.webp',
         pdfUrl: 'https://drive.google.com/file/d/1HuWr4v4ga6z-aYr_NT5supOdCPNzZOj9/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Lupin Gx products.'
+        description: 'Comprehensive catalogue of Lupin Gx products.'
     },
     {
         name: 'Lupin OTC',
         src: '/images/partners/converted-lupin.webp',
         pdfUrl: 'https://drive.google.com/file/d/1HJZf1fC2ru2-AXS2vk5JeNg1JLfkeKdg/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Lupin OTC products.'
+        description: 'Comprehensive catalogue of Lupin OTC products.'
     },
     {
         name: 'Torrent Pharma',
         src: '/images/partners/converted-torrent-pharma.webp',
         pdfUrl: 'https://drive.google.com/file/d/1EpO-kBHhN3sdaw4dCiSQXtD6kkqSEkIn/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Torrent Pharma products.'
+        description: 'Comprehensive catalogue of Torrent Pharma products.'
     },
     {
         name: 'Troikaa',
         src: '/images/partners/converted-troikaa.webp',
         pdfUrl: 'https://drive.google.com/file/d/16Ls5MKgr7H37UwMWKom3QBTJ2aaZRD9d/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Troikaa products.'
+        description: 'Comprehensive catalogue of Troikaa products.'
     },
     {
         name: 'Alembic',
         src: '/images/partners/converted-alembic.webp',
         pdfUrl: 'https://drive.google.com/file/d/1KWHuo0j6T8UKEyOC3TqIrC04A_s_4SXW/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Alembic products.'
+        description: 'Comprehensive catalogue of Alembic products.'
     },
     {
         name: 'Medigrip',
         src: '/images/partners/converted-medigrip.webp',
         pdfUrl: 'https://drive.google.com/file/d/1FGeGGI2MLAgJeXtvwN6b4t1i0QY9VRfd/view?usp=drive_link',
-        description: 'Comprehensive wholesale catalogue of Medigrip products.'
+        description: 'Comprehensive catalogue of Medigrip products.'
     },
 ];
 
@@ -132,7 +132,7 @@ export default function BrandsPage() {
                     <div className="mb-12">
                         <h1 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Our Pharma Partners</h1>
                         <p className="text-muted-foreground text-lg max-w-2xl">
-                            We are authorized wholesale distributors for India's leading pharmaceutical companies. Browse our partners below and download their complete product catalogs and price lists.
+                            We are authorized distributors for India's leading pharmaceutical companies. Browse our partners below and download their complete product catalogs and price lists.
                         </p>
                     </div>
 

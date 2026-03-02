@@ -2,32 +2,63 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Aadarsh Medical | Trusted Wholesale Pharma Distributor & Medical Supplies',
-  description: 'Aadarsh Medical Store (AD2025) - Central India\'s leading wholesale pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive wholesale prices.',
-  keywords: 'wholesale pharmacy, medical store, pharma distributor, generic medicines, healthcare supplies, surgical equipment, veterinary medicines, AD2025, Aadarsh Medical',
-  authors: [{ name: 'Aadarsh Medical' }],
-  metadataBase: new URL('https://ad2025.in'),
-  openGraph: {
-    title: 'Aadarsh Medical | Trusted Wholesale Pharmacy',
-    description: 'Reliable pharmaceutical supply chain serving hospitals and retailers since 2015.',
-    url: 'https://ad2025.in',
-    siteName: 'Aadarsh Medical',
-    locale: 'en_IN',
-    type: 'website',
+  title: 'Aadarsh Medical | Trusted Pharma Distributor & Medical Supplies',
+  description: 'Aadarsh Medical Store - Central India\'s leading pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive prices.',
+  alternates: {
+    canonical: '/',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Aadarsh Medical | Wholesale Pharma',
-    description: 'Authorized distributor for 29+ leading pharmaceutical brands.',
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.png', sizes: '16x16', type: 'image/png' },
-    ],
-    apple: '/favicon.png',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   manifest: '/manifest.json',
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Pharmacy",
+  "name": "Aadarsh Medical",
+  "image": "https://ad2025.in/favicon.png",
+  "@id": "https://ad2025.in",
+  "url": "https://ad2025.in",
+  "telephone": "+91 9630080706",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ghanta Ghar, Jagdish ward",
+    "addressLocality": "Garhakota",
+    "addressRegion": "MP",
+    "postalCode": "470229",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 23.9317,
+    "longitude": 79.1350
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "10:00",
+    "closes": "20:30"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/15ffXat1id/",
+    "https://www.instagram.com/samar_group_sagar/"
+  ]
 };
 
 import { CartProvider } from '@/context/CartContext';
@@ -45,6 +76,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased selection:bg-secondary selection:text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <CartProvider>
           {children}
         </CartProvider>
