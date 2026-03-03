@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ChevronRight, FileText, ArrowRight } from 'lucide-react';
+import { CompanyCatalogue } from '@/components/CompanyCatalogue';
 
 const brands = [
     {
@@ -112,7 +113,7 @@ const brands = [
 ];
 
 export const metadata = {
-    title: 'Our Pharma Partners | Aadarsh Medical',
+    title: 'Our Pharma Partners | Adarsh Medical',
     description: 'View and download the complete product catalogs for our trusted pharmaceutical partners.',
 };
 
@@ -134,6 +135,10 @@ export default function BrandsPage() {
                         <p className="text-muted-foreground text-lg max-w-2xl">
                             We are authorized distributors for India's leading pharmaceutical companies. Browse our partners below and download their complete product catalogs and price lists.
                         </p>
+                    </div>
+
+                    <div className="mb-16">
+                        <CompanyCatalogue />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

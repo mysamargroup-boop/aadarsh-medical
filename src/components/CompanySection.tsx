@@ -40,13 +40,13 @@ const companies = [
 
 export function CompanySection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-12 bg-white relative overflow-hidden">
             {/* Decorative background */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] -mr-64 -mt-64" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -ml-64 -mb-64" />
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
                     <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">
                             Our <span className="text-secondary italic">Pharma</span> Partners

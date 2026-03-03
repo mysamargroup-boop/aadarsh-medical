@@ -61,7 +61,7 @@ const categories = [
 
 export function Categories() {
   return (
-    <section id="categories" className="py-20 medical-gradient-mint relative">
+    <section id="categories" className="py-12 medical-gradient-mint relative">
       <div className="faint-pattern absolute inset-0 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">

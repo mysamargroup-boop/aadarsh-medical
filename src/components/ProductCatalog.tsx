@@ -33,7 +33,7 @@ export function ProductCatalog() {
   });
 
   return (
-    <section id="products" className="py-20 medical-gradient-blue">
+    <section id="products" className="py-12 medical-gradient-blue">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>

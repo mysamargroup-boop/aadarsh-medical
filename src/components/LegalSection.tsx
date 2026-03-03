@@ -6,7 +6,7 @@ import { ShieldCheck, FileText, BadgeCheck } from 'lucide-react';
 
 export function LegalSection() {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-10 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl shadow-primary/5 border border-white flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/3">

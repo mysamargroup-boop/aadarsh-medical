@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Aadarsh Medical | Trusted Pharma Distributor & Medical Supplies',
-  description: 'Aadarsh Medical Store - Central India\'s leading pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive prices.',
+  title: 'Adarsh Medical | Trusted Pharma Distributor & Medical Supplies',
+  description: 'Adarsh Medical Store - Central India\'s leading pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive prices.',
   alternates: {
     canonical: '/',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Pharmacy",
-  "name": "Aadarsh Medical",
+  "name": "Adarsh Medical",
   "image": "https://ad2025.in/favicon.png",
   "@id": "https://ad2025.in",
   "url": "https://ad2025.in",

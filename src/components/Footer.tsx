@@ -30,7 +30,7 @@ export function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group mb-6">
               <div className="w-48 h-16 flex items-center justify-start relative -ml-2 md:ml-0">
-                <Image src="/logo.png" alt="Aadarsh Medical Logo" fill className="object-contain object-left md:object-center" priority />
+                <Image src="/logo.png" alt="Adarsh Medical Logo" fill className="object-contain object-left md:object-center" priority />
               </div>
             </Link>
             <p className="text-teal-100/80 leading-relaxed max-w-xs">
@@ -118,7 +118,7 @@ export function Footer() {
             <span>Wholesale DL: 20B/461/36/2017</span>
           </div>
           <div className="space-y-2">
-            <p className="text-teal-100/50">© {year || new Date().getFullYear()} Aadarsh Medical Store. All Rights Reserved.</p>
+            <p className="text-teal-100/50">© {year || new Date().getFullYear()} Adarsh Medical Store. All Rights Reserved.</p>
             <Link
               href="https://www.instagram.com/shubham__nema"
               target="_blank"

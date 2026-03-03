@@ -11,6 +11,7 @@ import { CompanySection } from '@/components/CompanySection';
 import { ConcernProducts } from '@/components/ConcernProducts';
 import { LegalSection } from '@/components/LegalSection';
 import { ContactSection } from '@/components/ContactSection';
+import { CompanyCatalogue } from '@/components/CompanyCatalogue';
 import { Footer } from '@/components/Footer';
 import { AiAssistant } from '@/components/AiAssistant';
 
@@ -30,6 +31,8 @@ export default function Home() {
       <ConcernProducts />
 
       <CompanySection />
+
+      <CompanyCatalogue />
 
       <Categories />
 

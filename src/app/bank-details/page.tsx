@@ -13,7 +13,7 @@ export default function BankDetailsPage() {
 
     const bankDetails = [
         { label: 'Bank Name', value: 'State Bank of India (SBI)', icon: Landmark },
-        { label: 'Account Holder', value: 'Aadarsh Medical Store', icon: Building2 },
+        { label: 'Account Holder', value: 'Adarsh Medical Stores', icon: Building2 },
         { label: 'Account No.', value: '44782773381', icon: Hash },
         { label: 'IFSC Code', value: 'SBIN0006138', icon: CreditCard },
     ];

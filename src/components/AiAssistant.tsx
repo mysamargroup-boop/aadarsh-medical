@@ -38,7 +38,7 @@ export function AiAssistant({ externalOpen, onClose }: AiAssistantProps) {
 
     // Direct WhatsApp redirection
     const whatsappNumber = "919630080706";
-    const message = encodeURIComponent(`Hello Aadarsh Medical, I have an inquiry about: ${query}`);
+    const message = encodeURIComponent(`Hello Adarsh Medical, I have an inquiry about: ${query}`);
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 
     // Reset and close

@@ -36,7 +36,7 @@ export function ConcernProducts() {
     }).slice(0, 4);
 
     return (
-        <section className="py-24 bg-muted/20 overflow-hidden">
+        <section className="py-12 bg-muted/20 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                     <div>

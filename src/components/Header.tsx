@@ -117,6 +117,7 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Catalogue', href: '/brands' },
     { name: 'Inventory', href: '/shop' },
     { name: 'Categories', href: '/categories' },
     { name: 'Why Us', href: '/#why-us' },
@@ -186,7 +187,7 @@ export function Header() {
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:flex-1 flex justify-center md:justify-start z-10 pointer-events-none md:pointer-events-auto">
                 <NextLink href="/" className="flex items-center group whitespace-nowrap pointer-events-auto">
                   <div className="w-32 h-12 md:w-48 md:h-16 flex items-center justify-center shrink-0 overflow-hidden relative">
-                    <Image src="/logo.png" alt="Aadarsh Medical Logo" fill className="object-contain" priority />
+                    <Image src="/logo.png" alt="Adarsh Medical Logo" fill className="object-contain" priority />
                   </div>
                 </NextLink>
               </div>

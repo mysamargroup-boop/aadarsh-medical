@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 const slides = [
   {
-    title: "Aadarsh Medical Store – Trusted Pharmacy",
+    title: "Adarsh Medical Store – Trusted Pharmacy",
     subtitle: "Authorized Distributor of 29+ Leading Pharma Companies serving the nation.",
     image: PlaceHolderImages.find(img => img.id === 'hero-1')?.imageUrl,
     cta: "View Products"

@@ -51,7 +51,7 @@ export default function ContactPage() {
             icon: MapPin,
             title: "Visit Us",
             details: ["Ghanta Ghar, Jagdish ward,", "Garhakota Dist Sagar, MP, 470229"],
-            action: "https://maps.google.com/?q=Aadarsh+Medical+Store+Garhakota"
+            action: "https://maps.google.com/?q=Adarsh+Medical+Store+Garhakota"
         },
         {
             icon: Clock,

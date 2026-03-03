@@ -32,6 +32,7 @@ function ShopContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const cat = searchParams.get('cat');
@@ -184,7 +185,7 @@ function ShopContent() {
                 </span>
 
                 <div className="flex items-center gap-2">
-                  <Sheet>
+                  <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
                     <SheetTrigger asChild>
                       <Button variant="outline" className="lg:hidden rounded-xl border-muted text-primary font-bold flex gap-2 h-10 hover:text-primary hover:bg-muted/10">
                         <SlidersHorizontal size={16} /> Filters
@@ -201,6 +202,7 @@ function ShopContent() {
                         clearFilters={clearFilters}
                         priceRange={priceRange}
                         setPriceRange={setPriceRange}
+                        onApply={() => setIsSidebarOpen(false)}
                       />
                     </SheetContent>
                   </Sheet>

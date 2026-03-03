@@ -28,14 +28,14 @@ const highlights = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-20 relative overflow-hidden">
+    <section id="why-us" className="py-12 relative overflow-hidden">
       {/* Background Gradient Strip */}
       <div className="absolute inset-0 bg-secondary/5 -skew-y-3 translate-y-24 scale-110 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-14">
           <span className="text-secondary font-bold uppercase tracking-widest text-xs">Our Strength</span>
-          <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Why Choose Aadarsh MedStore?</h2>
+          <h2 className="text-primary font-headline font-bold text-3xl md:text-4xl mt-1">Why Choose Adarsh MedStore?</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

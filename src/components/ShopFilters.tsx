@@ -24,6 +24,7 @@ interface ShopFiltersProps {
   clearFilters: () => void;
   priceRange: [number, number];
   setPriceRange: (val: [number, number]) => void;
+  onApply?: () => void;
 }
 
 export function ShopFilters({
@@ -35,7 +36,8 @@ export function ShopFilters({
   setRxRequired,
   clearFilters,
   priceRange,
-  setPriceRange
+  setPriceRange,
+  onApply
 }: ShopFiltersProps) {
   const categories = [
     { label: "Pharmaceuticals", id: "Pharmaceuticals" },
@@ -211,7 +213,10 @@ export function ShopFilters({
       </div>
 
       <div className="p-6 border-t lg:hidden bg-muted/10">
-        <Button className="w-full h-12 gradient-button text-white rounded-xl font-bold shadow-lg shadow-secondary/20">
+        <Button
+          onClick={onApply}
+          className="w-full h-12 gradient-button text-white rounded-xl font-bold shadow-lg shadow-secondary/20"
+        >
           Apply Filters <Check size={18} className="ml-2" />
         </Button>
       </div>
