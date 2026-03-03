@@ -17,11 +17,6 @@ const companies = [
         count: "320+ Products"
     },
     {
-        name: "Cipla",
-        image: "/images/partners/converted-cipla.webp",
-        count: "280+ Products"
-    },
-    {
         name: "Mankind",
         image: "/images/partners/converted-mankind.webp",
         count: "500+ Products"

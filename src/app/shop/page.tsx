@@ -246,24 +246,36 @@ function ShopContent() {
               {selectedBrands.length === 1 && selectedBrands[0] === 'Mankind' && (
                 <div className="bg-gradient-to-r from-rose-50 to-orange-50/50 p-6 rounded-[1.5rem] border border-rose-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
                   <div>
-                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Pharma Full Catalogue</h3>
+                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Health Care GX Full Catalogue</h3>
                     <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
                   </div>
-                  <a href="https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                  <a href="https://drive.google.com/file/d/1NZL4vl9XgOcmwFQwyyYjS1t3BWGTTIHk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
                     View full catalogue (PDF)
                   </a>
                 </div>
               )}
 
               {selectedBrands.length === 1 && selectedBrands[0] === 'Mankind Prime' && (
-                <div className="bg-gradient-to-r from-orange-50 to-yellow-50/50 p-6 rounded-[1.5rem] border border-orange-100 mb-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
-                  <div>
-                    <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Prime Full Catalogue</h3>
-                    <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
+                <div className="flex flex-col gap-4 mb-6">
+                  <div className="bg-gradient-to-r from-orange-50 to-yellow-50/50 p-6 rounded-[1.5rem] border border-orange-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Prime (Cardiac & Diabetics)</h3>
+                      <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View catalogue (PDF)
+                    </a>
                   </div>
-                  <a href="https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
-                    View full catalogue (PDF)
-                  </a>
+
+                  <div className="bg-gradient-to-r from-yellow-50 to-amber-50/50 p-6 rounded-[1.5rem] border border-yellow-100 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm w-full">
+                    <div>
+                      <h3 className="text-secondary font-headline font-bold text-lg md:text-xl">Mankind Prime GX Full Catalogue</h3>
+                      <p className="text-muted-foreground text-sm mt-1">Access the complete product list and prices directly from our Drive.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="shrink-0 bg-secondary text-white px-6 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all">
+                      View full catalogue (PDF)
+                    </a>
+                  </div>
                 </div>
               )}
 

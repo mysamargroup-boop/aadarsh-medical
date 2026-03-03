@@ -9,7 +9,6 @@ import Image from 'next/image';
 const companies = [
   { name: 'Mankind', src: '/images/partners/converted-mankind.webp' },
   { name: 'Aristo', src: '/images/partners/converted-aristo.webp' },
-  { name: 'Cipla', src: '/images/partners/converted-cipla.webp' },
   { name: "Dr. Reddy's", src: '/images/partners/converted-dr-reddy.webp' },
   { name: 'Lupin', src: '/images/partners/converted-lupin.webp' },
   { name: 'Macleods', src: '/images/partners/converted-macleods.webp' },

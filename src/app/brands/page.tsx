@@ -8,16 +8,22 @@ import { CompanyCatalogue } from '@/components/CompanyCatalogue';
 
 const brands = [
     {
-        name: 'Mankind',
+        name: 'Mankind Health Care GX',
         src: '/images/partners/converted-mankind.webp',
-        pdfUrl: 'https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link',
-        description: 'Explore the complete catalog for Mankind Pharma products.'
+        pdfUrl: 'https://drive.google.com/file/d/1NZL4vl9XgOcmwFQwyyYjS1t3BWGTTIHk/view?usp=drive_link',
+        description: 'Explore the complete catalog for Mankind Health Care GX products.'
     },
     {
-        name: 'Mankind Prime',
+        name: 'Mankind Prime (Cardiac & Diabtics)',
         src: '',
         pdfUrl: 'https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link',
-        description: 'Explore the complete catalog for Mankind Prime products.'
+        description: 'Explore the complete catalog for Mankind Prime (Cardiac & Diabtics) products.'
+    },
+    {
+        name: 'Mankind Prime GX',
+        src: '',
+        pdfUrl: 'https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link',
+        description: 'Explore the complete catalog for Mankind Prime GX products.'
     },
     {
         name: "Dr. Reddy's (Max)",
@@ -73,7 +79,6 @@ const brands = [
         pdfUrl: 'https://drive.google.com/file/d/1Te1v4TVqBYqhKYls6sRvH3wHtErV20po/view?usp=drive_link',
         description: 'Comprehensive catalogue of Univentis products.'
     },
-    { name: 'Cipla', src: '/images/partners/converted-cipla.webp' },
     {
         name: 'Lupin Gx',
         src: '/images/partners/converted-lupin.webp',
