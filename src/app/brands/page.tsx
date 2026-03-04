@@ -15,13 +15,13 @@ const brands = [
     },
     {
         name: 'Mankind Prime (Cardiac & Diabtics)',
-        src: '',
+        src: '/images/partners/converted-mankind-prime.webp',
         pdfUrl: 'https://drive.google.com/file/d/1LO7b6pW1S0hrZ0ghYI9iRwSsNfQVeONI/view?usp=drive_link',
         description: 'Explore the complete catalog for Mankind Prime (Cardiac & Diabtics) products.'
     },
     {
         name: 'Mankind Prime GX',
-        src: '',
+        src: '/images/partners/converted-mankind-prime.webp',
         pdfUrl: 'https://drive.google.com/file/d/1i0EYI77eAVmeeUqo36QyBvqyp-r4OvTd/view?usp=drive_link',
         description: 'Explore the complete catalog for Mankind Prime GX products.'
     },
@@ -69,13 +69,13 @@ const brands = [
     },
     {
         name: 'Welcomevet Pharma',
-        src: '',
+        src: '/images/partners/converted-welcomevet.webp',
         pdfUrl: 'https://drive.google.com/file/d/1UehpABPuy9NWakVZUYbis6dqqKBls5xz/view?usp=drive_link',
         description: 'Explore the complete catalog for Welcomevet Pharma.'
     },
     {
         name: 'Univentis',
-        src: '',
+        src: '/images/partners/converted-univentis.webp',
         pdfUrl: 'https://drive.google.com/file/d/1Te1v4TVqBYqhKYls6sRvH3wHtErV20po/view?usp=drive_link',
         description: 'Comprehensive catalogue of Univentis products.'
     },

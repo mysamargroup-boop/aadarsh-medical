@@ -49,7 +49,7 @@ export function ShopFilters({
   ];
 
   const brands = [
-    "Dr. Reddy's", "Dr. Reddy's (Max)", "Dr. Reddy's (Leo)", "Glaxo Smith Kline", "Wellcome Vet", "Welcomevet Pharma", "Tineta Pharma", "Sushima", "Sushima Pharmaceuticals", "Cipla", "Omron", "Rajvaidya", "Dr. Trust", "Macleods", "Aristo", "Mankind", "Mankind Prime", "Orthopaedics", "Sarabhai", "Univentis", "Laborate", "Troikaa", "Torrent Pharma", "Alembic", "Lupin", "Medigrip"
+    "Dr. Reddy's", "Dr. Reddy's (Max)", "Dr. Reddy's (Leo)", "Glaxo Smith Kline", "Wellcome Vet", "Welcomevet Pharma", "Tineta Pharma", "Sushima", "Sushima Pharmaceuticals", "Omron", "Rajvaidya", "Dr. Trust", "Macleods", "Aristo", "Mankind", "Mankind Prime", "Orthopaedics", "Sarabhai", "Univentis", "Laborate", "Troikaa", "Torrent Pharma", "Alembic", "Lupin", "Medigrip"
   ];
 
   const dosageForms = [

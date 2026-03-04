@@ -16,6 +16,13 @@ const companies = [
   { name: 'Sushima', src: '/images/partners/converted-sushima.webp' },
   { name: 'Torrent Pharma', src: '/images/partners/converted-torrent-pharma.webp' },
   { name: 'Tynor', src: '/images/partners/converted-tynor.webp' },
+  { name: 'Alembic', src: '/images/partners/converted-alembic.webp' },
+  { name: 'Glenmark', src: '/images/partners/converted-glenmark.webp' },
+  { name: 'Medigrip', src: '/images/partners/converted-medigrip.webp' },
+  { name: 'Troikaa', src: '/images/partners/converted-troikaa.webp' },
+  { name: 'Univentis', src: '/images/partners/converted-univentis.webp' },
+  { name: 'Welcomevet', src: '/images/partners/converted-welcomevet.webp' },
+  { name: 'Mankind Prime', src: '/images/partners/converted-mankind-prime.webp' },
 ];
 
 export function LogoSlider() {

@@ -32,11 +32,6 @@ const companies = [
         count: "210+ Products"
     },
     {
-        name: "Cipla",
-        image: "/images/partners/converted-cipla.webp",
-        count: "280+ Products"
-    },
-    {
         name: "Torrent",
         image: "/images/partners/converted-torrent-pharma.webp",
         count: "190+ Products"

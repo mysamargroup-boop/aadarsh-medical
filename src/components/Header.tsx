@@ -29,7 +29,7 @@ const megaMenuData: Record<string, { subCategories: { name: string; href: string
       { name: 'Respiratory', href: '/shop?q=Respiratory' },
       { name: 'Hormones & Steroids', href: '/shop?q=Hormone' },
     ],
-    brands: ["Dr. Reddy's", "Cipla", "Lupin", "Sun Pharma", "Abbott"],
+    brands: ["Dr. Reddy's", "Lupin", "Sun Pharma", "Abbott"],
     description: 'Complete range of generic & branded prescription drugs.'
   },
   'OTC': {
@@ -41,7 +41,7 @@ const megaMenuData: Record<string, { subCategories: { name: string; href: string
       { name: 'First Aid', href: '/shop?q=First Aid' },
       { name: 'Oral Care', href: '/shop?q=Oral' },
     ],
-    brands: ["GSK", "Abbott", "Dr. Reddy's", "Cipla"],
+    brands: ["GSK", "Abbott", "Dr. Reddy's"],
     description: 'Everyday healthcare essentials & wellness products.'
   },
   'Vet': {
@@ -133,7 +133,7 @@ export function Header() {
   ];
 
   const brands = [
-    "Dr. Reddy's", "Macleods", "Lupin", "Abbott", "Cipla", "Torrent", "Sun Pharma", "Alkem"
+    "Dr. Reddy's", "Macleods", "Lupin", "Abbott", "Torrent", "Sun Pharma", "Alkem"
   ];
 
   const isActive = (path: string) => {
