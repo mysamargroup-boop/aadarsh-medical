@@ -30,6 +30,56 @@ const companies = [
         name: "Lupin",
         image: "/images/partners/converted-lupin.webp",
         count: "210+ Products"
+    },
+    {
+        name: "Cipla",
+        image: "/images/partners/converted-cipla.webp",
+        count: "280+ Products"
+    },
+    {
+        name: "Torrent",
+        image: "/images/partners/converted-torrent-pharma.webp",
+        count: "190+ Products"
+    },
+    {
+        name: "Alembic",
+        image: "/images/partners/converted-alembic.webp",
+        count: "130+ Products"
+    },
+    {
+        name: "Glenmark",
+        image: "/images/partners/converted-glenmark.webp",
+        count: "110+ Products"
+    },
+    {
+        name: "Troikaa",
+        image: "/images/partners/converted-troikaa.webp",
+        count: "95+ Products"
+    },
+    {
+        name: "Sushima",
+        image: "/images/partners/converted-sushima.webp",
+        count: "80+ Products"
+    },
+    {
+        name: "Sarabhai",
+        image: "/images/partners/converted-sarabhai.webp",
+        count: "75+ Products"
+    },
+    {
+        name: "Univentis",
+        image: "/images/partners/converted-univentis.webp",
+        count: "200+ Products"
+    },
+    {
+        name: "Welcomevet",
+        image: "/images/partners/converted-welcomevet.webp",
+        count: "120+ Products"
+    },
+    {
+        name: "Mankind Prime",
+        image: "/images/partners/converted-mankind-prime.webp",
+        count: "150+ Products"
     }
 ];
 
