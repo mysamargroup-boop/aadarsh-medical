@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { products } from '@/lib/product-data';
+import { products, getProductUrl } from '@/lib/product-data';
 
 export const dynamic = 'force-static';
 export const revalidate = 86400; // 24 hours
@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://ad2025.in';
 
     // Base routes
-    const routes = ['', '/shop', '/about', '/contact', '/bank-details', '/inquiry'].map((route) => ({
+    const routes = ['', '/shop/', '/contact/', '/bank-details/', '/inquiry/'].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // Unique categories for sitemap
-    // Safely get categories, filtering out any undefined/null
     const categories = Array.from(new Set(
         (products || [])
             .filter(p => p && (p.cat || p.primaryCategory))
@@ -24,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     )).filter(cat => cat.length > 0);
 
     const categoryRoutes = categories.map((cat) => ({
-        url: `${baseUrl}/shop?cat=${encodeURIComponent(cat)}`,
+        url: `${baseUrl}/shop/?cat=${encodeURIComponent(cat)}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.6,
@@ -32,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Product detail pages
     const productRoutes = (products || []).map((product) => ({
-        url: `${baseUrl}/products/${product.id}`,
+        url: `${baseUrl}${getProductUrl(product)}/`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: 0.5,

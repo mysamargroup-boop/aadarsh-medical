@@ -2,11 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ad2025.in'),
   title: 'Adarsh Medical | Trusted Pharma Distributor & Medical Supplies',
   description: 'Adarsh Medical Store - Central India\'s leading pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive prices.',
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: true,
     follow: true,
