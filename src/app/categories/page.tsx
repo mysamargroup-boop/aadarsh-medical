@@ -40,7 +40,7 @@ export default function CategoriesPage() {
             {isLoading
               ? Array.from({ length: 6 }).map((_, i) => <CategoryCardSkeleton key={i} />)
               : uniqueCategories.map(category => (
-                  <Link href={`/shop?cat=${encodeURIComponent(category)}`} key={category}>
+                  <Link href={`/shop/${category.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} key={category}>
                     <Card className="hover:shadow-lg transition-shadow duration-300">
                       <CardHeader>
                         <CardTitle className="text-primary group-hover:text-secondary transition-colors">{category}</CardTitle>

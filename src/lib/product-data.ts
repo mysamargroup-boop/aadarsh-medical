@@ -85,6 +85,31 @@ export function getProductUrl(product: Product) {
   return `/collections/${catSlug}/${subCatSlug}/${productSlug}-${product.id}`;
 }
 
+/**
+ * Helper to generate SEO-friendly category slug
+ */
+export function getCategorySlug(category: string): string {
+  return category.toLowerCase()
+    .replace(/ & /g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+/**
+ * Helper to get clean category URL
+ */
+export function getCategoryUrl(category: string): string {
+  return `/shop/${getCategorySlug(category)}`;
+}
+
+/**
+ * Helper to find category by slug (reverse lookup)
+ */
+export function getCategoryBySlug(slug: string): string | undefined {
+  const allCats = Array.from(new Set(allProducts.map(p => p.cat)));
+  return allCats.find(cat => getCategorySlug(cat) === slug);
+}
+
 // Consolidate all products into a single exported list
 export const products: Product[] = [
   ...allProducts,

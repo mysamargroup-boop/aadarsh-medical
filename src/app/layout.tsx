@@ -4,7 +4,24 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://ad2025.in'),
   title: 'Adarsh Medical | Trusted Pharma Distributor & Medical Supplies',
-  description: 'Adarsh Medical Store - Central India\'s leading pharmaceutical distributor. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands at competitive prices.',
+  description: 'Adarsh Medical Store - Central India\'s leading pharmaceutical distributor in Garhakota, Sagar MP. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands like Dr. Reddy\'s, Mankind, Macleods, Aristo & Lupin at authorized wholesale prices.',
+  keywords: ['pharma distributor', 'medical store', 'medical supplies Garhakota', 'Adarsh Medical', 'wholesale medicines', 'Sagar MP', 'Dr Reddys distributor', 'Mankind distributor', 'surgical equipment', 'veterinary medicines'],
+  alternates: {
+    canonical: 'https://ad2025.in/',
+  },
+  openGraph: {
+    title: 'Adarsh Medical Store | Authorized Pharmaceutical Distributor',
+    description: 'Central India\'s trusted pharma distributor. 2500+ products from 29+ leading pharmaceutical companies. Medicines, surgical supplies & veterinary products.',
+    url: 'https://ad2025.in/',
+    siteName: 'Adarsh Medical',
+    type: 'website',
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Adarsh Medical | Trusted Pharma Distributor',
+    description: 'Central India\'s trusted pharma distributor with 2500+ products from 29+ leading brands.',
+  },
   robots: {
     index: true,
     follow: true,
