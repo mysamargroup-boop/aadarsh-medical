@@ -26,19 +26,19 @@ export default function Home() {
 
       <LogoSlider />
 
-      <HealthConcerns />
+      {/* <HealthConcerns /> */}
 
-      <ConcernProducts />
+      {/* <ConcernProducts /> */}
 
       <CompanySection />
 
-      <CompanyCatalogue />
+      {/* <CompanyCatalogue /> */}
 
-      <Categories />
+      {/* <Categories /> */}
 
       <WhyChooseUs />
 
-      <ProductCatalog />
+      {/* <ProductCatalog /> */}
 
       <LegalSection />
 

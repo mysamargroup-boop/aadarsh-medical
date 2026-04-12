@@ -117,9 +117,8 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Catalogue', href: '/brands' },
-    { name: 'Inventory', href: '/shop' },
-    { name: 'Categories', href: '/categories' },
+    { name: 'About', href: '/about' },
+    { name: 'Products', href: '/products' },
     { name: 'Why Us', href: '/#why-us' },
     { name: 'Contact', href: '/#contact' },
   ];
@@ -214,6 +213,7 @@ export function Header() {
               ))}
 
               <div className="flex items-center gap-3 ml-2">
+                {/* Cart & Wishlist Hidden
                 <button
                   onClick={() => setIsCartOpen(true)}
                   className="relative p-2 text-emerald-900 hover:scale-110 transition-transform"
@@ -237,6 +237,7 @@ export function Header() {
                     </span>
                   )}
                 </NextLink>
+                */}
                 <div className="flex flex-col gap-1">
                   <Button asChild className="bg-emerald-500 text-white hover:bg-emerald-600 rounded-full px-4 lg:px-6 shadow-xl transition-all font-bold text-sm lg:text-base border-none h-11 shrink-0 flex items-center gap-2">
                     <NextLink href="https://chat.whatsapp.com/Bo64bJcFyE31vlI4G5onFm?mode=hq2tswa" target="_blank">
@@ -248,6 +249,7 @@ export function Header() {
             </div>
 
             <div className="flex items-center md:hidden gap-3">
+              {/* Mobile Cart & Wishlist Hidden
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2 text-emerald-900"
@@ -271,6 +273,7 @@ export function Header() {
                   </span>
                 )}
               </NextLink>
+              */}
             </div>
           </div>
         </nav>
@@ -406,6 +409,7 @@ export function Header() {
                 <ChevronRight size={16} className="opacity-30" />
               </NextLink>
             ))}
+            {/* Sub Nav Items Hidden
             <div className="grid grid-cols-2 gap-3 mt-6">
               {subNavItems.map((item) => (
                 <NextLink
@@ -418,6 +422,7 @@ export function Header() {
                 </NextLink>
               ))}
             </div>
+            */}
             <Button
               asChild
               className="w-full gradient-button text-white mt-8 h-14 font-bold rounded-2xl shadow-lg border-none"
@@ -436,13 +441,16 @@ export function Header() {
           <Home size={20} className={cn(isActive('/') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Home</span>
         </NextLink>
+        {/* Shop Icon Hidden
         <NextLink href="/shop" className={cn("flex flex-col items-center gap-1 transition-colors", isActive('/shop') ? "text-white opacity-100" : "text-white/60 opacity-80")}>
           <LayoutGrid size={20} className={cn(isActive('/shop') && "stroke-[2.5px]")} />
           <span className="text-[10px] font-bold">Shop</span>
         </NextLink>
+        */}
         <button onClick={() => window.location.href = 'tel:+919630080706'} className="bg-white w-14 h-14 rounded-full flex items-center justify-center -mt-12 shadow-2xl border-4 border-primary relative z-[103] group active:scale-95 transition-transform">
           <Phone className="text-primary group-hover:rotate-12 transition-transform" size={24} />
         </button>
+        {/* Cart Icon Hidden
         <button onClick={() => setIsCartOpen(true)} className="relative flex flex-col items-center gap-1 text-white/60 focus:outline-none">
           <ShoppingCart size={20} />
           <span className="text-[10px] font-bold">Cart</span>
@@ -452,6 +460,7 @@ export function Header() {
             </span>
           )}
         </button>
+        */}
         <button
           onClick={() => setIsAiAssistantOpen(true)}
           className="flex flex-col items-center gap-1 text-white/60 hover:text-white"

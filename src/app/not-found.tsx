@@ -34,8 +34,8 @@ export default function NotFound() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild variant="outline" className="rounded-2xl border-primary text-primary hover:bg-primary/5 h-14 px-8 font-bold border-2">
-              <Link href="/shop">
-                <Search className="mr-2" size={20} /> Browse Inventory
+              <Link href="/products">
+                <Search className="mr-2" size={20} /> Browse Products
               </Link>
             </Button>
             <Button asChild className="rounded-2xl gradient-button text-white shadow-xl shadow-secondary/20 h-14 px-10 font-bold border-none">

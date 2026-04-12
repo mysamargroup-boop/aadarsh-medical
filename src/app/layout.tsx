@@ -77,6 +77,7 @@ const jsonLd = {
 };
 
 import { CartProvider } from '@/context/CartContext';
+import { SmoothScroll } from '@/components/SmoothScroll';
 
 export default function RootLayout({
   children,
@@ -95,9 +96,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <SmoothScroll>
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -3,109 +3,109 @@
     {
       "id": "hero-1",
       "description": "Modern pharmaceutical laboratory and medicines",
-      "imageUrl": "https://images.unsplash.com/photo-1742189406399-a683d5650e06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGFybWFjeSUyMG1lZGljaW5lfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1742189406399-a683d5650e06?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGFybWFjeSUyMG1lZGljaW5lfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=75&w=800",
       "imageHint": "pharmacy medicine"
     },
     {
       "id": "hero-2",
       "description": "Healthcare professional with medicines",
-      "imageUrl": "https://images.unsplash.com/photo-1587557983735-f05198060b52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1587557983735-f05198060b52?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=75&w=800",
       "imageHint": "healthcare professional"
     },
     {
       "id": "hero-3",
       "description": "Wholesale medicine warehouse",
-      "imageUrl": "https://images.unsplash.com/photo-1714627798569-b3e36d409c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3YXJlaG91c2UlMjBsb2dpc3RpY3N8ZW58MHx8fHwxNzcxOTAyMjY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1714627798569-b3e36d409c4b?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3YXJlaG91c2UlMjBsb2dpc3RpY3N8ZW58MHx8fHwxNzcxOTAyMjY2fDA&ixlib=rb-4.1.0&q=75&w=800",
       "imageHint": "warehouse logistics"
     },
     {
       "id": "pharma-cat",
       "description": "Pharmaceutical tablets and capsules",
-      "imageUrl": "https://images.unsplash.com/photo-1704650311329-fb978a50e5e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaWxscyUyMGNhcHN1bGVzfGVufDB8fHx8MTc3MTgyODk3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1704650311329-fb978a50e5e6?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaWxscyUyMGNhcHN1bGVzfGVufDB8fHx8MTc3MTgyODk3OHww&ixlib=rb-4.1.0&q=75&w=600",
       "imageHint": "pills capsules"
     },
     {
       "id": "otc-cat",
       "description": "OTC healthcare products",
-      "imageUrl": "https://images.unsplash.com/photo-1684014286330-ddbeb4a40c92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGhjYXJlJTIwcHJvZHVjdHN8ZW58MHx8fHwxNzcxODcwOTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1684014286330-ddbeb4a40c92?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGhjYXJlJTIwcHJvZHVjdHN8ZW58MHx8fHwxNzcxODcwOTYzfDA&ixlib=rb-4.1.0&q=75&w=600",
       "imageHint": "healthcare products"
     },
     {
       "id": "vet-cat",
       "description": "Veterinary medicine and pets",
-      "imageUrl": "https://images.unsplash.com/photo-1649941437322-e09917964f57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx2ZXRlcmluYXJ5JTIwbWVkaWNpbmV8ZW58MHx8fHwxNzcxODcwOTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1649941437322-e09917964f57?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx2ZXRlcmluYXJ5JTIwbWVkaWNpbmV8ZW58MHx8fHwxNzcxODcwOTYzfDA&ixlib=rb-4.1.0&q=75&w=600",
       "imageHint": "veterinary medicine"
     },
     {
       "id": "device-cat",
       "description": "Medical devices and equipment",
-      "imageUrl": "https://images.unsplash.com/photo-1551076805-e1869033e561?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWRpY2FsJTIwZXF1aXBtZW50fGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1551076805-e1869033e561?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWRpY2FsJTIwZXF1aXBtZW50fGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=75&w=600",
       "imageHint": "medical equipment"
     },
     {
       "id": "surgical-cat",
       "description": "Surgical essentials",
-      "imageUrl": "https://images.unsplash.com/photo-1643386106343-18d5d3c64d47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdXJnaWNhbCUyMHN1cHBsaWVzfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1643386106343-18d5d3c64d47?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdXJnaWNhbCUyMHN1cHBsaWVzfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=75&w=600",
       "imageHint": "surgical supplies"
     },
     {
       "id": "promo-banner",
       "description": "Medical promotional banner for healthcare products",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwYmFubmVyfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dad99978?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwYmFubmVyfGVufDB8fHx8MTc3MTkyODE5N3ww&ixlib=rb-4.1.0&q=75&w=800",
       "imageHint": "medical banner"
     },
     {
       "id": "concern-gastric",
       "description": "Gastric care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "medical consultation gastric"
     },
     {
       "id": "concern-diabetes",
       "description": "Diabetes health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "glucometer diabetes"
     },
     {
       "id": "concern-heart",
       "description": "Heart care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1628595354825-d97ad2a1d337?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1628595354825-d97ad2a1d337?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "heart health"
     },
     {
       "id": "concern-stomach",
       "description": "Stomach care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1519802772250-a52a9af0eacb?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "stomach ache"
     },
     {
       "id": "concern-liver",
       "description": "Liver care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "liver health"
     },
     {
       "id": "concern-bone",
       "description": "Bone, Joint & Muscle care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "joint pain"
     },
     {
       "id": "concern-kidney",
       "description": "Kidney care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "kidney medical"
     },
     {
       "id": "concern-derma",
       "description": "Derma care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "dermatology care"
     },
     {
       "id": "concern-respiratory",
       "description": "Respiratory care health concern icon",
-      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400&h=400",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&fm=webp&q=75&w=400&h=400",
       "imageHint": "respiratory inhaler"
     }
   ]

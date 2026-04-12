@@ -78,6 +78,7 @@ export function Hero() {
                 {slide.subtitle}
               </p>
               <div className="flex flex-wrap gap-4 animate-in slide-in-from-bottom delay-200 duration-700">
+                {/* Product Links Hidden
                 <NextLink href="/shop">
                   <Button size="lg" className="gradient-button text-white px-8 h-12 md:h-14 rounded-full text-base md:text-lg shadow-xl shadow-secondary/20 group border-none">
                     {slide.cta}
@@ -89,6 +90,7 @@ export function Hero() {
                     Learn More
                   </Button>
                 </NextLink>
+                */}
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 export function Footer() {
@@ -14,8 +14,8 @@ export function Footer() {
 
   const quickLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop Catalog', href: '/shop' },
-    { name: 'Categories', href: '/categories' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Products', href: '/products' },
     { name: 'Blogs', href: '/blogs' },
     { name: 'Bank Details', href: '/bank-details' },
     { name: 'Contact Us', href: '/contact' },
@@ -37,17 +37,11 @@ export function Footer() {
               Premier pharmaceutical distributor serving Sagar and Central India with integrity and reliability since 2015.
             </p>
             <div className="flex gap-4">
-              <Link href="https://www.facebook.com/share/15ffXat1id/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+              <Link href="https://www.facebook.com/share/15ffXat1id/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
                 <Facebook size={18} className="text-white" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
+              <Link href="https://www.instagram.com/samar_group_sagar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
                 <Instagram size={18} className="text-white" />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
-                <Twitter size={18} className="text-white" />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors">
-                <Linkedin size={18} className="text-white" />
               </Link>
             </div>
           </div>
@@ -69,6 +63,7 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Categories Hidden
           <div>
             <h4 className="font-headline font-bold text-lg mb-8 relative inline-block text-white">
               Categories
@@ -85,6 +80,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
+          */}
 
           <div>
             <h4 className="font-headline font-bold text-lg mb-8 relative inline-block text-white">
