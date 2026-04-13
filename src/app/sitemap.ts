@@ -18,6 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'vitamin-d-deficiency-symptoms-treatment-supplements-guide',
     ];
 
+    const wholesaleCities = [
+        'sagar', 'damoh', 'bina', 'khurai', 
+        'rahatgarh', 'rehli', 'banda', 'chhatarpur'
+    ];
+
     const routes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
@@ -76,6 +81,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
+        });
+    });
+
+    // Add Wholesale City SEO Pages for Google to crawl
+    wholesaleCities.forEach(city => {
+        routes.push({
+            url: `${baseUrl}/wholesale/${city}/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7, // Higher priority for B2B local landing pages
         });
     });
 
