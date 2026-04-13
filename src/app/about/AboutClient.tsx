@@ -17,7 +17,14 @@ export default function AboutClient() {
             </span>
           </div>
 
-          <h1 className="text-center font-headline font-bold text-3xl md:text-5xl text-primary leading-tight mb-4">
+          {/* Admin Profile Image */}
+          <div className="flex justify-center mb-8">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border-[6px] border-white shadow-2xl shadow-secondary/20 ring-1 ring-border">
+              <img src="/profile.webp" alt="Abhishek Kumar Patel - Owner" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+
+          <h1 className="text-center font-headline font-bold text-3xl md:text-5xl text-primary leading-tight mb-6">
             Abhishek Kumar Patel
           </h1>
 
