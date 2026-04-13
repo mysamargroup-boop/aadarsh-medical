@@ -77,7 +77,7 @@ export default async function WholesaleCityPage({ params }: { params: { city: st
                                         <Phone className="w-5 h-5 mr-2" /> Order via WhatsApp
                                     </a>
                                 </Button>
-                                <Button asChild variant="outline" className="rounded-full px-8 h-12 font-bold text-primary border-primary/20 hover:bg-primary/5 transition-all">
+                                <Button asChild variant="outline" className="rounded-full px-8 h-12 font-bold text-primary border-primary/20 hover:bg-primary/5 hover:text-primary transition-all">
                                     <Link href="/brands">View Partner Catalogues</Link>
                                 </Button>
                             </div>

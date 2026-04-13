@@ -69,11 +69,11 @@ export default function BlogPostClient() {
     }
 
     return (
-        <main className="min-h-screen bg-muted/20">
+        <main className="min-h-screen bg-muted/20 overflow-x-hidden">
             <Header />
             {/* Reduced top padding here to fix the empty space */}
             <div className="pt-28 md:pt-36 pb-20">
-                <div className="max-w-4xl mx-auto px-4 md:px-8">
+                <div className="max-w-5xl mx-auto px-4 md:px-8">
                     <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                         <ChevronRight size={14} />
@@ -86,20 +86,20 @@ export default function BlogPostClient() {
                         {post.title}
                     </h1>
 
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
                         <span className="flex items-center gap-1"><Calendar size={16} /> {post.date}</span>
                         {post.readTime && <span className="flex items-center gap-1"><Clock size={16} /> {post.readTime}</span>}
                     </div>
 
                     {/* Blog Hero Image filled into the empty space */}
                     {post.image && (
-                        <div className="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-8 shadow-md relative">
+                        <div className="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-4 shadow-md relative">
                             <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                         </div>
                     )}
 
                     {/* ADSENSE AD SLOT — Top of Article */}
-                    <div id="ad-slot-top" className="my-6 text-center">
+                    <div id="ad-slot-top" className="mb-6 mt-2 text-center overflow-hidden">
                         <ins
                             className="adsbygoogle"
                             style={{ display: 'block' }}
@@ -110,11 +110,13 @@ export default function BlogPostClient() {
                         />
                     </div>
 
-                    <article className="prose lg:prose-xl max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-sm prose-headings:text-primary prose-headings:font-headline prose-p:leading-relaxed prose-a:text-secondary prose-a:font-semibold hover:prose-a:text-primary prose-table:border prose-td:border prose-td:px-4 prose-td:py-3 prose-th:border prose-th:px-4 prose-th:py-3 prose-th:bg-muted/50">
-                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <article className="prose lg:prose-xl max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-sm prose-headings:text-primary prose-headings:font-headline prose-p:leading-relaxed prose-a:text-secondary prose-a:font-semibold hover:prose-a:text-primary prose-table:border prose-table:min-w-full prose-td:border prose-td:px-4 prose-td:py-3 prose-th:border prose-th:px-4 prose-th:py-3 prose-th:bg-muted/50 overflow-hidden">
+                        <div className="overflow-x-auto pb-4">
+                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                        </div>
 
                         {/* ADSENSE AD SLOT — Bottom of Article */}
-                        <div id="ad-slot-bottom" className="my-8 text-center not-prose">
+                        <div id="ad-slot-bottom" className="my-8 text-center not-prose overflow-hidden">
                             <ins
                                 className="adsbygoogle"
                                 style={{ display: 'block' }}
