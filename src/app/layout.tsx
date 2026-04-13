@@ -5,7 +5,16 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ad2025.in'),
   title: 'Adarsh Medical | Trusted Pharma Distributor & Medical Supplies',
   description: 'Adarsh Medical Store - Central India\'s leading pharmaceutical distributor in Garhakota, Sagar MP. Genuine medicines, surgical equipment, and veterinary supplies from 29+ top brands like Dr. Reddy\'s, Mankind, Macleods, Aristo & Lupin at authorized wholesale prices.',
-  keywords: ['pharma distributor', 'medical store', 'medical supplies Garhakota', 'Adarsh Medical', 'wholesale medicines', 'Sagar MP', 'Dr Reddys distributor', 'Mankind distributor', 'surgical equipment', 'veterinary medicines'],
+  keywords: [
+    'pharma distributor', 'medical store', 'medical supplies Garhakota', 'Adarsh Medical',
+    'wholesale medicines', 'Sagar MP', 'Dr Reddys distributor', 'Mankind distributor',
+    'surgical equipment', 'veterinary medicines',
+    // LOCAL SEO: Both common spellings for Google search
+    'aadarsh medical store garhakota', 'adarsh medical store garhakota',
+    'medical store near me garhakota', 'dawai ki dukan garhakota',
+    'medicine shop sagar MP', 'pharmacy garhakota sagar',
+    'medical store garhakota madhya pradesh'
+  ],
   alternates: {
     canonical: 'https://ad2025.in/',
   },
@@ -40,6 +49,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Pharmacy",
   "name": "Adarsh Medical",
+  "alternateName": ["Aadarsh Medical Store", "Adarsh Medical Store Garhakota", "Aadarsh Medical Stores"],
   "image": "https://ad2025.in/favicon.png",
   "@id": "https://ad2025.in",
   "url": "https://ad2025.in",
@@ -90,8 +100,35 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PL2GQN6Z');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5604436069422278"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="font-body antialiased selection:bg-secondary selection:text-white">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PL2GQN6Z"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -6,6 +6,18 @@ export const revalidate = 86400; // 24 hours
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://ad2025.in';
 
+    // Blog slugs — UPDATE this list when adding new blogs
+    const blogSlugs = [
+        'complete-guide-to-acidity-medicines-omeprazole-pantoprazole',
+        'cefixime-antibiotic-complete-guide-uses-dosage-side-effects',
+        'diabetes-management-metformin-glimepiride-complete-guide',
+        'antifungal-creams-guide-clotrimazole-ketoconazole-skin-infections',
+        'ors-oral-rehydration-solution-guide-dehydration-treatment',
+        'blood-pressure-medications-guide-amlodipine-telmisartan',
+        'pain-relief-medicines-guide-paracetamol-ibuprofen-diclofenac',
+        'vitamin-d-deficiency-symptoms-treatment-supplements-guide',
+    ];
+
     const routes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
@@ -56,6 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
     ];
+
+    // Add individual blog post URLs for Google to crawl
+    blogSlugs.forEach(slug => {
+        routes.push({
+            url: `${baseUrl}/blogs/${slug}/`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        });
+    });
 
     return routes;
 }

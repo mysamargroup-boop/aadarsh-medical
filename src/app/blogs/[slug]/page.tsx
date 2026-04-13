@@ -2,11 +2,17 @@ import BlogPostClient from './BlogPostClient';
 
 // All blog slugs from public/blogs.json
 // These must be listed for Next.js static export
+// UPDATE THIS LIST whenever you add a new blog post to blogs.json
 export function generateStaticParams() {
   return [
-    { slug: 'understanding-common-medications' },
-    { slug: 'the-importance-of-medication-adherence' },
-    { slug: 'managing-side-effects-of-medication' },
+    { slug: 'complete-guide-to-acidity-medicines-omeprazole-pantoprazole' },
+    { slug: 'cefixime-antibiotic-complete-guide-uses-dosage-side-effects' },
+    { slug: 'diabetes-management-metformin-glimepiride-complete-guide' },
+    { slug: 'antifungal-creams-guide-clotrimazole-ketoconazole-skin-infections' },
+    { slug: 'ors-oral-rehydration-solution-guide-dehydration-treatment' },
+    { slug: 'blood-pressure-medications-guide-amlodipine-telmisartan' },
+    { slug: 'pain-relief-medicines-guide-paracetamol-ibuprofen-diclofenac' },
+    { slug: 'vitamin-d-deficiency-symptoms-treatment-supplements-guide' },
   ];
 }
 

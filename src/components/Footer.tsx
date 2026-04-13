@@ -95,13 +95,13 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="text-secondary shrink-0" size={20} />
                 <div className="flex flex-col">
-                  <span className="text-white">+91 9630080706</span>
-                  <span className="text-xs text-zinc-400">+91 9243967137</span>
+                  <a href="tel:+919630080706" className="text-white hover:text-secondary transition-colors">+91 9630080706</a>
+                  <a href="tel:+919243967137" className="text-xs text-zinc-400 hover:text-secondary transition-colors">+91 9243967137</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-secondary shrink-0" size={20} />
-                <span className="text-[13px] text-white">adarshmedicalstores2020@gmail.com</span>
+                <a href="mailto:adarshmedicalstores2020@gmail.com" className="text-[13px] text-white hover:text-secondary transition-colors">adarshmedicalstores2020@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -113,15 +113,29 @@ export function Footer() {
             <span>Retail DL: 20-223/36/2015</span>
             <span>Wholesale DL: 20B/461/36/2017</span>
           </div>
+          {/* Google Review Button — helps boost local SEO ranking */}
+          <div className="mb-6">
+            <a
+              href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyg83-Dk0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-secondary/20 text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/20 hover:border-secondary/40 transition-all"
+            >
+              ⭐ Rate Us on Google
+            </a>
+          </div>
           <div className="space-y-2">
             <p className="text-teal-100/50">© {year || new Date().getFullYear()} Adarsh Medical Store. All Rights Reserved.</p>
-            <Link
-              href="https://www.instagram.com/shubham__nema"
-              target="_blank"
-              className="text-secondary font-medium hover:text-white transition-colors"
-            >
-              Designed By Samar
-            </Link>
+            <p className="text-teal-100/30 text-xs">
+              Powered by{' '}
+              <Link
+                href="https://www.instagram.com/shubham__nema"
+                target="_blank"
+                className="text-secondary/70 hover:text-white transition-colors"
+              >
+                Samar Developers
+              </Link>
+            </p>
           </div>
         </div>
       </div>

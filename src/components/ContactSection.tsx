@@ -20,8 +20,10 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `*New Inquiry from Website*\n\n*Name:* ${formData.name}\n*Mobile:* ${formData.mobile}\n*Organization:* ${formData.organization}\n*Details:* ${formData.details}`;
+    // [Source: ad2025.in] tag helps track that this lead came from the website
+    const text = `*[Source: ad2025.in]*\n*New Inquiry from Website*\n\n*Name:* ${formData.name}\n*Mobile:* ${formData.mobile}\n*Organization:* ${formData.organization}\n*Details:* ${formData.details}`;
     const whatsappNumber = "919630080706";
+    // UTM params for tracking in Google Analytics
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
   return (
@@ -52,7 +54,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Contact Number</p>
-                  <p className="text-primary font-headline font-bold text-lg">+91 9630080706</p>
+                  <a href="tel:+919630080706" className="text-primary font-headline font-bold text-lg hover:text-secondary transition-colors">+91 9630080706</a>
                 </div>
               </div>
 
@@ -72,14 +74,14 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Email Address</p>
-                  <p className="text-primary font-headline font-bold text-sm">adarshmedicalstores2020@gmail.com</p>
+                  <a href="mailto:adarshmedicalstores2020@gmail.com" className="text-primary font-headline font-bold text-sm hover:text-secondary transition-colors">adarshmedicalstores2020@gmail.com</a>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4">
               <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full px-7 h-12 font-bold shadow-lg border-none">
-                <a href="https://wa.me/919630080706" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://wa.me/919630080706?text=Hello%20Adarsh%20Medical%2C%20I%20have%20an%20inquiry%20from%20your%20website%20ad2025.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <WhatsAppIcon className="w-5 h-5" /> Message on WhatsApp
                 </a>
               </Button>
