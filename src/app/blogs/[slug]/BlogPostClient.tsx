@@ -93,12 +93,14 @@ export default function BlogPostClient() {
 
                     {/* Blog Hero Image filled into the empty space */}
                     {post.image && (
-                        <div className="w-full relative mb-8 rounded-2xl overflow-hidden shadow-sm bg-black/5 flex items-center justify-center">
+                        <div className="w-full relative mb-8 rounded-2xl overflow-hidden shadow-sm bg-muted/50 flex items-center justify-center min-h-[300px]">
                             <img 
                                 src={post.image} 
                                 alt={post.title} 
-                                className="w-full h-auto max-h-[500px] object-cover" 
-                                onError={(e) => { e.currentTarget.parentElement!.style.display = 'none'; }}
+                                className="w-full h-auto max-h-[600px] object-cover" 
+                                onError={(e) => { 
+                                    e.currentTarget.src = 'https://images.unsplash.com/photo-1505751172107-573225a9405b?q=80&w=2070&auto=format&fit=crop'; // Medical placeholder
+                                }}
                             />
                         </div>
                     )}
@@ -136,8 +138,8 @@ export default function BlogPostClient() {
 
                         {/* Updated Author Box - E-A-T Signal for Google */}
                         <div className="mt-12 bg-muted/30 rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 border border-muted not-prose">
-                            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border-2 border-primary/20">
-                                <span className="text-primary font-bold text-2xl">AKP</span>
+                            <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-primary/20 bg-white">
+                                <img src="/profile_thumb.webp" alt="Abhishek Kumar Patel" className="w-full h-full object-cover" />
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-primary mb-1 text-center sm:text-left">Abhishek Kumar Patel</h3>
