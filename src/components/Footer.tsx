@@ -63,16 +63,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Categories Hidden
+          {/* Categories */}
           <div>
             <h4 className="font-headline font-bold text-lg mb-8 relative inline-block text-white">
-              Categories
+              Areas Served
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary rounded-full" />
             </h4>
             <ul className="space-y-4 text-teal-100/80">
-              {['Pharmaceuticals', 'OTC & Healthcare', 'Veterinary Medicines', 'Medical Devices', 'Surgical Essentials'].map(item => (
+              {['Garhakota', 'Sagar', 'Damoh', 'Rehli', 'Banda'].map(item => (
                 <li key={item}>
-                  <Link href="/shop" className="hover:text-accent hover:translate-x-2 transition-all flex items-center gap-2 group">
+                  <Link href={`/wholesale/${item.toLowerCase()}`} className="hover:text-accent hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </Link>
@@ -80,7 +80,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          */}
 
           <div>
             <h4 className="font-headline font-bold text-lg mb-8 relative inline-block text-white">

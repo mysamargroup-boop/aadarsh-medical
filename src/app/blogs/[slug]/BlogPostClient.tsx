@@ -73,7 +73,7 @@ export default function BlogPostClient() {
             <Header />
             {/* Reduced top padding here to fix the empty space */}
             <div className="pt-28 md:pt-36 pb-20">
-                <div className="max-w-5xl mx-auto px-4 md:px-8">
+                <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
                     <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                         <ChevronRight size={14} />
@@ -82,7 +82,7 @@ export default function BlogPostClient() {
                         <span className="text-primary font-bold truncate max-w-[200px]">{post.title}</span>
                     </nav>
 
-                    <h1 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-headline font-bold text-primary mb-6 leading-tight">
                         {post.title}
                     </h1>
 
@@ -93,12 +93,17 @@ export default function BlogPostClient() {
 
                     {/* Blog Hero Image filled into the empty space */}
                     {post.image && (
-                        <div className="w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-4 shadow-md relative">
-                            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                        <div className="w-full relative mb-8 rounded-2xl overflow-hidden shadow-sm bg-black/5 flex items-center justify-center">
+                            <img 
+                                src={post.image} 
+                                alt={post.title} 
+                                className="w-full h-auto max-h-[500px] object-cover" 
+                                onError={(e) => { e.currentTarget.parentElement!.style.display = 'none'; }}
+                            />
                         </div>
                     )}
 
-                    {/* ADSENSE AD SLOT — Top of Article */}
+                    {/* AdSense temporarily commented out to prevent layout shifting empty spaces
                     <div id="ad-slot-top" className="mb-6 mt-2 text-center overflow-hidden">
                         <ins
                             className="adsbygoogle"
@@ -109,13 +114,14 @@ export default function BlogPostClient() {
                             data-full-width-responsive="true"
                         />
                     </div>
+                    */}
 
-                    <article className="prose lg:prose-xl max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-sm prose-headings:text-primary prose-headings:font-headline prose-p:leading-relaxed prose-a:text-secondary prose-a:font-semibold hover:prose-a:text-primary prose-table:border prose-table:min-w-full prose-td:border prose-td:px-4 prose-td:py-3 prose-th:border prose-th:px-4 prose-th:py-3 prose-th:bg-muted/50 overflow-hidden">
-                        <div className="overflow-x-auto pb-4">
+                    <article className="prose lg:prose-lg max-w-none bg-white p-6 md:p-10 lg:p-14 rounded-2xl shadow-sm prose-headings:text-primary prose-headings:font-headline prose-p:leading-relaxed prose-a:text-secondary prose-a:font-semibold hover:prose-a:text-primary prose-table:border prose-table:min-w-full prose-td:border prose-td:px-4 prose-td:py-3 prose-th:border prose-th:px-4 prose-th:py-3 prose-th:bg-muted/50 overflow-hidden">
+                        <div className="overflow-x-auto pb-4 w-full">
                             <div dangerouslySetInnerHTML={{ __html: post.content }} />
                         </div>
 
-                        {/* ADSENSE AD SLOT — Bottom of Article */}
+                        {/* AdSense temporarily commented out to prevent layout shifting
                         <div id="ad-slot-bottom" className="my-8 text-center not-prose overflow-hidden">
                             <ins
                                 className="adsbygoogle"
@@ -126,6 +132,7 @@ export default function BlogPostClient() {
                                 data-full-width-responsive="true"
                             />
                         </div>
+                        */}
 
                         {/* Updated Author Box - E-A-T Signal for Google */}
                         <div className="mt-12 bg-muted/30 rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 border border-muted not-prose">
