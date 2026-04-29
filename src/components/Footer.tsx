@@ -14,11 +14,11 @@ export function Footer() {
 
   const quickLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Products', href: '/products' },
-    { name: 'Blogs', href: '/blogs' },
-    { name: 'Bank Details', href: '/bank-details' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'About Us', href: '/about/' },
+    { name: 'Products', href: '/products/' },
+    { name: 'Blogs', href: '/blogs/' },
+    { name: 'Bank Details', href: '/bank-details/' },
+    { name: 'Contact Us', href: '/contact/' },
   ];
 
   return (
@@ -70,9 +70,9 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary rounded-full" />
             </h4>
             <ul className="space-y-4 text-teal-100/80">
-              {['Garhakota', 'Sagar', 'Damoh', 'Rehli', 'Banda'].map(item => (
+              {['Garhakota', 'Sagar', 'Damoh', 'Rehli', 'Banda', 'Bina'].map(item => (
                 <li key={item}>
-                  <Link href={`/wholesale/${item.toLowerCase()}`} className="hover:text-accent hover:translate-x-2 transition-all flex items-center gap-2 group">
+                  <Link href={`/wholesale/${item.toLowerCase()}/`} className="hover:text-accent hover:translate-x-2 transition-all flex items-center gap-2 group">
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </Link>

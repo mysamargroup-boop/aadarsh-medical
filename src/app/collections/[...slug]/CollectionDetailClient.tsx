@@ -72,33 +72,15 @@ export default function CollectionDetailClient() {
                         <span className="text-primary font-bold">{product.name}</span>
                     </nav>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <div className="grid grid-cols-1 max-w-3xl mx-auto gap-12 mb-16">
+                        {/* Image section hidden as requested */}
+                        {/* 
                         <div className="space-y-8">
-                            {/* Product Image Section */}
                             <div className="relative aspect-square bg-white rounded-[2rem] overflow-hidden border border-muted shadow-sm group">
-                                <div className="absolute top-6 left-6 z-10 space-y-2">
-                                    {product.rx && (
-                                        <Badge className="bg-destructive hover:bg-destructive/90 text-white border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                            Prescription Required
-                                        </Badge>
-                                    )}
-                                    <br />
-                                    <Badge className="bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                                        {product.format}
-                                    </Badge>
-                                </div>
-
-                                <div className="absolute inset-0">
-                                    <Image
-                                        src={product.img}
-                                        alt={product.name}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-
+                                ...
                             </div>
                         </div>
+                        */}
 
                         <div className="space-y-8">
                             {/* Title Section */}
@@ -184,21 +166,24 @@ export default function CollectionDetailClient() {
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="flex flex-col gap-4">
                                         <Button
-                                            onClick={handleEnquiry}
-                                            size="lg" className="gradient-button text-white rounded-2xl h-14 font-bold text-base group border-none">
-                                            <ShoppingCart className="mr-2 group-hover:scale-110 transition-transform" size={20} /> Add to Enquiry
+                                            asChild
+                                            size="lg" className="gradient-button text-white rounded-2xl h-16 font-bold text-xl group border-none shadow-xl hover:scale-[1.02] transition-all">
+                                            <a href="https://davabazar24.com/" target="_blank" rel="noopener noreferrer">
+                                                <ShoppingCart className="mr-3 group-hover:scale-110 transition-transform" size={24} /> Order Now on DavaBazar
+                                            </a>
                                         </Button>
                                         <Button
-                                            onClick={() => window.open('https://wa.me/919630080706', '_blank')}
-                                            size="lg" className="bg-[#25D366] hover:bg-[#1DA851] text-white rounded-2xl h-14 font-bold text-base shadow-lg shadow-green-500/10 border-none">
-                                            <WhatsAppIcon className="mr-2 w-6 h-6" /> WhatsApp Chat
+                                            onClick={() => window.open(`https://wa.me/919630080706?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}`, '_blank')}
+                                            variant="outline"
+                                            size="lg" className="border-secondary text-secondary hover:bg-secondary/5 rounded-2xl h-14 font-bold text-base transition-all">
+                                            <WhatsAppIcon className="mr-2 w-6 h-6" /> Inquiry via WhatsApp
                                         </Button>
                                     </div>
 
                                     <p className="text-[10px] text-center text-muted-foreground flex items-center justify-center gap-2">
-                                        <Clock size={12} /> Same-day processing for orders before 4 PM
+                                        <Clock size={12} /> Fast supply directly to your doorstep
                                     </p>
                                 </CardContent>
                             </Card>

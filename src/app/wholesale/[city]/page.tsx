@@ -17,6 +17,7 @@ const cities = [
     { slug: 'rehli', name: 'Rehli' },
     { slug: 'banda', name: 'Banda' },
     { slug: 'chhatarpur', name: 'Chhatarpur' },
+    { slug: 'garhakota', name: 'Garhakota' },
 ];
 
 export function generateStaticParams() {

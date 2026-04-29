@@ -68,6 +68,10 @@ export const brands = ["Dr. Reddy's", "WellcomeVet Pharma", "Dr. Best", "Macleod
  * Helper to generate SEO friendly URLs
  */
 export function getProductUrl(product: Product) {
+  if (!product || !product.cat || !product.name) {
+    return '/products/';
+  }
+
   const catSlug = product.cat.toLowerCase()
     .replace(/ & /g, '-')
     .replace(/\s+/g, '-')
@@ -82,7 +86,7 @@ export function getProductUrl(product: Product) {
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '');
 
-  return `/collections/${catSlug}/${subCatSlug}/${productSlug}-${product.id}`;
+  return `/collections/${catSlug}/${subCatSlug}/${productSlug}-${product.id}/`;
 }
 
 /**
@@ -99,7 +103,7 @@ export function getCategorySlug(category: string): string {
  * Helper to get clean category URL
  */
 export function getCategoryUrl(category: string): string {
-  return `/shop/${getCategorySlug(category)}`;
+  return `/shop/${getCategorySlug(category)}/`;
 }
 
 /**

@@ -5,6 +5,10 @@ import BlogPostClient from './BlogPostClient';
 // UPDATE THIS LIST whenever you add a new blog post to blogs.json
 export function generateStaticParams() {
   return [
+    { slug: 'monsoon-diseases-prevention-medicines-india-guide' },
+    { slug: 'first-aid-kit-medicines-indian-household-guide' },
+    { slug: 'antibiotic-resistance-india-safe-use-guide' },
+    { slug: 'calcium-iron-deficiency-women-india-supplements-guide' },
     { slug: 'complete-guide-to-acidity-medicines-omeprazole-pantoprazole' },
     { slug: 'cefixime-antibiotic-complete-guide-uses-dosage-side-effects' },
     { slug: 'diabetes-management-metformin-glimepiride-complete-guide' },

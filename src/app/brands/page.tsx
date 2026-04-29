@@ -120,6 +120,7 @@ const brands = [
 export const metadata = {
     title: 'Our Pharma Partners & Catalogues | Adarsh Medical Store',
     description: 'View and download complete product catalogs & price lists from 29+ trusted pharmaceutical partners. Authorized distributor of Mankind, Dr. Reddy\'s, Macleods, Aristo, Lupin, Torrent & more.',
+    keywords: ['pharma brands india', 'Dr Reddys distributor', 'Mankind pharma products', 'Macleods catalogue', 'Aristo pharma', 'Lupin medicines', 'Torrent pharma', 'pharma distributor sagar MP', 'medicine catalogue download'],
     alternates: {
         canonical: 'https://ad2025.in/brands/',
     },

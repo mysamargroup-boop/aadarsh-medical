@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { products, getProductUrl, getCategorySlug, getCategoryUrl } from '@/lib/product-data';
 
 export const dynamic = 'force-static';
 export const revalidate = 86400; // 24 hours
@@ -8,6 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog slugs — UPDATE this list when adding new blogs
     const blogSlugs = [
+        'monsoon-diseases-prevention-medicines-india-guide',
+        'first-aid-kit-medicines-indian-household-guide',
+        'antibiotic-resistance-india-safe-use-guide',
+        'calcium-iron-deficiency-women-india-supplements-guide',
         'complete-guide-to-acidity-medicines-omeprazole-pantoprazole',
         'cefixime-antibiotic-complete-guide-uses-dosage-side-effects',
         'diabetes-management-metformin-glimepiride-complete-guide',
@@ -20,9 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const wholesaleCities = [
         'sagar', 'damoh', 'bina', 'khurai', 
-        'rahatgarh', 'rehli', 'banda', 'chhatarpur'
+        'rahatgarh', 'rehli', 'banda', 'chhatarpur', 'garhakota'
     ];
 
+    // Static routes
     const routes: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
@@ -38,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/products/`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/shop/`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,
@@ -74,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    // Add individual blog post URLs for Google to crawl
+    // Add individual blog post URLs
     blogSlugs.forEach(slug => {
         routes.push({
             url: `${baseUrl}/blogs/${slug}/`,
@@ -84,13 +96,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         });
     });
 
-    // Add Wholesale City SEO Pages for Google to crawl
+    // Add Wholesale City SEO Pages
     wholesaleCities.forEach(city => {
         routes.push({
             url: `${baseUrl}/wholesale/${city}/`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.7, // Higher priority for B2B local landing pages
+            priority: 0.7,
+        });
+    });
+
+    // Add Categories
+    const categories = Array.from(new Set(products.map(p => p.cat)));
+    categories.forEach(cat => {
+        routes.push({
+            url: `${baseUrl}${getCategoryUrl(cat)}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.7,
+        });
+    });
+
+    // Add ALL Products (The big one for indexing)
+    products.forEach(product => {
+        routes.push({
+            url: `${baseUrl}${getProductUrl(product)}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         });
     });
 

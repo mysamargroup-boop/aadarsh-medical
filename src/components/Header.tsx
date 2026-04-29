@@ -117,9 +117,9 @@ export function Header() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Products', href: '/products' },
-    { name: 'Why Us', href: '/#why-us' },
+    { name: 'About', href: '/about/' },
+    { name: 'Products', href: '/products/' },
+    { name: 'Blogs', href: '/blogs/' },
     { name: 'Contact', href: '/#contact' },
   ];
 

@@ -2,8 +2,9 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { allProducts } from '@/lib/product-data';
-import { Search, X, ExternalLink, ChevronDown, ChevronUp, Building2, Package, Pill } from 'lucide-react';
+import Link from 'next/link';
+import { allProducts, getProductUrl } from '@/lib/product-data';
+import { Search, X, ExternalLink, ChevronDown, ChevronUp, Building2, Package, Pill, Info } from 'lucide-react';
 
 // Map company names to their logo files in /images/partners/
 const companyLogos: Record<string, string> = {
@@ -18,19 +19,19 @@ const companyLogos: Record<string, string> = {
 
 export default function ProductsListClient() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState<{ name: string; company: string } | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
   const [expandedCompanies, setExpandedCompanies] = useState<Set<string>>(new Set());
   const [activeCompanyFilter, setActiveCompanyFilter] = useState<string | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Group products by company
   const productsByCompany = useMemo(() => {
-    const grouped: Record<string, { name: string; company: string }[]> = {};
+    const grouped: Record<string, any[]> = {};
     allProducts.forEach(p => {
       if (!grouped[p.company]) {
         grouped[p.company] = [];
       }
-      grouped[p.company].push({ name: p.name, company: p.company });
+      grouped[p.company].push(p);
     });
     // Sort products within each company alphabetically
     Object.keys(grouped).forEach(company => {
@@ -46,7 +47,7 @@ export default function ProductsListClient() {
 
   // Filter based on search query and company filter
   const filteredByCompany = useMemo(() => {
-    const filtered: Record<string, { name: string; company: string }[]> = {};
+    const filtered: Record<string, any[]> = {};
     const lowerQuery = searchQuery.toLowerCase().trim();
 
     const companiesToShow = activeCompanyFilter ? [activeCompanyFilter] : companyNames;
@@ -257,19 +258,34 @@ export default function ProductsListClient() {
                   {isExpanded && (
                     <div className="border-t border-border/50">
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border/30">
-                        {products.map((product, idx) => (
-                          <button
-                            key={`${product.company}-${product.name}-${idx}`}
-                            onClick={() => setSelectedProduct(product)}
-                            className="bg-white px-5 py-3.5 text-left hover:bg-emerald-50/50 transition-all group/item flex items-center gap-3"
-                            id={`product-${product.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
-                          >
-                            <div className="w-2 h-2 rounded-full bg-secondary/40 group-hover/item:bg-secondary shrink-0 transition-colors" />
-                            <span className="text-sm font-medium text-primary group-hover/item:text-secondary transition-colors truncate">
-                              {product.name}
-                            </span>
-                          </button>
-                        ))}
+                        {products.map((product, idx) => {
+                          const productUrl = getProductUrl(product as any);
+                          return (
+                            <div
+                              key={`${product.company}-${product.name}-${idx}`}
+                              className="bg-white group/item relative flex items-center gap-3 border-b border-r border-border/10 last:border-b-0"
+                            >
+                              <button
+                                onClick={() => setSelectedProduct(product)}
+                                className="flex-1 px-5 py-3.5 text-left hover:bg-emerald-50/50 transition-all flex items-center gap-3"
+                                id={`product-${product.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
+                              >
+                                <div className="w-2 h-2 rounded-full bg-secondary/40 group-hover/item:bg-secondary shrink-0 transition-colors" />
+                                <span className="text-sm font-medium text-primary group-hover/item:text-secondary transition-colors truncate">
+                                  {product.name}
+                                </span>
+                              </button>
+                              
+                              <Link 
+                                href={productUrl}
+                                className="p-2 mr-2 text-muted-foreground hover:text-secondary opacity-0 group-hover/item:opacity-100 transition-all"
+                                title="View Product Details"
+                              >
+                                <Info size={16} />
+                              </Link>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -327,15 +343,25 @@ export default function ProductsListClient() {
                 To place an order for this product, click the button below to visit our ordering portal.
               </p>
 
-              <a
-                href="https://davabazar24.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full gradient-button text-white font-bold text-base py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all"
-              >
-                <ExternalLink size={18} />
-                For Order Click Here
-              </a>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://davabazar24.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full gradient-button text-white font-bold text-base py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all"
+                >
+                  <ExternalLink size={18} />
+                  For Order Click Here
+                </a>
+
+                <Link
+                  href={getProductUrl(selectedProduct as any)}
+                  className="inline-flex items-center justify-center gap-2 w-full bg-muted/50 text-primary font-bold text-sm py-3 rounded-2xl hover:bg-muted transition-all border border-border"
+                >
+                  <Info size={16} />
+                  View Full Technical Details
+                </Link>
+              </div>
 
               <button
                 onClick={() => setSelectedProduct(null)}
